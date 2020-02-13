@@ -57,12 +57,16 @@ export default () => (
     <p>Styled Components is cool</p>
     <User
       username='Jane Doe'
+      // eslint-disable-next-line max-len
       avatar='https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg'
+      // eslint-disable-next-line max-len
       excerpt="I'm Jane Doe. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     />
     <User
       username='Bob Smith'
+      // eslint-disable-next-line max-len
       avatar='https://s3.amazonaws.com/uifaces/faces/twitter/vladarbatov/128.jpg'
+      // eslint-disable-next-line max-len
       excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
     />
   </Container>

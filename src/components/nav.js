@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Image from 'components/image';
 
-const Header = ({ siteTitle }) => (
+const Nav = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: 'rebeccapurple',
+      marginBottom: '1.45rem',
     }}
   >
     <div
       style={{
-        margin: `0 auto`,
+        margin: '0 auto',
         maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: '1.45rem 1.0875rem',
         display: 'flex',
         alignItems: 'center',
       }}
@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => (
       <div style={{ width: 50, marginRight: 10 }}>
         <Image
           style={{
-            margin: `0 auto`,
+            margin: '0 auto',
           }}
         />
       </div>
@@ -30,8 +30,8 @@ const Header = ({ siteTitle }) => (
         <Link
           to='/'
           style={{
-            color: `white`,
-            textDecoration: `none`,
+            color: 'white',
+            textDecoration: 'none',
           }}
         >
           {siteTitle}
@@ -41,12 +41,12 @@ const Header = ({ siteTitle }) => (
   </header>
 );
 
-Header.propTypes = {
+Nav.propTypes = {
   siteTitle: PropTypes.string,
 };
 
-Header.defaultProps = {
-  siteTitle: ``,
+Nav.defaultProps = {
+  siteTitle: '',
 };
 
-export default Header;
+export default Nav;
