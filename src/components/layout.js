@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-
-import { ThemeProvider } from 'styled-components';
-import { theme, GlobalStyle } from 'theme';
 import Nav from './nav';
+import 'reset-css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -16,16 +14,12 @@ const Layout = ({ children }) => {
       }
     }
   `);
-
   return (
-    <ThemeProvider theme={theme}>
-      <>
-        <GlobalStyle whiteColor />
-        <Nav siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <footer>©{new Date().getFullYear()}, Built by ThePuzzlers</footer>
-      </>
-    </ThemeProvider>
+    <>
+      <Nav siteTitle={data.site.siteMetadata.title} />
+      <main>{children}</main>
+      <footer>©{new Date().getFullYear()}, Built by ThePuzzlers</footer>
+    </>
   );
 };
 

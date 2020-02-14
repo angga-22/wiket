@@ -7,6 +7,7 @@ module.exports = {
     author: '@gatsbyjs',
   },
   plugins: [
+    'gatsby-plugin-theme-ui',
     // meta data for pages
     'gatsby-plugin-react-helmet',
     {
@@ -19,22 +20,15 @@ module.exports = {
     // necessary to load images using gatsby-image
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    // Styled Components
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        displayName: true,
-      },
-    },
     // allows webpage to be saved to phone
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'gatsby-starter-default',
+        name: 'thepuzzlers-starter-default',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fff',
+        theme_color: '#000',
         display: 'minimal-ui',
         icon: 'src/images/puzzlers-icon.png', // This path is relative to the root of the site.
       },
