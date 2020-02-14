@@ -8,7 +8,7 @@ don't initialize a README.md
 2. Clone the `client-base` repo locally
 
 ```
-$ git clone git@gitlab.com:theconcierge-org/client-base.git client__<name_of_client>
+$ git clone git@gitlab.com:thepuzzlers-org/client-boilerplate.git client__<name_of_client>
 $ cd client__<name_of_client>
 ```
 
@@ -16,7 +16,7 @@ $ cd client__<name_of_client>
 
 ```
 $ git remote rm origin
-$ git remote add origin git@gitlab.com:theconcierge-org/client__<name_of_client>.git
+$ git remote add origin git@gitlab.com:thepuzzlers-org/client__<name_of_client>.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
