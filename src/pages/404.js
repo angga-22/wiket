@@ -1,14 +1,28 @@
 import React from 'react';
-
-import Layout from 'components/layout';
-import SEO from 'components/seo';
+import SEO from 'atoms/SEO';
+import { GridItem } from 'pieces/grid';
+import { Heading, Paragraph } from 'pieces/typography';
+import { Section } from 'pieces/layout';
 
 const NotFoundPage = () => (
-  <Layout>
+  <>
     <SEO title='404: Not found' />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
+    <Section>
+      <GridItem
+        sx={{
+          display: 'flex',
+          height: ['200vw', '50vw', '120vw'],
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Heading as='h2'>Not found.</Heading>
+        <Paragraph>You just hit a route that doesn&#39;t exist.</Paragraph>
+      </GridItem>
+    </Section>
+  </>
 );
 
 export default NotFoundPage;
