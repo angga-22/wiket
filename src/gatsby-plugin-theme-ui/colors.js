@@ -1,13 +1,16 @@
+// No nesting!
+// colors declarations can only be one level deep
+
 const base = {
   background: '#fff',
-  primary: '#000',
+  primary: 'green',
   secondary: '#000',
   disabled: '#000',
 };
 
 const textColors = {
   // defaults:
-  text: 'primary',
+  text: '#000',
   // textBold
   heading: 'primary',
   // headingBold
@@ -19,22 +22,6 @@ const textColors = {
   // },
   // ...
 };
-
-const ctaColors = {
-  buttons: {
-    primary: {
-      normal: 'primary',
-      hover: 'secondary',
-    },
-  },
-  links: {
-    hyperLink: {
-      normal: 'primary',
-      hover: 'secondary',
-    },
-  },
-};
-
 const neutrals = {
   //   main,
 };
@@ -42,7 +29,6 @@ const neutrals = {
 export const colors = {
   // defaults
   ...base,
-  ...ctaColors,
   ...textColors,
   neutrals,
 };
