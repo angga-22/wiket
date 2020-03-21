@@ -9,7 +9,7 @@ import { styles } from './styles';
 import { forms } from './forms';
 import { tabs } from './tabs';
 import { layouts } from './layouts';
-import { space } from './spaces';
+import { space } from './space';
 
 export default {
   // ////
@@ -27,7 +27,7 @@ export default {
   layouts,
   space,
   colors,
-  elements,
+  ...elements,
   measure: {
     // fallback will force the gridItem to expand across the full width of the gridWrapper
     gridColumnFallback: {
