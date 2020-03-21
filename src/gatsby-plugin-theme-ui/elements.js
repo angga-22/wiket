@@ -1,5 +1,15 @@
 const links = {
-  hyperLink: {},
+  hyperLink: {
+    textDecoration: 'underline',
+    ':hover,:focus,active': {
+      color: 'primary',
+    },
+  },
+  footer: {
+    ':hover,:focus,.active': {
+      color: 'primary',
+    },
+  },
 };
 
 const buttons = {
