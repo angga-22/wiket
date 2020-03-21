@@ -1,0 +1,625 @@
+[
+  {
+    "seoTitle": "Datenschutzerklärung",
+    "headline": "Datenschutzerklärung",
+    "intro": "Mit dieser Datenschutzerklärung möchten wir Sie darüber informieren, wie wir personenbezogene Daten verarbeiten und Sie über Ihre Rechte aufklären. Wir sind uns bewusst, welche Bedeutung die Verarbeitung personenbezogener Daten für Sie als betroffener Nutzer hat und beachten dementsprechend alle einschlägigen gesetzlichen Vorgaben. Dabei ist der Schutz Ihrer Privatsphäre für uns von höchster Bedeutung. Die Verarbeitung Ihrer personenbezogenen Daten durch uns erfolgt unter Einhaltung der Datenschutzgrundverordnung, sowie der landesrechtlichen Datenschutzbestimmungen.",
+    "statement": [
+      {
+        "subheadline": "Verarbeitungsvorgänge",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Wir erheben und verarbeiten die folgenden personenbezogenen Daten über Sie: ",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [
+                {
+                  "style": "",
+                  "length": "",
+                  "offset": ""
+                }
+              ],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Online-Identifikatoren (z. B. Ihre IP-Adresse, Browsertyp und Browserversion, das verwandte Betriebssystem, die Referrer-URL, die IP-Adresse, den Dateinamen, den Zugriffsstatus, die übertragene Datenmenge, das Datum und die Uhrzeit der Serveranfrage)",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Verarbeitungszwecke",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Wir verarbeiten Ihre Daten zu den folgenden Zwecken:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Für die von Ihnen gewünschte Kontaktaufnahme",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Zur Qualitätssicherung und für unsere Statistik",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Rechtsgrundlage der Datenverarbeitung",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Die Verarbeitung Ihrer Daten geschieht auf den folgenden Rechtsgrundlagen:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a) DSGVO",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "zur Erfüllung gesetzlicher Pflichten nach Art. 6 Abs. 1 lit. c) DSGVO",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "aus einem berechtigten Interesse nach Art. 6 Abs. 1 lit. f) DSGVO",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Berechtigte Interessen",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Sofern wir die Verarbeitung Ihrer personenbezogenen Daten auf berechtigte Interessen iSv. Art. 6 Abs. 1 lit. f) DS-GVO stützen, sind solche:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "die Verbesserung unseres Angebots",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "der Schutz vor Missbrauch",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "die Führung unserer Statistik",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Datenquellen",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Wir erhalten die Daten von Ihnen (einschließlich über die von Ihnen verwendeten Geräte). Sollten wir die personenbezogenen Daten nicht direkt von Ihnen erheben, so teilen wir Ihnen zusätzlich mit, aus welcher Quelle die personenbezogenen Daten stammen und gegebenenfalls ob sie aus öffentlich zugänglichen Quellen stammen.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Empfänger oder Kategorien von Empfängern der personenbezogenen Daten",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Bei der Verarbeitung Ihrer Daten arbeiten wir mit den folgenden Dienstleistern zusammen, die Zugriff auf Ihre Daten haben:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Anbieter von Webanalyse-Tools",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Web-Hosting Anbieter",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "die Führung unserer Statistik",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ],
+        "textAfterListing": "Es findet eine Datenübertragung in Drittländer außerhalb der Europäischen Union statt. Dies erfolgt auf der Grundlage gesetzlich vorgesehener vertraglicher Regelungen, die einen angemessenen Schutz Ihrer Daten sicherstellen sollen und die Sie auf Anfrage einsehen können. "
+      },
+      {
+        "subheadline": "Speicherdauer",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Wir speichern Ihre personenbezogenen Daten nur solange, wie es für die  Erreichung des Verarbeitungszweckes nötig ist oder die Speicherung einer  gesetzlichen Aufbewahrungsfrist unterliegt. ",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "fmq35",
+              "text": "Wir speichern Ihre Daten,",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "wenn Sie in die Verarbeitung eingewilligt haben höchstens solange, bis Sie Ihre Einwilligung widerrufen",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "wenn wir die Daten auf der Grundlage eines berechtigten Interesses verwenden höchstens solange, wie Ihr Interesse an einer Löschung oder Anonymisierung nicht überwiegt\"",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Ihre Rechte",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Sie haben – teilweise unter bestimmten Voraussetzungen – das Recht,",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "unentgeltlich Auskunft über die Verarbeitung Ihrer  Daten zu verlangen, sowie den Erhalt einer Kopie Ihrer  personenbezogenen Daten. Auskunft können Sie u. a. verlangen über die  Zwecke der Verarbeitung, die Kategorien der personenbezogenen Daten die  verarbeitet werden, die Empfänger der Daten (sofern eine Weitergabe  erfolgt), die Dauer der Speicherung oder die Kriterien für die  Festlegung der Dauer;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 14,
+                      "length": 8,
+                      "style": "BOLD"
+                    },
+                    {
+                      "offset": 95,
+                      "length": 5,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Ihre Daten zu berichtigen. Sollten Ihre personenbezogenen  Daten unvollständig sein, so haben Sie, unter Berücksichtigung der  Verarbeitungszwecke, das Recht die Daten zu vervollständigen;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 14,
+                      "length": 11,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Ihre Daten löschen oder sperren zu lassen. Gründe für  das Bestehen eines Löschungs-/Sperrungsanspruchs können u.a. sein der  Widerruf der Einwilligung auf dem die Verarbeitung fußt, die betroffene  Person legt Widerspruch gegen die Verarbeitung ein, die  personenbezogenen Daten wurden unrechtmäßig verarbeitet;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 11,
+                      "length": 7,
+                      "style": "BOLD"
+                    },
+                    {
+                      "offset": 24,
+                      "length": 7,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "die Verarbeitung einschränken zu lassen;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 17,
+                      "length": 22,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "der Verarbeitung Ihrer Daten zu widersprechen;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 32,
+                      "length": 13,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "Ihre Einwilligung zur Verarbeitung Ihrer Daten für die Zukunft zu widerrufen und",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 66,
+                      "length": 10,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "sich bei der zuständigen Aufsichtsbehörde über eine unzulässige Datenverarbeitung zu beschweren.",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 85,
+                      "length": 10,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Erfordernis oder Verpflichtung zur Bereitstellung von Daten",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Soweit dies bei der Erhebung nicht ausdrücklich  angegeben ist, ist die Bereitstellung von Daten nicht erforderlich oder  verpflichtend. Eine solche Verpflichtung kann sich aus gesetzlichen  Vorgaben oder vertraglichen Regelungen ergeben.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Datensicherung ",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Wir haben umfangreiche technische und  organisatorische Maßnahmen ergriffen, um Ihre Daten gegen mögliche  Gefahren, wie unbefugten Zugang oder Zugriff, unbefugte Kenntnisnahme,  Veränderung oder Verbreitung, sowie vor Verlust, Zerstörung oder  Missbrauch zu sichern.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "cemfr",
+              "text": "",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "50jhg",
+              "text": "Um Ihre persönlichen Daten bei der Übertragung  vor unberechtigtem Zugriff Dritter zu schützen, sichern wir die  Datenübertragungen ggf. mittels SSL-Verschlüsselung. Es handelt sich  dabei um ein standardisiertes Verschlüsselungsverfahren für  Online-Dienste, insbesondere für das Web.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Logfiles",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Bei jedem Zugriff auf unsere Internet-Seiten werden  Nutzungsdaten durch den jeweiligen Internetbrowser übermittelt und in  Protokolldateien, den sogenannten Server-Logfiles, gespeichert. Die  dabei gespeicherten Datensätze enthalten die folgenden Daten: Domain,  von der aus der Nutzer Zugriff auf die Webseite nimmt, Datum und Uhrzeit  des Abrufs IP-Adresse des zugreifenden Rechners Webseite(n), die der  Nutzer im Rahmen des Angebots besucht, übertragene Datenmenge,  Browsertyp und -version, verwendetes Betriebssystem, Name des  Internet-Service-Providers, Meldung, ob der Abruf erfolgreich war. Diese  Logfile-Datensätze werden in anonymisierter Form ausgewertet, um das  Angebot zu verbessern und nutzerfreundlicher zu gestalten, Fehler zu  finden und zu beheben und die Auslastung von Servern zu steuern. ",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Stand dieser Datenschutzerklärung",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "März 2020.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "8nt5c",
+              "text": "Wir behalten uns vor, diese Datenschutzerklärung jederzeit mit Wirkung für die Zukunft zu ändern.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

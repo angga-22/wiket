@@ -1,0 +1,14 @@
+[
+  {
+    "impressum": {
+      "company": "Fake Company Name",
+      "headOfCompany": "Mister Bean",
+      "address": {
+        "street": "Sunny Street 9",
+        "city": "34235 London"
+      },
+      "tel": "missing.",
+      "ustid": "missing."
+    }
+  }
+]
