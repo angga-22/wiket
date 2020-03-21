@@ -25,9 +25,9 @@ export const Footer = memo(() => (
         Impressum
       </GatsbyLink>
       <Paragraph sx={{ marginLeft: ['5vw'] }}>
-        {'Build with <3 by '}
+        {'Good Code from Berlin '}
         <Link variant='hyperLink' href='https://thepuzzlers.io'>
-          The Puzzlers.
+          - The Puzzlers.
         </Link>
       </Paragraph>
     </GridItem>

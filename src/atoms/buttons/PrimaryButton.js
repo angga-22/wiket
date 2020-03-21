@@ -1,27 +1,6 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui';
+import React from 'react';
+import { Button } from 'pieces/elements';
 
-export default ({ children }) => (
-  <button
-    type='submit'
-    sx={{
-      appearance: 'none',
-      variant: 'buttons.primary',
-      display: 'inline-block',
-      textAlign: 'center',
-      lineHeight: 'inherit',
-      textDecoration: 'none',
-      fontSize: 'inherit',
-      // this uses the value from `theme.space[4]`
-      padding: 2,
-      // these use values from `theme.colors`
-      color: 'secondary',
-      '&:hover': {
-        color: 'primary',
-        bg: 'secondary',
-      },
-    }}
-  >
-    {children}
-  </button>
-);
+// This Button gets the styles from the theme. (see `elements.js`)
+// Extend if necessary
+export const PrimaryButton = props => <Button variant='primary' {...props} />;

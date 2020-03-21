@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button } from 'theme-ui';
+import { PrimaryButton } from 'atoms/buttons';
 
-export default ({ children }) => (
-  <Button variant="secondary">{children}</Button>
+// This Button gets the styles from the theme. (see `elements.js`)
+// Extend if necessary
+export const SecondaryButton = props => (
+  <PrimaryButton variant='secondary' {...props} />
 );
