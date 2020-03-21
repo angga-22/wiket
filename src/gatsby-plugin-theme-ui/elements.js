@@ -8,6 +8,9 @@ const links = {
   },
   navigation: {
     variant: 'typography.navigationLink.normal',
+    ':hover,:focus,active': {
+      color: 'primary',
+    },
   },
   footer: {
     variant: 'links.navigation',
