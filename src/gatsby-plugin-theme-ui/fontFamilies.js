@@ -5,7 +5,7 @@ export const fontFamilies = {
   },
   primary: {
     normal: 'amsiPro_condensed_ultra, sans-serif',
-    bold: 'fontFamily, serif',
+    bold: 'amsiPro_narrow_black, sans-serif',
   },
   secondary: {
     normal: 'amsiPro_narrow_semiBold, sans-serif',

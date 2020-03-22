@@ -6,24 +6,31 @@ import { RichText } from 'pieces/utils/typography';
 import { Emphasize } from 'pieces/typography';
 import { Box } from 'pieces/box';
 
+/*
+// Props
+// type: lookup key for the theme.
+//       Can be either full themeKey e.g. `smallParagraph` or short version
+//       without appended "Paragraph": e.g. `small`
+// as: html element to use. Defaults to `p`.
+// maxchar: Maximum number of chars to display.
+//          Will cut off after specified numner and append `...`
+// variant: Font variant as specified in fontFamilies.js
+//          Defaults to `normal`. Could be e.g. `bold`,...
+*/
 export const Heading = forwardRef(
-  ({ as, adoptStyling, maxchar, ...props }, ref) => {
+  ({ as, type = 'h1', variant = 'normal', maxchar, ...props }, ref) => {
     const { theme } = useThemeUI();
-    const motionElement = as ? motion[as] : motion.h2;
-
-    const tag = adoptStyling ? adoptStyling : as;
-
     return (
       <Box
         ref={ref}
-        as={motionElement}
-        variant='normal'
+        as={as ? motion[as] : motion[type]}
+        variant={variant}
         {...props}
-        __themeKey={`typography.${tag}`}
+        __themeKey={`typography.${type}`}
         __css={{
           color:
-            theme.colors[tag] && theme.colors[tag].normal
-              ? `${tag}.normal`
+            theme.colors[type] && theme.colors[type][variant]
+              ? `${type}.${variant}`
               : 'heading',
         }}
       >
@@ -34,11 +41,11 @@ export const Heading = forwardRef(
             <Emphasize
               sx={{
                 color: `${
-                  theme.colors[tag] && theme.colors[tag].bold
-                    ? `${tag}.bold`
+                  theme.colors[type] && theme.colors[type].bold
+                    ? `${type}.bold`
                     : 'headingBold'
                 }`,
-                variant: `typography.${tag}.bold`,
+                variant: `typography.${type}.bold`,
               }}
             >
               {children}
@@ -47,8 +54,12 @@ export const Heading = forwardRef(
           Italic={({ children }) => (
             <Emphasize
               sx={{
-                color: `${tag}.italic`,
-                variant: `typography.${tag}.bold`,
+                color: `${
+                  theme.colors[type] && theme.colors[type].italic
+                    ? `${type}.italic`
+                    : 'textItalic'
+                }`,
+                variant: `typography.${type}.italic`,
               }}
             >
               {children}

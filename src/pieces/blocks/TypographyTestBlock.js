@@ -4,7 +4,6 @@ import { Section } from 'pieces/layout';
 import {
   Heading,
   Paragraph,
-  SmallParagraph,
   Label,
   Link,
   Button as ButtonTypography,
@@ -24,12 +23,12 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
         gridColumnEnd: ['13', '13', '24', '22', '19'],
       }}
     >
-      <Heading as='h1'>{text || 'H1'}</Heading>
-      <Heading as='h2'>{text || 'H2'}</Heading>
-      <Heading as='h3'>{text || 'H3'}</Heading>
-      <Heading as='h4'>{text || 'H4'}</Heading>
-      <Heading as='h5'>{text || 'H5'}</Heading>
-      <Heading as='h6'>{text || 'H6'}</Heading>
+      <Heading type='h1'>{text || 'H1'}</Heading>
+      <Heading type='h2'>{text || 'H2'}</Heading>
+      <Heading type='h3'>{text || 'H3'}</Heading>
+      <Heading type='h4'>{text || 'H4'}</Heading>
+      <Heading type='h5'>{text || 'H5'}</Heading>
+      <Heading type='h6'>{text || 'H6'}</Heading>
       <Label>{text || 'Label'}</Label>
       <Box>
         <Link>{text || 'Link'}</Link>
@@ -46,13 +45,18 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
       <Paragraph>
         {paragraph
           // eslint-disable-next-line max-len
-          || 'Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+          || 'Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
-      <SmallParagraph>
+      <Paragraph type='small'>
         {paragraph
           // eslint-disable-next-line max-len
-          || 'Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
-      </SmallParagraph>
+          || 'Small Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+      </Paragraph>
+      <Paragraph variant='bold'>
+        {paragraph
+          // eslint-disable-next-line max-len
+          || 'Bold Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+      </Paragraph>
       {children}
     </GridItem>
   </Section>
