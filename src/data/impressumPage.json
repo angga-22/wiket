@@ -2,6 +2,12 @@
   {
     "seoTitle": "Impressum",
     "headline": "Impressum",
-    "headOfCompanyIntro": "Vertretungsberechtigter Geschäftsführer"
+    "headOfCompanyIntro": "Vertretungsberechtigter Geschäftsführer",
+    "registerHeadline": "Registereintrag",
+    "commercialRegisterEntry": {
+      "title": "Eintragung im Handelsregister",
+      "courtName": "Registergericht",
+      "numberName": "Registernummer"
+    }
   }
 ]

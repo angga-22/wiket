@@ -1,14 +1,19 @@
 [
   {
     "legal": {
-      "company": "Damian Hutter (ThePuzzlers)",
-      "headOfCompany": "Damian Hutter",
+      "company": "Rainbow GmbH",
+      "headOfCompany": "Unicorn Start",
       "address": {
-        "street": "Neuwerkstraße 9",
-        "city": "24321 Lütjenburg"
+        "street": "Sunshine Road 9",
+        "city": "123134 FantasyCity"
       },
-      "tel": "+49(0)4381/404147",
-      "ustid": "DE305962731"
+      "tel": "",
+      "ustid": "",
+      "email": "optional@mail.de",
+      "commercialRegister": {
+        "court": "",
+        "number": ""
+      }
     },
     "socialMedia": {}
   }

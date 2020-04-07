@@ -7,7 +7,13 @@ import { ImpressumBlock, LegalHeaderBlock } from 'pieces/blocks';
 
 const ImpressumPage = ({
   data: {
-    impressumPageJson: { seoTitle, headline, headOfCompanyIntro },
+    impressumPageJson: {
+      seoTitle,
+      headline,
+      headOfCompanyIntro,
+      commercialRegisterEntry,
+      registerHeadline,
+    },
     businessInfoJson: { legal },
   },
 }) => (
@@ -17,6 +23,8 @@ const ImpressumPage = ({
     <ImpressumBlock
       {...legal}
       headOfCompanyIntro={headOfCompanyIntro}
+      commercialRegisterEntry={commercialRegisterEntry}
+      registerHeadline={registerHeadline}
       sx={{ mt: ['10vw', '5vw', '5vw', '2vw'], mb: ['20vw'] }}
     />
   </Section>
@@ -28,6 +36,12 @@ export const query = graphql`
       seoTitle
       headline
       headOfCompanyIntro
+      registerHeadline
+      commercialRegisterEntry {
+        title
+        courtName
+        numberName
+      }
     }
     businessInfoJson {
       legal {
@@ -39,6 +53,11 @@ export const query = graphql`
         }
         tel
         ustid
+        email
+        commercialRegister {
+          court
+          number
+        }
       }
     }
   }

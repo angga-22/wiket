@@ -2,6 +2,12 @@
   {
     "seoTitle": "Legal",
     "headline": "Legal",
-    "headOfCompanyIntro": "represented by"
+    "headOfCompanyIntro": "represented by",
+    "registerHeadline": "Register entry",
+    "commercialRegisterEntry": {
+      "title": "Entry in the Commercial Register",
+      "courtName": "Register court",
+      "numberName": "Register number"
+    }
   }
 ]
