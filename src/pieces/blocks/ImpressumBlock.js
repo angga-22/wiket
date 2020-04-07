@@ -5,6 +5,7 @@ import { LegalPageGridItem } from 'pieces/blocks';
 export const ImpressumBlock = ({
   company,
   headOfCompany,
+  headOfCompanyIntro,
   address,
   tel,
   ustid,
@@ -13,7 +14,8 @@ export const ImpressumBlock = ({
   <LegalPageGridItem sx={sx}>
     <Paragraph variant='bold'>{company}</Paragraph>
     <br />
-    Vertretungsberechtigter Geschäftsführer:
+    {headOfCompanyIntro}
+    {':'}
     <Paragraph> {headOfCompany}</Paragraph>
     <br />
     <Paragraph>

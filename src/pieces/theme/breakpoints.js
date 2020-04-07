@@ -6,6 +6,7 @@ export const breakpoints = [
   // Landscape
   '@media screen and (min-width: 63em) and (orientation: landscape)', // 1024px tablet_landscape
   '@media screen and (min-width: 80em)', // 1200px desktop_s
+  '@media screen and (min-width: 160em)', // 2560px desktop_xxl
 ];
 
 export const pixelValues = [320, 512, 640, 1024, 1280];

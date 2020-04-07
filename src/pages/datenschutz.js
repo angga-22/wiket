@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from 'atoms/SEO';
+import SEO from 'pieces/SEO';
 import { graphql } from 'gatsby';
 // pieces imports
 import { Section } from 'pieces/layout';
@@ -14,16 +14,21 @@ const DatenschutzPage = ({
   data: {
     datenschutzPageJson: { seoTitle, headline, intro, statement },
     businessInfoJson: {
-      impressum: { headOfCompany, address, company },
+      legal: { headOfCompany, address, company },
     },
   },
 }) => (
-  <Section>
-    <SEO title={seoTitle} />
+  <Section sx={{ wordWrap: 'anywhere', overflow: 'hidden' }}>
+    <SEO
+      title={seoTitle}
+      description={`Die Datenschutzerklärung von ${company}.`}
+    />
+    <LegalHeaderBlock headline={`${headline} ${company}`} introText={intro} />
+    {/* Responsible Person and Business Info */}
     <LegalHeaderBlock headline={`${headline} ${company}`} introText={intro} />
     {/* Responsible Person and Business Info */}
     <LegalPageGridItem>
-      <Heading as='h3' sx={{ lineHeight: '1.15' }}>
+      <Heading type='h3' sx={{ lineHeight: '1.15' }}>
         Namen und Kontaktdaten des Verantwortlichen sowie seines Vertreters
       </Heading>
       <Paragraph sx={{ mt: ['1em'] }} variant='bold'>
@@ -87,11 +92,10 @@ export const query = graphql`
             }
           }
         }
-        textAfterListing
       }
     }
     businessInfoJson {
-      impressum {
+      legal {
         company
         headOfCompany
         address {

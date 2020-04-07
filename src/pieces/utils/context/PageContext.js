@@ -6,7 +6,7 @@ import { getBody } from 'pieces/utils/functions';
 const PageContext = createContext();
 export const usePageContext = () => useContext(PageContext);
 
-export const PageContextProvider = ({ children }) => {
+export const PageContextProvider = ({ children, locale }) => {
   const { scrollYProgress } = useViewportScroll();
   const body = getBody();
   const currentScroll = useMotionValue(0);
@@ -14,6 +14,7 @@ export const PageContextProvider = ({ children }) => {
   return (
     <PageContext.Provider
       value={{
+        locale,
         scrollYProgress,
         currentScroll,
         body,

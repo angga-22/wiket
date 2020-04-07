@@ -7,6 +7,7 @@ import {
   Label,
   Link,
   Button as ButtonTypography,
+  LargeButton as LargeButtonTypography,
 } from 'pieces/typography';
 import { Box } from 'pieces/box';
 
@@ -14,7 +15,7 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
   <Section>
     <GridItem
       sx={{
-        height: '90vh',
+        minHeight: '90vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -29,7 +30,9 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
       <Heading type='h4'>{text || 'H4'}</Heading>
       <Heading type='h5'>{text || 'H5'}</Heading>
       <Heading type='h6'>{text || 'H6'}</Heading>
+      <Label type='loud'>{text || 'Loud Label'}</Label>
       <Label>{text || 'Label'}</Label>
+      <Label type='quiet'>{text || 'Quiet Label'}</Label>
       <Box>
         <Link>{text || 'Link'}</Link>
       </Box>
@@ -40,17 +43,24 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
         <ButtonTypography>{text || 'Button Typography'}</ButtonTypography>
       </Box>
       <Box>
-        <ButtonTypography>{text || 'Large Button Typography'}</ButtonTypography>
+        <LargeButtonTypography>
+          {text || 'Large Button Typography'}
+        </LargeButtonTypography>
       </Box>
+      <Paragraph type='loud'>
+        {paragraph
+          // eslint-disable-next-line max-len
+          || 'Loud Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+      </Paragraph>
       <Paragraph>
         {paragraph
           // eslint-disable-next-line max-len
           || 'Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
-      <Paragraph type='small'>
+      <Paragraph type='quiet'>
         {paragraph
           // eslint-disable-next-line max-len
-          || 'Small Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+          || 'Quiet Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
       <Paragraph variant='bold'>
         {paragraph

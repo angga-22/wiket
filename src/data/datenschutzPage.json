@@ -278,24 +278,8 @@
                 }
               ]
             }
-          },
-          {
-            "bulletpoint": {
-              "blocks": [
-                {
-                  "key": "fp0cm",
-                  "text": "die Führung unserer Statistik",
-                  "type": "unstyled",
-                  "depth": 0,
-                  "inlineStyleRanges": [],
-                  "entityRanges": [],
-                  "data": {}
-                }
-              ]
-            }
           }
-        ],
-        "textAfterListing": "Es findet eine Datenübertragung in Drittländer außerhalb der Europäischen Union statt. Dies erfolgt auf der Grundlage gesetzlich vorgesehener vertraglicher Regelungen, die einen angemessenen Schutz Ihrer Daten sicherstellen sollen und die Sie auf Anfrage einsehen können. "
+        ]
       },
       {
         "subheadline": "Speicherdauer",
@@ -342,7 +326,7 @@
               "blocks": [
                 {
                   "key": "fp0cm",
-                  "text": "wenn wir die Daten auf der Grundlage eines berechtigten Interesses verwenden höchstens solange, wie Ihr Interesse an einer Löschung oder Anonymisierung nicht überwiegt\"",
+                  "text": "wenn wir die Daten auf der Grundlage eines berechtigten Interesses verwenden höchstens solange, wie Ihr Interesse an einer Löschung oder Anonymisierung nicht überwiegt",
                   "type": "unstyled",
                   "depth": 0,
                   "inlineStyleRanges": [],
@@ -544,6 +528,9 @@
             }
           ]
         }
+      },
+      {
+        "subheadline": "Weitere Informationen zum Datenschutz"
       },
       {
         "subheadline": "Datensicherung ",

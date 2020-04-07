@@ -1,14 +1,15 @@
 [
   {
-    "impressum": {
-      "company": "Fake Company Name",
-      "headOfCompany": "Mister Bean",
+    "legal": {
+      "company": "Damian Hutter (ThePuzzlers)",
+      "headOfCompany": "Damian Hutter",
       "address": {
-        "street": "Sunny Street 9",
-        "city": "34235 London"
+        "street": "Neuwerkstraße 9",
+        "city": "24321 Lütjenburg"
       },
-      "tel": "missing.",
-      "ustid": "missing."
-    }
+      "tel": "+49(0)4381/404147",
+      "ustid": "DE305962731"
+    },
+    "socialMedia": {}
   }
 ]

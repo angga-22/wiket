@@ -1,7 +1,15 @@
-import { getGridPaddings } from './getGridPaddings';
+import {
+  getGridPaddings,
+  getFullWidthItemMinusMargin,
+} from './getGridPaddings';
 import { getGridTemplateColumns } from './getGridTemplateColumns';
 
 const proportionalPaddings = getGridPaddings({
+  factor: [2.5, 1.5, 2.5, 2.5, 2.5],
+  offsets: [10, 5, 15, 25, 25],
+});
+
+export const fullWidthLeftMinusMargins = getFullWidthItemMinusMargin({
   factor: [2.5, 1.5, 2.5, 2.5, 2.5],
   offsets: [10, 5, 15, 25, 25],
 });

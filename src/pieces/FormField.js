@@ -11,6 +11,7 @@ export const FormField = ({
   required = false,
   sx,
   inputAs = undefined,
+  inputVariant,
   ...props
 }) => {
   const inputProps = {};
@@ -22,6 +23,7 @@ export const FormField = ({
     <GridItem sx={sx}>
       <Label htmlFor={name}>{label}</Label>
       <Input
+        variant={inputVariant}
         type={type}
         name={name}
         placeholder={placeholder}

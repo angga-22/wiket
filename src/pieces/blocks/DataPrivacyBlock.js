@@ -12,7 +12,7 @@ export const DataPrivacyBlock = ({
 }) => (
   <LegalPageGridItem sx={sx}>
     {subheadline && (
-      <Heading as='h3' sx={{ lineHeight: '1.15' }}>
+      <Heading type='h4' sx={{ lineHeight: '1.15' }}>
         {subheadline}
       </Heading>
     )}

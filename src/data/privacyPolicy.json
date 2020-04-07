@@ -1,0 +1,608 @@
+[
+  {
+    "seoTitle": "Privacy Policy",
+    "headline": "Privacy Policy",
+    "intro": "With this privacy policy, we would like to inform you about how we handle personal data and inform you about your rights. We are aware of the importance of the processing of personal data to users and observe all relevant legal requirements. The protection of your privacy is of the utmost importance to us. The processing of your personal data by us takes place in compliance with the General Data Protection Regulation (GDPR), as well as the national data protection regulations.",
+    "statement": [
+      {
+        "subheadline": "Processing operations",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "We collect and process the following personal data about you:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [
+                {
+                  "style": "",
+                  "length": "",
+                  "offset": ""
+                }
+              ],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "online identifiers (e.g. your IP address, browser type and browser version, the operating system used, the referrer URL, the IP address, the file name, the access status, the transferred data volume, the date and time of the server request)",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Processing purposes",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "We process your data for the following purposes:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "to process your contacting",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "for quality assurance, and for our statistics",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Legal basis of data processing",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Your data will be processed on the following legal bases:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "your consent pursuant to Art. 6(1)(a)  GDPR",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "to fulfil legal obligations pursuant to Art. 6(1)(c) GDPR or",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "from a legitimate interest pursuant to Art. 6(1)(f) GDPR.",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Legitimate interests",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "If we process your personal data based on legitimate interests under Art. 6(1)(f) GDPR they are for",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "the improvement of our service,",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "protection against fraud, and",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "our statistics.",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Data sources",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "We receive the data from you (including the equipment you use). If we do not collect personal data directly from you, we will also inform you from which source the personal data originates and, if applicable, whether it originates from public accessible sources.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Recipients or categories of recipients of personal data",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "When processing your data, we work with the following service providers who have access to your data:",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "providers of web analysis tools,",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "web hosting providers.",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Retention period",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "We store your personal data only as long as it is necessary to achieve the processing purpose or the storage is subject to a legal retention period.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "fmq35",
+              "text": "We store your data,",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "if you have consented to the processing until you revoke your consent,",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "fp0cm",
+                  "text": "if we use the data on the basis of our legitimate interests, only as long as your interest in deletion or anonymisation does not outweigh them.",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Your rights",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "You have the right – partly under certain conditions,",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        },
+        "listing": [
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to request information about the processing of your data free of charge, as well as the receipt of a copy of your personal data. You can request information on the purposes of the processing, the categories of personal data being processed, the recipients of the data (if they are passed on), the duration of the storage or the criteria for determining the duration;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 19,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to correct your data. Should your personal data be incomplete, you have the right to complete the data, taking into account the processing purposes;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 7,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to delete or block your data. Reasons for the existence of a cancellation/blocking right can be, among others, the revocation of the consent on which the processing is based, the data subject objects to the processing, the personal data were processed unlawfully;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 6,
+                      "style": "BOLD"
+                    },
+                    {
+                      "offset": 13,
+                      "length": 5,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to restrict the processing;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 8,
+                      "style": "BOLD"
+                    },
+                    {
+                      "offset": 16,
+                      "length": 10,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to object the processing of your data;",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 6,
+                      "style": "BOLD"
+                    },
+                    {
+                      "offset": 14,
+                      "length": 10,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to revoke your consent to the processing of your data in the future, and",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 19,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          },
+          {
+            "bulletpoint": {
+              "blocks": [
+                {
+                  "key": "56psq",
+                  "text": "to complain to the competent supervisory authority about inadmissible data processing.",
+                  "type": "unstyled",
+                  "depth": 0,
+                  "inlineStyleRanges": [
+                    {
+                      "offset": 3,
+                      "length": 8,
+                      "style": "BOLD"
+                    }
+                  ],
+                  "entityRanges": [],
+                  "data": {}
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "subheadline": "Requirement or obligation to provide data",
+        "text": {
+          "blocks": [
+            {
+              "key": "fp0cm",
+              "text": "Where not expressly stated in the survey, the provision of data is not required or obligatory. Such an obligation may result from legal requirements or contractual regulations.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Further information on data protection"
+      },
+      {
+        "subheadline": "Data protection",
+        "text": {
+          "blocks": [
+            {
+              "key": "56psq",
+              "text": "We have taken extensive technical and organizational measures to protect your data against possible dangers, such as unauthorized access, unauthorized knowledge, alteration or distribution, as well as against loss, destruction or misuse.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "1pthl",
+              "text": "In order to protect your personal data from unauthorized access by third parties during transmission, we secure the data transmissions, if necessary using SSL encryption. This is a standardized encryption method for online services, especially for the web.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Log files",
+        "text": {
+          "blocks": [
+            {
+              "key": "56psq",
+              "text": "With each access to our website, usage data is transmitted by your web browser and stored in log files, the so-called server log files. The data records stored this way contain the following data: Domain from which the user accessed the website, date and time of access, IP address of the accessing computer, website(s) visited by the user within the scope of the service, data volume transmitted, browser type and version, operating system used, name of the Internet service provider, notification as to whether the access was successful. These log file data records are evaluated in anonymised form in order to improve the offer and make it more user-friendly, to find and correct errors and to control the utilization of servers.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      },
+      {
+        "subheadline": "Status of this privacy policy",
+        "text": {
+          "blocks": [
+            {
+              "key": "56psq",
+              "text": "April 2020",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            },
+            {
+              "key": "pbp5",
+              "text": "We reserve the right to change this privacy policy at any time.",
+              "type": "unstyled",
+              "depth": 0,
+              "inlineStyleRanges": [],
+              "entityRanges": [],
+              "data": {}
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

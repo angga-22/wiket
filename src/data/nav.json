@@ -1,0 +1,40 @@
+[
+  {
+    "nav": {
+      "links": [
+        {
+          "title": "First Link",
+          "href": "#sectionId"
+        },
+        {
+          "title": "Second Link",
+          "href": "#sectionId"
+        },
+        {
+          "title": "Third Link",
+          "href": "#sectionId"
+        }
+      ]
+    },
+    "footer": {
+      "links": [
+        {
+          "title": "Privacy Policy",
+          "to": "/privacy-policy"
+        },
+        {
+          "title": "Legal",
+          "to": "/legal"
+        },
+        {
+          "title": "Datenschutz",
+          "to": "/datenschutz"
+        },
+        {
+          "title": "Impressum",
+          "to": "/impressum"
+        }
+      ]
+    }
+  }
+]

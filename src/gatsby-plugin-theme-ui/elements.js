@@ -1,5 +1,15 @@
+const linkDefault = {
+  cursor: 'pointer',
+  transition: '0.2s ease-out',
+};
+const buttonDefault = {
+  cursor: 'pointer',
+  transition: '0.2s ease-out',
+};
+
 const links = {
   hyperLink: {
+    ...linkDefault,
     variant: 'typography.hyperLink.normal',
     textDecoration: 'underline',
     ':hover,:focus,active': {
@@ -7,12 +17,14 @@ const links = {
     },
   },
   navigation: {
+    ...linkDefault,
     variant: 'typography.navigationLink.normal',
     ':hover,:focus,active': {
       color: 'primary',
     },
   },
   footer: {
+    ...linkDefault,
     variant: 'links.navigation',
     ':hover,:focus,.active': {
       color: 'primary',
@@ -22,15 +34,17 @@ const links = {
 
 const buttons = {
   primary: {
+    ...buttonDefault,
     variant: 'typography.buttonLarge.normal',
     height: '30px',
-    ':hover': {
+    '&:hover': {
       bg: 'primary',
     },
   },
   secondary: {
+    ...buttonDefault,
     variant: 'typography.button.normal',
-    ':hover': {
+    '&:hover': {
       bg: 'primary',
     },
   },

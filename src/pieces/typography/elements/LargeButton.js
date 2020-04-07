@@ -7,7 +7,7 @@ export const LargeButton = React.forwardRef((props, ref) => (
     ref={ref}
     as={motion.span}
     variant='normal'
-    __themeKey='typography.largeButton'
+    __themeKey='typography.buttonLarge'
     {...props}
   />
 ));

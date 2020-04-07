@@ -14,7 +14,11 @@ export const GatsbyLink = forwardRef(({ to, children, ...props }, ref) => (
     __themeKey='links'
     {...props}
   >
-    <Link to={to} activeClassName='active'>
+    <Link
+      to={to}
+      activeClassName='active'
+      style={{ textDecoration: 'inherit', color: 'inherit' }}
+    >
       {children}
     </Link>
   </Box>

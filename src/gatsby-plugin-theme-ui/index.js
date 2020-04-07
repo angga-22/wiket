@@ -1,7 +1,9 @@
 // pieces import
+import { merge } from 'theme-ui';
 import { breakpoints, typography, grids, lineHeights } from 'pieces/theme';
 // client imports
 import { fontFamilies } from './fontFamilies';
+import { blocks } from './blocks';
 import { colors } from './colors';
 import { elements } from './elements';
 import { animations } from './animations';
@@ -9,7 +11,22 @@ import { styles } from './styles';
 import { forms } from './forms';
 import { tabs } from './tabs';
 import { layouts } from './layouts';
+import { measure } from './measure';
 import { space } from './space';
+
+const customTypography = merge(typography, {
+  // h1: {
+  //   bold: {
+  //     color: 'primary',
+  //   },
+  // normal: {
+  //   color: 'primary',
+  // },
+  // },
+  // primary: {
+  // color: 'primary'
+  // }
+});
 
 export default {
   // ////
@@ -17,7 +34,7 @@ export default {
   // ////
   breakpoints,
   fonts: fontFamilies,
-  typography,
+  typography: customTypography,
   lineHeights,
   grids,
   forms,
@@ -26,31 +43,15 @@ export default {
   ...styles,
   layouts,
   space,
+  blocks,
   colors,
   ...elements,
-  measure: {
-    // fallback will force the gridItem to expand across the full width of the gridWrapper
-    gridColumnFallback: {
-      gridColumn: ['1/13', '1/13', '1/25', '1/25', '1/25'],
-    },
-    // custom presets for gridItems to expand across a certain width
-    wide: {
-      gridColumnStart: ['1'],
-      gridColumnEnd: ['13', 'span 7', 'span 14', 'span 11', 'span 9'],
-    },
-    normal: {
-      gridColumnStart: ['1'],
-      gridColumnEnd: ['span 11', 'span 6', 'span 12', 'span 10', 'span 7'],
-    },
-    narrow: {
-      gridColumnStart: ['1'],
-      gridColumnEnd: ['span 10', 'span 5', 'span 10', 'span 9', 'span 5'],
-    },
-  },
+  measure,
   styles: {
     root: {
       fontFamily: 'body.normal',
       color: 'text',
+      bg: 'background',
     },
   },
 };

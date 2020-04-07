@@ -1,7 +1,6 @@
-/** @jsx jsx */
-// external dependencies
-import { jsx, useThemeUI } from 'theme-ui';
-import { forwardRef } from 'react';
+/* eslint-disable no-shadow */
+import React, { forwardRef } from 'react';
+import { useThemeUI } from 'theme-ui';
 import { motion } from 'framer-motion';
 // pieces components
 import { RichText } from 'pieces/utils/typography';
@@ -18,59 +17,56 @@ import { Box } from 'pieces/box';
 //          Will cut off after specified numner and append `...`
 // variant: Font variant as specified in fontFamilies.js
 //          Defaults to `normal`. Could be e.g. `bold`,...
+// boldVariant: Typography variant  to be used for the bold styling
+//              defaults to '<type>.bold'
+// italicVariant: Typography variant  to be used for the italic styling
+//              defaults to '<type>.italic'
 */
 export const Paragraph = forwardRef(
-  ({ as, type = 'paragraph', variant = 'normal', maxchar, ...props }, ref) => {
+  (
+    {
+      as,
+      type = 'paragraph',
+      variant = 'normal',
+      boldVariant,
+      italicVariant,
+      maxchar,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const { theme } = useThemeUI();
 
     // allows us to only specify `type=loud` but actually lookup loudParagraph in typographySetup.js
-    const __themeKey = theme.typography[type]
-      ? `typography.${type}`
-      : `typography.${type}Paragraph`;
+    const fullType = theme.typography[type] ? type : `${type}Paragraph`;
 
     return (
       <Box
         ref={ref}
         as={as ? motion[as] : motion.p}
         variant={variant}
+        __themeKey={`typography.${fullType}`}
         {...props}
-        __themeKey={__themeKey}
         __css={{
-          color:
-            // check if there is a custom color in the theme
-            theme.colors[type] && theme.colors[type][variant]
-              ? `${type}.${variant}`
-              : 'text',
+          color: 'text',
         }}
       >
         <RichText
           maxchar={maxchar}
-          content={props.children}
+          content={children}
           Bold={({ children }) => (
-            // checks if there are custom bold settings for the requested type within the theme
             <Emphasize
-              sx={{
-                color: `${
-                  theme.colors[type] && theme.colors[type].bold
-                    ? `${type}.bold`
-                    : 'textBold'
-                }`,
-                variant: `typography.${type}.bold`,
-              }}
+              color='textBold'
+              variant={boldVariant ? boldVariant : `${fullType}.bold`}
             >
               {children}
             </Emphasize>
           )}
           Italic={({ children }) => (
             <Emphasize
-              sx={{
-                color: `${
-                  theme.colors[type] && theme.colors[type].italic
-                    ? `${type}.italic`
-                    : 'textItalic'
-                }`,
-                variant: `typography.${type}.italic`,
-              }}
+              color='textItalic'
+              variant={italicVariant ? italicVariant : `${fullType}.italic`}
             >
               {children}
             </Emphasize>

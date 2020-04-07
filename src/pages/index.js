@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from 'atoms/SEO';
+import SEO from 'pieces/SEO';
 // sections
 import { Header } from 'sections/landingPage';
 import { TypographyTestBlock } from 'pieces/blocks';
@@ -10,7 +10,7 @@ const IndexPage = () => (
     <SEO title='Home' />
     <Header />
     {/* Delete This After Typography is setup */}
-    <TypographyTestBlock text="" paragraph="">
+    <TypographyTestBlock text='' paragraph=''>
       {/* Client Components */}
       <PrimaryButton>Primary Button</PrimaryButton>
       <SecondaryButton>Secondary Button</SecondaryButton>

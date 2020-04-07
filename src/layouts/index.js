@@ -5,35 +5,39 @@ import PropTypes from 'prop-types';
 import 'reset-css';
 // pieces components
 import { Main } from 'pieces/layout';
+import { PageContextProvider } from 'pieces/utils/context';
 // client imports
 import 'gatsby-plugin-theme-ui/fontImports';
 import { Navigation } from 'sections/Navigation';
 import { Footer } from 'sections/Footer';
 
-const Layout = ({ children }) => (
+// Font Awesome
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { faFacebook,  } from '@fortawesome/free-brands-svg-icons';
+// import { faEnvelope } from '@fortawesome/pro-solid-svg-icons';
+// library.add(faFacebook, faEnvelope);
+
+const Layout = ({ children, pageContext: { locale } }) => (
   <>
-    <Global
-      styles={{
-        body: {
-          WebkitTextSizeAdjust: '100%',
-          width: '100%',
-          height: '100%',
-          position: 'relative',
-        },
-        // reset browser specific link styles
-        'a:-webkit-any-link': {
-          textDecoration: 'inherit',
-          color: 'inherit',
-        },
-        '*|*:link': {
-          textDecoration: 'inherit',
-          color: 'inherit',
-        },
-      }}
-    />
-    <Navigation />
-    <Main>{children}</Main>
-    <Footer />
+    <PageContextProvider locale={locale}>
+      <Global
+        styles={{
+          body: {
+            WebkitTextSizeAdjust: '100%',
+            width: '100%',
+            height: '100%',
+            position: 'relative',
+          },
+          '*|*:link': {
+            textDecoration: 'inherit',
+            color: 'inherit',
+          },
+        }}
+      />
+      <Navigation locale={locale} />
+      <Main>{children}</Main>
+      <Footer />
+    </PageContextProvider>
   </>
 );
 Layout.propTypes = {

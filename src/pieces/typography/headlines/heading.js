@@ -1,6 +1,5 @@
-/** @jsx jsx */
-import { jsx, useThemeUI } from 'theme-ui';
-import { forwardRef } from 'react';
+/* eslint-disable no-shadow */
+import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { RichText } from 'pieces/utils/typography';
 import { Emphasize } from 'pieces/typography';
@@ -16,57 +15,55 @@ import { Box } from 'pieces/box';
 //          Will cut off after specified numner and append `...`
 // variant: Font variant as specified in fontFamilies.js
 //          Defaults to `normal`. Could be e.g. `bold`,...
+// boldVariant: Typography variant  to be used for the bold styling
+//              defaults to '<type>.bold'
+// italicVariant: Typography variant  to be used for the italic styling
+//              defaults to '<type>.italic'
 */
 export const Heading = forwardRef(
-  ({ as, type = 'h1', variant = 'normal', maxchar, ...props }, ref) => {
-    const { theme } = useThemeUI();
-    return (
-      <Box
-        ref={ref}
-        as={as ? motion[as] : motion[type]}
-        variant={variant}
-        {...props}
-        __themeKey={`typography.${type}`}
-        __css={{
-          color:
-            theme.colors[type] && theme.colors[type][variant]
-              ? `${type}.${variant}`
-              : 'heading',
-        }}
-      >
-        <RichText
-          maxchar={maxchar}
-          content={props.children}
-          Bold={({ children }) => (
-            <Emphasize
-              sx={{
-                color: `${
-                  theme.colors[type] && theme.colors[type].bold
-                    ? `${type}.bold`
-                    : 'headingBold'
-                }`,
-                variant: `typography.${type}.bold`,
-              }}
-            >
-              {children}
-            </Emphasize>
-          )}
-          Italic={({ children }) => (
-            <Emphasize
-              sx={{
-                color: `${
-                  theme.colors[type] && theme.colors[type].italic
-                    ? `${type}.italic`
-                    : 'textItalic'
-                }`,
-                variant: `typography.${type}.italic`,
-              }}
-            >
-              {children}
-            </Emphasize>
-          )}
-        />
-      </Box>
-    );
-  }
+  (
+    {
+      as,
+      type = 'h1',
+      variant = 'normal',
+      boldVariant,
+      italicVariant,
+      maxchar,
+      children,
+      ...props
+    },
+    ref
+  ) => (
+    <Box
+      ref={ref}
+      as={as ? motion[as] : motion[type]}
+      variant={variant}
+      {...props}
+      __themeKey={`typography.${type}`}
+      __css={{
+        color: 'heading',
+      }}
+    >
+      <RichText
+        maxchar={maxchar}
+        content={children}
+        Bold={({ children }) => (
+          <Emphasize
+            color='headingBold'
+            variant={boldVariant ? boldVariant : `${type}.bold`}
+          >
+            {children}
+          </Emphasize>
+        )}
+        Italic={({ children }) => (
+          <Emphasize
+            color='headingItalic'
+            variant={italicVariant ? italicVariant : `${type}.italic`}
+          >
+            {children}
+          </Emphasize>
+        )}
+      />
+    </Box>
+  )
 );

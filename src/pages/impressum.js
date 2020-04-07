@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from 'atoms/SEO';
+import SEO from 'pieces/SEO';
 import { graphql } from 'gatsby';
 // pieces imports
 import { Section } from 'pieces/layout';
@@ -7,15 +7,16 @@ import { ImpressumBlock, LegalHeaderBlock } from 'pieces/blocks';
 
 const ImpressumPage = ({
   data: {
-    impressumPageJson: { seoTitle, headline },
-    businessInfoJson: { impressum },
+    impressumPageJson: { seoTitle, headline, headOfCompanyIntro },
+    businessInfoJson: { legal },
   },
 }) => (
   <Section>
-    <SEO title={seoTitle} />
+    <SEO title={seoTitle} description={`Impressum von ${legal.company}.`} />
     <LegalHeaderBlock headline={headline} />
     <ImpressumBlock
-      {...impressum}
+      {...legal}
+      headOfCompanyIntro={headOfCompanyIntro}
       sx={{ mt: ['10vw', '5vw', '5vw', '2vw'], mb: ['20vw'] }}
     />
   </Section>
@@ -26,9 +27,10 @@ export const query = graphql`
     impressumPageJson {
       seoTitle
       headline
+      headOfCompanyIntro
     }
     businessInfoJson {
-      impressum {
+      legal {
         company
         headOfCompany
         address {

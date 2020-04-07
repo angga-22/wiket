@@ -16,17 +16,26 @@ export const lockOrReleaseBody = async ({
     body.style.position = 'relative';
     body.style.height = '100%';
     // scroll to the position on the screen the user was before opening the menu
-    window.scrollTo(0, currentScroll.get());
+    // window.scrollTo(0, currentScroll.get());
+    window.scrollTo({
+      top: currentScroll.get(),
+      left: 0,
+      behavior: 'auto',
+    });
     // animate the overlay out
     animation();
   } else {
+    // remember position
+    currentScroll.set(window.pageYOffset);
+
     // animate the overlay in
     await animation();
+
     // lock the body
-    currentScroll.set(window.pageYOffset);
     body.style.position = 'fixed';
     body.style.overflow = 'hidden';
     body.style.height = '100%';
+
     // animate the overlay content in
     animateContent();
   }
