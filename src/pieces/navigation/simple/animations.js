@@ -4,8 +4,6 @@ export const animations = {
     // main stage for the navigation
     overlay: {
       open: {
-        backgroundColor: '#E5005B',
-        color: 'white',
         height: '100vh',
         opacity: 1,
         zIndex: 100,

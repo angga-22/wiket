@@ -18,7 +18,7 @@ export const Header = memo(() => {
   return (
     <Section>
       <GridItem>
-        <Heading as='h1'>{landingPageJson.headline}</Heading>
+        <Heading type='h1'>{landingPageJson.headline}</Heading>
       </GridItem>
     </Section>
   );
