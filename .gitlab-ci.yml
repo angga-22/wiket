@@ -1,0 +1,28 @@
+image: node:12.18.3
+
+stages:
+  - build
+  - deploy
+
+##
+# Import CI Jobs
+##
+include:
+  - project: 'thepuzzlers-org/websites/ci-templates'
+    ref: 'master'
+    file: 'ssh-deploy.yml'
+
+  # build_gatsby job is executed automatically
+  - project: 'thepuzzlers-org/websites/ci-templates'
+    ref: 'master'
+    file: 'build-gatsby.yml'
+
+deploy_public_folder:
+  stage: deploy
+  extends: .ssh_deploy
+  variables:
+    DOMAIN: test.thepuzzlers.io
+  needs: [build_gatsby]
+  # only deploy to production when pushed to master branch
+  only:
+    - master
