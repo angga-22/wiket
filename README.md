@@ -48,11 +48,52 @@ $ gatsby develop
 <a name="initial-setup"></a>
 ## ToDos after initial setup
 
-- Change Site Details in `gatsby-config.js`. Set title, description, etc.
-- Set default locale in `gatsby-config.js` (important for Seo)
-- Set secondary locales and their according prefixes in `gatsby-config.js` (important for Seo)
-- Replace favicons in `images/seo/` with correct icons.
-- Remove all legal pages and legal jsons that are not needed:
+#### - [] Update `siteMetadata` in `gatsby-config.js`. Set title, description, etc.
+  This is extremely important for SEO.
+  ```
+  module.exports = {
+    siteMetadata: {
+      title: '', # long title
+      description: '', # long description
+      author: '@ThePuzzlers',
+      shortTitle: '', # short title
+      shortDescription: '', # short description
+      url: 'https://www.example.com/', # url of website
+    },
+  ...
+  }
+  ```
+#### - [] Update default locale in `gatsby-config.js` (important for SEO)
+  Set any secondary languages as well.
+  ```   
+  module.exports = {
+    siteMetadata: {
+      ...
+      locales: {
+        default: 'en',
+        locales: [
+          # add any additional locales here. And define pathPrefix for that language.
+          # leave empty if website has only one language
+          { code: 'de', pathPrefix: 'de' }
+        ],
+      },
+    },
+  ...
+  }
+  ```
+  Gatsby will generate a set of new pages for secondary languages under the specified pathPrefix.
+  If e.g. default locale is `en` and we specified the german secondary locale like this `{ code: 'de', pathPrefix: 'de' }`, we will have the english landingpage under `https://example.com/` and the german landingpage at `https://example.com/de`.
+
+  For any questions regarding multi-locale websites: Ask Caro. 
+
+#### - [] Replace favicons and other SEO related images in `images/seo/` with correct icons:
+  - `src/images/seo/favicon16.png` (16x16px favicon)
+  - `src/images/seo/favicon32.png` (32x32px favicon)
+  - `src/images/seo/favicon64.png` (64x64px favicon)
+  - `src/images/seo/thumbnail.png` (Thumbnail for e.g. twitter card)
+
+
+#### - [] Remove all legal pages and legal jsons that are not needed:
 
   If a language is not needed, remove all related files. If both are needed, move pages in according subfolder.
   e.g. if german is the secondary locale, put pages in `pages/de/datenschutz.js` and `pages/de/impressum.js`
@@ -71,6 +112,10 @@ $ gatsby develop
   - `pages/impressum.js`
   - `data/datenschutzPage.json`
   - `data/impressumPage.json`
+
+#### - [] Update `businessdata.json`
+This is very important, as it is needed by the data-privacy and legal pages.
+
 
 <a name="deployment"></a>
 ## Setup deployment pipeline:
