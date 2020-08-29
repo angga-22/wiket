@@ -204,6 +204,31 @@ Add the following sample HTML:
 
 Save and close the file when you are finished.
 
+--- 
+
+**Change Group ownership of directory**
+
+Change ownership of `/var/www/example.com/` directory and all files within to www-data group  
+```
+$ chgrp -R www-data /var/www/example.com/
+```
+
+Add write permission to group owners of `/var/www/example.com/` and all files within
+```
+$ chmod g+w -R /var/www/example.com/
+```
+
+Inspect the final result:
+```
+$ ls -l /var/www/
+
+# It should look like this:
+drwxrwxr-x 3 root www-data 4096 Aug 29 13:32 example.com
+```
+
+This step is necessary, because the ci pipeline logs in as the `ci`-User, who is a member of the `www-data` group.
+It needs write permission, to successfully execute the delivery pipeline.
+
 ---
 
 In order for Nginx to serve this content, it’s necessary to create a server block with the correct directives. Let’s make a new one at /etc/nginx/sites-available/example.com:
