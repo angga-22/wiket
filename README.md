@@ -2,21 +2,22 @@
 
 1. Create new client repo on GitLab
 
-Naming : `client__<name_of_client>`
+Naming : `<unique_id>__<name_of_client>`
 don't initialize a README.md
+The unique id should be a number with 7 digits.
 
 2. Clone the `client-boilerplate` repo locally
 
 ```
-$ git clone git@gitlab.com:thepuzzlers-org/client-boilerplate.git client__<name_of_client>
-$ cd client__<name_of_client>
+$ git clone git@gitlab.com:thepuzzlers-org/websites/client-boilerplate.git <unique_id>__<name_of_client>
+$ cd <unique_id>__<name_of_client>
 ```
 
 3. Rewire it to new gitlab repo:
 
 ```
 $ git remote rm origin
-$ git remote add origin git@gitlab.com:thepuzzlers-org/client__<name_of_client>.git
+$ git remote add origin git@gitlab.com:thepuzzlers-org/websites/<unique_id>__<name_of_client>.git
 git add .
 git commit -m "Initial commit"
 git push -u origin master
