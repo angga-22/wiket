@@ -35,11 +35,15 @@ $ git push -u origin master
 
 Install dependencies:
 
-```$ yarn```
+```
+$ yarn
+```
 
 Run Gatsby:
 
-```$ gatsby develop```
+```
+$ gatsby develop
+```
 
 <a name="initial-setup"></a>
 ## ToDos after initial setup
