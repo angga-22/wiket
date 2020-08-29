@@ -8,12 +8,10 @@
 <a name="clone"></a>
 ## How to clone this repo
 ### 1. Create new client repo on GitLab
-
-Naming : `<unique_id>__<name_of_client>`
-
-Don't initialize a README.md
-
-The unique id should be a number with 7 digits.
+- Create repo in `thepuzzlers-org/websites`-Group (https://gitlab.com/thepuzzlers-org/websites)
+- Naming : `<unique_id>__<name_of_client>`
+- Don't initialize a README.md
+- The unique id should be a number with 7 digits.
 
 ### 2. Clone the `client-boilerplate` repo locally
 
