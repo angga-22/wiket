@@ -114,8 +114,47 @@ $ gatsby develop
   - `data/datenschutzPage.json`
   - `data/impressumPage.json`
 
-#### - Update `businessdata.json`
-This is very important, as it is needed by the data-privacy and legal pages.
+#### - Update legal information in  `businessInfo.json`
+  This is very important, as it is needed by the data-privacy and legal pages.
+
+  ```
+  [
+    {
+      "legal": {
+        "company": "Rainbow GmbH",
+        "headOfCompany": "Unicorn Start",
+        "address": {
+          "street": "Sunshine Road 9",
+          "city": "123134 FantasyCity"
+        },
+        "tel": "",
+        "ustid": "",
+        "email": "optional@mail.de",
+        "commercialRegister": {
+          "court": "",
+          "number": ""
+        }
+      },
+      ...
+    }
+  ]
+  ```
+
+  **Optional:** Add social media links in `businessInfo.json`
+  This step is only necessary if you later want to query for the businesse's social media links in e.g. the footer.
+  ```
+  [
+    {
+      ...
+      "socialMedia": {
+        "twitter": "",
+        "facebook": "",
+        "instagram": ""
+      }
+    }
+  ]
+  ```
+
 
 
 <a name="deployment"></a>
@@ -130,7 +169,7 @@ This is very important, as it is needed by the data-privacy and legal pages.
 To host the website on the default server `thepuzzlers.io` setup the following records:
 
 - A record pointing to: `158.181.50.48`
-- AAAA record pointing to: `2a03:b0c0:3:d0::b7d:c001`
+- AAAA record pointing to: `2a00:6140:117:161::1`
 - CNAME with the name `www`, redirecting to your domain.
 
 ### 2. Update `DOMAIN` variable in .gitlab-ci.yml file.
