@@ -172,19 +172,8 @@ To host the website on the default server `thepuzzlers.io` setup the following r
 - AAAA record pointing to: `2a00:6140:117:161::1`
 - CNAME with the name `www`, redirecting to your domain.
 
-### 2. Update `DOMAIN` variable in .gitlab-ci.yml file.
 
-This is very important, otherwise the deploy step of the ci pipeline will never get triggered.
-
-```
-deploy_public_folder:
-  ...
-  variables:
-    DOMAIN: example.com
-  ...
-```
-
-### 3. Log in to hosting server and add a new server block to nginx
+### 2. Log in to hosting server and add a new server block to nginx
 
 In the following example we setup a domain called `example.com`, but you should replace this with your own domain name.
 
@@ -273,6 +262,26 @@ The redirect flag makes sure every incoming http request will be redirected to h
 As you can see, we need to always state the domain names that the cert will be valid for. (the `-d`-flag)
 
 Luckily, the certbot nginx plugin automatically creates a cron job to regularily update the certificates. So we don't have to worry about them expiring.
+
+
+### 3. Update `DOMAIN` variable in .gitlab-ci.yml file.
+
+This is very important, otherwise the deploy step of the ci pipeline will never get triggered.
+
+```
+deploy_public_folder:
+  ...
+  variables:
+    DOMAIN: example.com
+  ...
+```
+
+
+### 4. Push to changes to master
+
+This will trigger a Gatsby build and will deploy the results to your server. 
+It should be live within >5min.
+
 
 #### Disclaimer:
 
