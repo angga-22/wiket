@@ -21,7 +21,7 @@ deploy_public_folder:
   stage: deploy
   extends: .ssh_deploy
   variables:
-    DOMAIN: test.thepuzzlers.io
+    DOMAIN: '' # Add production url here! e.g. thepuzzlers.io or shop.thetrainee.co
   needs: [build_gatsby]
   # only deploy to production when pushed to master branch
   only:
