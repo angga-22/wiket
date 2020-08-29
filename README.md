@@ -1,5 +1,11 @@
 # Boilerplate code to start a new The Puzzlers website
 
+- [How to clone this repo](#clone)
+- [How to start the project](#start)
+- [Todos after initial setup](#initial-setup)
+- [Configure deployment pipeline](#deployment)
+
+<a name="clone"></a>
 ## How to clone this repo
 ### 1. Create new client repo on GitLab
 
@@ -26,11 +32,13 @@ git commit -m "Initial commit"
 git push -u origin master
 ```
 
+<a name="start"></a>
 ## How to start the project
 
 Run Gatsby:
 `gatsby develop`
 
+<a name="initial-setup"></a>
 ## ToDos after initial setup
 
 - Change Site Details in `gatsby-config.js`. Set title, description, etc.
@@ -57,6 +65,7 @@ Run Gatsby:
   - `data/datenschutzPage.json`
   - `data/impressumPage.json`
 
+<a name="deployment"></a>
 ## Setup deployment pipeline:
 
 ### Prerequisites:
