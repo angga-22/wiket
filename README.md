@@ -1,19 +1,22 @@
-# Clone this to kickstart a new Concierge client website
+# Boilerplate code to start a new The Puzzlers website
 
-1. Create new client repo on GitLab
+## How to clone this repo to kickstart a new The Puzzlers website
+###1. Create new client repo on GitLab
 
 Naming : `<unique_id>__<name_of_client>`
-don't initialize a README.md
+
+Don't initialize a README.md
+
 The unique id should be a number with 7 digits.
 
-2. Clone the `client-boilerplate` repo locally
+###2. Clone the `client-boilerplate` repo locally
 
 ```
 $ git clone git@gitlab.com:thepuzzlers-org/websites/client-boilerplate.git <unique_id>__<name_of_client>
 $ cd <unique_id>__<name_of_client>
 ```
 
-3. Rewire it to new gitlab repo:
+###3. Rewire it to new gitlab repo:
 
 ```
 $ git remote rm origin
