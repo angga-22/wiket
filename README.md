@@ -55,13 +55,13 @@ Run Gatsby:
 
 ## Setup deployment pipeline:
 
-Prerequisites:
+### Prerequisites:
 
 - Have a fully registered domain name.
 
-Setup:
 
-1. Setup an A and AAAA record to point to the hosting server.
+
+### 1. Setup an A and AAAA record to point to the hosting server.
 
 To host the website on the default server `thepuzzlers.io` setup the following records:
 
@@ -69,7 +69,7 @@ To host the website on the default server `thepuzzlers.io` setup the following r
 - AAAA record pointing to: `2a03:b0c0:3:d0::b7d:c001`
 - CNAME with the name `www`, redirecting to your domain.
 
-2. Update `DOMAIN` variable in .gitlab-ci.yml file.
+### 2. Update `DOMAIN` variable in .gitlab-ci.yml file.
    This is very important, otherwise the deploy step of the ci pipeline will never get triggered.
 
 ```
@@ -80,9 +80,7 @@ deploy_public_folder:
   ...
 ```
 
-3.  Log in to hosting server and setup the following files:
-
-    ### Add a new server block to nginx
+### 3.  Log in to hosting server and add a new server block to nginx
 
     In the following example we setup a domain called `example.com`, but you should \*replace this with your own domain name\*.
 
