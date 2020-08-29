@@ -25,16 +25,21 @@ $ cd <unique_id>__<name_of_client>
 ```
 $ git remote rm origin
 $ git remote add origin git@gitlab.com:thepuzzlers-org/websites/<unique_id>__<name_of_client>.git
-git add .
-git commit -m "Initial commit"
-git push -u origin master
+$ git add .
+$ git commit -m "Initial commit"
+$ git push -u origin master
 ```
 
 <a name="start"></a>
 ## How to start the project
 
+Install dependencies:
+
+```$ yarn```
+
 Run Gatsby:
-`gatsby develop`
+
+```$ gatsby develop```
 
 <a name="initial-setup"></a>
 ## ToDos after initial setup
