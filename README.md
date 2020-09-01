@@ -6,31 +6,34 @@
 - [Configure deployment pipeline](#deployment)
 
 <a name="clone"></a>
+
 ## How to clone this repo
+
 ### 1. Create new client repo on GitLab
-- Create repo in `thepuzzlers-org/websites`-Group (https://gitlab.com/thepuzzlers-org/websites)
-- Naming : `<unique_id>__<name_of_client>`
+
+- Create repo in **`thepuzzlers-org/websites`-Group** (https://gitlab.com/thepuzzlers-org/websites)
+- Naming : `<domain_of_client>` (e.g. `thepuzzlers.io`)
 - Don't initialize a README.md
-- The unique id should be a number with 7 digits.
 
 ### 2. Clone the `client-boilerplate` repo locally
 
 ```
-$ git clone git@gitlab.com:thepuzzlers-org/websites/client-boilerplate.git <unique_id>__<name_of_client>
-$ cd <unique_id>__<name_of_client>
+$ git clone git@gitlab.com:thepuzzlers-org/websites/client-boilerplate.git <repo_name>
+$ cd <repo_name>
 ```
 
 ### 3. Rewire it to new gitlab repo:
 
 ```
 $ git remote rm origin
-$ git remote add origin git@gitlab.com:thepuzzlers-org/websites/<unique_id>__<name_of_client>.git
+$ git remote add origin git@gitlab.com:thepuzzlers-org/websites/<repo_name>.git
 $ git add .
 $ git commit -m "Initial commit"
 $ git push -u origin master
 ```
 
 <a name="start"></a>
+
 ## How to start the project
 
 Install dependencies:
@@ -46,118 +49,143 @@ $ gatsby develop
 ```
 
 <a name="initial-setup"></a>
+
 ## ToDos after initial setup
 
+#### - Connect to CMS Api
+
+This simply requires you to change the api url in `gatsby-config.js` to the unique endpoint of your business.
+E.g. https://api.thepuzzlers.io/artist-bella
+
+```
+plugins: [
+  {
+    resolve: 'gatsby-source-graphql',
+    options: {
+      ...,
+      url: 'https://api.thepuzzlers.io/BUSINESS-SLUG',
+    },
+  },
+  ...
+]
+```
+
 #### - Update `siteMetadata` in `gatsby-config.js`. Set title, description, etc.
-  This is extremely important for SEO.
-  ```
-  module.exports = {
-    siteMetadata: {
-      title: '', # long title
-      description: '', # long description
-      author: '@ThePuzzlers',
-      shortTitle: '', # short title
-      shortDescription: '', # short description
-      url: 'https://www.example.com/', # url of website
-    },
-  ...
-  }
-  ```
+
+This is extremely important for SEO.
+
+```
+module.exports = {
+  siteMetadata: {
+    title: '', # long title
+    description: '', # long description
+    author: '@ThePuzzlers',
+    shortTitle: '', # short title
+    shortDescription: '', # short description
+    url: 'https://www.example.com/', # url of website
+  },
+...
+}
+```
+
 #### - Update default locale in `gatsby-config.js` (important for SEO)
-  Set any secondary languages as well.
-  ```   
-  module.exports = {
-    siteMetadata: {
-      ...
-      locales: {
-        default: 'en',
-        locales: [
-          # add any additional locales here. And define pathPrefix for that language.
-          # leave empty if website has only one language
-          { code: 'de', pathPrefix: 'de' }
-        ],
-      },
+
+Set any secondary languages as well.
+
+```
+module.exports = {
+  siteMetadata: {
+    ...
+    locales: {
+      default: 'en',
+      locales: [
+        # add any additional locales here. And define pathPrefix for that language.
+        # leave empty if website has only one language
+        { code: 'de', pathPrefix: 'de' }
+      ],
     },
-  ...
-  }
-  ```
-  Gatsby will generate a set of new pages for secondary languages under the specified pathPrefix.
-  If e.g. default locale is `en` and we specified the german secondary locale like this `{ code: 'de', pathPrefix: 'de' }`, we will have the english landingpage under `https://example.com/` and the german landingpage at `https://example.com/de`.
+  },
+...
+}
+```
 
-  **For any questions regarding multi-locale websites:** Ask Caro.
+Gatsby will generate a set of new pages for secondary languages under the specified pathPrefix.
+If e.g. default locale is `en` and we specified the german secondary locale like this `{ code: 'de', pathPrefix: 'de' }`, we will have the english landingpage under `https://example.com/` and the german landingpage at `https://example.com/de`.
 
+**For any questions regarding multi-locale websites:** Ask Caro.
 
 #### - Replace favicons and other SEO related images in `images/seo/` with correct icons:
-  - `src/images/seo/favicon16.png` (16x16px favicon)
-  - `src/images/seo/favicon32.png` (32x32px favicon)
-  - `src/images/seo/favicon64.png` (64x64px favicon)
-  - `src/images/seo/thumbnail.png` (Thumbnail for e.g. twitter card)
 
+- `src/images/seo/favicon16.png` (16x16px favicon)
+- `src/images/seo/favicon32.png` (32x32px favicon)
+- `src/images/seo/favicon64.png` (64x64px favicon)
+- `src/images/seo/thumbnail.png` (Thumbnail for e.g. twitter card)
 
 #### - Remove all legal pages and legal jsons that are not needed:
 
-  If a language is not needed, remove all related files. If both are needed, move pages in according subfolder.
-  e.g. if german is the secondary locale, put pages in `pages/de/datenschutz.js` and `pages/de/impressum.js`
-  (Json files don't need to be moved.)
+If a language is not needed, remove all related files. If both are needed, move pages in according subfolder.
+e.g. if german is the secondary locale, put pages in `pages/de/datenschutz.js` and `pages/de/impressum.js`
+(Json files don't need to be moved.)
 
-  English:
+English:
 
-  - `pages/privacy-policy.js`
-  - `pages/legal.js`
-  - `data/legalPage.json`
-  - `data/privacyPolicy.json`
+- `pages/privacy-policy.js`
+- `pages/legal.js`
+- `data/legalPage.json`
+- `data/privacyPolicy.json`
 
-  German:
+German:
 
-  - `pages/datenschutz.js`
-  - `pages/impressum.js`
-  - `data/datenschutzPage.json`
-  - `data/impressumPage.json`
+- `pages/datenschutz.js`
+- `pages/impressum.js`
+- `data/datenschutzPage.json`
+- `data/impressumPage.json`
 
-#### - Update legal information in  `businessInfo.json`
-  This is very important, as it is needed by the data-privacy and legal pages.
+#### - Update legal information in `businessInfo.json`
 
-  ```
-  [
-    {
-      "legal": {
-        "company": "Rainbow GmbH",
-        "headOfCompany": "Unicorn Start",
-        "address": {
-          "street": "Sunshine Road 9",
-          "city": "123134 FantasyCity"
-        },
-        "tel": "",
-        "ustid": "",
-        "email": "optional@mail.de",
-        "commercialRegister": {
-          "court": "",
-          "number": ""
-        }
+This is very important, as it is needed by the data-privacy and legal pages.
+
+```
+[
+  {
+    "legal": {
+      "company": "Rainbow GmbH",
+      "headOfCompany": "Unicorn Start",
+      "address": {
+        "street": "Sunshine Road 9",
+        "city": "123134 FantasyCity"
       },
-      ...
-    }
-  ]
-  ```
-
-  **Optional:** Add social media links in `businessInfo.json`
-  This step is only necessary if you later want to query for the businesse's social media links in e.g. the footer.
-  ```
-  [
-    {
-      ...
-      "socialMedia": {
-        "twitter": "",
-        "facebook": "",
-        "instagram": ""
+      "tel": "",
+      "ustid": "",
+      "email": "optional@mail.de",
+      "commercialRegister": {
+        "court": "",
+        "number": ""
       }
+    },
+    ...
+  }
+]
+```
+
+**Optional:** Add social media links in `businessInfo.json`
+This step is only necessary if you later want to query for the businesse's social media links in e.g. the footer.
+
+```
+[
+  {
+    ...
+    "socialMedia": {
+      "twitter": "",
+      "facebook": "",
+      "instagram": ""
     }
-  ]
-  ```
-
-
+  }
+]
+```
 
 <a name="deployment"></a>
+
 ## Setup deployment pipeline:
 
 ### Prerequisites:
@@ -171,7 +199,6 @@ To host the website on the default server `thepuzzlers.io` setup the following r
 - A record pointing to: `158.181.50.48`
 - AAAA record pointing to: `2a00:6140:117:161::1`
 - CNAME with the name `www`, redirecting to your domain.
-
 
 ### 2. Log in to hosting server and add a new server block to nginx
 
@@ -204,21 +231,24 @@ Add the following sample HTML:
 
 Save and close the file when you are finished.
 
---- 
+---
 
 **Change Group ownership of directory**
 
-Change ownership of `/var/www/example.com/` directory and all files within to www-data group  
+Change ownership of `/var/www/example.com/` directory and all files within to www-data group
+
 ```
 $ chgrp -R www-data /var/www/example.com/
 ```
 
 Add write permission to group owners of `/var/www/example.com/` and all files within
+
 ```
 $ chmod g+w -R /var/www/example.com/
 ```
 
 Inspect the final result:
+
 ```
 $ ls -l /var/www/
 
@@ -288,7 +318,6 @@ As you can see, we need to always state the domain names that the cert will be v
 
 Luckily, the certbot nginx plugin automatically creates a cron job to regularily update the certificates. So we don't have to worry about them expiring.
 
-
 ### 3. Update `DOMAIN` variable in .gitlab-ci.yml file.
 
 This is very important, otherwise the deploy step of the ci pipeline will never get triggered.
@@ -301,12 +330,10 @@ deploy_public_folder:
   ...
 ```
 
-
 ### 4. Push to changes to master
 
-This will trigger a Gatsby build and will deploy the results to your server. 
+This will trigger a Gatsby build and will deploy the results to your server.
 It should be live within >5min.
-
 
 #### Disclaimer:
 

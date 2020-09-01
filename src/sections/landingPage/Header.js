@@ -7,8 +7,13 @@ import { Heading } from 'pieces/typography';
 import { GridItem } from 'pieces/grid';
 
 export const Header = memo(() => {
-  const { landingPageJson } = useStaticQuery(graphql`
+  const { landingPageJson, puzzlers } = useStaticQuery(graphql`
     query {
+      puzzlers {
+        business {
+          name
+        }
+      }
       landingPageJson {
         headline
       }
@@ -19,6 +24,7 @@ export const Header = memo(() => {
     <Section>
       <GridItem>
         <Heading type='h1'>{landingPageJson.headline}</Heading>
+        <Heading type='h3'>Here is {puzzlers.business.name}</Heading>
       </GridItem>
     </Section>
   );

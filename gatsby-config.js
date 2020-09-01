@@ -19,6 +19,18 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-theme-ui',
+    // CMS Api
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        // Arbitrary name for the remote schema Query type
+        typeName: 'PUZZLERS',
+        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
+        fieldName: 'puzzlers',
+        // UPDATE TO CORRECT BUSINSS SLUG
+        url: 'https://api.thepuzzlers.io/artist-bella',
+      },
+    },
     // meta data for pages
     'gatsby-plugin-react-helmet',
     // local images
@@ -42,27 +54,11 @@ module.exports = {
     // necessary to load images using gatsby-image
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    // allows webpage to be saved to phone
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'thepuzzlers-starter-default',
-    //     short_name: 'starter',
-    //     start_url: '/',
-    //     background_color: '#fff',
-    //     theme_color: '#000',
-    //     display: 'minimal-ui',
-    //     icon: 'src/images/puzzlers-icon.png', // This path is relative to the root of the site.
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-layout',
       options: {
         component: require.resolve('./src/layouts/index.js'),
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 };
