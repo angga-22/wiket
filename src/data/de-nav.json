@@ -1,0 +1,32 @@
+[
+  {
+    "nav": {
+      "links": [
+        {
+          "title": "Home",
+          "to": "/"
+        },
+        {
+          "title": "Zweiter Link",
+          "to": "/second"
+        },
+        {
+          "title": "Dritter Link",
+          "to": "/third"
+        }
+      ]
+    },
+    "footer": {
+      "links": [
+        {
+          "title": "Datenschutz",
+          "to": "/datenschutz"
+        },
+        {
+          "title": "Impressum",
+          "to": "/impressum"
+        }
+      ]
+    }
+  }
+]

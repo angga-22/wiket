@@ -25,14 +25,6 @@
         {
           "title": "Legal",
           "to": "/legal"
-        },
-        {
-          "title": "Datenschutz",
-          "to": "/datenschutz"
-        },
-        {
-          "title": "Impressum",
-          "to": "/impressum"
         }
       ]
     }
