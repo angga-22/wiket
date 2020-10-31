@@ -35,7 +35,9 @@ const Layout = ({ children, pageContext: { locale } }) => (
         }}
       />
       <Navigation locale={locale} />
-      <Main>{children}</Main>
+      <Main sx={{ paddingTop: ['60px', '60px', '60px', '60px', '70px'] }}>
+        {children}
+      </Main>
       <Footer />
     </PageContextProvider>
   </>

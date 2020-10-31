@@ -4,15 +4,15 @@
       "links": [
         {
           "title": "First Link",
-          "href": "#sectionId"
+          "to": "#sectionId"
         },
         {
           "title": "Second Link",
-          "href": "#sectionId"
+          "to": "#sectionId"
         },
         {
           "title": "Third Link",
-          "href": "#sectionId"
+          "to": "/third-page"
         }
       ]
     },

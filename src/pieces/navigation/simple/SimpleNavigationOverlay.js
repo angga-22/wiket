@@ -16,6 +16,7 @@ export const SimpleNavigationOverlay = ({ children }) => {
         position: 'relative',
         overflowX: 'hidden',
         minHeight: '100%',
+        backgroundColor: 'background',
       }}
       variants={variants.overlay}
       animate={overlayControls}
