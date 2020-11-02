@@ -3,16 +3,16 @@
     "nav": {
       "links": [
         {
-          "title": "First Link",
-          "to": "#sectionId"
+          "title": "Home",
+          "to": "/"
         },
         {
-          "title": "Second Link",
-          "to": "#sectionId"
+          "title": "Legal Page",
+          "to": "/legal"
         },
         {
-          "title": "Third Link",
-          "to": "/third-page"
+          "title": "Header Section",
+          "to": "/#header"
         }
       ]
     },
