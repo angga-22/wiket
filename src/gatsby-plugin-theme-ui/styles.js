@@ -1,6 +1,7 @@
 export const styles = {
   shadows: {},
   radii: {
-    // primary
+    card: '10px',
+    button: '5px',
   },
 };
