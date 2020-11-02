@@ -3,7 +3,7 @@
 
 const base = {
   background: '#fff',
-  primary: 'green',
+  primary: 'pink',
   secondary: '#000',
   disabled: '#000',
 
