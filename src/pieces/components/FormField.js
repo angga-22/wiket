@@ -1,7 +1,5 @@
 import React from 'react';
-import { Label } from 'pieces/typography/elements';
-import { Input } from 'pieces/elements';
-import { GridItem } from 'pieces/grid';
+import { Label, Input, GridItem } from 'pieces';
 
 export const FormField = ({
   type = 'text',

@@ -2,8 +2,7 @@
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { RichText } from 'pieces/utils/typography';
-import { Emphasize } from 'pieces/typography';
-import { Box } from 'pieces/box';
+import { Box, Emphasize } from 'pieces';
 
 /*
 // Props

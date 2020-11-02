@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 // pieces imports
-import { Box } from 'pieces/box';
+import { Box } from 'pieces';
 import { SimpleNavigationContextProvider } from './SimpleNavigationContext';
 import { SimpleNavigationOverlay } from './SimpleNavigationOverlay';
 import { animations as defaultAnimations } from './animations';

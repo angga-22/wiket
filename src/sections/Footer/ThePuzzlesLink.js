@@ -2,9 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Pieces Imports
 import { usePageContext } from 'pieces/utils/context';
-import { FlexWrapper } from 'pieces/flex';
-import { Paragraph } from 'pieces/typography';
-import { Image } from 'pieces/elements';
+import { FlexWrapper, Paragraph, Image } from 'pieces';
 
 export const ThePuzzlersLink = () => {
   const { locale } = usePageContext();

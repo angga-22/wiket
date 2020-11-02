@@ -2,7 +2,7 @@ import React from 'react';
 import { usePageContext } from 'pieces/utils/context';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { useNavigationContext } from 'pieces/navigation/navigationContext';
-import { FlexWrapper } from 'pieces/flex';
+import { FlexWrapper } from 'pieces';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

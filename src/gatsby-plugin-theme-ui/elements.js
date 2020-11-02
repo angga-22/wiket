@@ -1,6 +1,5 @@
 const linkDefault = {
   cursor: 'pointer',
-  transition: '0.2s ease-out',
 };
 const buttonDefault = {
   cursor: 'pointer',
@@ -13,21 +12,21 @@ const links = {
     variant: 'typography.hyperLink.normal',
     textDecoration: 'underline',
     ':hover,:focus,active': {
-      color: 'primary',
+      color: 'medium',
     },
   },
   navigation: {
     ...linkDefault,
     variant: 'typography.navigationLink.normal',
-    ':hover,:focus,active': {
-      color: 'primary',
+    ':hover,:focus,&.active': {
+      color: 'medium',
     },
   },
   footer: {
     ...linkDefault,
     variant: 'links.navigation',
-    ':hover,:focus,.active': {
-      color: 'primary',
+    ':hover,:focus,&.active': {
+      color: 'medium',
     },
   },
 };
@@ -36,22 +35,31 @@ const buttons = {
   primary: {
     ...buttonDefault,
     variant: 'typography.buttonLarge.normal',
-    height: '30px',
+    bg: 'primary',
+    borderRadius: 'button',
+    padding: '5px 10px 10px 10px',
     '&:hover': {
-      bg: 'primary',
+      transform: 'scale(1.1)',
     },
   },
   secondary: {
     ...buttonDefault,
     variant: 'typography.button.normal',
+    bg: 'light',
+    borderRadius: 'button',
+    padding: '5px 10px 10px 10px',
     '&:hover': {
-      bg: 'primary',
+      bg: 'medium',
     },
   },
 };
 
 const cards = {
-  primary: {},
+  primary: {
+    backgroundColor: 'light',
+    borderRadius: 'card',
+    padding: '20px',
+  },
 };
 
 export const elements = {

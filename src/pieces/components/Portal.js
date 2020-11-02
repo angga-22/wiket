@@ -4,7 +4,7 @@ import { usePortal } from 'pieces/utils/hooks';
 /**
  * @example
  * <Portal id='container'>
- *   <p>Thinking with portals</p>
+ *   <p>Content in Portal</p>
  * </Portal>
  */
 export const Portal = ({ id, children }) => {

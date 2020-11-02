@@ -4,8 +4,7 @@ import { useThemeUI } from 'theme-ui';
 import { motion } from 'framer-motion';
 // pieces components
 import { RichText } from 'pieces/utils/typography';
-import { Emphasize } from 'pieces/typography';
-import { Box } from 'pieces/box';
+import { Box, Emphasize } from 'pieces';
 
 /*
 // Props

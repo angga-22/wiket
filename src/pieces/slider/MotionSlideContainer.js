@@ -1,8 +1,6 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import { useAnimation, useMotionValue } from 'framer-motion';
-import { FlexWrapper } from 'pieces/flex';
-import { GridItem } from 'pieces/grid';
-import { Box } from 'pieces/box';
+import { FlexWrapper, GridItem, Box } from 'pieces';
 
 export const MotionSlideContainer = ({
   items,

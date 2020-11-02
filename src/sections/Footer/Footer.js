@@ -3,10 +3,8 @@ import React, { memo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Pieces components
 // import { usePageContext } from 'pieces/utils/context';
-import { Section } from 'pieces/layout';
-import { GatsbyLink } from 'pieces/elements';
-import { GridItem } from 'pieces/grid';
-import { FlexWrapper } from 'pieces/flex';
+import { Section, NavigationLink, GridItem, FlexWrapper } from 'pieces';
+
 // Local Component import
 import { ThePuzzlersLink } from './ThePuzzlesLink';
 
@@ -131,7 +129,7 @@ export const Footer = memo(() => {
           sx={{ flexDirection: ['column', 'column', 'row', 'row', 'row'] }}
         >
           {links.map(link => (
-            <GatsbyLink
+            <NavigationLink
               sx={{
                 marginRight: [0, 0, 20, 20, 25],
                 marginBottom: [20, 10, 0, 0, 0],
@@ -141,8 +139,11 @@ export const Footer = memo(() => {
               variant='footer'
             >
               {link.title}
-            </GatsbyLink>
+            </NavigationLink>
           ))}
+          <NavigationLink to='/#header'>
+            Go back to landingpage header
+          </NavigationLink>
         </FlexWrapper>
         {/* "Built by the Puzzlers" - Reference */}
         <ThePuzzlersLink />

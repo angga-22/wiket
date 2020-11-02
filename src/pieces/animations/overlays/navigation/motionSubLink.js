@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
+// External imports
 import React from 'react';
-import { GridItem } from 'pieces/grid';
+// Pieces imports
+import { GridItem } from 'pieces';
 import { useNavigationContext } from 'pieces/navigation/navigationContext';
 
 export const MotionSubLink = ({ link, children }) => {

@@ -1,5 +1,6 @@
 import React from 'react';
-import { GridItem } from 'pieces/grid';
+// Pieces imports
+import { GridItem } from 'pieces';
 
 export const LegalPageGridItem = ({ sx, children }) => (
   <GridItem

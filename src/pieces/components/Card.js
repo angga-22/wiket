@@ -1,10 +1,9 @@
-// external dependencies
+// External dependencies
 import React from 'react';
+// Pieces imports
+import { Box } from 'pieces';
 
-// pieces components
-import { Box } from 'pieces/box';
-
-export const CardBase = React.forwardRef((props, ref) => (
+export const Card = React.forwardRef((props, ref) => (
   <Box
     className='card--background'
     ref={ref}

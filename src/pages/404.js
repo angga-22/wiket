@@ -1,8 +1,5 @@
 import React from 'react';
-import SEO from 'pieces/SEO';
-import { GridItem } from 'pieces/grid';
-import { Heading, Paragraph } from 'pieces/typography';
-import { Section } from 'pieces/layout';
+import { SEO, GridItem, Section, Heading, Paragraph } from 'pieces';
 
 const NotFoundPage = () => (
   <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePageContext } from 'pieces/utils/context';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
-import { FlexWrapper } from 'pieces/flex';
+import { FlexWrapper } from 'pieces';
 import { motion } from 'framer-motion';
 import { useSimpleNavigationContext } from './SimpleNavigationContext';
 
@@ -28,10 +28,14 @@ export const SimpleNavigationIcon = ({ OpenIcon, CloseIcon, ...props }) => {
       }}
       {...props}
     >
-      <FlexWrapper animate={openIconControls}>
+      <FlexWrapper sx={{ cursor: 'pointer' }} animate={openIconControls}>
         <OpenIcon />
       </FlexWrapper>
-      <FlexWrapper animate={closeIconControls} style={{ display: 'none' }}>
+      <FlexWrapper
+        sx={{ cursor: 'pointer' }}
+        animate={closeIconControls}
+        style={{ display: 'none' }}
+      >
         <CloseIcon />
       </FlexWrapper>
     </FlexWrapper>

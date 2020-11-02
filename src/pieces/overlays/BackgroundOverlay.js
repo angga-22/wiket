@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridWrapper } from 'pieces/grid';
+import { GridWrapper } from 'pieces';
 import { useOverlayContext } from 'pieces/utils/context';
 
 export const BackgroundOverlay = ({ children }) => {

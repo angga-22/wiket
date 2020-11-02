@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { Box } from 'pieces/box';
+import { Box } from 'pieces';
 
 export const Link = forwardRef((props, ref) => (
   <Box
@@ -9,5 +9,8 @@ export const Link = forwardRef((props, ref) => (
     variant='hyperLink'
     {...props}
     __themeKey='links'
+    __css={{
+      color: 'inherit',
+    }}
   />
 ));

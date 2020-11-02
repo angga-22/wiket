@@ -1,5 +1,6 @@
 import React from 'react';
-import { Paragraph, Heading } from 'pieces/typography';
+// Pieces imports
+import { Paragraph, Heading } from 'pieces';
 import { LegalPageGridItem } from 'pieces/blocks';
 
 export const LegalHeaderBlock = ({ headline, introText, sx }) => (

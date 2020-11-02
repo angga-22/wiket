@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'pieces/box';
+import { Box } from 'pieces';
 import { motion } from 'framer-motion';
 
 export const Input = React.forwardRef((props, ref) => (

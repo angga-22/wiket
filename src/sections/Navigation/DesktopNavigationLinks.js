@@ -1,15 +1,11 @@
 // External dependencies
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { useLocation } from '@reach/router';
 // Pieces imports
-import { Box } from 'pieces/box';
-import { NavigationLink } from 'pieces/navigation';
+import { Box, NavigationLink } from 'pieces';
 
 export const DesktopNavigationLinks = () => {
-  const location = useLocation();
-
-  // data
+  // Data
   const {
     navJson: {
       nav: { links },
@@ -37,13 +33,9 @@ export const DesktopNavigationLinks = () => {
       }}
     >
       {links.map(({ to, title }) => (
-        <NavigationLink
-          sx={{ p: ['10px 20px'] }}
-          key={to}
-          title={title}
-          to={to}
-          active={location.pathname === to || location.pathname === `${to}/`}
-        />
+        <NavigationLink key={to} to={to} sx={{ p: ['10px 20px'] }}>
+          {title}
+        </NavigationLink>
       ))}
     </Box>
   );

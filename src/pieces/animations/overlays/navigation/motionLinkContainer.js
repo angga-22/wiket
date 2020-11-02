@@ -3,7 +3,7 @@ import React from 'react';
 // data imports
 // pieces imports
 import { useNavigationContext } from 'pieces/navigation/navigationContext';
-import { GridItem } from 'pieces/grid';
+import { GridItem } from 'pieces';
 // client imports
 
 export const MotionLinkContainer = ({ children, ...props }) => {

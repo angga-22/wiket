@@ -1,11 +1,8 @@
 // external imports
 import React from 'react';
-
-// data imports
-// pieces imports
+// Pieces imports
 import { useNavigationContext } from 'pieces/navigation/navigationContext';
-import { GridWrapper } from 'pieces/grid';
-// client imports
+import { GridWrapper } from 'pieces';
 
 export const MotionOverlayContainer = ({ children }) => {
   const { overlayControls, variants } = useNavigationContext();

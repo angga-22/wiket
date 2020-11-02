@@ -2,9 +2,7 @@
 import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 // pieces components
-import { Section } from 'pieces/layout';
-import { Heading } from 'pieces/typography';
-import { GridItem } from 'pieces/grid';
+import { Section, Heading, GridItem } from 'pieces';
 
 export const Header = memo(() => {
   const { landingPageJson, puzzlers } = useStaticQuery(graphql`
@@ -21,7 +19,7 @@ export const Header = memo(() => {
   `);
 
   return (
-    <Section>
+    <Section id='header'>
       <GridItem>
         <Heading type='h1'>{landingPageJson.headline}</Heading>
         <Heading type='h3'>Here is {puzzlers.business.name}</Heading>

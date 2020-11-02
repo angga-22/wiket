@@ -15,7 +15,14 @@ import favicon32 from 'images/seo/favicon32.png';
 import favicon64 from 'images/seo/favicon64.png';
 import favicon16 from 'images/seo/favicon16.png';
 
-function SEO({ description, meta, title, shortTitle, shortDescription, url }) {
+export function SEO({
+  description,
+  meta,
+  title,
+  shortTitle,
+  shortDescription,
+  url,
+}) {
   const { locale } = usePageContext();
   const { site } = useStaticQuery(
     graphql`
@@ -125,5 +132,3 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 };
-
-export default SEO;

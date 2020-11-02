@@ -1,5 +1,6 @@
 import React from 'react';
-import { Paragraph } from 'pieces/typography';
+// Pieces imports
+import { Paragraph } from 'pieces';
 import { LegalPageGridItem } from 'pieces/blocks';
 
 export const ImpressumBlock = ({

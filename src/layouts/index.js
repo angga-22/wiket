@@ -4,8 +4,8 @@ import { Global } from '@emotion/core';
 import PropTypes from 'prop-types';
 import 'reset-css';
 // pieces components
-import { Main } from 'pieces/layout';
 import { PageContextProvider } from 'pieces/utils/context';
+import { Box } from 'pieces';
 // client imports
 import 'gatsby-plugin-theme-ui/fontImports';
 import { Navigation } from 'sections/Navigation';
@@ -35,13 +35,18 @@ const Layout = ({ children, pageContext: { locale } }) => (
         }}
       />
       <Navigation locale={locale} />
-      <Main sx={{ paddingTop: ['60px', '60px', '60px', '60px', '70px'] }}>
+      <Box
+        as='main'
+        // Padding reflects the height of the NavBar
+        sx={{ paddingTop: ['60px', '60px', '60px', '60px', '70px'] }}
+      >
         {children}
-      </Main>
+      </Box>
       <Footer />
     </PageContextProvider>
   </>
 );
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };

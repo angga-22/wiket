@@ -1,8 +1,7 @@
 // external dependencies
 import React from 'react';
 // pieces components
-import { Box } from 'pieces/box';
-import { FlexWrapper } from 'pieces/flex';
+import { Box, FlexWrapper } from 'pieces';
 import { useTabsContext } from './TabsContext';
 import { withTabsContext } from './withTabsContext';
 

@@ -6,7 +6,7 @@ import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
 // eslint-disable-next-line max-len
 import { useSimpleNavigationContext } from 'pieces/navigation/simple/SimpleNavigationContext';
-import { Box } from 'pieces/box';
+import { Box } from 'pieces';
 
 export const SimpleMotionLink = ({ children }) => {
   const { body, currentScroll } = usePageContext();

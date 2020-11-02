@@ -7,7 +7,7 @@ import { Link as RouterLink } from 'gatsby';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
 import { useNavigationContext } from 'pieces/navigation/navigationContext';
-import { GridItem } from 'pieces/grid';
+import { GridItem } from 'pieces';
 
 export const MotionLink = ({ children, href }) => {
   const { body, currentScroll } = usePageContext();

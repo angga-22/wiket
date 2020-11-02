@@ -1,8 +1,9 @@
 import React from 'react';
-import SEO from 'pieces/SEO';
+// Pieces imports
+import { SEO, Card, NavigationLink } from 'pieces';
+import { TypographyTestBlock } from 'pieces/blocks';
 // sections
 import { Header } from 'sections/landingPage';
-import { TypographyTestBlock } from 'pieces/blocks';
 import { PrimaryButton, SecondaryButton } from 'atoms/buttons';
 
 const IndexPage = () => (
@@ -13,7 +14,10 @@ const IndexPage = () => (
     <TypographyTestBlock text='' paragraph=''>
       {/* Client Components */}
       <PrimaryButton>Primary Button</PrimaryButton>
-      <SecondaryButton>Secondary Button</SecondaryButton>
+      <NavigationLink to='/legal'>
+        <SecondaryButton>Secondary Button to Legal Page</SecondaryButton>
+      </NavigationLink>
+      <Card>Hi, I am a card</Card>
     </TypographyTestBlock>
   </>
 );

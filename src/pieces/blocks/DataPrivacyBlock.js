@@ -1,6 +1,6 @@
 import React from 'react';
-import { Paragraph, Heading } from 'pieces/typography';
-import { Box } from 'pieces/box';
+// Pieces imports
+import { Box, Paragraph, Heading } from 'pieces';
 import { LegalPageGridItem } from 'pieces/blocks';
 
 export const DataPrivacyBlock = ({

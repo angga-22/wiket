@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'pieces/box';
+import { Box } from 'pieces';
 
 export const Block = React.forwardRef((props, ref) => (
   <Box

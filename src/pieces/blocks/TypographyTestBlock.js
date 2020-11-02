@@ -1,15 +1,14 @@
 import React from 'react';
-import { GridItem } from 'pieces/grid';
-import { Section } from 'pieces/layout';
+// Pieces imports
 import {
+  GridItem,
+  Section,
+  Box,
   Heading,
   Paragraph,
   Label,
   Link,
-  Button as ButtonTypography,
-  LargeButton as LargeButtonTypography,
-} from 'pieces/typography';
-import { Box } from 'pieces/box';
+} from 'pieces';
 
 export const TypographyTestBlock = ({ text, paragraph, children }) => (
   <Section>
@@ -24,12 +23,12 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
         gridColumnEnd: ['13', '13', '24', '22', '19'],
       }}
     >
-      <Heading type='h1'>{text || 'H1'}</Heading>
-      <Heading type='h2'>{text || 'H2'}</Heading>
-      <Heading type='h3'>{text || 'H3'}</Heading>
-      <Heading type='h4'>{text || 'H4'}</Heading>
-      <Heading type='h5'>{text || 'H5'}</Heading>
-      <Heading type='h6'>{text || 'H6'}</Heading>
+      <Heading type='h1'>{text || 'Hello World H1'}</Heading>
+      <Heading type='h2'>{text || 'Hello World H2'}</Heading>
+      <Heading type='h3'>{text || 'Hello World H3'}</Heading>
+      <Heading type='h4'>{text || 'Hello World H4'}</Heading>
+      <Heading type='h5'>{text || 'Hello World H5'}</Heading>
+      <Heading type='h6'>{text || 'Hello World H6'}</Heading>
       <Label type='loud'>{text || 'Loud Label'}</Label>
       <Label>{text || 'Label'}</Label>
       <Label type='quiet'>{text || 'Quiet Label'}</Label>
@@ -40,12 +39,12 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
         <Link variant='navigation'>{text || 'NavigationLink'}</Link>
       </Box>
       <Box>
-        <ButtonTypography>{text || 'Button Typography'}</ButtonTypography>
+        <Paragraph type='button'>{text || 'Button Typography'}</Paragraph>
       </Box>
       <Box>
-        <LargeButtonTypography>
+        <Paragraph type='buttonLarge'>
           {text || 'Large Button Typography'}
-        </LargeButtonTypography>
+        </Paragraph>
       </Box>
       <Paragraph type='loud'>
         {paragraph

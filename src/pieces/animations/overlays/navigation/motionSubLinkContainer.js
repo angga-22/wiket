@@ -1,16 +1,10 @@
 /* eslint-disable operator-linebreak */
-// external imports
+// External imports
 import React, { useEffect } from 'react';
-// data imports
-// pieces imports
+// Pieces imports
 import { useNavigationContext } from 'pieces/navigation/navigationContext';
-import { GridItem } from 'pieces/grid';
-import { FlexWrapper } from 'pieces/flex';
+import { GridItem, FlexWrapper, Heading } from 'pieces';
 import { MotionLink } from 'pieces/animations/overlays/navigation/MotionLink';
-
-import { Heading } from 'pieces/typography';
-
-// client imports
 
 export const MotionSubLinkContainer = ({
   NavigationLink,

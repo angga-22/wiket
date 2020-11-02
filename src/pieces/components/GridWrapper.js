@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from 'pieces/box';
+import { Box } from 'pieces';
 
 export const GridWrapper = React.forwardRef((props, ref) => (
   <Box

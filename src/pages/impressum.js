@@ -1,8 +1,7 @@
 import React from 'react';
-import SEO from 'pieces/SEO';
 import { graphql } from 'gatsby';
 // pieces imports
-import { Section } from 'pieces/layout';
+import { SEO, Section } from 'pieces';
 import { ImpressumBlock, LegalHeaderBlock } from 'pieces/blocks';
 
 const ImpressumPage = ({

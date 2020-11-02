@@ -1,5 +1,5 @@
 import React from 'react';
-import Box from 'pieces/box';
+import Box from 'pieces';
 
 export const MobileNavigation = ({ children }) => (
   // Box functions as a wrapper to hold the overlay, regardles of how the overlay will look like

@@ -1,9 +1,10 @@
 import React from 'react';
-import SEO from 'pieces/SEO';
 import { graphql } from 'gatsby';
 // pieces imports
-import { Section } from 'pieces/layout';
+import { Section, SEO, NavigationLink } from 'pieces';
 import { ImpressumBlock, LegalHeaderBlock } from 'pieces/blocks';
+
+import { SecondaryButton } from '../atoms/buttons';
 
 const LegalPage = ({
   data: {
@@ -22,6 +23,12 @@ const LegalPage = ({
       title={seoTitle}
       description={`Legal information of ${legal.company}.`}
     />
+    <NavigationLink to='/'>
+      <SecondaryButton>Go to LandingPage</SecondaryButton>
+    </NavigationLink>
+    <NavigationLink to='/#cards'>
+      <SecondaryButton>Go to Cards Section</SecondaryButton>
+    </NavigationLink>
     <LegalHeaderBlock headline={headline} />
     <ImpressumBlock
       {...legal}

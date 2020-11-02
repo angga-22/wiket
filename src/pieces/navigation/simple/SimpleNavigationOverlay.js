@@ -2,7 +2,7 @@
 // external imports
 import React from 'react';
 // pieces imports
-import { GridWrapper } from 'pieces/grid';
+import { GridWrapper } from 'pieces';
 // eslint-disable-next-line max-len
 import { useSimpleNavigationContext } from './SimpleNavigationContext';
 

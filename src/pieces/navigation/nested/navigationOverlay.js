@@ -10,12 +10,9 @@ import { MotionSubLink } from 'pieces/animations/overlays/navigation/MotionSubLi
 import { MotionLink } from 'pieces/animations/overlays/navigation/MotionLink';
 import { MotionLinkContainer } from 'pieces/animations/overlays/navigation/MotionLinkContainer';
 import { MotionSubLinkContainer } from 'pieces/animations/overlays/navigation/MotionSubLinkContainer';
-import { Heading } from 'pieces/typography';
+import { Heading } from 'pieces';
 
-export const NavigationOverlay = ({
-  NavigationLink,
-  BackButton,
-}) => (
+export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
   <MotionOverlayContainer>
     <MotionLinkContainer
       sx={{

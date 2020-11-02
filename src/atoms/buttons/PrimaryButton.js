@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'pieces/elements';
+import { Button } from 'pieces';
 
 // This Button gets the styles from the theme. (see `elements.js`)
 // Extend if necessary

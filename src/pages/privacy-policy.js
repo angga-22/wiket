@@ -1,9 +1,7 @@
 import React from 'react';
-import SEO from 'pieces/SEO';
 import { graphql } from 'gatsby';
 // pieces imports
-import { Section } from 'pieces/layout';
-import { Heading, Paragraph } from 'pieces/typography';
+import { Section, Heading, Paragraph, SEO } from 'pieces';
 import {
   LegalPageGridItem,
   LegalHeaderBlock,

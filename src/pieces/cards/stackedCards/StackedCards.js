@@ -1,11 +1,12 @@
 import React from 'react';
 import { useStackedCardsContext } from 'pieces/utils/context';
 import { useMotionValue } from 'framer-motion';
-import { Box } from 'pieces/box';
-import { FlexWrapper } from 'pieces/flex';
-// import { GridItem } from 'pieces/grid';
-
-import { MotionCardContainer } from './MotionCardContainer';
+// Pieces Imports
+import {
+  Box,
+  FlexWrapper,
+  // GridItem
+} from 'pieces';
 
 export const StackedCards = ({
   Image,
@@ -79,7 +80,8 @@ export const StackedCards = ({
             const cardPosition = useMotionValue(i);
             const scale = 0.9 - i * (i * 0.1);
             return (
-              <MotionCardContainer
+              // Motion Card Container
+              <Box
                 // eslint-disable-next-line react/no-array-index-key
                 className='following-images'
                 key={image.url.id}
@@ -102,7 +104,7 @@ export const StackedCards = ({
                   image={image.url.childImageSharp}
                   className={`thumb-${i}`}
                 />
-              </MotionCardContainer>
+              </Box>
             );
           })}
         </Box>

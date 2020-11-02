@@ -1,20 +1,17 @@
 // External dependencies
-import React from 'react';
+import React, { memo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 // Pieces imports
-import { GridWrapper, GridItem } from 'pieces/grid';
-import { FlexWrapper } from 'pieces/flex';
-import { Image } from 'pieces/elements';
+import { GridWrapper, GridItem, FlexWrapper, Box, Image } from 'pieces';
 import {
   SimpleNavigationIcon,
   SimpleNavigationLogo,
 } from 'pieces/navigation/simple';
-import { Box } from 'pieces/box';
 // Local imports
 import { DesktopNavigationLinks } from './DesktopNavigationLinks';
 
-export const NavigationHeader = () => {
+export const NavigationHeader = memo(() => {
   // Data
   const { logo, openIcon, closeIcon } = useStaticQuery(graphql`
     query {
@@ -126,4 +123,4 @@ export const NavigationHeader = () => {
       </GridWrapper>
     </>
   );
-};
+});
