@@ -51,13 +51,15 @@
     "lint-staged": "^10.0.7",
     "prettier": "^2.2.1"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "No license",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "lint": "eslint . --fix",
+    "lint": "eslint src/ --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
@@ -79,7 +81,11 @@
     }
   },
   "lint-staged": {
-    "*.+(js|jsx)": ["eslint --fix"],
-    "*.+(json|css|md)": ["prettier --write"]
+    "*.+(js|jsx)": [
+      "eslint --fix"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write"
+    ]
   }
 }
