@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState } from 'react';
 import { useThemeUI } from 'theme-ui';
 import { useAnimation, useMotionValue } from 'framer-motion';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 
 const NavigationContext = createContext();
 export const useNavigationContext = () => useContext(NavigationContext);
@@ -71,7 +71,7 @@ export const NavigationContextProvider = ({ children }) => {
     // Depending on current location open subnav or main nav links
     const uriParts = location.pathname
       .split('/')
-      .filter(uriPart => uriPart !== '');
+      .filter((uriPart) => uriPart !== '');
     // "/project/first-post" => ["project", "first-post"]
     if (uriParts.length > 1) {
       openSubNavigation(`/${uriParts[0]}`);
@@ -87,7 +87,7 @@ export const NavigationContextProvider = ({ children }) => {
     isOpen.set(!isOpen.get());
   };
 
-  const openSubNavigation = href => {
+  const openSubNavigation = (href) => {
     // the  open animation of sublinks is handled in MotionSubLinkContainer
     // as the animation has to wait until the dynamic sublinks are rendered
     setActiveSubNavigation(href);

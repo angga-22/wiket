@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import { navigate } from 'gatsby';
 // Pieces imports
 import { Link } from 'pieces';
