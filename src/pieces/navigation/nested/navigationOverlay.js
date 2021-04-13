@@ -1,16 +1,17 @@
 /* eslint-disable max-len */
 // external imports
 import React from 'react';
+import PropTypes from 'prop-types';
 // data imports
-import { navigationData } from 'data/navigationData';
+import navigationData from 'data/nav';
 // pieces imports
 // eslint-disable-next-line max-len
-import { MotionOverlayContainer } from 'pieces/animations/overlays/navigation/motionOverlayContainer';
-import { MotionSubLink } from 'pieces/animations/overlays/navigation/MotionSubLink';
-import { MotionLink } from 'pieces/animations/overlays/navigation/MotionLink';
-import { MotionLinkContainer } from 'pieces/animations/overlays/navigation/MotionLinkContainer';
-import { MotionSubLinkContainer } from 'pieces/animations/overlays/navigation/MotionSubLinkContainer';
-import { Heading } from 'pieces';
+import { MotionOverlayContainer } from '../../animations/overlays/navigation/motionOverlayContainer';
+import { MotionSubLink } from '../../animations/overlays/navigation/motionSubLink';
+import { MotionLink } from '../../animations/overlays/navigation/motionLink';
+import { MotionLinkContainer } from '../../animations/overlays/navigation/motionLinkContainer';
+import { MotionSubLinkContainer } from '../../animations/overlays/navigation/motionSubLinkContainer';
+import { Heading } from '../../components/Heading';
 
 export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
   <MotionOverlayContainer>
@@ -25,7 +26,7 @@ export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
       <Heading as='h2' sx={{ marginBottom: '10vw' }}>
         Hauptnavigation.
       </Heading>
-      {navigationData.map(link => {
+      {navigationData[0].nav.map((link) => {
         if (!link.subpages || link.subpages.length === 0) {
           return (
             // NavigationLink -> Open Page
@@ -59,3 +60,8 @@ export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
     </MotionSubLinkContainer>
   </MotionOverlayContainer>
 );
+
+NavigationOverlay.propTypes = {
+  NavigationLink: PropTypes.func.isRequired,
+  BackButton: PropTypes.func.isRequired,
+};

@@ -1,6 +1,6 @@
 // external dependencies
 import React from 'react';
-import { Global } from '@emotion/core';
+import { Global } from '@emotion/react';
 import PropTypes from 'prop-types';
 import 'reset-css';
 // pieces components
@@ -18,37 +18,38 @@ import { Footer } from 'sections/Footer';
 // library.add(faFacebook, faEnvelope);
 
 const Layout = ({ children, pageContext: { locale } }) => (
-  <>
-    <PageContextProvider locale={locale}>
-      <Global
-        styles={{
-          body: {
-            WebkitTextSizeAdjust: '100%',
-            width: '100%',
-            height: '100%',
-            position: 'relative',
-          },
-          '*|*:link': {
-            textDecoration: 'inherit',
-            color: 'inherit',
-          },
-        }}
-      />
-      <Navigation locale={locale} />
-      <Box
-        as='main'
-        // Padding reflects the height of the NavBar
-        sx={{ paddingTop: ['60px', '60px', '60px', '60px', '70px'] }}
-      >
-        {children}
-      </Box>
-      <Footer />
-    </PageContextProvider>
-  </>
+  <PageContextProvider locale={locale}>
+    <Global
+      styles={{
+        body: {
+          WebkitTextSizeAdjust: '100%',
+          width: '100%',
+          height: '100%',
+          position: 'relative',
+        },
+        '*|*:link': {
+          textDecoration: 'inherit',
+          color: 'inherit',
+        },
+      }}
+    />
+    <Navigation locale={locale} />
+    <Box
+      as='main'
+      // Padding reflects the height of the NavBar
+      sx={{ paddingTop: ['60px', '60px', '60px', '60px', '70px'] }}
+    >
+      {children}
+    </Box>
+    <Footer />
+  </PageContextProvider>
 );
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  pageContext: PropTypes.shape({
+    locale: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Layout;

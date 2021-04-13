@@ -1,8 +1,9 @@
 // external imports
 import React from 'react';
+import PropTypes from 'prop-types';
 // data imports
 // pieces imports
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
+import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
 import { GridItem } from 'pieces';
 // client imports
 
@@ -20,4 +21,8 @@ export const MotionLinkContainer = ({ children, ...props }) => {
       {children}
     </GridItem>
   );
+};
+
+MotionLinkContainer.propTypes = {
+  children: PropTypes.func.isRequired,
 };

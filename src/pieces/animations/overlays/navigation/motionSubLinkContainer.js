@@ -1,10 +1,11 @@
 /* eslint-disable operator-linebreak */
 // External imports
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
+import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
 import { GridItem, FlexWrapper, Heading } from 'pieces';
-import { MotionLink } from 'pieces/animations/overlays/navigation/MotionLink';
+import { MotionLink } from 'pieces/animations/overlays/navigation/motionLink';
 
 export const MotionSubLinkContainer = ({
   NavigationLink,
@@ -51,7 +52,7 @@ export const MotionSubLinkContainer = ({
       requestedSubLinks &&
       requestedSubLinks.subpages ? (
         <>
-          {requestedSubLinks.subpages.map(link => (
+          {requestedSubLinks.subpages.map((link) => (
             <MotionLink key={link.id} href={link.href}>
               <NavigationLink link={link} />
             </MotionLink>
@@ -61,4 +62,20 @@ export const MotionSubLinkContainer = ({
       ) : null}
     </GridItem>
   );
+};
+
+MotionSubLinkContainer.propTypes = {
+  children: PropTypes.func.isRequired,
+  sx: PropTypes.shape(),
+  NavigationLink: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  BackButton: PropTypes.func.isRequired,
+};
+
+MotionSubLinkContainer.defaultProps = {
+  sx: {},
 };

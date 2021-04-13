@@ -1,5 +1,6 @@
 // external imports
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 // pieces imports
 import { Box } from 'pieces';
@@ -29,3 +30,10 @@ export const Navigation = memo(
     </NavigationContextProvider>
   )
 );
+
+Navigation.propTypes = {
+  NavigationLink: PropTypes.func.isRequired,
+  NavigationHeader: PropTypes.func.isRequired,
+  NavigationBackButton: PropTypes.func.isRequired,
+  NavigationFooter: PropTypes.func.isRequired,
+};

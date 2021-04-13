@@ -1,10 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { usePageContext } from 'pieces/utils/context';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
 import { FlexWrapper } from 'pieces';
 import { motion } from 'framer-motion';
+// eslint-disable-next-line import/no-unresolved
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigationContext } from './navigationContext';
 
 export const NavigationIcon = React.forwardRef(({ icon, ...props }, ref) => {
   const {
@@ -67,3 +69,10 @@ export const NavigationIcon = React.forwardRef(({ icon, ...props }, ref) => {
     </FlexWrapper>
   );
 });
+
+NavigationIcon.propTypes = {
+  icon: PropTypes.shape({
+    open: PropTypes.string.isRequired,
+    close: PropTypes.string.isRequired,
+  }).isRequired,
+};

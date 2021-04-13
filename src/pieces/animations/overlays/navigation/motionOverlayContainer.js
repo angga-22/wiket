@@ -1,7 +1,8 @@
 // external imports
 import React from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
+import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
 import { GridWrapper } from 'pieces';
 
 export const MotionOverlayContainer = ({ children }) => {
@@ -22,4 +23,8 @@ export const MotionOverlayContainer = ({ children }) => {
       {children}
     </GridWrapper>
   );
+};
+
+MotionOverlayContainer.propTypes = {
+  children: PropTypes.func.isRequired,
 };

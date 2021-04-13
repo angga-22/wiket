@@ -2,9 +2,10 @@ export const lockOrReleaseBody = async ({
   animation,
   animateContent = () => {},
   isOpen,
-  body,
+  bodyElement,
   currentScroll,
 }) => {
+  const body = bodyElement;
   // stop any ongoing animations
   // controlNavbar.stop();
   // close the menu

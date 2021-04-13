@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
 import { Paragraph } from 'pieces';
-import { LegalPageGridItem } from 'pieces/blocks';
+import { LegalPageGridItem } from './LegalPageGridItem';
 
 export const ImpressumBlock = ({
   company,
@@ -52,3 +53,32 @@ export const ImpressumBlock = ({
     )}
   </LegalPageGridItem>
 );
+
+ImpressumBlock.propTypes = {
+  sx: PropTypes.shape(),
+  company: PropTypes.string.isRequired,
+  headOfCompany: PropTypes.string.isRequired,
+  headOfCompanyIntro: PropTypes.string.isRequired,
+  registerHeadline: PropTypes.string.isRequired,
+  commercialRegisterEntry: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    courtName: PropTypes.string.isRequired,
+    numberName: PropTypes.string.isRequired,
+  }).isRequired,
+  commercialRegister: PropTypes.shape({
+    number: PropTypes.string.isRequired,
+    court: PropTypes.string.isRequired,
+  }),
+  address: PropTypes.shape({
+    street: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }).isRequired,
+  tel: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  ustid: PropTypes.string.isRequired,
+};
+
+ImpressumBlock.defaultProps = {
+  sx: {},
+  commercialRegister: {},
+};

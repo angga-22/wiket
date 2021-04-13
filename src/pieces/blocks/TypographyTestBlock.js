@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
 import {
   GridItem,
@@ -33,9 +34,11 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
       <Label>{text || 'Label'}</Label>
       <Label type='quiet'>{text || 'Quiet Label'}</Label>
       <Box>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <Link>{text || 'Link'}</Link>
       </Box>
       <Box>
+        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
         <Link variant='navigation'>{text || 'NavigationLink'}</Link>
       </Box>
       <Box>
@@ -47,26 +50,37 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
         </Paragraph>
       </Box>
       <Paragraph type='loud'>
-        {paragraph
+        {paragraph ||
           // eslint-disable-next-line max-len
-          || 'Loud Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+          'Loud Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
       <Paragraph>
-        {paragraph
+        {paragraph ||
           // eslint-disable-next-line max-len
-          || 'Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+          'Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
       <Paragraph type='quiet'>
-        {paragraph
+        {paragraph ||
           // eslint-disable-next-line max-len
-          || 'Quiet Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+          'Quiet Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
       <Paragraph variant='bold'>
-        {paragraph
+        {paragraph ||
           // eslint-disable-next-line max-len
-          || 'Bold Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
+          'Bold Paragraph - Muffin marzipan marshmallow oat cake brownie dragée. I love chocolate bar I love I love lollipop bear claw. Dessert gingerbread jelly-o. Donut chocolate jelly beans.'}
       </Paragraph>
       {children}
     </GridItem>
   </Section>
 );
+
+TypographyTestBlock.propTypes = {
+  children: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  paragraph: PropTypes.string,
+};
+
+TypographyTestBlock.defaultProps = {
+  text: null,
+  paragraph: null,
+};

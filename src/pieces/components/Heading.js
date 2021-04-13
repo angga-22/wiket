@@ -1,8 +1,10 @@
 /* eslint-disable no-shadow */
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { RichText } from 'pieces/utils/typography';
-import { Box, Emphasize } from 'pieces';
+import { Box } from './Box';
+import { Emphasize } from './Emphasize';
 
 /*
 // Props
@@ -49,7 +51,7 @@ export const Heading = forwardRef(
         Bold={({ children }) => (
           <Emphasize
             color='headingBold'
-            variant={boldVariant ? boldVariant : `${type}.bold`}
+            variant={boldVariant || `${type}.bold`}
           >
             {children}
           </Emphasize>
@@ -57,7 +59,7 @@ export const Heading = forwardRef(
         Italic={({ children }) => (
           <Emphasize
             color='headingItalic'
-            variant={italicVariant ? italicVariant : `${type}.italic`}
+            variant={italicVariant || `${type}.italic`}
           >
             {children}
           </Emphasize>
@@ -66,3 +68,22 @@ export const Heading = forwardRef(
     </Box>
   )
 );
+
+Heading.propTypes = {
+  as: PropTypes.string,
+  type: PropTypes.string,
+  variant: PropTypes.string,
+  boldVariant: PropTypes.string,
+  italicVariant: PropTypes.string,
+  maxchar: PropTypes.string,
+  children: PropTypes.func.isRequired,
+};
+
+Heading.defaultProps = {
+  as: undefined,
+  type: 'h1',
+  variant: 'normal',
+  boldVariant: undefined,
+  italicVariant: undefined,
+  maxchar: undefined,
+};

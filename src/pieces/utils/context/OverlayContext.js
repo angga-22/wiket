@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useThemeUI } from 'theme-ui';
 import { useMotionValue, useAnimation } from 'framer-motion';
 
@@ -49,4 +50,8 @@ export const OverlayContextProvider = ({ children }) => {
       {children}
     </OverlayContext.Provider>
   );
+};
+
+OverlayContextProvider.propTypes = {
+  children: PropTypes.func.isRequired,
 };

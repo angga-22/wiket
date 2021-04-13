@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box } from 'pieces';
 import { motion } from 'framer-motion';
+import { Box } from './Box';
 
 export const Button = React.forwardRef((props, ref) => (
   <Box

@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
 import { Box, Paragraph, Heading } from 'pieces';
-import { LegalPageGridItem } from 'pieces/blocks';
+import { LegalPageGridItem } from './LegalPageGridItem';
 
 export const DataPrivacyBlock = ({
   sx,
@@ -38,3 +39,21 @@ export const DataPrivacyBlock = ({
     {textAfterListing && <Paragraph>{textAfterListing}</Paragraph>}
   </LegalPageGridItem>
 );
+
+DataPrivacyBlock.propTypes = {
+  sx: PropTypes.shape(),
+  subheadline: PropTypes.string,
+  text: PropTypes.string,
+  textAfterListing: PropTypes.string,
+  listing: PropTypes.arrayOf({
+    bulletpoint: PropTypes.shape().isRequired,
+  }),
+};
+
+DataPrivacyBlock.defaultProps = {
+  sx: {},
+  subheadline: null,
+  text: null,
+  textAfterListing: null,
+  listing: null,
+};

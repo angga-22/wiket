@@ -1,7 +1,7 @@
 // External dependencies
 import React from 'react';
 // Pieces imports
-import { Box } from 'pieces';
+import { Box } from './Box';
 
 export const Card = React.forwardRef((props, ref) => (
   <Box

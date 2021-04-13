@@ -1,5 +1,8 @@
 import React from 'react';
-import { Label, Input, GridItem } from 'pieces';
+import PropTypes from 'prop-types';
+import { Label } from './Label';
+import { Input } from './Input';
+import { GridItem } from './GridItem';
 
 export const FormField = ({
   type = 'text',
@@ -31,4 +34,24 @@ export const FormField = ({
       />
     </GridItem>
   );
+};
+
+FormField.propTypes = {
+  type: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  sx: PropTypes.shape(),
+  inputAs: PropTypes.string,
+  inputVariant: PropTypes.string,
+  required: PropTypes.bool,
+};
+
+FormField.defaultProps = {
+  type: 'text',
+  placeholder: '',
+  sx: {},
+  inputAs: undefined,
+  inputVariant: undefined,
+  required: false,
 };

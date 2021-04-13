@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 const TabsContext = createContext();
 
@@ -7,20 +8,20 @@ const useTabsContext = () => useContext(TabsContext);
 const TabsProvider = ({ activeTab: initialActiveTab, children }) => {
   const [tabs, setTabs] = useState([]);
   const [activeTab, setActiveTab] = useState(initialActiveTab);
-  const registerTab = newTab => {
+  const registerTab = (newTab) => {
     let isNewTabFound;
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
       if (tab.id === newTab.id) {
         isNewTabFound = true;
       }
     });
 
     if (!isNewTabFound) {
-      setTabs(previousTabs => [...previousTabs, newTab]);
+      setTabs((previousTabs) => [...previousTabs, newTab]);
     }
   };
 
-  const onClick = tab => () => {
+  const onClick = (tab) => () => {
     setActiveTab(tab);
   };
 
@@ -36,6 +37,11 @@ const TabsProvider = ({ activeTab: initialActiveTab, children }) => {
       {children}
     </TabsContext.Provider>
   );
+};
+
+TabsProvider.propTypes = {
+  children: PropTypes.func.isRequired,
+  activeTab: PropTypes.number.isRequired,
 };
 
 export { TabsProvider, useTabsContext };

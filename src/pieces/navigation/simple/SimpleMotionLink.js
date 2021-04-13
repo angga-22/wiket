@@ -1,6 +1,6 @@
 // external imports
 import React from 'react';
-
+import PropTypes from 'prop-types';
 // pieces imports
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
@@ -28,4 +28,8 @@ export const SimpleMotionLink = ({ children }) => {
       {children}
     </Box>
   );
+};
+
+SimpleMotionLink.propTypes = {
+  children: PropTypes.func.isRequired,
 };

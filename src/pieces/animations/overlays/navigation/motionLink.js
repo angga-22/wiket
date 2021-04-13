@@ -1,12 +1,13 @@
 // external imports
 import React from 'react';
 import { Link as RouterLink } from 'gatsby';
+import PropTypes from 'prop-types';
 
 // data imports
 // pieces imports
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
+import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
 import { GridItem } from 'pieces';
 
 export const MotionLink = ({ children, href }) => {
@@ -30,4 +31,9 @@ export const MotionLink = ({ children, href }) => {
       <RouterLink to={href}>{children}</RouterLink>
     </GridItem>
   );
+};
+
+MotionLink.propTypes = {
+  children: PropTypes.func.isRequired,
+  href: PropTypes.string.isRequired,
 };

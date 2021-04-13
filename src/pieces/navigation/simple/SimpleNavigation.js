@@ -1,5 +1,6 @@
 // external imports
 import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 // pieces imports
 import { Box } from 'pieces';
@@ -25,7 +26,7 @@ export const SimpleNavigation = memo(
         <NavigationHeader />
         <SimpleNavigationOverlay>
           <OverlayLayout>
-            {links.map(Link => (
+            {links.map((Link) => (
               <SimpleMotionLink key={Link}>{Link}</SimpleMotionLink>
             ))}
           </OverlayLayout>
@@ -34,3 +35,15 @@ export const SimpleNavigation = memo(
     </SimpleNavigationContextProvider>
   )
 );
+
+SimpleNavigation.propTypes = {
+  NavigationHeader: PropTypes.func.isRequired,
+  OverlayLayout: PropTypes.func.isRequired,
+  links: PropTypes.arrayOf(PropTypes.func.isRequired),
+  sx: PropTypes.shape(),
+};
+
+SimpleNavigation.defaultProps = {
+  links: [],
+  sx: {},
+};

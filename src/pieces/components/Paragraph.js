@@ -1,10 +1,12 @@
 /* eslint-disable no-shadow */
 import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
 import { useThemeUI } from 'theme-ui';
 import { motion } from 'framer-motion';
 // pieces components
-import { RichText } from 'pieces/utils/typography';
-import { Box, Emphasize } from 'pieces';
+import { RichText } from '../utils/typography';
+import { Box } from './Box';
+import { Emphasize } from './Emphasize';
 
 /*
 // Props
@@ -57,7 +59,7 @@ export const Paragraph = forwardRef(
           Bold={({ children }) => (
             <Emphasize
               color='textBold'
-              variant={boldVariant ? boldVariant : `${fullType}.bold`}
+              variant={boldVariant || `${fullType}.bold`}
             >
               {children}
             </Emphasize>
@@ -65,7 +67,7 @@ export const Paragraph = forwardRef(
           Italic={({ children }) => (
             <Emphasize
               color='textItalic'
-              variant={italicVariant ? italicVariant : `${fullType}.italic`}
+              variant={italicVariant || `${fullType}.italic`}
             >
               {children}
             </Emphasize>
@@ -75,3 +77,22 @@ export const Paragraph = forwardRef(
     );
   }
 );
+
+Paragraph.propTypes = {
+  as: PropTypes.string,
+  type: PropTypes.string,
+  variant: PropTypes.string,
+  boldVariant: PropTypes.string,
+  italicVariant: PropTypes.string,
+  maxchar: PropTypes.string,
+  children: PropTypes.func.isRequired,
+};
+
+Paragraph.defaultProps = {
+  as: undefined,
+  type: 'h1',
+  variant: 'normal',
+  boldVariant: undefined,
+  italicVariant: undefined,
+  maxchar: undefined,
+};

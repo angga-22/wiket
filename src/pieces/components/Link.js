@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { motion } from 'framer-motion';
-import { Box } from 'pieces';
+import { Box } from './Box';
 
 export const Link = forwardRef((props, ref) => (
   <Box

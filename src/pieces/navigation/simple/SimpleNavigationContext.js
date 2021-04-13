@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { useThemeUI, merge } from 'theme-ui';
 import { useAnimation, useMotionValue } from 'framer-motion';
 
@@ -20,10 +21,10 @@ export const SimpleNavigationContextProvider = ({
     overlay:
       animations && animations.navigation && animations.navigation.overlay,
     linkItems:
-      animations
-      && animations.navigation
-      && animations.navigation.links
-      && animations.navigation.links.items,
+      animations &&
+      animations.navigation &&
+      animations.navigation.links &&
+      animations.navigation.links.items,
   };
   // animation controls which ge17173vet passed down to the client component
   // -> overlay
@@ -73,4 +74,13 @@ export const SimpleNavigationContextProvider = ({
       {children}
     </NavigationContext.Provider>
   );
+};
+
+SimpleNavigationContextProvider.propTypes = {
+  children: PropTypes.func.isRequired,
+  animations: PropTypes.shape(),
+};
+
+SimpleNavigationContextProvider.defaultProps = {
+  animations: {},
 };

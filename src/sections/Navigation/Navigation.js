@@ -28,7 +28,7 @@ export const Navigation = memo(() => {
 
   return (
     <SimpleNavigation
-      NavigationHeader={props => <NavigationHeader {...props} />}
+      NavigationHeader={(props) => <NavigationHeader {...props} />}
       links={[
         ...links.map(({ title, to }) => (
           <NavigationLink

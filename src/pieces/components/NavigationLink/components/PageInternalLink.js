@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
 import { navigate } from 'gatsby';
+import PropTypes from 'prop-types';
 // Pieces imports
-import { Link } from 'pieces';
+import { Link } from '../../Link';
 
 // Navigates to a section within a page
 // e.g. to navigate between sections of a single page website
@@ -38,7 +39,7 @@ export const PageInternalLink = ({
       });
     } catch (error) {
       // eslint-ignore no-console
-      console.error(`Error: Queryselector ${hash} not found.`);
+      throw Error(`Error: Queryselector ${hash} not found.`);
     }
     // Set hash in url (only if we are not already at this path)
     // Jumps to secton direclty, that is why we wait to smooth scroll there manually
@@ -59,4 +60,16 @@ export const PageInternalLink = ({
       {children}
     </Link>
   );
+};
+
+PageInternalLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.func.isRequired,
+  sx: PropTypes.shape(),
+  variant: PropTypes.string,
+};
+
+PageInternalLink.defaultProps = {
+  sx: {},
+  variant: 'navigation',
 };

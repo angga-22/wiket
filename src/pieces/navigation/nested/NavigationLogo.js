@@ -1,10 +1,11 @@
 // external dependencies
 import React from 'react';
+import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 // pieces imports
 import { usePageContext } from 'pieces/utils/context';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
+import { useNavigationContext } from './navigationContext';
 
 export const NavigationLogo = ({ Logo }) => {
   const { closeNavigation, isOpen } = useNavigationContext();
@@ -28,4 +29,8 @@ export const NavigationLogo = ({ Logo }) => {
       }}
     />
   );
+};
+
+NavigationLogo.propTypes = {
+  Logo: PropTypes.func.isRequired,
 };

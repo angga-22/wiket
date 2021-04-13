@@ -44,7 +44,7 @@ export function SEO({
     `
   );
 
-  const pageLang = locale ? locale : site.siteMetadata.locales.default;
+  const pageLang = locale || site.siteMetadata.locales.default;
   const metaDescription = description || site.siteMetadata.description;
   // eslint-disable-next-line operator-linebreak
   const metaShortDescription =
@@ -125,10 +125,16 @@ export function SEO({
 SEO.defaultProps = {
   meta: [],
   description: '',
+  shortTitle: null,
+  shortDescription: null,
+  url: null,
 };
 
 SEO.propTypes = {
   description: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  shortTitle: PropTypes.string,
+  shortDescription: PropTypes.string,
+  url: PropTypes.string,
 };

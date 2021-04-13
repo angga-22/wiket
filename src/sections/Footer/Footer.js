@@ -128,7 +128,7 @@ export const Footer = memo(() => {
         <FlexWrapper
           sx={{ flexDirection: ['column', 'column', 'row', 'row', 'row'] }}
         >
-          {links.map(link => (
+          {links.map((link) => (
             <NavigationLink
               sx={{
                 marginRight: [0, 0, 20, 20, 25],

@@ -1,7 +1,9 @@
 import React, { createContext, useContext } from 'react';
 import { useAnimation, useMotionValue } from 'framer-motion';
+import propTypes from 'prop-types';
 
 const StackedCardsContext = createContext();
+
 export const useStackedCardsContext = () => useContext(StackedCardsContext);
 
 // values which come from the actual provider wrapped around an element
@@ -24,7 +26,7 @@ export const StackedCardsProvider = ({
   // animation values
   const currentCard = useMotionValue(0);
   // card shift onClick on one of the tabs
-  const handleClick = index => {
+  const handleClick = (index) => {
     moveCards({
       controlCards,
       controlCardImageOpacity,
@@ -57,7 +59,7 @@ export const StackedCardsProvider = ({
       }
       return {};
     });
-    controlTabItem.start(i => {
+    controlTabItem.start((i) => {
       if (i === currentCard.get()) {
         return {
           color: '#A4031C',
@@ -88,4 +90,16 @@ export const StackedCardsProvider = ({
       {children}
     </StackedCardsContext.Provider>
   );
+};
+
+StackedCardsProvider.propTypes = {
+  children: propTypes.func.isRequired,
+  yOffset: propTypes.number.isRequired,
+  moveCards: propTypes.func.isRequired,
+  opacityBorderUpper: propTypes.number.isRequired,
+  activeItem: propTypes.number,
+};
+
+StackedCardsProvider.defaultProps = {
+  activeItem: 0,
 };

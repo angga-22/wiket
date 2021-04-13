@@ -1,12 +1,76 @@
 import React, { useRef, useLayoutEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useAnimation, useMotionValue } from 'framer-motion';
 import { FlexWrapper, GridItem, Box } from 'pieces';
 
+// Helper functions
+const snapItemsLeft = (
+  { allowDrag, activeItem, currentX, itemRef, itemSnapAnimation, onSwipeEnd },
+  panEnded = false
+) => {
+  // hotspot was not reached and items needs to snap back
+  if (panEnded && allowDrag.get() !== false) {
+    allowDrag.set(false);
+    return {
+      x: currentX.get(),
+      ...itemSnapAnimation,
+    };
+  }
+  // hotspot was reached
+  onSwipeEnd(activeItem.get() + 1);
+  allowDrag.set(false);
+  activeItem.set(activeItem.get() + 1);
+  currentX.set(currentX.get() - itemRef.current.clientWidth);
+  return {
+    x: currentX.get(),
+    ...itemSnapAnimation,
+  };
+};
+
+const snapItemsRight = (
+  { allowDrag, activeItem, currentX, itemRef, itemSnapAnimation, onSwipeEnd },
+  panEnded = false
+) => {
+  // hotspot was not reached and items needs to snap back
+  if (panEnded && allowDrag.get() !== false) {
+    allowDrag.set(false);
+    return {
+      x: currentX.get(),
+      ...itemSnapAnimation,
+    };
+  }
+  // hotspot was reached
+  onSwipeEnd(activeItem.get() - 1);
+  allowDrag.set(false);
+  activeItem.set(activeItem.get() - 1);
+  currentX.set(currentX.get() + itemRef.current.clientWidth);
+
+  return {
+    x: currentX.get(),
+    ...itemSnapAnimation,
+  };
+};
+
+const controlAdditionalAnimations = ({
+  additionalControls,
+  activeItem,
+  additionalAnimationVariants,
+}) => {
+  if (additionalControls !== null) {
+    additionalControls.start((i) => {
+      if (i === activeItem.get()) {
+        return additionalAnimationVariants.initial;
+        // return { x: 200 };
+      }
+      return additionalAnimationVariants.animated;
+    });
+  }
+};
+
+// Component
 export const MotionSlideContainer = ({
   items,
-  children,
   custom,
-  index,
   activeItem,
   additionalControls = null,
   additionalAnimationVariants = null,
@@ -141,7 +205,7 @@ export const MotionSlideContainer = ({
         id='motionslider--images'
         sx={{ touchAction: 'none' }}
         {...props}
-        custom={{ ...custom }}
+        custom={custom}
         // control the items
         onPan={(event, info) => {
           // const el = document.getElementById('motionslider--images');
@@ -172,66 +236,23 @@ export const MotionSlideContainer = ({
   );
 };
 
-// Helper functions
-const snapItemsLeft = (
-  { allowDrag, activeItem, currentX, itemRef, itemSnapAnimation, onSwipeEnd },
-  panEnded = false
-) => {
-  // hotspot was not reached and items needs to snap back
-  if (panEnded && allowDrag.get() !== false) {
-    allowDrag.set(false);
-    return {
-      x: currentX.get(),
-      ...itemSnapAnimation,
-    };
-  }
-  // hotspot was reached
-  onSwipeEnd(activeItem.get() + 1);
-  allowDrag.set(false);
-  activeItem.set(activeItem.get() + 1);
-  currentX.set(currentX.get() - itemRef.current.clientWidth);
-  return {
-    x: currentX.get(),
-    ...itemSnapAnimation,
-  };
+MotionSlideContainer.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.string.isRequired,
+    })
+  ),
+  custom: PropTypes.shape(),
+  activeItem: PropTypes.shape().isRequired,
+  additionalControls: PropTypes.shape(),
+  additionalAnimationVariants: PropTypes.shape(),
+  onSwipeEnd: PropTypes.func,
 };
 
-const snapItemsRight = (
-  { allowDrag, activeItem, currentX, itemRef, itemSnapAnimation, onSwipeEnd },
-  panEnded = false
-) => {
-  // hotspot was not reached and items needs to snap back
-  if (panEnded && allowDrag.get() !== false) {
-    allowDrag.set(false);
-    return {
-      x: currentX.get(),
-      ...itemSnapAnimation,
-    };
-  }
-  // hotspot was reached
-  onSwipeEnd(activeItem.get() - 1);
-  allowDrag.set(false);
-  activeItem.set(activeItem.get() - 1);
-  currentX.set(currentX.get() + itemRef.current.clientWidth);
-
-  return {
-    x: currentX.get(),
-    ...itemSnapAnimation,
-  };
-};
-
-const controlAdditionalAnimations = ({
-  additionalControls,
-  activeItem,
-  additionalAnimationVariants,
-}) => {
-  if (additionalControls !== null) {
-    additionalControls.start(i => {
-      if (i === activeItem.get()) {
-        return additionalAnimationVariants.initial;
-        // return { x: 200 };
-      }
-      return additionalAnimationVariants.animated;
-    });
-  }
+MotionSlideContainer.defaultProps = {
+  additionalControls: null,
+  additionalAnimationVariants: null,
+  onSwipeEnd: () => null,
+  custom: {},
+  items: [],
 };

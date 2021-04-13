@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { usePageContext } from 'pieces/utils/context';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { FlexWrapper } from 'pieces';
@@ -40,4 +41,9 @@ export const SimpleNavigationIcon = ({ OpenIcon, CloseIcon, ...props }) => {
       </FlexWrapper>
     </FlexWrapper>
   );
+};
+
+SimpleNavigationIcon.propTypes = {
+  OpenIcon: PropTypes.func.isRequired,
+  CloseIcon: PropTypes.func.isRequired,
 };

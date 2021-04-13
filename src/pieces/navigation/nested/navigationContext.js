@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useThemeUI } from 'theme-ui';
 import { useAnimation, useMotionValue } from 'framer-motion';
 import { useLocation } from '@gatsbyjs/reach-router';
@@ -64,6 +65,15 @@ export const NavigationContextProvider = ({ children }) => {
     // update isOpen
     isOpen.set(!isOpen.get());
   };
+
+  const openSubNavigation = (href) => {
+    // the  open animation of sublinks is handled in MotionSubLinkContainer
+    // as the animation has to wait until the dynamic sublinks are rendered
+    setActiveSubNavigation(href);
+    controlLinks.close();
+    controlSubLinks.open();
+  };
+
   const openNavigation = async () => {
     // Open overlay
     await controlOverlay.open();
@@ -85,14 +95,6 @@ export const NavigationContextProvider = ({ children }) => {
     closeIconControls.start({ display: 'flex' });
     // update isOpen
     isOpen.set(!isOpen.get());
-  };
-
-  const openSubNavigation = (href) => {
-    // the  open animation of sublinks is handled in MotionSubLinkContainer
-    // as the animation has to wait until the dynamic sublinks are rendered
-    setActiveSubNavigation(href);
-    controlLinks.close();
-    controlSubLinks.open();
   };
 
   const closeSubNavigation = () => {
@@ -124,4 +126,8 @@ export const NavigationContextProvider = ({ children }) => {
       {children}
     </NavigationContext.Provider>
   );
+};
+
+NavigationContextProvider.propTypes = {
+  children: PropTypes.func.isRequired,
 };

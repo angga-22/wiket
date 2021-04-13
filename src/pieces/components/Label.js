@@ -2,12 +2,15 @@
 import React, { forwardRef } from 'react';
 import { useThemeUI } from 'theme-ui';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 // pieces components
-import { RichText } from 'pieces/utils/typography';
-import { Box, Emphasize } from 'pieces';
+import { RichText } from '../utils/typography';
+import { Box } from './Box';
+import { Emphasize } from './Emphasize';
 
 // eslint-disable-next-line max-len
-const capitalize = string => string.replace(/(?:^|\s)\S/g, a => a.toUpperCase());
+const capitalize = (string) =>
+  string.replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
 export const Label = forwardRef(
   (
@@ -30,7 +33,7 @@ export const Label = forwardRef(
     return (
       <Box
         ref={ref}
-        as={as ? as : motion.label}
+        as={as || motion.label}
         variant={variant}
         {...props}
         __themeKey={`typography.${fullType}`}
@@ -43,7 +46,7 @@ export const Label = forwardRef(
           Bold={({ children }) => (
             <Emphasize
               color='labelBold'
-              variant={boldVariant ? boldVariant : `${fullType}.bold`}
+              variant={boldVariant || `${fullType}.bold`}
             >
               {children}
             </Emphasize>
@@ -51,7 +54,7 @@ export const Label = forwardRef(
           Italic={({ children }) => (
             <Emphasize
               color='labelItalic'
-              variant={italicVariant ? italicVariant : `${fullType}.italic`}
+              variant={italicVariant || `${fullType}.italic`}
             >
               {children}
             </Emphasize>
@@ -61,3 +64,20 @@ export const Label = forwardRef(
     );
   }
 );
+
+Label.propTypes = {
+  as: PropTypes.string,
+  type: PropTypes.string,
+  variant: PropTypes.string,
+  boldVariant: PropTypes.string,
+  italicVariant: PropTypes.string,
+  children: PropTypes.func.isRequired,
+};
+
+Label.defaultProps = {
+  as: undefined,
+  type: 'label',
+  variant: 'normal',
+  boldVariant: undefined,
+  italicVariant: undefined,
+};

@@ -1,4 +1,5 @@
 import React, { createContext, useContext } from 'react';
+import PropTypes from 'prop-types';
 
 import { useViewportScroll, useMotionValue } from 'framer-motion';
 import { getBody } from 'pieces/utils/functions';
@@ -23,4 +24,9 @@ export const PageContextProvider = ({ children, locale }) => {
       {children}
     </PageContext.Provider>
   );
+};
+
+PageContextProvider.propTypes = {
+  children: PropTypes.func.isRequired,
+  locale: PropTypes.shape().isRequired,
 };

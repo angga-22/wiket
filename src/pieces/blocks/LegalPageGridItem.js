@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
 import { GridItem } from 'pieces';
 
@@ -14,3 +15,12 @@ export const LegalPageGridItem = ({ sx, children }) => (
     {children}
   </GridItem>
 );
+
+LegalPageGridItem.propTypes = {
+  sx: PropTypes.shape(),
+  children: PropTypes.func.isRequired,
+};
+
+LegalPageGridItem.defaultProps = {
+  sx: {},
+};

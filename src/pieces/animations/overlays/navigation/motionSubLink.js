@@ -1,9 +1,10 @@
 /* eslint-disable max-len */
 // External imports
 import React from 'react';
+import PropTypes from 'prop-types';
 // Pieces imports
 import { GridItem } from 'pieces';
-import { useNavigationContext } from 'pieces/navigation/navigationContext';
+import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
 
 export const MotionSubLink = ({ link, children }) => {
   const { variants, openSubNavigation } = useNavigationContext();
@@ -19,4 +20,11 @@ export const MotionSubLink = ({ link, children }) => {
       {children}
     </GridItem>
   );
+};
+
+MotionSubLink.propTypes = {
+  children: PropTypes.func.isRequired,
+  link: PropTypes.shape({
+    href: PropTypes.string.isRequired,
+  }).isRequired,
 };

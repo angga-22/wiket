@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
+import PropTypes from 'prop-types';
 // Pieces imports
-import { GatsbyLink } from 'pieces';
+import { GatsbyLink } from '../../GatsbyLink';
 
 // Uses GatsbyLink, to navigate to a new page
 export const PageLink = ({ children, to, sx = {}, variant = 'navigation' }) => {
@@ -13,4 +14,16 @@ export const PageLink = ({ children, to, sx = {}, variant = 'navigation' }) => {
       {children}
     </GatsbyLink>
   );
+};
+
+PageLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.func.isRequired,
+  sx: PropTypes.shape(),
+  variant: PropTypes.string,
+};
+
+PageLink.defaultProps = {
+  sx: {},
+  variant: 'navigation',
 };

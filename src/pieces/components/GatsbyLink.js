@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { forwardRef } from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
-import { Box } from 'pieces';
+import { Box } from './Box';
 
 // This componenet is Gatsby specific!
 export const GatsbyLink = forwardRef(
@@ -36,7 +36,7 @@ export const GatsbyLink = forwardRef(
           textDecoration: 'inherit',
           color: 'inherit',
           // We need to apply padding to link itself, to enlarge the clickable area
-          padding: padding ? padding : p,
+          padding: padding || p,
         }}
       >
         {children}

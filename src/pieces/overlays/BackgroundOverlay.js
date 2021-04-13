@@ -1,5 +1,6 @@
 import React from 'react';
 import { GridWrapper } from 'pieces';
+import PropTypes from 'prop-types';
 import { useOverlayContext } from 'pieces/utils/context';
 
 export const BackgroundOverlay = ({ children }) => {
@@ -21,4 +22,8 @@ export const BackgroundOverlay = ({ children }) => {
       {children}
     </GridWrapper>
   );
+};
+
+BackgroundOverlay.propTypes = {
+  children: PropTypes.func.isRequired,
 };

@@ -1,5 +1,6 @@
 // external dependencies
 import React from 'react';
+import PropTypes from 'prop-types';
 import { navigate } from 'gatsby';
 // pieces imports
 import { usePageContext } from 'pieces/utils/context';
@@ -28,4 +29,8 @@ export const SimpleNavigationLogo = ({ Logo }) => {
       }}
     />
   );
+};
+
+SimpleNavigationLogo.propTypes = {
+  Logo: PropTypes.func.isRequired,
 };

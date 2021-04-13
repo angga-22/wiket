@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const shortenText = (text = '', maxchar) => {
+  if (maxchar && text.length > maxchar) {
+    return `${text.slice(0, maxchar)}...`;
+  }
+  return text;
+};
+
 export const RichText = ({ Bold, Italic, content, maxchar }) => {
   const result = [];
   let position = 0;
@@ -13,7 +20,7 @@ export const RichText = ({ Bold, Italic, content, maxchar }) => {
   // shortenText if maxchar given
   const shortendContent = { blocks: [] };
   if (maxchar) {
-    content.blocks.forEach(block => {
+    content.blocks.forEach((block) => {
       totalTextLength += block.text.length;
       if (isShortend) {
         return;
@@ -23,6 +30,7 @@ export const RichText = ({ Bold, Italic, content, maxchar }) => {
       } else {
         // this might lead to
         const shortenBy = maxchar - totalTextLength;
+        // eslint-disable-next-line no-param-reassign
         block.text = shortenText(block.text, shortenBy);
         shortendContent.blocks.push(block);
         isShortend = true;
@@ -83,11 +91,4 @@ RichText.propTypes = {
 RichText.defaultProps = {
   Italic: React.Fragment,
   Bold: React.Fragment,
-};
-
-const shortenText = (text = '', maxchar) => {
-  if (maxchar && text.length > maxchar) {
-    return `${text.slice(0, maxchar)}...`;
-  }
-  return text;
 };

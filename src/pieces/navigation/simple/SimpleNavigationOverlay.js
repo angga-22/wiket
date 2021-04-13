@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 // external imports
 import React from 'react';
+import PropTypes from 'prop-types';
 // pieces imports
 import { GridWrapper } from 'pieces';
 // eslint-disable-next-line max-len
@@ -24,4 +25,8 @@ export const SimpleNavigationOverlay = ({ children }) => {
       {children}
     </GridWrapper>
   );
+};
+
+SimpleNavigationOverlay.propTypes = {
+  children: PropTypes.func.isRequired,
 };

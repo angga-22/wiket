@@ -49,7 +49,7 @@ export const NavigationHeader = memo(() => {
           }}
         >
           <SimpleNavigationLogo
-            Logo={props => (
+            Logo={(props) => (
               <Image
                 sx={{
                   height: ['20px', '20px', '20px', '20px', '25px'],

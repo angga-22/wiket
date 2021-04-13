@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useStackedCardsContext } from 'pieces/utils/context';
 import { useMotionValue } from 'framer-motion';
 // Pieces Imports
@@ -111,4 +112,22 @@ export const StackedCards = ({
       </FlexWrapper>
     </Box>
   );
+};
+
+StackedCards.propTypes = {
+  Image: PropTypes.func.isRequired,
+  yOffset: PropTypes.number,
+  parentIndex: PropTypes.number,
+  images: PropTypes.arrayOf({
+    url: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      childImageSharp: PropTypes.string.isRequired,
+    }),
+  }),
+};
+
+StackedCards.defaultProps = {
+  yOffset: -40,
+  parentIndex: 0,
+  images: [],
 };

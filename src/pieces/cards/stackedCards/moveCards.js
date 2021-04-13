@@ -12,7 +12,7 @@ export const moveCards = ({
   // indicates the distance the cards need to travel
   const jumps = requestedCard - currentCard.get();
   // helperfunction to set the opacity
-  const setOpacity = visibilityChange => {
+  const setOpacity = (visibilityChange) => {
     if (visibilityChange === 'getsInvisible') {
       return 0;
     }
@@ -32,15 +32,15 @@ export const moveCards = ({
       let visibilityChange = null;
       // check if the card is currently visible
       // eslint-disable-next-line max-len
-      const isCurrentlyVisible =
-        position >= 0 && position <= opacityBorderUpper ? true : false;
+      const isCurrentlyVisible = !!(
+        position >= 0 && position <= opacityBorderUpper
+      );
       // set up the new card positions
       // cardPosition.set(position - jumps);
       // position = cardPosition.get();
       // check the new visibility for the card
       // eslint-disable-next-line max-len
-      const getsVisible =
-        position >= 0 && position <= opacityBorderUpper ? true : false;
+      const getsVisible = !!(position >= 0 && position <= opacityBorderUpper);
       // true - false = getsInvisble
       // false - true = getsVisible
       // check if the visibility has changed
@@ -57,7 +57,7 @@ export const moveCards = ({
       const scale = 0.9 - position * (position * 0.1);
       const y = position * yOffset;
       // change the opacity of the stacked cards behind the main image
-      controlCardImageOpacity.start(i => {
+      controlCardImageOpacity.start((i) => {
         // if the requested card is 0 the cards need to be shifted regarding their initial order i
         const opacity = requestedCard !== 0 ? 1 - position * 0.4 : 1 - i * 0.4;
         return {

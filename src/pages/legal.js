@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 // pieces imports
 import { Section, SEO, NavigationLink } from 'pieces';
 import { ImpressumBlock, LegalHeaderBlock } from 'pieces/blocks';
@@ -39,6 +40,10 @@ const LegalPage = ({
     />
   </Section>
 );
+
+LegalPage.propTypes = {
+  data: PropTypes.shape().isRequired,
+};
 
 export const query = graphql`
   query {
