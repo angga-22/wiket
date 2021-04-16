@@ -1,11 +1,11 @@
+/* eslint-disable no-param-reassign */
 export const lockOrReleaseBody = async ({
   animation,
   animateContent = () => {},
   isOpen,
-  bodyElement,
+  body,
   currentScroll,
 }) => {
-  const body = bodyElement;
   // stop any ongoing animations
   // controlNavbar.stop();
   // close the menu
