@@ -28,5 +28,5 @@ export const PageContextProvider = ({ children, locale }) => {
 
 PageContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  locale: PropTypes.shape().isRequired,
+  locale: PropTypes.string.isRequired,
 };

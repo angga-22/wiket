@@ -37,9 +37,11 @@ export const SimpleNavigation = memo(
 );
 
 SimpleNavigation.propTypes = {
-  NavigationHeader: PropTypes.func.isRequired,
-  OverlayLayout: PropTypes.func.isRequired,
-  links: PropTypes.arrayOf(PropTypes.func.isRequired),
+  NavigationHeader: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
+    .isRequired,
+  OverlayLayout: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
+    .isRequired,
+  links: PropTypes.arrayOf(PropTypes.node.isRequired),
   sx: PropTypes.shape(),
 };
 
