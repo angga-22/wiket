@@ -37,7 +37,7 @@ const buttons = {
     variant: 'typography.buttonLarge.normal',
     bg: 'primary',
     borderRadius: 'button',
-    padding: '5px 10px 10px 10px',
+    padding: '10px',
     '&:hover': {
       transform: 'scale(1.1)',
     },
@@ -47,7 +47,7 @@ const buttons = {
     variant: 'typography.button.normal',
     bg: 'light',
     borderRadius: 'button',
-    padding: '5px 10px 10px 10px',
+    padding: '10px',
     '&:hover': {
       bg: 'medium',
     },
