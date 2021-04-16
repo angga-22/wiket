@@ -27,8 +27,8 @@ export const Paragraph = forwardRef(
   (
     {
       as,
-      type = 'paragraph',
-      variant = 'normal',
+      type,
+      variant,
       boldVariant,
       italicVariant,
       maxchar,
@@ -90,7 +90,7 @@ Paragraph.propTypes = {
 
 Paragraph.defaultProps = {
   as: undefined,
-  type: 'h1',
+  type: 'paragraph',
   variant: 'normal',
   boldVariant: undefined,
   italicVariant: undefined,
