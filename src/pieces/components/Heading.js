@@ -25,8 +25,8 @@ export const Heading = forwardRef(
   (
     {
       as,
-      type = 'h1',
-      variant = 'normal',
+      type,
+      variant,
       boldVariant,
       italicVariant,
       maxchar,
