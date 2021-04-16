@@ -8,5 +8,5 @@ export const MobileNavigation = ({ children }) => (
 );
 
 MobileNavigation.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

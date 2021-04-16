@@ -64,7 +64,7 @@ export const PageInternalLink = ({
 
 PageInternalLink.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   sx: PropTypes.shape(),
   variant: PropTypes.string,
 };

@@ -85,7 +85,7 @@ Paragraph.propTypes = {
   boldVariant: PropTypes.string,
   italicVariant: PropTypes.string,
   maxchar: PropTypes.string,
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Paragraph.defaultProps = {

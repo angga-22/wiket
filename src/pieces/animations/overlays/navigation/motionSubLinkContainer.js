@@ -65,7 +65,7 @@ export const MotionSubLinkContainer = ({
 };
 
 MotionSubLinkContainer.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   sx: PropTypes.shape(),
   NavigationLink: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(

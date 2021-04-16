@@ -29,7 +29,7 @@ const Tabs = ({ children, Tab = Box, TabContainer = FlexWrapper }) => {
 };
 
 Tabs.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   Tab: PropTypes.func,
   TabContainer: PropTypes.func,
 };

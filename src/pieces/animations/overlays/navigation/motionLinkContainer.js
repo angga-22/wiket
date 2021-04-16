@@ -24,5 +24,5 @@ export const MotionLinkContainer = ({ children, ...props }) => {
 };
 
 MotionLinkContainer.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

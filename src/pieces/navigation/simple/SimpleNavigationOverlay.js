@@ -28,5 +28,5 @@ export const SimpleNavigationOverlay = ({ children }) => {
 };
 
 SimpleNavigationOverlay.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

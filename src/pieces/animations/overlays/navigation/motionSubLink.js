@@ -23,7 +23,7 @@ export const MotionSubLink = ({ link, children }) => {
 };
 
 MotionSubLink.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   link: PropTypes.shape({
     href: PropTypes.string.isRequired,
   }).isRequired,

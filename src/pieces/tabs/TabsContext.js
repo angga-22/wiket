@@ -40,7 +40,7 @@ const TabsProvider = ({ activeTab: initialActiveTab, children }) => {
 };
 
 TabsProvider.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   activeTab: PropTypes.number.isRequired,
 };
 

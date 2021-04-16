@@ -77,7 +77,7 @@ export const SimpleNavigationContextProvider = ({
 };
 
 SimpleNavigationContextProvider.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   animations: PropTypes.shape(),
 };
 

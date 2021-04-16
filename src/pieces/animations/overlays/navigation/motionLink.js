@@ -34,6 +34,6 @@ export const MotionLink = ({ children, href }) => {
 };
 
 MotionLink.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
 };

@@ -26,5 +26,5 @@ export const MotionOverlayContainer = ({ children }) => {
 };
 
 MotionOverlayContainer.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

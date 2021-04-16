@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { useAnimation, useMotionValue } from 'framer-motion';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const StackedCardsContext = createContext();
 
@@ -93,11 +93,11 @@ export const StackedCardsProvider = ({
 };
 
 StackedCardsProvider.propTypes = {
-  children: propTypes.func.isRequired,
-  yOffset: propTypes.number.isRequired,
-  moveCards: propTypes.func.isRequired,
-  opacityBorderUpper: propTypes.number.isRequired,
-  activeItem: propTypes.number,
+  children: PropTypes.node.isRequired,
+  yOffset: PropTypes.number.isRequired,
+  moveCards: PropTypes.func.isRequired,
+  opacityBorderUpper: PropTypes.number.isRequired,
+  activeItem: PropTypes.number,
 };
 
 StackedCardsProvider.defaultProps = {

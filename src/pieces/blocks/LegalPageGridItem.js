@@ -18,7 +18,7 @@ export const LegalPageGridItem = ({ sx, children }) => (
 
 LegalPageGridItem.propTypes = {
   sx: PropTypes.shape(),
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 LegalPageGridItem.defaultProps = {

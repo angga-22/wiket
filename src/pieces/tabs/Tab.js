@@ -17,5 +17,5 @@ export const Tab = ({ id, title, children }) => {
 Tab.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

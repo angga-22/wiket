@@ -76,7 +76,7 @@ export const TypographyTestBlock = ({ text, paragraph, children }) => (
 );
 
 TypographyTestBlock.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   text: PropTypes.string,
   paragraph: PropTypes.string,
 };

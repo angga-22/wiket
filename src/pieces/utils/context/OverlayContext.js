@@ -53,5 +53,5 @@ export const OverlayContextProvider = ({ children }) => {
 };
 
 OverlayContextProvider.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

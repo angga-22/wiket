@@ -31,5 +31,5 @@ export const SimpleMotionLink = ({ children }) => {
 };
 
 SimpleMotionLink.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };

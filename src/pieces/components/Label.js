@@ -71,7 +71,7 @@ Label.propTypes = {
   variant: PropTypes.string,
   boldVariant: PropTypes.string,
   italicVariant: PropTypes.string,
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Label.defaultProps = {

@@ -18,7 +18,7 @@ export const PageLink = ({ children, to, sx = {}, variant = 'navigation' }) => {
 
 PageLink.propTypes = {
   to: PropTypes.string.isRequired,
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
   sx: PropTypes.shape(),
   variant: PropTypes.string,
 };

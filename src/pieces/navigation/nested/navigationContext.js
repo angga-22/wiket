@@ -129,5 +129,5 @@ export const NavigationContextProvider = ({ children }) => {
 };
 
 NavigationContextProvider.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
