@@ -26,8 +26,9 @@ export const SimpleNavigation = memo(
         <NavigationHeader />
         <SimpleNavigationOverlay>
           <OverlayLayout>
-            {links.map((Link) => (
-              <SimpleMotionLink key={Link}>{Link}</SimpleMotionLink>
+            {links.map((Link, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <SimpleMotionLink key={index}>{Link}</SimpleMotionLink>
             ))}
           </OverlayLayout>
         </SimpleNavigationOverlay>
