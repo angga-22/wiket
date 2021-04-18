@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Box } from './Box';
 
-import { srcsetValues } from '../theme/breakpoints';
+import { srcsetValues } from '../theme';
 
 // srcSet must be used from the biggest screen to the smallest as a fallback
 
