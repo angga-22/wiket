@@ -19,3 +19,4 @@ export * from './Portal';
 export * from './SEO';
 export * from './Card';
 export * from './NavigationLink';
+export * from './ResponsiveImage';
