@@ -5,15 +5,17 @@ import PropTypes from 'prop-types';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
 // eslint-disable-next-line max-len
-import { useSimpleNavigationContext } from 'pieces/navigation/simple/SimpleNavigationContext';
-import { Box } from 'pieces';
+import { useSimpleNavigationContext } from './SimpleNavigationContext';
+import { Box } from '../../components/Box';
 
-export const SimpleMotionLink = ({ children }) => {
+export const SimpleMotionLink = ({ children, sx }) => {
   const { body, currentScroll } = usePageContext();
   const { variants, closeNavigation, isOpen } = useSimpleNavigationContext();
   return (
     <Box
       className='overlay--items'
+      as='li'
+      sx={sx}
       onClick={() => {
         lockOrReleaseBody({
           animation: () => closeNavigation(),
@@ -31,5 +33,10 @@ export const SimpleMotionLink = ({ children }) => {
 };
 
 SimpleMotionLink.propTypes = {
+  sx: PropTypes.shape,
   children: PropTypes.node.isRequired,
+};
+
+SimpleMotionLink.defaultProps = {
+  sx: {},
 };
