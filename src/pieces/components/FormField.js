@@ -26,6 +26,7 @@ export const FormField = ({
       <Input
         variant={inputVariant}
         type={type}
+        id={name}
         name={name}
         placeholder={placeholder}
         required={required}
