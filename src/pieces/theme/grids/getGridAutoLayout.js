@@ -1,16 +1,15 @@
 /* eslint-disable max-len */
 /* eslint-disable implicit-arrow-linebreak */
-
 import { pixelValues } from '../breakpoints';
 
-export const getGridTemplateColumns = ({
+export const getGridAutoLayout = ({
   totalColumsPerBreakpoint,
   offsets,
   gaps,
   factor,
 }) => {
-  const templateColumns = totalColumsPerBreakpoint.map(
-    (columns, index) => `repeat(${columns}, 
+  const autoLayout = totalColumsPerBreakpoint.map(
+    (columns, index) => `
   calc(
     (
       (
@@ -21,7 +20,7 @@ export const getGridTemplateColumns = ({
             (${columns - 1} * ${gaps[index]})
         ) / ${columns}
     )
-  ))`
+  )`
   );
-  return templateColumns;
+  return autoLayout;
 };
