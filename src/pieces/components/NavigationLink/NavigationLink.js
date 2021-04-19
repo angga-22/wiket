@@ -8,6 +8,7 @@ import { PageInternalLink, PageLink } from './components';
 // Detects, whether a link contains a hash
 // And wether we are at the requested page, to be able to scroll to the hash
 function isPageInternalLink(to, currentLocation) {
+  if (!to) return false;
   const requestedPathname = to.slice(0, to.indexOf('#'));
   if (to.includes('#')) {
     if (
@@ -21,7 +22,6 @@ function isPageInternalLink(to, currentLocation) {
   return false;
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export const NavigationLink = ({ to, ...props }) => {
   const location = useLocation();
   return isPageInternalLink(to, location) ? (
