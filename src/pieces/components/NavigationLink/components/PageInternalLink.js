@@ -11,12 +11,7 @@ import { Link } from '../../Link';
 // Expects the user to already be on the correct page.
 // Expects an id selector as the "to"-prop
 // Valid "to"-props: "#footer" or "/about/#us"
-export const PageInternalLink = ({
-  to,
-  children,
-  sx = {},
-  variant = 'navigation',
-}) => {
+export const PageInternalLink = ({ to, children, sx = {}, variant }) => {
   const { pathname: currentPathname, hash: currentHash } = useLocation();
   const [isClient, setClient] = useState(false);
   const hash = to.slice(to.indexOf('#'));
@@ -39,7 +34,7 @@ export const PageInternalLink = ({
       });
     } catch (error) {
       // eslint-ignore no-console
-      throw Error(`Error: Queryselector ${hash} not found.`);
+      console.error(`Error: Queryselector ${hash} not found.`);
     }
     // Set hash in url (only if we are not already at this path)
     // Jumps to secton direclty, that is why we wait to smooth scroll there manually
