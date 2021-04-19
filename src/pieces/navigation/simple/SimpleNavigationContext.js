@@ -78,7 +78,14 @@ export const SimpleNavigationContextProvider = ({
 
 SimpleNavigationContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
-  animations: PropTypes.shape(),
+  animations: PropTypes.shape({
+    navigation: {
+      overlay: PropTypes.any.isRequired,
+      links: {
+        items: PropTypes.any.isRequired,
+      },
+    },
+  }),
 };
 
 SimpleNavigationContextProvider.defaultProps = {
