@@ -8,21 +8,12 @@ import { RichText } from '../utils/typography';
 import { Box } from './Box';
 import { Emphasize } from './Emphasize';
 
-// eslint-disable-next-line max-len
 const capitalize = (string) =>
   string.replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
 export const Label = forwardRef(
   (
-    {
-      as,
-      variant = 'normal',
-      boldVariant,
-      italicVariant,
-      type = 'label',
-      children,
-      ...props
-    },
+    { as, variant, boldVariant, italicVariant, type, children, ...props },
     ref
   ) => {
     const { theme } = useThemeUI();
@@ -39,6 +30,7 @@ export const Label = forwardRef(
         __themeKey={`typography.${fullType}`}
         __css={{
           color: 'labels',
+          zIndex: 'inherit',
         }}
       >
         <RichText
@@ -76,7 +68,7 @@ Label.propTypes = {
 
 Label.defaultProps = {
   as: undefined,
-  type: 'label',
+  type: 'primaryLabel',
   variant: 'normal',
   boldVariant: undefined,
   italicVariant: undefined,
