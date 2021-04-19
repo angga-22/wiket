@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 // external imports
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -16,6 +15,7 @@ import { Heading } from '../../components/Heading';
 export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
   <MotionOverlayContainer>
     <MotionLinkContainer
+      className='navigation--motion-link-container'
       sx={{
         flexDirection: 'column',
         width: '100%',
@@ -42,7 +42,6 @@ export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
           </MotionSubLink>
         );
       })}
-      {/* <NavigationFooter sx={{ width: '100vw', marginLeft: '-28px' }} /> */}
     </MotionLinkContainer>
     {/*  Opens when SubLink is clicked  */}
     <MotionSubLinkContainer
@@ -51,13 +50,12 @@ export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
         width: '100%',
         position: 'absolute',
         paddingTop: '10vw',
+        paddingBottom: '10vw',
       }}
       NavigationLink={NavigationLink}
       BackButton={BackButton}
       data={navigationData}
-    >
-      {/* <NavigationFooter sx={{ width: '100vw', marginLeft: '-28px' }} /> */}
-    </MotionSubLinkContainer>
+    />
   </MotionOverlayContainer>
 );
 
