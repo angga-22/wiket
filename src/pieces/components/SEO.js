@@ -10,6 +10,12 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import { usePageContext } from 'pieces/utils/context';
+import { useLocation } from '@gatsbyjs/reach-router';
+import {
+  revertPathToDefaultLocale,
+  localizePath,
+} from 'pieces/utils/functions';
+
 import thumbnail from 'images/seo/thumbnail.png';
 import favicon32 from 'images/seo/favicon32.png';
 import favicon64 from 'images/seo/favicon64.png';
@@ -23,8 +29,11 @@ export function SEO({
   shortDescription,
   url,
 }) {
+  const location = useLocation();
   const { locale } = usePageContext();
-  const { site } = useStaticQuery(
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(
     graphql`
       query {
         site {
@@ -37,6 +46,15 @@ export function SEO({
             shortDescription
             locales {
               default
+              locales {
+                code
+                pathPrefix
+                hreflang
+              }
+            }
+            translatedPaths {
+              default
+              deDE
             }
           }
         }
@@ -44,22 +62,28 @@ export function SEO({
     `
   );
 
-  const pageLang = locale || site.siteMetadata.locales.default;
-  const metaDescription = description || site.siteMetadata.description;
+  const cleanedPathname = revertPathToDefaultLocale(
+    location.pathname,
+    siteMetadata.locales.locales,
+    siteMetadata.translatedPaths
+  );
+
+  const pageLang = locale === 'deDE' ? 'de' : siteMetadata.locales.default;
+  const metaDescription = description || siteMetadata.description;
   // eslint-disable-next-line operator-linebreak
   const metaShortDescription =
-    shortDescription || site.siteMetadata.shortDescription;
-  const metaTitle = title || site.siteMetadata.title;
-  const metaShortTitle = shortTitle || site.siteMetadata.shortTitle;
-  const metaUrl = url || site.siteMetadata.url;
+    shortDescription || siteMetadata.shortDescription;
+  const metaTitle = title || siteMetadata.title;
+  const metaShortTitle = shortTitle || siteMetadata.shortTitle;
+  const metaUrl = url || siteMetadata.url;
 
   return (
     <Helmet
       htmlAttributes={{
-        pageLang,
+        lang: pageLang,
       }}
       title={metaTitle}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${siteMetadata.title}`}
       meta={[
         {
           name: 'description',
@@ -87,7 +111,7 @@ export function SEO({
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author,
+          content: siteMetadata.author,
         },
         {
           name: 'twitter:title',
@@ -99,7 +123,22 @@ export function SEO({
         },
       ].concat(meta)}
       link={[
-        { rel: 'image_src', type: 'image/png', href: `${thumbnail}` },
+        {
+          rel: 'alternate',
+          hreflang: 'en',
+          href: siteMetadata.url + cleanedPathname,
+        },
+        {
+          rel: 'alternate',
+          hreflang: 'de',
+          href: siteMetadata.url + localizePath(cleanedPathname, 'deDE'),
+        },
+        {
+          rel: 'alternate',
+          hreflang: 'x-default',
+          href: siteMetadata.url + cleanedPathname,
+        },
+        { rel: 'image_src', type: 'image/png', href: thumbnail },
         {
           rel: 'icon',
           type: 'image/png',

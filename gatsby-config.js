@@ -9,13 +9,17 @@ module.exports = {
     shortDescription:
       // eslint-disable-next-line max-len
       'Built by us. No upfront payments.',
-    url: 'https://www.thepuzzlers.io/',
+    url: 'https://www.thepuzzlers.io',
     locales: {
       default: 'en',
-      locales: [
-        // { code: 'de', pathPrefix: 'de' }
-      ],
+      // locales: [{ code: 'deDE', pathPrefix: 'de', hreflang: 'de' }],
     },
+    translatedPaths: [
+      // {
+      //   default: 'privacy-policy',
+      //   deDE: 'datenschutz',
+      // },
+    ],
   },
   plugins: [
     'gatsby-plugin-theme-ui',
