@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 // pieces imports
-import { Box } from 'pieces';
+import { Box } from '../../components/Box';
 import { NavigationContextProvider } from './navigationContext';
 import { NavigationOverlay } from './navigationOverlay';
 
