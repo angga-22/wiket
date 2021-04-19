@@ -1,22 +1,26 @@
 // external dependencies
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
+import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import { Box } from './Box';
 
+// Set styling for active Link as follows
+// in links.js (in theme)
+
+// hyperlink : {
+//   ... general styling here
+//   '&.active' : {
+//     ... styling for active Link here
+//   }
+// }
+
 // This componenet is Gatsby specific!
 export const GatsbyLink = forwardRef(
   (
-    {
-      active = false,
-      to,
-      children,
-      variant = 'hyperLink',
-      sx: { padding, p, ...sx },
-      ...props
-    },
+    { active, to, children, variant, sx: { padding, p, ...sx }, ...props },
     ref
   ) => (
     <Box
@@ -29,9 +33,7 @@ export const GatsbyLink = forwardRef(
       {...props}
     >
       <Link
-        // className={active ? 'active' : ''}
         to={to}
-        // activeClassName='active'
         sx={{
           textDecoration: 'inherit',
           color: 'inherit',
@@ -45,12 +47,19 @@ export const GatsbyLink = forwardRef(
   )
 );
 
-// Set styling for active Link as follows
-// in links.js
+GatsbyLink.propTypes = {
+  active: PropTypes.boolean,
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+  variant: PropTypes.string,
+  sx: PropTypes.shape({
+    padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    p: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  }),
+};
 
-// hyperlink : {
-//   ... general styling here
-//   '&.active' : {
-//     ... styling for active Link here
-//   }
-// }
+GatsbyLink.defaultProps = {
+  active: false,
+  variant: 'hyperLink',
+  sx: {},
+};
