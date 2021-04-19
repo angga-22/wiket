@@ -11,7 +11,7 @@ export const SimpleNavigationOverlay = ({ children }) => {
   const { overlayControls, variants } = useSimpleNavigationContext();
   return (
     <GridWrapper
-      className='overlay--wrapper'
+      className='simple-navigation-overlay--wrapper'
       sx={{
         display: 'none',
         position: 'relative',
