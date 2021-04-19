@@ -19,4 +19,8 @@ export * from './Portal';
 export * from './SEO';
 export * from './Card';
 export * from './NavigationLink';
+export * from './FullWidthBackground';
+export * from './Divider';
+export * from './TextArea';
 export * from './ResponsiveImage';
+export * from './GatsbyImage';
