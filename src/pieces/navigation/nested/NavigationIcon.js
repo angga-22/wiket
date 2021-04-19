@@ -1,12 +1,14 @@
+/* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { usePageContext } from 'pieces/utils/context';
-import { lockOrReleaseBody } from 'pieces/utils/functions';
-import { FlexWrapper } from 'pieces';
 import { motion } from 'framer-motion';
 // eslint-disable-next-line import/no-unresolved
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// Pieces imports
+import { usePageContext } from '../../utils/context';
+import { lockOrReleaseBody } from '../../utils/functions';
 import { useNavigationContext } from './navigationContext';
+import { FlexWrapper } from '../../components/FlexWrapper';
 
 export const NavigationIcon = React.forwardRef(({ icon, ...props }, ref) => {
   const {
