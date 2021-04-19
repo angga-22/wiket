@@ -43,6 +43,7 @@ export const Heading = forwardRef(
       __themeKey={`typography.${type}`}
       __css={{
         color: 'heading',
+        zIndex: 'inherit',
       }}
     >
       <RichText
