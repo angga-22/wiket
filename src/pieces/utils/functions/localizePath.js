@@ -1,9 +1,8 @@
-/* eslint-disable max-len */
 import { siteMetadata } from '../../../../gatsby-config';
 
 const {
-  locales: { locales, default: defaultCode },
-  translatedPaths,
+  locales: { translations = [], default: defaultCode },
+  translatedPaths = [],
 } = siteMetadata;
 
 export default function localizePath(path, localeCode) {
@@ -12,11 +11,11 @@ export default function localizePath(path, localeCode) {
   if (localeCode === defaultCode) {
     return path;
   }
-  const { pathPrefix } = locales.find(
-    ({ code: websiteLocaleCode }) => websiteLocaleCode === localeCode
-  );
+  const { pathPrefix = null } =
+    translations.find(
+      ({ code: websiteLocaleCode }) => websiteLocaleCode === localeCode
+    ) || {};
 
-  // eslint-disable-next-line max-len
   if (!pathPrefix)
     throw Error(`Locale ${localeCode} can't be found in gatsby config.`);
 

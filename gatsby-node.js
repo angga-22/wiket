@@ -17,9 +17,9 @@ exports.onCreatePage = ({ page, actions }) => {
 
   // loop through all locale of page and check, if pathPrefix is given
   // if yes, pass carresponding locale to pageContext
-  if (locales.locales) {
+  if (locales.translations?.length > 0) {
     // eslint-disable-next-line consistent-return
-    locales.locales.forEach(({ code, pathPrefix }) => {
+    locales.translations.forEach(({ code, pathPrefix }) => {
       if (page.path.match(new RegExp(`/${pathPrefix}/.+|/${pathPrefix}/`))) {
         deletePage(page);
         // You can access the variable "house" in your page queries now

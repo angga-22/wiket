@@ -12,7 +12,9 @@ module.exports = {
     url: 'https://www.thepuzzlers.io',
     locales: {
       default: 'en',
-      // locales: [{ code: 'deDE', pathPrefix: 'de', hreflang: 'de' }],
+      translations: [
+        // { code: 'deDE', pathPrefix: 'de', hreflang: 'de' }
+      ],
     },
     translatedPaths: [
       // {

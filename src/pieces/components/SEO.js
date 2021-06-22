@@ -13,7 +13,7 @@ import { usePageContext } from 'pieces/utils/context';
 import { useLocation } from '@gatsbyjs/reach-router';
 import {
   revertPathToDefaultLocale,
-  localizePath,
+  // localizePath,
 } from 'pieces/utils/functions';
 
 import thumbnail from 'images/seo/thumbnail.png';
@@ -46,16 +46,16 @@ export function SEO({
             shortDescription
             locales {
               default
-              locales {
-                code
-                pathPrefix
-                hreflang
-              }
+              #     translations {
+              #      code
+              #     pathPrefix
+              #     hreflang
+              #    }
             }
-            translatedPaths {
-              default
-              deDE
-            }
+            # translatedPaths {
+            #   default
+            #   deDE
+            #  }
           }
         }
       }
@@ -64,8 +64,8 @@ export function SEO({
 
   const cleanedPathname = revertPathToDefaultLocale(
     location.pathname,
-    siteMetadata.locales.locales,
-    siteMetadata.translatedPaths
+    siteMetadata.locales.locales || [],
+    siteMetadata.translatedPaths || []
   );
 
   const pageLang = locale === 'deDE' ? 'de' : siteMetadata.locales.default;
@@ -128,11 +128,11 @@ export function SEO({
           hreflang: 'en',
           href: siteMetadata.url + cleanedPathname,
         },
-        {
-          rel: 'alternate',
-          hreflang: 'de',
-          href: siteMetadata.url + localizePath(cleanedPathname, 'deDE'),
-        },
+        // {
+        //   rel: 'alternate',
+        //   hreflang: 'de',
+        //   href: siteMetadata.url + localizePath(cleanedPathname, 'deDE'),
+        // },
         {
           rel: 'alternate',
           hreflang: 'x-default',

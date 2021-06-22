@@ -98,7 +98,7 @@ module.exports = {
     ...
     locales: {
       default: 'en',
-      locales: [
+      translations: [
         # add any additional locales here. And define pathPrefix for that language.
         # leave empty if website has only one language
         { code: 'de', pathPrefix: 'de' }
