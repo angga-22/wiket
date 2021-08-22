@@ -3,9 +3,9 @@ import React from 'react';
 import { Global } from '@emotion/react';
 import PropTypes from 'prop-types';
 import 'reset-css';
-// pieces components
+import { Box } from '@thepuzzlers/pieces';
+// local components
 import { PageContextProvider } from 'pieces/utils/context';
-import { Box } from 'pieces';
 // client imports
 import 'gatsby-plugin-theme-ui/fontImports';
 import { Navigation } from 'sections/Navigation';

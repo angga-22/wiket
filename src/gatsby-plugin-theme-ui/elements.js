@@ -44,6 +44,7 @@ const buttons = {
   },
   secondary: {
     ...buttonDefault,
+    width: '300px',
     variant: 'typography.button.normal',
     bg: 'light',
     borderRadius: 'button',

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import motion from 'framer-motion';
-import { Box } from './Box';
+import { Box } from '@thepuzzlers/pieces';
 
 export const TextArea = React.forwardRef(({ variant, ...props }, ref) => (
   <Box

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
-import { Box, Paragraph, Heading } from 'pieces';
+import { Box, Paragraph, Heading } from '@thepuzzlers/pieces';
+// Local imports
 import { LegalPageGridItem } from './LegalPageGridItem';
 
 export const DataPrivacyBlock = ({

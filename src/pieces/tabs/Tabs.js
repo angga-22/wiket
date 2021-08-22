@@ -1,8 +1,8 @@
 // external dependencies
 import React from 'react';
 import PropTypes from 'prop-types';
-// pieces components
-import { Box, FlexWrapper } from 'pieces';
+import { Box, FlexWrapper } from '@thepuzzlers/pieces';
+// Local components
 import { useTabsContext } from './TabsContext';
 import { withTabsContext } from './withTabsContext';
 

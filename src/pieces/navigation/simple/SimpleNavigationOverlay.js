@@ -2,8 +2,7 @@
 // external imports
 import React from 'react';
 import PropTypes from 'prop-types';
-// pieces imports
-import { GridWrapper } from 'pieces';
+import { GridWrapper } from '@thepuzzlers/pieces';
 // eslint-disable-next-line max-len
 import { useSimpleNavigationContext } from './SimpleNavigationContext';
 

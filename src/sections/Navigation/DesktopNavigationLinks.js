@@ -1,8 +1,10 @@
 // External dependencies
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-// Pieces imports
-import { Box, NavigationLink } from 'pieces';
+import { Box } from '@thepuzzlers/pieces';
+
+// Local imports
+import { NavigationLink } from 'pieces';
 
 export const DesktopNavigationLinks = () => {
   // Data

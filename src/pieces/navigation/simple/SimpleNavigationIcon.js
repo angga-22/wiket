@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FlexWrapper } from '@thepuzzlers/pieces';
 import { usePageContext } from 'pieces/utils/context';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
-import { FlexWrapper } from 'pieces';
 import { motion } from 'framer-motion';
 import { useSimpleNavigationContext } from './SimpleNavigationContext';
 

@@ -1,10 +1,10 @@
 import React from 'react';
-// Pieces imports
-import { SEO, Card, NavigationLink } from 'pieces';
+import { Card, Button } from '@thepuzzlers/pieces';
+// Local imports
+import { SEO, NavigationLink } from 'pieces';
 import { TypographyTestBlock } from 'pieces/blocks';
 // sections
 import { Header } from 'sections/landingPage';
-import { PrimaryButton, SecondaryButton } from 'atoms/buttons';
 
 const IndexPage = () => (
   <>
@@ -13,9 +13,9 @@ const IndexPage = () => (
     {/* Delete This After Typography is setup */}
     <TypographyTestBlock text='' paragraph=''>
       {/* Client Components */}
-      <PrimaryButton>Primary Button</PrimaryButton>
+      <Button variant='primary'>Primary Button</Button>
       <NavigationLink to='/legal'>
-        <SecondaryButton>Secondary Button to Legal Page</SecondaryButton>
+        <Button variant='secondary'>Secondary Button to Legal Page</Button>
       </NavigationLink>
       <Card>Hi, I am a card</Card>
     </TypographyTestBlock>

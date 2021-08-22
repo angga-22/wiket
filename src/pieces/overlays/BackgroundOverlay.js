@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridWrapper } from 'pieces';
+import { GridWrapper } from '@thepuzzlers/pieces';
 import PropTypes from 'prop-types';
 import { useOverlayContext } from 'pieces/utils/context';
 

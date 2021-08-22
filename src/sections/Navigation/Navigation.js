@@ -1,9 +1,10 @@
 // external dependencies
 import React, { memo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-// pieces components
+import { FlexWrapper, GridItem, Box } from '@thepuzzlers/pieces';
+// Local components
 import { SimpleNavigation } from 'pieces/navigation/simple';
-import { FlexWrapper, GridItem, Box, NavigationLink } from 'pieces';
+import { NavigationLink } from 'pieces';
 // client imports
 import { NavigationHeader } from './NavigationHeader';
 

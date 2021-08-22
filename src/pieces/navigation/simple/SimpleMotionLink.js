@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
 // eslint-disable-next-line max-len
+import { Box } from '@thepuzzlers/pieces';
 import { useSimpleNavigationContext } from './SimpleNavigationContext';
-import { Box } from '../../components/Box';
 
 export const SimpleMotionLink = ({ children, sx }) => {
   const { body, currentScroll } = usePageContext();

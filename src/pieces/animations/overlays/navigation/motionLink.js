@@ -2,13 +2,12 @@
 import React from 'react';
 import { Link as RouterLink } from 'gatsby';
 import PropTypes from 'prop-types';
+import { GridItem } from '@thepuzzlers/pieces';
 
-// data imports
-// pieces imports
+// Local imports
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
 import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
-import { GridItem } from 'pieces';
 
 export const MotionLink = ({ children, href }) => {
   const { body, currentScroll } = usePageContext();

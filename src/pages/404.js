@@ -1,5 +1,7 @@
 import React from 'react';
-import { SEO, GridItem, Section, Heading, Paragraph } from 'pieces';
+import { GridItem, Section, Heading, Paragraph } from '@thepuzzlers/pieces';
+
+import { SEO } from 'pieces';
 
 const NotFoundPage = () => (
   <>

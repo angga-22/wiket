@@ -2,9 +2,9 @@
 // External imports
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
+import { GridItem, FlexWrapper, Heading } from '@thepuzzlers/pieces';
+// Local imports
 import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
-import { GridItem, FlexWrapper, Heading } from 'pieces';
 import { MotionLink } from 'pieces/animations/overlays/navigation/motionLink';
 
 export const MotionSubLinkContainer = ({

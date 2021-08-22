@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-// pieces imports
-import { Section, SEO, NavigationLink } from 'pieces';
+import { Section } from '@thepuzzlers/pieces';
+// Local imports
+import { SEO } from 'pieces';
 import { ImpressumBlock, LegalHeaderBlock } from 'pieces/blocks';
-
-import { SecondaryButton } from '../atoms/buttons';
 
 const LegalPage = ({
   data: {
@@ -24,12 +23,6 @@ const LegalPage = ({
       title={seoTitle}
       description={`Legal information of ${legal.company}.`}
     />
-    <NavigationLink to='/'>
-      <SecondaryButton>Go to LandingPage</SecondaryButton>
-    </NavigationLink>
-    <NavigationLink to='/#cards'>
-      <SecondaryButton>Go to Cards Section</SecondaryButton>
-    </NavigationLink>
     <LegalHeaderBlock headline={headline} />
     <ImpressumBlock
       {...legal}

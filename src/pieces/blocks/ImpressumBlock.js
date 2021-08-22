@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
-import { Paragraph } from 'pieces';
+import { Paragraph } from '@thepuzzlers/pieces';
+// Local imports
 import { LegalPageGridItem } from './LegalPageGridItem';
 
 export const ImpressumBlock = ({

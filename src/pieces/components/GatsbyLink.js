@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
-import { Box } from './Box';
+import { Box } from '@thepuzzlers/pieces';
 
 // Set styling for active Link as follows
 // in links.js (in theme)

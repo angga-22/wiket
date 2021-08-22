@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
 import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
-// Pieces imports
-import { Link } from '../../Link';
+import { Link } from '@thepuzzlers/pieces';
 
 // Navigates to a section within a page
 // e.g. to navigate between sections of a single page website

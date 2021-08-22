@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 // pieces components
-import { Section, Heading, GridItem } from 'pieces';
+import { Section, Heading, GridItem } from '@thepuzzlers/pieces';
 
 export const Header = memo(() => {
   const { landingPageJson, puzzlers } = useStaticQuery(graphql`

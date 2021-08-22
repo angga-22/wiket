@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import { Box } from './Box';
+import { Box } from '@thepuzzlers/pieces';
 
 export const GatsbyImage = ({ sx, image, ...props }) => (
   <Box sx={sx} {...props}>

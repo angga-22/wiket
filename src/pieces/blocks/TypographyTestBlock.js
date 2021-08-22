@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
 import {
   GridItem,
   Section,
@@ -9,7 +8,7 @@ import {
   Paragraph,
   Label,
   Link,
-} from 'pieces';
+} from '@thepuzzlers/pieces';
 
 export const TypographyTestBlock = ({ text, paragraph, children }) => (
   <Section>

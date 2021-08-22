@@ -1,14 +1,19 @@
 // External dependencies
 import React, { memo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import {
+  GridWrapper,
+  GridItem,
+  FlexWrapper,
+  Box,
+  Image,
+} from '@thepuzzlers/pieces';
 
-// Pieces imports
-import { GridWrapper, GridItem, FlexWrapper, Box, Image } from 'pieces';
+// Local imports
 import {
   SimpleNavigationIcon,
   SimpleNavigationLogo,
 } from 'pieces/navigation/simple';
-// Local imports
 import { DesktopNavigationLinks } from './DesktopNavigationLinks';
 
 export const NavigationHeader = memo(() => {
@@ -54,6 +59,7 @@ export const NavigationHeader = memo(() => {
                 sx={{
                   height: ['20px', '20px', '20px', '20px', '25px'],
                   alignSelf: 'center',
+                  width: 'auto',
                 }}
                 src={logo.publicURL}
                 {...props}

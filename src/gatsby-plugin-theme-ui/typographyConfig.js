@@ -1,4 +1,4 @@
-export const typographySetup = {
+export const typographyConfig = {
   h1: {
     factor: 2.5,
     fontSizes: [55.2, 45.6, 63.2, 63.2, 76],

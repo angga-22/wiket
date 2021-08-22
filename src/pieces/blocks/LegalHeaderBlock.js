@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
-import { Paragraph, Heading } from 'pieces';
+import { Paragraph, Heading } from '@thepuzzlers/pieces';
+// Local imports
 import { LegalPageGridItem } from './LegalPageGridItem';
 
 export const LegalHeaderBlock = ({ headline, introText, sx }) => (

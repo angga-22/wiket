@@ -2,8 +2,8 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-// pieces imports
-import { Box } from 'pieces';
+import { Box } from '@thepuzzlers/pieces';
+// Lcoal imports
 import { SimpleNavigationContextProvider } from './SimpleNavigationContext';
 import { SimpleNavigationOverlay } from './SimpleNavigationOverlay';
 import { animations as defaultAnimations } from './animations';

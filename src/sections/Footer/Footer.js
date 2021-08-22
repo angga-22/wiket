@@ -3,7 +3,8 @@ import React, { memo } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 // Pieces components
 // import { usePageContext } from 'pieces/utils/context';
-import { Section, NavigationLink, GridItem, FlexWrapper } from 'pieces';
+import { Section, GridItem, FlexWrapper } from '@thepuzzlers/pieces';
+import { NavigationLink } from 'pieces';
 
 // Local Component import
 import { ThePuzzlersLink } from './ThePuzzlesLink';

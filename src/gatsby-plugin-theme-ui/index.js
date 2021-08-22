@@ -1,6 +1,9 @@
 // pieces import
 import { merge } from 'theme-ui';
-import { breakpoints, typography, grids, lineHeights } from 'pieces/theme';
+import {
+  theme as defaultTheme,
+  getFluidTypographyStyles,
+} from '@thepuzzlers/pieces';
 // client imports
 import { fontFamilies } from './fontFamilies';
 import { blocks } from './blocks';
@@ -11,9 +14,12 @@ import { styles } from './styles';
 import { forms } from './forms';
 import { tabs } from './tabs';
 import { layouts } from './layouts';
-import { measure } from './measure';
 import { space } from './space';
+import { typographyConfig, lineHeights } from './typographyConfig';
 
+const { breakpoints, grids, measure } = defaultTheme;
+
+const typography = getFluidTypographyStyles({ typographyConfig, fontFamilies });
 const customTypography = merge(typography, {
   // h1: {
   //   bold: {
@@ -33,10 +39,11 @@ export default {
   // pieces imports
   // ////
   breakpoints,
+  grids,
+  measure,
   fonts: fontFamilies,
   typography: customTypography,
   lineHeights,
-  grids,
   forms,
   tabs,
   animations,
@@ -46,7 +53,6 @@ export default {
   blocks,
   colors,
   ...elements,
-  measure,
   styles: {
     root: {
       fontFamily: 'body.normal',

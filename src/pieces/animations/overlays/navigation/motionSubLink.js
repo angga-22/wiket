@@ -2,8 +2,8 @@
 // External imports
 import React from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
-import { GridItem } from 'pieces';
+import { GridItem } from '@thepuzzlers/pieces';
+// Local imports
 import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
 
 export const MotionSubLink = ({ link, children }) => {

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-// Pieces Imports
+import { FlexWrapper, Paragraph, Image } from '@thepuzzlers/pieces';
+
+// Local Imports
 import { usePageContext } from 'pieces/utils/context';
-import { FlexWrapper, Paragraph, Image } from 'pieces';
 
 export const ThePuzzlersLink = () => {
   const { locale } = usePageContext();

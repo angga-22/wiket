@@ -1,7 +1,7 @@
 import React, { useRef, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useAnimation, useMotionValue } from 'framer-motion';
-import { FlexWrapper, GridItem, Box } from 'pieces';
+import { FlexWrapper, GridItem, Box } from '@thepuzzlers/pieces';
 
 // Helper functions
 const snapItemsLeft = (

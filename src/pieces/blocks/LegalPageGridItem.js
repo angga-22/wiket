@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Pieces imports
-import { GridItem } from 'pieces';
+import { GridItem } from '@thepuzzlers/pieces';
 
 export const LegalPageGridItem = ({ sx, children }) => (
   <GridItem
