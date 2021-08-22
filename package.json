@@ -1,8 +1,8 @@
 {
-  "name": "thepuzzlers-starter-default",
+  "name": "thepuzzlers-starter",
   "private": true,
-  "description": "Client Gatsby Boilerplate to get started quickly.",
-  "version": "0.1.0",
+  "description": "Gatsby Boilerplate to kickstart a The Puzzlers Website.",
+  "version": "0.2.0",
   "author": "The Puzzlers hi@thepuzzlers.io",
   "dependencies": {
     "@emotion/react": "^11.4.1",
