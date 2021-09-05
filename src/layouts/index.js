@@ -7,7 +7,7 @@ import { Box } from '@thepuzzlers/pieces';
 // local components
 import { PageContextProvider } from 'pieces/utils/context';
 // client imports
-import 'gatsby-plugin-theme-ui/fontImports';
+import 'gatsby-plugin-theme-ui/fonts/fontImports';
 import { Navigation } from 'sections/Navigation';
 import { Footer } from 'sections/Footer';
 

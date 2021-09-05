@@ -1,11 +1,10 @@
-// pieces import
-import { merge } from 'theme-ui';
 import {
-  theme as defaultTheme,
+  theme as initialTheme,
   getFluidTypographyStyles,
 } from '@thepuzzlers/pieces';
+import { merge } from 'theme-ui';
 // client imports
-import { fontFamilies } from './fontFamilies';
+import { fontFamilies } from './fonts/fontFamilies';
 import { blocks } from './blocks';
 import { colors } from './colors';
 import { elements } from './elements';
@@ -16,8 +15,6 @@ import { tabs } from './tabs';
 import { layouts } from './layouts';
 import { space } from './space';
 import { typographyConfig, lineHeights } from './typographyConfig';
-
-const { breakpoints, grids, measure } = defaultTheme;
 
 const typography = getFluidTypographyStyles({ typographyConfig, fontFamilies });
 const customTypography = merge(typography, {
@@ -34,15 +31,14 @@ const customTypography = merge(typography, {
   // }
 });
 
-export default {
-  // ////
-  // pieces imports
-  // ////
-  breakpoints,
-  grids,
-  measure,
-  fonts: fontFamilies,
+const theme = {
+  // pieces styles
+  breakpoints: initialTheme.breakpoints,
+  measure: initialTheme.measure,
+  grids: initialTheme.grids,
+  // local styles
   typography: customTypography,
+  fonts: fontFamilies,
   lineHeights,
   forms,
   tabs,
@@ -61,3 +57,5 @@ export default {
     },
   },
 };
+
+export default theme;
