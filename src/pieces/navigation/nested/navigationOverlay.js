@@ -2,15 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // data imports
-import navigationData from 'data/nav';
+import navigationData from 'data/nav.json';
 // pieces imports
-// eslint-disable-next-line max-len
-import { MotionOverlayContainer } from '../../animations/overlays/navigation/motionOverlayContainer';
-import { MotionSubLink } from '../../animations/overlays/navigation/motionSubLink';
-import { MotionLink } from '../../animations/overlays/navigation/motionLink';
-import { MotionLinkContainer } from '../../animations/overlays/navigation/motionLinkContainer';
-import { MotionSubLinkContainer } from '../../animations/overlays/navigation/motionSubLinkContainer';
-import { Heading } from '../../components/Heading';
+import { Heading } from '@thepuzzlers/pieces';
+import { MotionOverlayContainer } from './motionHelpers/motionOverlayContainer';
+import { MotionSubLink } from './motionHelpers/motionSubLink';
+import { MotionLink } from './motionHelpers/motionLink';
+import { MotionLinkContainer } from './motionHelpers/motionLinkContainer';
+import { MotionSubLinkContainer } from './motionHelpers/motionSubLinkContainer';
 
 export const NavigationOverlay = ({ NavigationLink, BackButton }) => (
   <MotionOverlayContainer>

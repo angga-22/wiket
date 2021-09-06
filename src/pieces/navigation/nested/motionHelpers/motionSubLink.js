@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GridItem } from '@thepuzzlers/pieces';
 // Local imports
-import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
+import { useNavigationContext } from '../navigationContext';
 
 export const MotionSubLink = ({ link, children }) => {
   const { variants, openSubNavigation } = useNavigationContext();

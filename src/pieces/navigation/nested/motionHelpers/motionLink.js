@@ -7,7 +7,7 @@ import { GridItem } from '@thepuzzlers/pieces';
 // Local imports
 import { lockOrReleaseBody } from 'pieces/utils/functions';
 import { usePageContext } from 'pieces/utils/context';
-import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
+import { useNavigationContext } from '../navigationContext';
 
 export const MotionLink = ({ children, href }) => {
   const { body, currentScroll } = usePageContext();

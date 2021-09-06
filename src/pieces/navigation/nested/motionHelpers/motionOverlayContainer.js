@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { GridWrapper } from '@thepuzzlers/pieces';
 
 // Local imports
-import { useNavigationContext } from 'pieces/navigation/nested/navigationContext';
+import { useNavigationContext } from '../navigationContext';
 
 export const MotionOverlayContainer = ({ children }) => {
   const { overlayControls, variants } = useNavigationContext();
