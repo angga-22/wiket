@@ -1,5 +1,5 @@
 const path = require('path');
-const { createRemoteFileNode } = require('gatsby-source-filesystem');
+// const { createRemoteFileNode } = require('gatsby-source-filesystem');
 const {
   siteMetadata: { locales },
 } = require('./gatsby-config');
@@ -45,32 +45,32 @@ exports.onCreatePage = ({ page, actions }) => {
   });
 };
 
-// Convert Asset types from external api into Gatsby Images
-exports.createResolvers = async ({
-  actions,
-  cache,
-  createNodeId,
-  createResolvers,
-  store,
-  reporter,
-}) => {
-  const { createNode } = actions;
+// // Convert Asset types from external api into Gatsby Images
+// exports.createResolvers = async ({
+//   actions,
+//   cache,
+//   createNodeId,
+//   createResolvers,
+//   store,
+//   reporter,
+// }) => {
+//   const { createNode } = actions;
 
-  await createResolvers({
-    PUZZLERS_Asset: {
-      gatsbyImage: {
-        type: 'File',
-        async resolve(source) {
-          return createRemoteFileNode({
-            url: encodeURI(`https://api.thepuzzlers.io${source.url}`),
-            store,
-            cache,
-            createNode,
-            createNodeId,
-            reporter,
-          });
-        },
-      },
-    },
-  });
-};
+//   await createResolvers({
+//     PUZZLERS_Asset: {
+//       gatsbyImage: {
+//         type: 'File',
+//         async resolve(source) {
+//           return createRemoteFileNode({
+//             url: encodeURI(`https://api.thepuzzlers.io${source.url}`),
+//             store,
+//             cache,
+//             createNode,
+//             createNodeId,
+//             reporter,
+//           });
+//         },
+//       },
+//     },
+//   });
+// };
