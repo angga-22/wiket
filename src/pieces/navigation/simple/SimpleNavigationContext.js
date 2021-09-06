@@ -47,14 +47,14 @@ export const SimpleNavigationContextProvider = ({
     openIconControls.start({ display: 'flex' });
     closeIconControls.start({ display: 'none' });
     // update isOpen
-    isOpen.set(!isOpen.get());
+    isOpen.set(false);
   };
   const openNavigation = async () => {
     // Switch icon
     openIconControls.start({ display: 'none' });
     closeIconControls.start({ display: 'flex' });
     // update isOpen
-    isOpen.set(!isOpen.get());
+    isOpen.set(true);
     // Open overlay
     await controlOverlay.open();
   };
