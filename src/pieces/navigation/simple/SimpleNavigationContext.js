@@ -79,12 +79,12 @@ export const SimpleNavigationContextProvider = ({
 SimpleNavigationContextProvider.propTypes = {
   children: PropTypes.node.isRequired,
   animations: PropTypes.shape({
-    navigation: {
-      overlay: PropTypes.any.isRequired,
+    navigation: PropTypes.shape({
+      overlay: PropTypes.shape().isRequired,
       links: {
-        items: PropTypes.any.isRequired,
+        items: PropTypes.shape().isRequired,
       },
-    },
+    }),
   }),
 };
 

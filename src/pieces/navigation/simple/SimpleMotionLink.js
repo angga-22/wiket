@@ -33,7 +33,7 @@ export const SimpleMotionLink = ({ children, sx }) => {
 };
 
 SimpleMotionLink.propTypes = {
-  sx: PropTypes.shape,
+  sx: PropTypes.shape(),
   children: PropTypes.node.isRequired,
 };
 

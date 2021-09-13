@@ -48,14 +48,11 @@ export const GatsbyLink = forwardRef(
 );
 
 GatsbyLink.propTypes = {
-  active: PropTypes.boolean,
+  active: PropTypes.bool,
   to: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   variant: PropTypes.string,
-  sx: PropTypes.shape({
-    padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    p: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  }),
+  sx: PropTypes.shape(),
 };
 
 GatsbyLink.defaultProps = {
