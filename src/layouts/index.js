@@ -31,6 +31,11 @@ const Layout = ({ children, pageContext: { locale } }) => (
           textDecoration: 'inherit',
           color: 'inherit',
         },
+        '*': {
+          '-webkit-font-smoothing': 'antialiased',
+          textRendering: 'optimizeLegibility',
+          '-moz-osx-font-smoothing': 'grayscale',
+        },
       }}
     />
     <Navigation locale={locale} />
