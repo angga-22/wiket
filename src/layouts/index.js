@@ -32,9 +32,9 @@ const Layout = ({ children, pageContext: { locale } }) => (
           color: 'inherit',
         },
         '*': {
-          '-webkit-font-smoothing': 'antialiased',
+          WebkitFontSmoothing: 'antialiased',
           textRendering: 'optimizeLegibility',
-          '-moz-osx-font-smoothing': 'grayscale',
+          MozOsxFontSmoothing: 'grayscale',
         },
       }}
     />
