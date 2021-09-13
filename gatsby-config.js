@@ -57,9 +57,10 @@ module.exports = {
     },
     // enables to query json files
     'gatsby-transformer-json',
-    // necessary to load images using gatsby-image
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    // necessary to load images using gatsby-plugin-image
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: 'gatsby-plugin-layout',
       options: {

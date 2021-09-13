@@ -1,21 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { GatsbyImage as BaseGatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import { Box } from '@thepuzzlers/pieces';
 
-export const GatsbyImage = ({ sx, image, ...props }) => (
+export const GatsbyImage = ({ sx, image, alt, ...props }) => (
   <Box sx={sx} {...props}>
-    <Img
-      alt={image.alt}
-      loading='eager'
+    <BaseGatsbyImage
+      image={getImage(image)}
+      alt={alt}
       style={{
         height: '100%',
         width: '100%',
         alignSelf: 'center',
         borderRadius: 'inherit',
       }}
-      fluid={image.gatsbyImage.childImageSharp.fluid}
       imgStyle={{
         width: '100%',
         height: '100%',
@@ -28,17 +27,16 @@ export const GatsbyImage = ({ sx, image, ...props }) => (
 );
 
 GatsbyImage.propTypes = {
-  sx: PropTypes.shape,
+  sx: PropTypes.shape(),
+  alt: PropTypes.string,
   image: PropTypes.shape({
-    alt: PropTypes.string,
-    gatsbyImage: {
-      childImageSharp: {
-        fluid: PropTypes.any.isRequired,
-      },
+    childImageSharp: {
+      gatsbyImageData: PropTypes.shape().isRequired,
     },
   }).isRequired,
 };
 
 GatsbyImage.defaultProps = {
+  alt: '',
   sx: {},
 };
