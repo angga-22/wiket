@@ -55,6 +55,14 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
+    // local data
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        // name: `data`,
+        path: `${__dirname}/src/assets/`,
+      },
+    },
     // enables to query json files
     'gatsby-transformer-json',
     // necessary to load images using gatsby-plugin-image
