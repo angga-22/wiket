@@ -5,15 +5,11 @@ import {
 import { merge } from 'theme-ui';
 // client imports
 import { fontFamilies } from './fonts/fontFamilies';
-import { blocks } from './blocks';
 import { colors } from './colors';
 import { elements } from './elements';
 import { animations } from './animations';
 import { styles } from './styles';
 import { forms } from './forms';
-import { tabs } from './tabs';
-import { layouts } from './layouts';
-import { space } from './space';
 import { typographyConfig, lineHeights } from './typographyConfig';
 
 const typography = getFluidTypographyStyles({ typographyConfig, fontFamilies });
@@ -41,12 +37,8 @@ const theme = {
   fonts: fontFamilies,
   lineHeights,
   forms,
-  tabs,
   animations,
   ...styles,
-  layouts,
-  space,
-  blocks,
   colors,
   ...elements,
   styles: {
