@@ -15,24 +15,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
 
-  // loop through all locale of page and check, if pathPrefix is given
-  // if yes, pass carresponding locale to pageContext
-  if (locales.translations?.length > 0) {
-    // eslint-disable-next-line consistent-return
-    locales.translations.forEach(({ code, pathPrefix }) => {
-      if (page.path.match(new RegExp(`/${pathPrefix}/.+|/${pathPrefix}/`))) {
-        deletePage(page);
-        // You can access the variable "house" in your page queries now
-        return createPage({
-          ...page,
-          context: {
-            ...page.context,
-            locale: code,
-          },
-        });
-      }
-    });
-  }
   // default to default locale defined in gatsby-config.js
   deletePage(page);
   // You can access the variable "locale" in your page queries now
