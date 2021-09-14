@@ -1,40 +1,86 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import { Card, Button } from '@thepuzzlers/pieces';
-// Local imports
-import { SEO, NavigationLink, GatsbyImage } from 'pieces';
-import { TypographyTestBlock } from 'pieces/blocks';
-// sections
-import { Header } from 'sections/landingPage';
 import { graphql } from 'gatsby';
+import { Header } from 'sections/landingPage';
+import potject from 'assets/jpg/header-sub-img-1.jpg';
+import greenThumb from 'assets/jpg/header-sub-img-2.jpg';
+import greenCafe from 'assets/jpg/header-sub-img-3.jpg';
+import communicateImg from 'assets/svg/icon-communication.svg';
+import growImg from 'assets/svg/icon-growth.svg';
+import connectImg from 'assets/svg/icon-collaborate.svg';
+import marketImg from 'assets/svg/icon-market.svg';
+import { Benefit } from 'sections/landingPage/benefits';
+import FeaturePrice from 'sections/landingPage/featuresPrice';
+import Footer from 'sections/landingPage/footer';
+
+const headerData = {
+  firstCard: {
+    id: 1,
+    label: 'Potject',
+    location: 'Poetry in Bangkok',
+    img: `${potject}`,
+  },
+  secondCard: {
+    id: 2,
+    label: 'GreenThumb',
+    location: 'Gardener in CheChe',
+    img: `${greenThumb}`,
+  },
+  thirdCard: {
+    id: 3,
+    label: 'Green Cafe',
+    location: 'Cafe in Bangkok',
+    img: `${greenCafe}`,
+  },
+};
+
+const benefitData = {
+  firstBenefit: {
+    id: 1,
+    label: 'Communicate',
+    description:
+      'Build your reputation and relationship to drive innovation and productivity.',
+    img: `${communicateImg}`,
+  },
+  secondBenefit: {
+    id: 2,
+    label: 'Grow',
+    description:
+      'Build your reputation and relationship to drive innovation and productivity.',
+    img: `${growImg}`,
+  },
+  thirdBenefit: {
+    id: 3,
+    label: 'Connect',
+    description:
+      'Build your reputation and relationship to drive innovation and productivity.',
+    img: `${connectImg}`,
+  },
+  fourthBenefit: {
+    id: 4,
+    label: 'market',
+    description:
+      'Build your reputation and relationship to drive innovation and productivity.',
+    img: `${marketImg}`,
+  },
+};
 
 const IndexPage = ({ data }) => (
-  <>
-    <SEO title='Home' />
-    <Header />
-    {/* Delete This After Typography is setup */}
-    <TypographyTestBlock text='' paragraph=''>
-      {/* Client Components */}
-      <GatsbyImage
-        sx={{ width: '100px', height: '100px' }}
-        image={data.landingPageJson.image}
-      />
-      <Button variant='primary'>Primary Button</Button>
-      <NavigationLink to='/legal'>
-        <Button variant='secondary'>Secondary Button to Legal Page</Button>
-      </NavigationLink>
-      <Card>Hi, I am a card</Card>
-    </TypographyTestBlock>
-  </>
+  <div>
+    <Header cardData={headerData} />
+    <Benefit benefitData={benefitData} />
+    <FeaturePrice featuresData={data.features.nodes} />
+    <Footer />
+  </div>
 );
-
 export const query = graphql`
-  query {
-    landingPageJson {
-      headline
-      image {
-        childImageSharp {
-          gatsbyImageData(layout: FIXED)
+  query getFeaturesPricingData {
+    features: allPricingFeaturesJson {
+      nodes {
+        title
+        features {
+          isBlossom
+          isGrowth
+          title
         }
       }
     }

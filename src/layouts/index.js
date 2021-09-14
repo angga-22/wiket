@@ -3,13 +3,16 @@ import React from 'react';
 import { Global } from '@emotion/react';
 import PropTypes from 'prop-types';
 import 'reset-css';
-import { Box } from '@thepuzzlers/pieces';
-// local components
+// import { gsap } from 'gsap';
+// pieces components
 import { PageContextProvider } from 'pieces/utils/context';
+import { Box } from '@thepuzzlers/pieces';
 // client imports
-import 'gatsby-plugin-theme-ui/fonts/fontImports';
-import { Navigation } from 'sections/Navigation';
-import { Footer } from 'sections/Footer';
+// import 'gatsby-plugin-theme-ui/fontImports';
+import { Nav } from 'components/nav-menu';
+
+// if (typeof window !== `undefined`) {
+// }
 
 // Font Awesome
 // import { library } from '@fortawesome/fontawesome-svg-core';
@@ -24,8 +27,9 @@ const Layout = ({ children, pageContext: { locale } }) => (
         body: {
           WebkitTextSizeAdjust: '100%',
           width: '100%',
-          height: '100%',
           position: 'relative',
+          backgroundColor: '#FFF8EF',
+          overflow: 'visible',
         },
         '*|*:link': {
           textDecoration: 'inherit',
@@ -38,15 +42,19 @@ const Layout = ({ children, pageContext: { locale } }) => (
         },
       }}
     />
-    <Navigation locale={locale} />
+    {/* <Navigation locale={locale} /> */}
+    {/* {GSDevTools.create()} */}
     <Box
       as='main'
       // Padding reflects the height of the NavBar
-      sx={{ paddingTop: ['60px', '60px', '60px', '60px', '70px'] }}
+      sx={{
+        positin: 'relative',
+      }}
     >
+      <Nav />
       {children}
     </Box>
-    <Footer />
+    {/* <Footer /> */}
   </PageContextProvider>
 );
 

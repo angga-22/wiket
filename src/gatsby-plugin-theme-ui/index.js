@@ -10,9 +10,9 @@ import { elements } from './elements';
 import { animations } from './animations';
 import { styles } from './styles';
 import { forms } from './forms';
-import { typographyConfig, lineHeights } from './typographyConfig';
+import { typographySetup, lineHeights } from './typographyConfig';
 
-const typography = getFluidTypographyStyles({ typographyConfig, fontFamilies });
+const typography = getFluidTypographyStyles({ typographySetup, fontFamilies });
 const customTypography = merge(typography, {
   // h1: {
   //   bold: {

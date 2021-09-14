@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Your profile page",
+    "features": [
+      {
+        "title": "Beautifl profile page",
+        "isBlossom": true,
+        "isGrowth": true
+      },
+      {
+        "title": "Business information",
+        "isBlossom": true,
+        "isGrowth": true
+      },
+      {
+        "title": "Contact details",
+        "isBlossom": false,
+        "isGrowth": true
+      },
+      {
+        "title": "Images",
+        "isBlossom": true,
+        "isGrowth": true
+      }
+    ]
+  },
+  {
+    "title": "Visibility and connections",
+    "features": [
+      {
+        "title": "Access to closed B2B network",
+        "isBlossom": true,
+        "isGrowth": true
+      },
+      {
+        "title": "Access to public B2C network",
+        "isBlossom": true,
+        "isGrowth": true
+      },
+      {
+        "title": "Connect with other business",
+        "isBlossom": false,
+        "isGrowth": true
+      },
+      {
+        "title": "Conect with end-customers",
+        "isBlossom": false,
+        "isGrowth": true
+      }
+    ]
+  },
+  {
+    "title": "Products",
+    "features": [
+      {
+        "title": "Product listing without images",
+        "isBlossom": true,
+        "isGrowth": true
+      },
+      {
+        "title": "Product listing with images",
+        "isBlossom": true,
+        "isGrowth": true
+      },
+      {
+        "title": "Detailed product pages",
+        "isBlossom": false,
+        "isGrowth": true
+      },
+      {
+        "title": "Showcase pricing for B2B customer",
+        "isBlossom": false,
+        "isGrowth": true
+      },
+      {
+        "title": "Showcase pricing for B2C customer",
+        "isBlossom": false,
+        "isGrowth": true
+      }
+    ]
+  }
+]

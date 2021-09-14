@@ -1,21 +1,23 @@
 [
   {
-    "nav": {
-      "links": [
-        {
-          "title": "Home",
-          "to": "/"
-        },
-        {
-          "title": "Legal Page",
-          "to": "/legal"
-        },
-        {
-          "title": "Header Section",
-          "to": "/#header"
-        }
-      ]
-    },
+    "nav": [
+      {
+        "title": "Benefits",
+        "to": "/#benefit-section"
+      },
+      {
+        "title": "Your Profile",
+        "to": "/#profile"
+      },
+      {
+        "title": "Connections",
+        "to": "/#connections"
+      },
+      {
+        "title": "Plans & Pricing",
+        "to": "/#feature-price-section"
+      }
+    ],
     "footer": {
       "links": [
         {

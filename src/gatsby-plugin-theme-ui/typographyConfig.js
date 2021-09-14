@@ -1,13 +1,13 @@
-export const typographyConfig = {
+export const typographySetup = {
   h1: {
     factor: 2.5,
-    fontSizes: [55.2, 45.6, 63.2, 63.2, 76],
+    fontSizes: [50, 65, 84, 51, 72, 94],
     fontFamily: 'primary',
-    lineHeight: 'heading.design',
+    lineHeight: 1,
   },
   h2: {
     factor: 2.5,
-    fontSizes: [40.8, 31.2, 44, 44, 52],
+    fontSizes: [27.5, 31, 41, 36, 41, 54],
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
@@ -17,23 +17,24 @@ export const typographyConfig = {
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
+
   h4: {
     factor: 2.5,
-    fontSizes: [26.4, 24, 31.2, 31.2, 36],
+    fontSizes: [19.5, 24.5, 25.5, 18, 26.5, 28.5],
     fontFamily: 'primary',
-    lineHeight: 'heading.design',
+    lineHeight: 1.25,
   },
   h5: {
     factor: 2.5,
-    fontSizes: [24, 21.6, 28, 28, 30],
+    fontSizes: [19, 22, 24, 20.7, 23.3, 24],
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
   h6: {
     factor: 2.5,
-    fontSizes: [21.6, 19.2, 24.8, 24.8, 24],
-    fontFamily: 'primary',
-    lineHeight: 'heading.safe',
+    fontSizes: [16, 16, 19, 14.5, 16, 16],
+    fontFamily: 'body',
+    lineHeight: 1.1,
     letterSpacing: '0.5px',
   },
   navigationLink: {
@@ -68,27 +69,218 @@ export const typographyConfig = {
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
+  lead: {
+    factor: 2.5,
+    fontSizes: [19, 16, 20, 15, 17, 20],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
   paragraph: {
     factor: 2.5,
-    fontSizes: [15, 12, 15, 15, 15],
+    fontSizes: [19, 18, 20, 16, 15, 17],
     fontFamily: 'body',
-    lineHeight: 'body.safe',
+    lineHeight: 1.5,
+  },
+  paragraphSecondary: {
+    factor: 2.5,
+    fontSizes: [16.8, 17.7, 18, 14.5, 16, 18],
+    fontFamily: 'body',
+    lineHeight: 1.5,
   },
   smallParagraph: {
     factor: 2.5,
-    fontSizes: [14, 11, 14, 14, 13],
+    fontSizes: [15, 12, 14, 11.5, 11.5, 13],
     fontFamily: 'body',
-    lineHeight: 'body.safe',
+    lineHeight: 1.5,
+  },
+  benefitParagraph: {
+    factor: 2.5,
+    fontSizes: [17, 19, 19, 16, 16, 18],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
+  featureSubline: {
+    factor: 2.5,
+    fontSizes: [18, 19, 20, 16, 18, 20],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
+  featureList: {
+    factor: 2.5,
+    fontSizes: [16, 16, 16, 16, 19.6, 20],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
+  cardHeader: {
+    factor: 2.5,
+    fontSizes: [25, 28, 28, 24, 30, 22],
+    fontFamily: 'primary',
+    lineHeight: 1.5,
+  },
+  cardHeaderSmall: {
+    factor: 2.5,
+    fontSizes: [16, 17, 17, 16, 16, 16],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
+  cardParagraph: {
+    factor: 2.5,
+    fontSizes: [17, 17, 19, 16, 16, 16],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
+  footerParagraph: {
+    factor: 2.5,
+    fontSizes: [20, 28, 28, 24, 30, 22],
+    fontFamily: 'body',
+    lineHeight: 1.5,
   },
 };
 
 export const lineHeights = {
   heading: {
     safe: 1,
-    design: 0.85,
+    design: 1.25,
   },
   body: {
     safe: 1.75,
     design: 1.5,
+  },
+};
+
+export const textDefaultSpans = {
+  p: {
+    primary: [
+      {
+        wide: 'span 12',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 12',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 16',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 16',
+        base: 'span 10',
+        narrow: 'span 12',
+      },
+      {
+        wide: 'span 13',
+        base: 'span 11',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 11',
+        base: 'span 9',
+        narrow: 'span 7',
+      },
+    ],
+    secondary: [
+      {
+        wide: 'span 12',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 12',
+        base: 'span 9',
+        narrow: 'span 7',
+      },
+      {
+        wide: 'span 14',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 15',
+        base: 'span 12',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 12',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 12',
+        base: 'span 7',
+        narrow: 'span 5',
+      },
+    ],
+  },
+  h3: {
+    primary: [
+      {
+        wide: 'span 12',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 12',
+        base: 'span 11',
+        narrow: 'span 6',
+      },
+      {
+        wide: 'span 20',
+        base: 'span 18',
+        narrow: 'span 16',
+      },
+      {
+        wide: 'span 18',
+        base: 'span 12',
+        narrow: 'span 10',
+      },
+      {
+        wide: 'span 16',
+        base: 'span 10',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 14',
+        base: 'span 11',
+        narrow: 'span 10',
+      },
+    ],
+  },
+  h4: {
+    secondary: [
+      {
+        wide: 'span 12',
+        base: 'span 11',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 10',
+        base: 'span 8',
+        narrow: 'span 6',
+      },
+      {
+        wide: 'span 17',
+        base: 'span 11',
+        narrow: 'span 10',
+      },
+      {
+        wide: 'span 18',
+        base: 'span 11',
+        narrow: 'span 8',
+      },
+      {
+        wide: 'span 12',
+        base: 'span 8',
+        narrow: 'span 7',
+      },
+      {
+        wide: 'span 10',
+        base: 'span 8',
+        narrow: 'span 6',
+      },
+    ],
   },
 };
