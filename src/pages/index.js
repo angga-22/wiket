@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Header } from 'sections/landingPage';
+import { HeaderJeremy } from 'sections/landingPage/header-jeremy/Header';
+import { Values } from 'sections/landingPage/values/Values';
 import potject from 'assets/jpg/header-sub-img-1.jpg';
 import greenThumb from 'assets/jpg/header-sub-img-2.jpg';
 import greenCafe from 'assets/jpg/header-sub-img-3.jpg';
@@ -66,8 +68,10 @@ const benefitData = {
 
 const IndexPage = ({ data }) => (
   <div>
+    <HeaderJeremy />
     <Header cardData={headerData} />
     <Benefit benefitData={benefitData} />
+    <Values />
     <FeaturePrice featuresData={data.features.nodes} />
     <Footer />
   </div>

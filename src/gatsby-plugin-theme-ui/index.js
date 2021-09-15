@@ -12,7 +12,10 @@ import { styles } from './styles';
 import { forms } from './forms';
 import { typographyConfig, lineHeights } from './typographyConfig';
 
-const typography = getFluidTypographyStyles({ typographyConfig, fontFamilies });
+const typography = getFluidTypographyStyles({
+  typographyConfig,
+  fontFamilies,
+});
 const customTypography = merge(typography, {
   // h1: {
   //   bold: {
