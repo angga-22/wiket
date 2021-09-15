@@ -119,7 +119,7 @@ const FooterNav = () => (
       ],
     }}
   >
-    <Text
+    <Paragraph
       type='smallParagraph'
       variant='lighter'
       sx={{
@@ -127,8 +127,8 @@ const FooterNav = () => (
       }}
     >
       Legal Notes
-    </Text>
-    <Text
+    </Paragraph>
+    <Paragraph
       type='smallParagraph'
       variant='lighter'
       sx={{
@@ -136,6 +136,6 @@ const FooterNav = () => (
       }}
     >
       Privacy
-    </Text>
+    </Paragraph>
   </GridItem>
 );

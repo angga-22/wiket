@@ -198,7 +198,7 @@ const Info = () => (
     }}
   >
     <Paragraph
-      type='h1'
+      type='paragraph'
       sx={{
         color: 'primary',
       }}
@@ -315,6 +315,7 @@ const FirstCard = ({ children }) => (
       width: [null, null, null, null, '88%', '78%'],
       ml: ['7%', '0', '0', '0', '5%', '0'],
       position: 'relative',
+      borderRadius: '12px',
       zIndex: '1',
       transform: [
         'translateY(-24%)',

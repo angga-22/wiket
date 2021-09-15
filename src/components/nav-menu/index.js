@@ -25,7 +25,7 @@ const Logo = () => (
     sx={{
       gridColumn: ['1 / 5', '1 /4', '1 /  6', '1 /  5', '1 /  4', '1 /  4'],
       alignSelf: 'center',
-      transform: ['translateY(50%)', 'translateY(50%)'],
+      transform: ['translateY(50%)', 'translateY(50%)', 'translateY(50%)'],
     }}
   >
     <Link to='/'>
@@ -91,7 +91,12 @@ const GetStartedButton = () => (
       ],
       alignSelf: 'center',
       display: ['flex'],
-      transform: ['translateY(-90%)', 'translateY(-80%)', 'translateY(-70%)'],
+      transform: [
+        'translateY(-90%)',
+        'translateY(-80%)',
+        'translateY(-70%)',
+        'translateY(0)',
+      ],
     }}
   >
     <Button
@@ -101,8 +106,11 @@ const GetStartedButton = () => (
         borderRadius: '10px',
         height: ['40px', '42px', '42px', '40px', '42px', '42px'],
         backgroundColor: 'buttonBackground',
+        fontSize: '12px',
       }}
-    />
+    >
+      tes
+    </Button>
   </GridItem>
 );
 

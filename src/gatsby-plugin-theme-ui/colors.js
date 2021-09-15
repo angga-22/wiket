@@ -2,9 +2,9 @@
 // No variables - you can't reference the colors by var name (e.g. 'primary') within this file
 
 const base = {
-  lightBackground: '#FFF8F0', // background
+  background: '#FFF8F0', // background
   primary: '#005650', // green
-  secondary: '#FDA700', // yellow
+  secondary: '#FDA700', // orange
   disabled: '#000',
 
   // neutrals
