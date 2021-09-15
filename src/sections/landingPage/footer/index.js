@@ -1,6 +1,6 @@
 // pieces
 /** @jsx jsx */
-import { jsx, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import {
   Section,
   GridItem,
@@ -86,7 +86,7 @@ const FooterParagraph = () => (
   <GridItem
     sx={{
       gridColumn: [
-        '2 / 12',
+        '1 / 13',
         '3 / 11',
         '14 /  25',
         '15 /  25',
@@ -109,10 +109,11 @@ const FooterParagraph = () => (
         color: '#fff',
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
         mb: ['45px', '58px', '0', '0', '0'],
+        fontWeight: 'lighter',
       }}
     >
-      Where like-minded businesses
-      <Text sx={{ color: '#FDA700', fontWeight: 'bold' }}>connect</Text>
+      Where mind-liked businesses
+      <span sx={{ color: '#FDA700', fontWeight: 'bold' }}> connect</span>
     </Paragraph>
   </GridItem>
 );
@@ -133,10 +134,10 @@ const FooterNav = () => (
       transform: [
         'translateY(0%)',
         'translateY(0%)',
-        'translateY(-300%)',
-        'translateY(-300%)',
-        'translateY(-400%)',
-        'translateY(-370%)',
+        'translateY(-350%)',
+        'translateY(-350%)',
+        'translateY(-450%)',
+        'translateY(-500%)',
       ],
     }}
   >

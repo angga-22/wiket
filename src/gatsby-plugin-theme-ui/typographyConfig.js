@@ -95,7 +95,7 @@ export const typographyConfig = {
   },
   paragraph: {
     factor: 2.5,
-    fontSizes: [19, 18, 20, 16, 15, 17],
+    fontSizes: [18.63, 16.87, 16.24, 18.72, 18.45, 19.77],
     fontFamily: 'body',
     lineHeight: 1.5,
     color: 'primary',
@@ -160,7 +160,7 @@ export const typographyConfig = {
   footerParagraph: {
     factor: 2.5,
     fontSizes: [26.08, 24.86, 26.75, 26.21, 31.36, 43.5],
-    fontFamily: 'body',
+    fontFamily: 'primary',
     lineHeight: 1.5,
   },
 };

@@ -75,7 +75,7 @@ const NavigationLinks = () => {
         <NavigationLink
           variant='bold'
           type='paragraph'
-          sx={{ color: 'primary' }}
+          sx={{ color: 'primary', fontWeight: 'bold' }}
           to={el.to}
         >
           {el.title}

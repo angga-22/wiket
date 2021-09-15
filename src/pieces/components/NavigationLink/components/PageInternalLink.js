@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
-import { navigate } from 'gatsby';
+// import { navigate } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Link } from '@thepuzzlers/pieces';
 
@@ -23,33 +23,33 @@ export const PageInternalLink = ({ to, children, sx = {}, variant }) => {
     setClient(true);
   }, []);
 
-  function scrollToHash(e) {
-    e.preventDefault();
+  // function scrollToHash(e) {
+  //   e.preventDefault();
 
-    // Smooth scroll to hash
-    try {
-      document.querySelector(hash).scrollIntoView({
-        behavior: 'smooth',
-      });
-    } catch (error) {
-      // eslint-ignore no-console
-      console.error(`Error: Queryselector ${hash} not found.`);
-    }
-    // Set hash in url (only if we are not already at this path)
-    // Jumps to secton direclty, that is why we wait to smooth scroll there manually
-    if (!isActive) {
-      setTimeout(() => navigate(hash), 500);
-    }
-  }
+  //   // Smooth scroll to hash
+  //   try {
+  //     document.querySelector(hash).scrollIntoView({
+  //       behavior: 'smooth',
+  //     });
+  //   } catch (error) {
+  //     // eslint-ignore no-console
+  //     // console.error(`Error: Queryselector ${hash} not found.`);
+  //   }
+  //   // Set hash in url (only if we are not already at this path)
+  //   // Jumps to secton direclty, that is why we wait to smooth scroll there manually
+  //   if (!isActive) {
+  //     setTimeout(() => navigate(hash), 500);
+  //   }
+  // }
 
   return (
     <Link
       key={isClient && 'client'}
-      sx={{ ...sx }}
+      sx={{ ...sx, fontWeight: 'bold' }}
       className={isActive && 'active'}
       variant={variant}
       href={hash}
-      onClick={scrollToHash}
+      // onClick={scrollToHash}
     >
       {children}
     </Link>
