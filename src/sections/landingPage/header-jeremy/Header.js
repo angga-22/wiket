@@ -25,29 +25,28 @@ import LinePhoneLandscape from '../../../assets/svg/line-phone-landscape.svg';
 // EXPORT
 export const HeaderJeremy = memo(() => {
   const data = useStaticQuery(graphql`
-    {
-      allImgContainersJson {
-        edges {
-          node {
-            alignSelf
-            alt
-            image {
-              childImageSharp {
-                gatsbyImageData
-              }
+    query getHeaderData {
+      headerDataJson {
+        cards {
+          id
+          title
+          text
+          alt
+          image {
+            childImageSharp {
+              gatsbyImageData
             }
-            gridColumn
-            gridRowStart
-            id
-            text
-            title
           }
+          gridColumn
+          gridRowStart
+          # marginTop
+          # marginLeft
+          # marginRight
+          alignSelf
         }
       }
     }
   `);
-
-  const containerData = data.allImgContainersJson.edges;
 
   return (
     <Section
@@ -59,18 +58,18 @@ export const HeaderJeremy = memo(() => {
         <MainImg />
         <MainImgCaption />
 
-        {containerData.map((container) => (
+        {data.headerDataJson.cards.map((card) => (
           <ImgContainer
-            key={container.node.id}
-            title={container.node.title}
-            text={container.node.text}
-            image={container.node.image}
-            gridRowStart={container.node.gridRowStart}
-            gridColumn={container.node.gridColumn}
-            // marginTop={container.node.marginTop}
-            // marginLeft={container.node.marginLeft}
-            // marginRight={container.node.marginLeft}
-            alignSelf={container.node.alignSelf}
+            key={card.id}
+            title={card.title}
+            text={card.text}
+            image={card.image}
+            gridRowStart={card.gridRowStart}
+            gridColumn={card.gridColumn}
+            // marginTop={card.marginTop}
+            // marginLeft={card.marginLeft}
+            // marginRight={card.marginLeft}
+            alignSelf={card.alignSelf}
           />
         ))}
         <TextParagraph />
