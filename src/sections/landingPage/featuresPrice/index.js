@@ -37,7 +37,7 @@ const Headlines = () => (
     <Heading
       type='h2'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         fontWeight: 'lighter',
         textAlign: 'center',
       }}
@@ -48,11 +48,11 @@ const Headlines = () => (
         variant='bold'
         type='h2'
         sx={{
-          color: 'accentSecondary',
+          color: 'primary',
         }}
       >
         <br />
-        For Free .
+        For Free.
       </Heading>
     </Heading>
   </GridItem>

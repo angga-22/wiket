@@ -37,13 +37,28 @@ export default Footer;
 const Logo = () => (
   <GridItem
     sx={{
-      gridColumn: ['5 / 9', '5 / 9', '1 /  5', '1 /  5', '1 /  4', '1 /  4'],
-      mb: ['24px', '16px'],
+      gridColumn: ['5 / 9', '5 / 9', '1 /  6', '1 /  5', '1 /  5', '1 /  4'],
+      transform: [
+        'translateY(0%)',
+        'translateY(0%)',
+        'translateY(-200%)',
+        'translateY(-250%)',
+        'translateY(-210%)',
+        'translateY(-290%)',
+      ],
     }}
   >
     <picture>
       <source srcSet={logoWiketWhite} />
-      <img src={logoWiketWhite} alt='batik-shape' />
+      <img
+        src={logoWiketWhite}
+        alt='batik-shape'
+        sx={{
+          width: '100%',
+          mt: [null, null, '0', '0'],
+          mb: ['24px', '24px', '0', '0'],
+        }}
+      />
     </picture>
   </GridItem>
 );
@@ -53,7 +68,7 @@ const BackgroundImage = () => (
     variant='fullWidth'
     sx={{
       maxWidth: '100%',
-      mb: ['64px', '50px', '50px', '30px', '36px', '73px'],
+      mb: ['72px', '69px', '48px', '25px', '70px', '70px'],
     }}
   >
     <picture>
@@ -71,35 +86,33 @@ const FooterParagraph = () => (
   <GridItem
     sx={{
       gridColumn: [
-        '1 / 13',
         '2 / 12',
+        '3 / 11',
         '14 /  25',
         '15 /  25',
         '16 /  25',
-        '18 /  25',
+        '16 /  25',
       ],
       transform: [
         'translateY(0%)',
         'translateY(0%)',
-        'translateY(80%)',
-        'translateY(80%)',
-        'translateY(70%)',
-        'translateY(90%)',
+        'translateY(0%)',
+        'translateY(0%)',
+        'translateY(0%)',
+        'translateY(0%)',
       ],
     }}
   >
     <Paragraph
       type='footerParagraph'
-      variant='bold'
       sx={{
         color: '#fff',
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
-        mb: ['70px', '61px', '0', '0', '0'],
+        mb: ['45px', '58px', '0', '0', '0'],
       }}
     >
-      Where
-      <Text sx={{ color: '#FDA700' }}> like-minded </Text>
-      businesses conntect
+      Where like-minded businesses
+      <Text sx={{ color: '#FDA700', fontWeight: 'bold' }}>connect</Text>
     </Paragraph>
   </GridItem>
 );
@@ -116,6 +129,14 @@ const FooterNav = () => (
         'space-between',
         'space-between',
         'space-between',
+      ],
+      transform: [
+        'translateY(0%)',
+        'translateY(0%)',
+        'translateY(-300%)',
+        'translateY(-300%)',
+        'translateY(-400%)',
+        'translateY(-370%)',
       ],
     }}
   >
