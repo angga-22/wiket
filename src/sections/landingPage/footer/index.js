@@ -8,13 +8,14 @@ import {
   srcsetValues,
 } from '@thepuzzlers/pieces';
 // import { srcsetValues } from '@thepuzzlers/pieces';
-import { StaticImage } from 'gatsby-plugin-image';
-import batikFooterPhone from 'assets/svg/footer-phone.svg';
-import batikFooterPhoneXl from 'assets/svg/footer-phoneXl.svg';
-import batikFooterTabletPortrait from 'assets/svg/footer-tabletPortrait.svg';
-import batikFooterPhoneLandscape from 'assets/svg/footer-phoneLandscape.svg';
-import batikFooterTabletLandscape from 'assets/svg/footer-tabletLandscape.svg';
-import batikFooterDesktop from 'assets/svg/footer-desktop.svg';
+// import { StaticImage } from 'gatsby-plugin-image';
+import batikFooterPhone from 'assets/svg/footer-background-phone.svg';
+import batikFooterPhoneXl from 'assets/svg/footer-background-phoneXl.svg';
+import batikFooterTabletPortrait from 'assets/svg/footer-background-tabletPortrait.svg';
+import batikFooterPhoneLandscape from 'assets/svg/footer-background-phoneLandscape.svg';
+import batikFooterTabletLandscape from 'assets/svg/footer-background-tabletLandscape.svg';
+import batikFooterDesktop from 'assets/svg/footer-background-desktop.svg';
+import logoWiketWhite from 'assets/svg/logo-wiket-white.svg';
 
 const Footer = () => (
   <Section
@@ -40,7 +41,10 @@ const Logo = () => (
       mb: ['24px', '16px'],
     }}
   >
-    <StaticImage src='../../../assets/png/logo-wiket.png' />
+    <picture>
+      <source srcSet={logoWiketWhite} />
+      <img src={logoWiketWhite} alt='batik-shape' />
+    </picture>
   </GridItem>
 );
 
@@ -115,7 +119,7 @@ const FooterNav = () => (
       ],
     }}
   >
-    <Text
+    <Paragraph
       type='smallParagraph'
       variant='lighter'
       sx={{
@@ -123,8 +127,8 @@ const FooterNav = () => (
       }}
     >
       Legal Notes
-    </Text>
-    <Text
+    </Paragraph>
+    <Paragraph
       type='smallParagraph'
       variant='lighter'
       sx={{
@@ -132,6 +136,6 @@ const FooterNav = () => (
       }}
     >
       Privacy
-    </Text>
+    </Paragraph>
   </GridItem>
 );

@@ -2,16 +2,19 @@
 // No variables - you can't reference the colors by var name (e.g. 'primary') within this file
 
 const base = {
-  background: '#fff',
-  primary: 'pink',
-  secondary: '#FDA700',
+  background: '#FFF8F0', // background
+  primary: '#005650', // green
+  secondary: '#FDA700', // orange
   disabled: '#000',
 
   // neutrals
-  black: '#000000',
-  dark: '#2D3133',
-  medium: '#D1D4D7',
-  light: '#F2F3F8',
+  dark: '#000',
+  light: '#FCF5DE',
+
+  // accents
+  accentPrimary: '#FFA722',
+  accentSecondary: '#004E4C',
+  buttonBackground: '#FDA700',
 };
 
 const textColors = {

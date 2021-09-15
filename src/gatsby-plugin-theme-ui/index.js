@@ -10,10 +10,10 @@ import { elements } from './elements';
 import { animations } from './animations';
 import { styles } from './styles';
 import { forms } from './forms';
-import { typographySetup, lineHeights } from './typographyConfig';
+import { typographyConfig, lineHeights } from './typographyConfig';
 
 const typography = getFluidTypographyStyles({
-  typographyConfig: typographySetup,
+  typographyConfig,
   fontFamilies,
 });
 const customTypography = merge(typography, {

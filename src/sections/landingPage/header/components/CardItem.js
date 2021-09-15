@@ -9,7 +9,7 @@ const CardItem = ({ label, location, image }) => (
       borderRadius: '12px',
       boxShadow: '0px 18px 24px rgba(0, 0, 0, 0.1)',
       p: '12px',
-      backgroundColor: 'lightBackground',
+      backgroundColor: 'background',
     }}
   >
     <img

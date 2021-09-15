@@ -28,10 +28,9 @@ const Card = ({ image, label, description }) => (
         <span sx={{ color: 'orange' }}>.</span>
       </Heading>
       <Paragraph
-        type='benefitParagraph'
+        type='paragraph'
         sx={{
           color: 'accentSecondary',
-
           mt: '10px',
         }}
       >

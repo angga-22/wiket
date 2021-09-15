@@ -11,12 +11,14 @@ import {
   srcsetValues,
 } from '@thepuzzlers/pieces';
 import { StaticImage } from 'gatsby-plugin-image';
-import { jsx, Text } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import dotArrowDesktop from 'assets/svg/line-desktop.svg';
 import dotArrowTabletLandscape from 'assets/svg/line-tablet-landscape.svg';
 import dotArrowPhoneLandscape from 'assets/svg/line-phone-landscape.svg';
 import dotArrowTabletPortrait from 'assets/svg/line-tablet-portrait.svg';
 import dotArrowDefault from 'assets/svg/line-phone.svg';
+import floatingCircle from 'assets/svg/floating-circle2.svg';
+import floatingMarker from 'assets/svg/floating-marker.svg';
 import CardItem from './components/CardItem';
 
 // EXPORT
@@ -184,7 +186,7 @@ const Info = () => (
       gridRow: [2, 2, 2, 5, 2, 3],
       alignSelf: [null, null, null, 'start', 'end', 'center'],
       mt: ['24px', '40px', '24px', '0', '0', '0'],
-      ml: [null, null, null, null, '1em', '10px'],
+      ml: [null, null, null, null, '16px', '10px'],
       transform: [
         'translateY(0)',
         'translateY(0)',
@@ -198,13 +200,11 @@ const Info = () => (
     <Paragraph
       type='paragraph'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
-      <Text sx={{ fontWeight: 'bold' }}>
-        Wiket is the first business to business network{' '}
-      </Text>{' '}
-      which lets you connect to mind like people.
+      Wiket is the first business to business network which lets you connect to
+      mind like people.
     </Paragraph>
   </GridItem>
 );
@@ -217,7 +217,6 @@ const DotArrow = () => (
       ml: [null, null, null, '-10px', '-20px', '-18px'],
       alignSelf: [null, null, 'center', 'end', 'start', 'start'],
       position: 'relative',
-      zIndex: '-1',
       transform: [
         'translateY(0)',
         'translateY(-5%)',
@@ -263,7 +262,10 @@ const FloatingCircle = () => (
       ],
     }}
   >
-    <StaticImage src='../../../assets/svg/floating-circle2.svg' />
+    <picture>
+      <source srcSet={floatingCircle} />
+      <img src={floatingCircle} alt='batik-shape' />
+    </picture>
   </GridItem>
 );
 
@@ -274,7 +276,7 @@ const FloatingMarker = () => (
       gridRow: [5, 5, 3, 3, 1, 1],
       alignSelf: [null, null, 'center', null, 'center', 'center'],
       position: 'relative',
-      zIndex: '-1',
+      zIndex: ['-1', '-1', '1', '-1', '1', '1'],
       transform: [
         'translateY(0)',
         'translateY(5%)',
@@ -285,7 +287,10 @@ const FloatingMarker = () => (
       ],
     }}
   >
-    <StaticImage src='../../../assets/svg/floating-marker.svg' />
+    <picture>
+      <source srcSet={floatingMarker} />
+      <img src={floatingMarker} alt='batik-shape' />
+    </picture>
   </GridItem>
 );
 
@@ -309,6 +314,9 @@ const FirstCard = ({ children }) => (
       height: [null, null, 'auto', '276px', 'auto', 'auto'],
       width: [null, null, null, null, '88%', '78%'],
       ml: ['7%', '0', '0', '0', '5%', '0'],
+      position: 'relative',
+      borderRadius: '12px',
+      zIndex: '1',
       transform: [
         'translateY(-24%)',
         'translateY(-25%)',
@@ -332,6 +340,8 @@ const SecondCard = ({ children }) => (
       gridRow: [5, 6, 3, 3, 2, 2],
       width: [null, null, null, null, null, '90%'],
       alignSelf: [null, null, 'end', 'end', 'center', 'center'],
+      position: 'relative',
+      zIndex: '1',
       transform: [
         'translateY(0)',
         'translateY(-15%)',
@@ -358,6 +368,8 @@ const ThirdCard = ({ children }) => (
         ' 8 / 12',
       ],
       gridRow: [5, 6, 4, 4, 3, 3],
+      position: 'relative',
+      zIndex: '1',
       ml: [null, null, null, null, null, '48px'],
       width: [null, null, null, null, '85%', 'fit-content'],
       transform: [
