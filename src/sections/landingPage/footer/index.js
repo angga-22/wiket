@@ -22,7 +22,7 @@ const Footer = () => (
     id='header-section'
     sx={{
       mt: '10vw',
-      backgroundColor: 'accentSecondary',
+      backgroundColor: 'primary',
     }}
   >
     <BackgroundImage />

@@ -10,7 +10,11 @@ export const Nav = () => (
   <Section
     id='navigation-section'
     sx={{
-      height: '100px',
+      height: ['65px', '65px', '80px', '80px', '100px', '100px'],
+      top: '0',
+      position: 'fixed',
+      zIndex: '2',
+      backgroundColor: 'background',
     }}
   >
     <Logo />
@@ -25,11 +29,12 @@ const Logo = () => (
     sx={{
       gridColumn: ['1 / 5', '1 /4', '1 /  6', '1 /  5', '1 /  4', '1 /  4'],
       alignSelf: 'center',
+
       transform: [
         'translateY(50%)',
         'translateY(50%)',
         'translateY(50%)',
-        'translateY(50%)',
+        'translateY(60%)',
         'translateY(5%)',
         'translateY(10%)',
       ],
@@ -99,10 +104,10 @@ const GetStartedButton = () => (
       alignSelf: 'center',
       display: ['flex'],
       transform: [
-        'translateY(-90%)',
-        'translateY(-80%)',
-        'translateY(-70%)',
-        'translateY(-90%)',
+        'translateY(-60%)',
+        'translateY(-60%)',
+        'translateY(-50%)',
+        'translateY(-50%)',
         'translateY(0)',
         'translateY(0)',
       ],
@@ -140,7 +145,12 @@ const HamburgerMenu = () => (
       ],
       display: ['block', 'block', 'block', 'block', 'none', 'none'],
       cursor: 'pointer',
-      transform: ['translateY(55%)', 'translateY(55%)', 'translateY(70%)'],
+      transform: [
+        'translateY(60%)',
+        'translateY(55%)',
+        'translateY(70%)',
+        'translateY(70%)',
+      ],
     }}
   >
     <Box

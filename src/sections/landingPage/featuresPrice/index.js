@@ -106,7 +106,7 @@ const BlossomCard = () => (
       type='cardHeader'
       variant='bold'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
       }}
     >
@@ -114,7 +114,7 @@ const BlossomCard = () => (
       <Heading
         type='cardHeaderSmall'
         sx={{
-          color: 'accentSecondary',
+          color: 'primary',
           fontWeight: ['lighter', 'bold', 'bold', 'bold', 'bold', 'bold'],
         }}
       >
@@ -125,7 +125,7 @@ const BlossomCard = () => (
     <Paragraph
       type='cardParagraph'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
       Everything you need to get started. Comes with your own profile and access
@@ -147,7 +147,7 @@ const GrowthCard = () => (
       ],
       gridRow: [4, 4, 3, 3, 3, 3],
       borderRadius: ['16px', '16px', '16px', '16px', '16px', '16px'],
-      backgroundColor: 'accentSecondary',
+      backgroundColor: 'primary',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -208,7 +208,7 @@ const BatikShape = () => (
       gridRow: [null, null, null, 2, 2, 2],
       zIndex: '-1',
       display: ['none', 'none', 'none', 'none', 'block', 'block'],
-      transform: [null, null, null, null, 'translateY(32%)', 'translateY(46%)'],
+      // transform: [null, null, null, null, 'translateY(32%)', 'translateY(46%)'],
     }}
   >
     <picture>
@@ -236,13 +236,13 @@ const FeaturesLabel = () => (
       type='h5'
       variant='bold'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         mb: ['16px', '16px', '22px', '12px', '24px', '24px'],
       }}
     >
       Features
     </Heading>
-    <Paragraph type='featureSubline' sx={{ color: 'accentSecondary' }}>
+    <Paragraph type='featureSubline' sx={{ color: 'primary' }}>
       Both of our plans are especially designed for smal business and come withe
       a richt set of features.
     </Paragraph>

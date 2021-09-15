@@ -24,7 +24,7 @@ const CardItem = ({ label, location, image }) => (
       type='h6'
       variant='bold'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         mt: '12px',
         mb: '5px',
       }}
@@ -34,7 +34,7 @@ const CardItem = ({ label, location, image }) => (
     <Paragraph
       type='smallParagraph'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         fontWeight: 'lighter',
       }}
     >

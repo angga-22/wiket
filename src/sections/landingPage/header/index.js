@@ -75,16 +75,12 @@ const Headlines = () => (
     <Heading
       type='h4'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
       Explore new opportunities.
     </Heading>
-    <Heading
-      variant='bold'
-      type='h1'
-      sx={{ mt: '8px', color: 'accentSecondary' }}
-    >
+    <Heading variant='bold' type='h1' sx={{ mt: '8px', color: 'primary' }}>
       <Box as='span' sx={{ color: 'accentPrimary' }}>
         Grow{' '}
       </Box>
@@ -155,15 +151,15 @@ const HeaderImageLabel = () => (
       type='lead'
       variant='bold'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
       Hanging Garden
     </Paragraph>
     <Paragraph
-      type='smallParagraph'
+      type='lead'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         fontWeight: 'lighter',
       }}
     >
@@ -376,7 +372,7 @@ const ThirdCard = ({ children }) => (
       width: [null, '95%', '100%', '93%', '85%', '90%'],
       transform: [
         'translateY(0)',
-        'translateY(-32%)',
+        'translateY(-25%)',
         'translateY(-70%)',
         'translateY(0)',
         'translateY(-37%)',

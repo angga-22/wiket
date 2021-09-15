@@ -123,7 +123,7 @@ export const typographyConfig = {
   },
   benefitParagraph: {
     factor: 2.5,
-    fontSizes: [17, 19, 19, 16, 16, 18],
+    fontSizes: [16.76, 16.87, 15.28, 17.78, 17.53, 17.79],
     fontFamily: 'body',
     lineHeight: 1.5,
   },
@@ -153,7 +153,7 @@ export const typographyConfig = {
   },
   cardParagraph: {
     factor: 2.5,
-    fontSizes: [17, 17, 19, 16, 16, 16],
+    fontSizes: [14.9, 15.1, 16.24, 14.98, 14.76, 17.79],
     fontFamily: 'body',
     lineHeight: 1.5,
   },

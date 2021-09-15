@@ -21,7 +21,7 @@ const Card = ({ image, label, description }) => (
         type='h4'
         variant='bold'
         sx={{
-          color: 'accentSecondary',
+          color: 'primary',
         }}
       >
         {label}
@@ -30,7 +30,7 @@ const Card = ({ image, label, description }) => (
       <Paragraph
         type='paragraph'
         sx={{
-          color: 'accentSecondary',
+          color: 'primary',
           mt: '10px',
         }}
       >
