@@ -63,14 +63,14 @@ const SectionHeader = () => (
     }}
   >
     <Heading
-      type='valuesH2'
+      type='sectionHeading'
       sx={{
         textAlign: ['center', 'left', 'left', 'left', 'left', 'left'],
         paddingBottom: '1.5em',
       }}
     >
       The place for <br />
-      <Heading as span type='valuesH2' variant='bold'>
+      <Heading as span type='sectionHeading' variant='bold'>
         like-minded people
       </Heading>
       <span sx={{ color: 'secondary' }}>.</span>
@@ -114,11 +114,11 @@ const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
       ],
     }}
   >
-    <Heading variant='bold' type='valuesH4'>
+    <Heading variant='bold' type='titleHeading'>
       {title}
       <span sx={{ color: 'secondary' }}>.</span>
     </Heading>
-    <Paragraph type='valuesParagraph' marginTop='.5em'>
+    <Paragraph type='textParagraph' marginTop='.5em'>
       {text}
     </Paragraph>
   </GridItem>
