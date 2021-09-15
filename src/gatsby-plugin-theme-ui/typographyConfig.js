@@ -77,7 +77,7 @@ export const typographyConfig = {
   },
   paragraph: {
     factor: 2.5,
-    fontSizes: [19, 18, 20, 16, 15, 17],
+    fontSizes: [19, 18, 20, 60, 50, 50],
     fontFamily: 'body',
     lineHeight: 1.5,
   },

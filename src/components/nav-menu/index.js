@@ -2,9 +2,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Link, useStaticQuery, graphql } from 'gatsby';
-import { Section, GridItem, Paragraph, Button } from '@thepuzzlers/pieces';
-import { StaticImage } from 'gatsby-plugin-image';
+import { Section, GridItem, Button } from '@thepuzzlers/pieces';
 import { NavigationLink } from 'pieces/components/NavigationLink/NavigationLink';
+import logoWiketGreen from 'assets/svg/logo-wiket-green2.svg';
 
 export const Nav = () => (
   <Section
@@ -15,6 +15,7 @@ export const Nav = () => (
   >
     <Logo />
     <NavigationLinks />
+    <HamburgerMenu />
     <GetStartedButton />
   </Section>
 );
@@ -22,12 +23,22 @@ export const Nav = () => (
 const Logo = () => (
   <GridItem
     sx={{
-      gridColumn: ['5 / 9', '5 / 9', '1 /  5', '1 /  5', '1 /  4', '1 /  4'],
+      gridColumn: ['1 / 5', '1 /4', '1 /  6', '1 /  5', '1 /  4', '1 /  4'],
       alignSelf: 'center',
+      transform: ['translateY(50%)', 'translateY(50%)'],
     }}
   >
     <Link to='/'>
-      <StaticImage src='../../assets/png/logo-wiket-green.png' />
+      <picture>
+        <source srcSet={logoWiketGreen} />
+        <img
+          src={logoWiketGreen}
+          alt='batik-shape'
+          sx={{
+            width: '100%',
+          }}
+        />
+      </picture>
     </Link>
   </GridItem>
 );
@@ -54,14 +65,13 @@ const NavigationLinks = () => {
       }}
     >
       {data.nav.nav.map((el) => (
-        <NavigationLink to={el.to}>
-          <Paragraph
-            variant='bold'
-            type='paragraph'
-            sx={{ color: 'accentSecondary' }}
-          >
-            {el.title}
-          </Paragraph>
+        <NavigationLink
+          variant='bold'
+          type='paragraph'
+          sx={{ color: 'primary' }}
+          to={el.to}
+        >
+          {el.title}
         </NavigationLink>
       ))}
     </GridItem>
@@ -71,26 +81,41 @@ const NavigationLinks = () => {
 const GetStartedButton = () => (
   <GridItem
     sx={{
-      gridColumn: [null, null, null, null, '22 / 25', '22/ 25'],
+      gridColumn: [
+        '6/ 11',
+        '8 / 11',
+        '18 / 23',
+        '18 / 23',
+        '21 / 25',
+        '22/ 25',
+      ],
       alignSelf: 'center',
-      display: ['none', 'none', 'none', 'none', 'flex', 'flex'],
+      display: ['flex'],
+      transform: ['translateY(-90%)', 'translateY(-80%)', 'translateY(-70%)'],
     }}
   >
     <Button
       sx={{
-        width: ['100%'],
+        width: ['100%', '100%', '93%', '85%', '100%', '100%'],
+        ml: ['15px', '0', null, null, '38px', '20px'],
+        borderRadius: '10px',
+        height: ['40px', '42px', '42px', '40px', '42px', '42px'],
         backgroundColor: 'buttonBackground',
       }}
-    >
-      <Paragraph
-        type='paragraph'
-        variant='bold'
-        sx={{
-          color: '#fff',
-        }}
-      >
-        Get Started
-      </Paragraph>
-    </Button>
+    />
+  </GridItem>
+);
+
+const HamburgerMenu = () => (
+  <GridItem
+    sx={{
+      gridColumn: ['12', '12', '24', '24', null, null],
+      display: ['flex', 'flex', 'flex', 'flex', 'none', 'none'],
+      transform: ['translateY(50%)', 'translateY(50%)'],
+    }}
+  >
+    <div>--</div>
+    <div>--</div>
+    <div>--</div>
   </GridItem>
 );
