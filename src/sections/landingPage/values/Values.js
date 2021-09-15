@@ -21,6 +21,7 @@ export const Values = memo(() => (
     sx={{ minHeight: '100vh', alignItems: 'center', mt: '10vw' }}
   >
     <GridWrapper variant='inside.columns'>
+      <Background />
       <SectionHeader />
       <SectionHeaderImg />
       {valuesTexts.map((value) => (
@@ -35,6 +36,17 @@ export const Values = memo(() => (
     </GridWrapper>
   </Section>
 ));
+
+const Background = () => (
+  <GridItem
+    sx={{
+      gridColumn: ['-1/1'],
+      gridRow: ['1/6'],
+      backgroundColor: 'red',
+      borderRadius: '24px',
+    }}
+  />
+);
 
 const SectionHeader = () => (
   <GridItem
@@ -51,18 +63,17 @@ const SectionHeader = () => (
     }}
   >
     <Heading
-      type='h2'
+      type='valuesH2'
       sx={{
-        color: 'positive',
         textAlign: ['center', 'left', 'left', 'left', 'left', 'left'],
         paddingBottom: '1.5em',
       }}
     >
       The place for <br />
-      <Heading as span type='h2' variant='bold'>
+      <Heading as span type='valuesH2' variant='bold'>
         like-minded people
       </Heading>
-      <span sx={{ color: 'accent' }}>.</span>
+      <span sx={{ color: 'secondary' }}>.</span>
     </Heading>
   </GridItem>
 );
@@ -79,7 +90,7 @@ const SectionHeaderImg = () => (
         '16/span 8',
       ],
       gridRow: [2 / 3, 1 / 1, 1 / 1, 1 / 1, 1 / 1, 1 / 1],
-      alignSelf: [null, 'end', 'end', 'start', null, null],
+      alignSelf: ['start', 'end', 'end', 'start', null, null],
     }}
   >
     <Image src={ThumbsUpImg} />
@@ -103,11 +114,11 @@ const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
       ],
     }}
   >
-    <Paragraph variant='bold' color='positive' type='h4' marginBottom='.5em'>
+    <Heading variant='bold' type='valuesH4'>
       {title}
-      <span sx={{ color: 'accent' }}>.</span>
-    </Paragraph>
-    <Paragraph color='positive' type='paragraph'>
+      <span sx={{ color: 'secondary' }}>.</span>
+    </Heading>
+    <Paragraph type='valuesParagraph' marginTop='.5em'>
       {text}
     </Paragraph>
   </GridItem>

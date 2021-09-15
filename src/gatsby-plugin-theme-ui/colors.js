@@ -4,7 +4,7 @@
 const base = {
   background: '#fff',
   primary: 'pink',
-  secondary: '#000',
+  secondary: '#FDA700',
   disabled: '#000',
 
   // neutrals
@@ -15,10 +15,11 @@ const base = {
 };
 
 const textColors = {
-  text: '#000',
+  text: '#005650',
+  brightText: '#FFFFFF',
   // textBold: 'red',
   // textItalic
-  heading: '#000',
+  // heading: '#000',
   // headingBold: 'green',
   // headingItalic
   // labels: 'green',

@@ -2,21 +2,21 @@
   {
     "id": 1,
     "title": "Local",
-    "text": "You have products to sell? Fantastic! Start your wholesale adventure",
+    "text": "We ensure that businesses within our network act as local as possible. Reducing shippments, allowing quicker business and development of communities.",
     "gridColumnStart": [2, 3, 6, 2, 2, 2],
     "gridRow": ["3 / 4", "2 / 3", "2 / 3", "2 / 3", "2 / 3", "2 / 3"]
   },
   {
     "id": 2,
-    "title": "Passion",
-    "text": "Build your reputation and relationships to drive innovation and productivity",
+    "title": "Passionate",
+    "text": "On wiket you will find people who love what they are doing. Just like you. Connect with them and share ideas, knowledge and products.",
     "gridColumnStart": [2, 3, 6, 10, 10, 10],
     "gridRow": ["4 / 5", "3 / 4", "3 / 4", "2 / 3", "2 / 3", "2 / 3"]
   },
   {
     "id": 3,
-    "title": "Fair",
-    "text": "You have products to sell? Fantastic! Start your wholesale adventure",
+    "title": "Awareness",
+    "text": "From your packaging to the care about your local community. Awareness can come in a lot of forms and you will find all of them on wiket.",
     "gridColumnStart": [2, 3, 6, 18, 18, 18],
     "gridRow": ["5 / 6", "4 / 5", "4 / 5", "2 / 3", "2 / 3", "2 / 3"]
   }
