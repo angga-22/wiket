@@ -1,10 +1,13 @@
 export const fontFamilies = {
   body: {
-    normal: 'amsiPro_narrow_semiBold, sans-serif',
-    bold: 'amsiPro_narrow_black, sans-serif',
+    normal: 'faible-regular, sans-serif',
+    bold: 'faible-bold, sans-serif',
   },
   primary: {
-    normal: 'amsiPro_condensed_ultra, sans-serif',
-    bold: 'amsiPro_narrow_black, sans-serif',
+    normal: 'spoof-regular, sans-serif',
+    bold: 'spoof-bold, sans-serif',
+  },
+  secondary: {
+    normal: 'faible-medium, sans-serif',
   },
 };

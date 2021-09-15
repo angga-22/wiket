@@ -8,7 +8,7 @@ import 'reset-css';
 import { PageContextProvider } from 'pieces/utils/context';
 import { Box } from '@thepuzzlers/pieces';
 // client imports
-// import 'gatsby-plugin-theme-ui/fontImports';
+import 'gatsby-plugin-theme-ui/fonts/fontImports';
 import { Nav } from 'components/nav-menu';
 
 // if (typeof window !== `undefined`) {
