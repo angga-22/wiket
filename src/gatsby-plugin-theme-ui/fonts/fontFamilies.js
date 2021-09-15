@@ -4,7 +4,7 @@ export const fontFamilies = {
     bold: 'faible-bold, sans-serif',
   },
   primary: {
-    normal: 'spoof-regular, sans-serif',
+    normal: 'spoof-light, sans-serif',
     bold: 'spoof-bold, sans-serif',
   },
   secondary: {
