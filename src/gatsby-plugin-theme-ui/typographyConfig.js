@@ -11,18 +11,36 @@ export const typographyConfig = {
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
+  valuesH2: {
+    factor: 2.5,
+    // figma file to code array below
+    // fontSizes: [30.73, 29.3, 31.52, 41.18, 40.59, 53.38],
+    // Jeremy's calculation below
+    fontSizes: [30.3, 32, 40.8, 35, 44, 52],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+    color: 'brightText',
+  },
   h3: {
     factor: 2.5,
     fontSizes: [33.6, 28.8, 37.6, 37.6, 44],
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
-
   h4: {
     factor: 2.5,
     fontSizes: [19.5, 24.5, 25.5, 18, 26.5, 28.5],
     fontFamily: 'primary',
     lineHeight: 1.25,
+  },
+  valuesH4: {
+    factor: 2.5,
+    fontSizes: [23.28, 22.2, 23.88, 23.4, 23.06, 24.71],
+    // Jeremy's calculation below
+    // fontSizes: [24, 24.5, 25.5, 23, 26.5, 22],
+    fontFamily: 'primary',
+    lineHeight: 1.25,
+    // color: 'brightText',
   },
   h5: {
     factor: 2.5,
@@ -81,6 +99,15 @@ export const typographyConfig = {
     fontFamily: 'body',
     lineHeight: 1.5,
     color: 'primary',
+  },
+  valuesParagraph: {
+    factor: 2.5,
+    fontSizes: [16.76, 16.87, 15.28, 17.78, 17.53, 17.79],
+    // Jeremy's calculation below
+    // fontSizes: [17, 16, 20, 16, 15, 17],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+    // color: 'brightText',
   },
   paragraphSecondary: {
     factor: 2.5,

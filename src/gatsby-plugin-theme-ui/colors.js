@@ -18,12 +18,11 @@ const base = {
 };
 
 const textColors = {
-  text: '#2E2E2E', // green
-  lightText: '#FFFCF9',
-
+  text: '#005650',
+  brightText: '#FFFFFF',
   // textBold: 'red',
   // textItalic
-  heading: '#2E2E2E',
+  // heading: '#000',
   // headingBold: 'green',
   // headingItalic
   // labels: 'green',
