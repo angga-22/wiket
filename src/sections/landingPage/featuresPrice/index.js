@@ -29,7 +29,7 @@ export default FeaturePrice;
 const Headlines = () => (
   <GridItem
     sx={{
-      gridColumn: ['1 / 13', '1 / 13', '3 / 23', '2 / 24', '3 / 23', '6 /  20'],
+      gridColumn: ['2 / 11', '2 / 12', '8 / 17', '4 / 22', '1 / 8', '2 / 8'],
       gridRow: [1, 1, 1, 1, 1, 1],
       mb: ['16px'],
     }}
@@ -39,10 +39,10 @@ const Headlines = () => (
       sx={{
         color: 'primary',
         fontWeight: 'lighter',
-        textAlign: 'center',
+        textAlign: ['center', 'center', 'center', 'center', 'left', 'left'],
       }}
     >
-      Explore new relationships.
+      Explore new relationships{' '}
       <Heading
         as='span'
         variant='bold'
@@ -51,8 +51,7 @@ const Headlines = () => (
           color: 'primary',
         }}
       >
-        <br />
-        For Free.
+        for free.
       </Heading>
     </Heading>
   </GridItem>
@@ -61,17 +60,20 @@ const Headlines = () => (
 const SmallHeadlines = () => (
   <GridItem
     sx={{
-      gridColumn: ['2 / 12', '2 / 12', '6 / 20', '6 / 20', '8 / 18', '9 /  17'],
+      gridColumn: ['2 / 12', '3 / 11', '6 / 19', '6 / 20', '1 / 9', '2 /  10'],
       gridRow: [2, 2, 2, 2, 2, 2],
       mb: ['79px', '117px', '150px', '80px', '177px', '174px'],
     }}
   >
     <Paragraph
       type='paragraph'
-      sx={{ color: 'accentSecondary', textAlign: 'center' }}
+      sx={{
+        color: 'accentSecondary',
+        textAlign: ['center', 'center', 'center', 'center', 'left', 'left'],
+      }}
     >
-      Supporting businesses with a passion is our driving factor. Therefore
-      we’re offering the entry to our network for free.
+      Join our waiting list today and get informed as soon as we open up our
+      network further.
     </Paragraph>
   </GridItem>
 );
