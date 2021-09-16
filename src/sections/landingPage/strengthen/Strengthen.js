@@ -61,7 +61,7 @@ const SectionHeader = () => (
         '1/span 10',
         '1/span 10',
         '2/span 19',
-        '1/span 16',
+        '1/span 17',
         '3/span 14',
         '5/span 14',
       ],
@@ -71,8 +71,7 @@ const SectionHeader = () => (
     <Heading type='sectionHeading' sx={{ paddingBottom: '1.5em' }}>
       Strengthen your market position.{' '}
       <Heading
-        as
-        span
+        as='span'
         type='sectionHeading'
         variant='bold'
         sx={{ color: 'secondary' }}

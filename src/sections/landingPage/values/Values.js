@@ -20,7 +20,10 @@ export const Values = memo(() => (
     id='values-section'
     sx={{ minHeight: '100vh', alignItems: 'center', mt: '10vw' }}
   >
-    <GridWrapper variant='inside.columns'>
+    <GridWrapper
+      variant='inside.columns'
+      sx={{ '.valuesTextBlock:last-of-type': { paddingBottom: '7em' } }}
+    >
       <Background />
       <SectionHeader />
       <SectionHeaderImg />
@@ -42,7 +45,7 @@ const Background = () => (
     sx={{
       gridColumn: ['-1/1'],
       gridRow: ['1/6'],
-      backgroundColor: 'red',
+      backgroundColor: 'primary',
       borderRadius: '24px',
     }}
   />
@@ -53,24 +56,32 @@ const SectionHeader = () => (
     sx={{
       gridColumn: [
         '3/span 8',
-        '1/span 7',
-        '2/span 11',
-        '2/span 14',
-        '2/span 13',
-        '2/span 13',
+        '2/span 7',
+        '3/span 11',
+        '3/span 14',
+        '3/span 13',
+        '3/span 13',
       ],
       gridRow: '1/span 1',
+      paddingTop: ['3.5em', '3.5em', '3.5em', '3.5em', '6em', '7em'],
     }}
   >
     <Heading
-      type='sectionHeading'
+      as='h2'
+      type='sectionHeadingValues'
       sx={{
         textAlign: ['center', 'left', 'left', 'left', 'left', 'left'],
-        paddingBottom: '1.5em',
       }}
     >
       The place for <br />
-      <Heading as span type='sectionHeading' variant='bold'>
+      <Heading
+        as='span'
+        type='sectionHeadingValues'
+        sx={{
+          textAlign: ['center', 'left', 'left', 'left', 'left', 'left'],
+        }}
+        variant='bold'
+      >
         like-minded people
       </Heading>
       <span sx={{ color: 'secondary' }}>.</span>
@@ -81,16 +92,17 @@ const SectionHeader = () => (
 const SectionHeaderImg = () => (
   <GridItem
     sx={{
+      paddingTop: ['4em', '7em', '9em', '2em', '6em', '6em'],
       gridColumn: [
         '1/span 11',
-        '8/span 5',
-        '13/span 11',
-        '17/span 7',
+        '7/span 5',
+        '12/span 11',
+        '13/span 10',
         '16/span 8',
-        '16/span 8',
+        '16/span 7',
       ],
-      gridRow: [2 / 3, 1 / 1, 1 / 1, 1 / 1, 1 / 1, 1 / 1],
-      alignSelf: ['start', 'end', 'end', 'start', null, null],
+      gridRow: ['2 / 3', '1 / 1', '1 / 1', '3 / 4', '1 / 1', '1 / 1'],
+      alignSelf: ['start', 'end', 'end', 'start', 'end', 'end'],
     }}
   >
     <Image src={ThumbsUpImg} />
@@ -99,6 +111,7 @@ const SectionHeaderImg = () => (
 
 const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
   <GridItem
+    className='valuesTextBlock'
     id={id}
     sx={{
       marginTop: '3em',
@@ -106,19 +119,19 @@ const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
       gridRow,
       gridColumnEnd: [
         'span 9',
-        'span 6',
-        'span 8',
         'span 7',
+        'span 12',
+        'span 8',
         'span 5',
         'span 5',
       ],
     }}
   >
-    <Heading variant='bold' type='titleHeading'>
+    <Heading variant='bold' type='titleHeadingValues'>
       {title}
       <span sx={{ color: 'secondary' }}>.</span>
     </Heading>
-    <Paragraph type='textParagraph' marginTop='.5em'>
+    <Paragraph type='textParagraphValues' marginTop='.5em'>
       {text}
     </Paragraph>
   </GridItem>
