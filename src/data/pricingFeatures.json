@@ -3,7 +3,7 @@
     "title": "Your profile page",
     "features": [
       {
-        "title": "Beautifl profile page",
+        "title": "Beautiful profile page",
         "isBlossom": true,
         "isGrowth": true
       },
@@ -34,12 +34,12 @@
       },
       {
         "title": "Access to public B2C network",
-        "isBlossom": true,
+        "isBlossom": false,
         "isGrowth": true
       },
       {
-        "title": "Connect with other business",
-        "isBlossom": false,
+        "title": "Connect with other businesses",
+        "isBlossom": true,
         "isGrowth": true
       },
       {
@@ -64,7 +64,7 @@
       },
       {
         "title": "Detailed product pages",
-        "isBlossom": false,
+        "isBlossom": true,
         "isGrowth": true
       },
       {

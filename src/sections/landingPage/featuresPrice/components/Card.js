@@ -11,7 +11,7 @@ const FeatureListing = ({ data }) =>
           gridColumn: [
             '1 / 12',
             '1 / 12',
-            '2 / 19',
+            '3 / 19',
             '3 / 23',
             '2 / 24',
             '3 / 24',
@@ -37,7 +37,7 @@ const FeatureListing = ({ data }) =>
               gridColumn: [
                 '1 / 10',
                 '1 / 9',
-                '2 / 14',
+                '3 / 16',
                 '3 / 12',
                 '2 / 12',
                 '3 / 10',
@@ -47,9 +47,9 @@ const FeatureListing = ({ data }) =>
           >
             <Paragraph
               type='featureList'
+              variant='bold'
               sx={{
                 color: 'accentSecondary',
-                fontWeight: 'bold',
               }}
             >
               {el.title}
@@ -57,7 +57,7 @@ const FeatureListing = ({ data }) =>
           </GridItem>
           <GridItem
             sx={{
-              gridColumn: ['11', '10', '16 / 18', '18', '14 / 16', '14 / 16'],
+              gridColumn: ['11', '11', '21 ', '18', '14 / 16', '14 / 16'],
               display: 'flex',
               justifyContent: 'center',
               transform: 'translateY(10%)',
@@ -87,7 +87,7 @@ const FeatureListing = ({ data }) =>
 
           <GridItem
             sx={{
-              gridColumn: ['12', '12', '20 / 22', '22', '20 /22', '20 / 22 '],
+              gridColumn: ['12', '12', ' 22', '22', '20 /22', '20 / 22 '],
               display: 'flex',
               justifyContent: 'center',
               transform: 'translateY(10%)',
