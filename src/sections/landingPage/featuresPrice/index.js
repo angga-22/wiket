@@ -227,7 +227,7 @@ const BatikShape = () => (
 const FeaturesLabel = () => (
   <GridItem
     sx={{
-      gridColumn: ['1 / 12', '1 / 9', ' 2 / 14', '3 / 13', '2 / 10', '3 / 9'],
+      gridColumn: ['1 / 12', '1 / 9', ' 3 / 16', '3 / 16', '2 / 10', '3 / 9'],
       gridRow: [5, 5, 4, 4, 3, 3],
       borderRadius: ['16px', '16px', '16px', '16px', '16px', '16px'],
       alignSelf: ['end', 'end', 'end', 'end', 'end', 'end'],
@@ -242,11 +242,11 @@ const FeaturesLabel = () => (
         mb: ['16px', '16px', '22px', '12px', '24px', '24px'],
       }}
     >
-      Features
+      Features<span sx={{ color: 'secondary' }}>.</span>
     </Heading>
     <Paragraph type='featureSubline' sx={{ color: 'primary' }}>
-      Both of our plans are especially designed for smal business and come withe
-      a richt set of features.
+      Both of our plans are especially designed for small businesses and come
+      with a rich set of features.
     </Paragraph>
   </GridItem>
 );
