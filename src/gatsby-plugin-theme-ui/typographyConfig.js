@@ -114,7 +114,7 @@ export const typographyConfig = {
   },
   paragraph: {
     factor: 2.5,
-    fontSizes: [19, 18, 20, 16, 15, 17],
+    fontSizes: [18.63, 16.87, 16.24, 18.72, 18.45, 19.77],
     fontFamily: 'body',
     lineHeight: 1.5,
     color: 'primary',
@@ -151,7 +151,7 @@ export const typographyConfig = {
   },
   benefitParagraph: {
     factor: 2.5,
-    fontSizes: [17, 19, 19, 16, 16, 18],
+    fontSizes: [16.76, 16.87, 15.28, 17.78, 17.53, 17.79],
     fontFamily: 'body',
     lineHeight: 1.5,
   },
@@ -181,14 +181,14 @@ export const typographyConfig = {
   },
   cardParagraph: {
     factor: 2.5,
-    fontSizes: [17, 17, 19, 16, 16, 16],
+    fontSizes: [14.9, 15.1, 16.24, 14.98, 14.76, 17.79],
     fontFamily: 'body',
     lineHeight: 1.5,
   },
   footerParagraph: {
     factor: 2.5,
-    fontSizes: [20, 28, 28, 24, 30, 22],
-    fontFamily: 'body',
+    fontSizes: [26.08, 24.86, 26.75, 26.21, 31.36, 43.5],
+    fontFamily: 'primary',
     lineHeight: 1.5,
   },
 };

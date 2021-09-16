@@ -62,7 +62,7 @@ const Headlines = () => (
     sx={{
       gridColumn: [
         '1 / 12',
-        '2 / 12',
+        '1 / 12',
         '2 / 20',
         '13 / 24',
         '14 /  25',
@@ -75,16 +75,12 @@ const Headlines = () => (
     <Heading
       type='h4'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
       Explore new opportunities.
     </Heading>
-    <Heading
-      variant='bold'
-      type='h1'
-      sx={{ mt: '8px', color: 'accentSecondary' }}
-    >
+    <Heading variant='bold' type='h1' sx={{ mt: '8px', color: 'primary' }}>
       <Box as='span' sx={{ color: 'accentPrimary' }}>
         Grow{' '}
       </Box>
@@ -98,9 +94,9 @@ const HeaderImage = () => (
     sx={{
       gridColumn: [
         '1 / 13',
-        '4 / 12',
+        '4 / 13',
         '9 /  22',
-        '3 / span 9',
+        '2 / span 9',
         '2 / span 8',
         '3 / span 8',
       ],
@@ -133,7 +129,7 @@ const HeaderImageLabel = () => (
         '1 / span 7',
         '4 / span 5',
         '9 /  22',
-        '3 / span 7',
+        '2 / span 6',
         '2 / 6',
         '3 / 8',
       ],
@@ -155,15 +151,15 @@ const HeaderImageLabel = () => (
       type='lead'
       variant='bold'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
       Hanging Garden
     </Paragraph>
     <Paragraph
-      type='smallParagraph'
+      type='lead'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
         fontWeight: 'lighter',
       }}
     >
@@ -177,22 +173,22 @@ const Info = () => (
     sx={{
       gridColumn: [
         '1 / span 11',
-        '2 / span 7',
-        '2 / 13',
-        '6 / 15',
+        '1 / span 7',
+        '10 / 19',
+        '4 / 15',
+        '16 / 23',
         '16 / 22',
-        '16 / 21',
       ],
-      gridRow: [2, 2, 2, 5, 2, 3],
-      alignSelf: [null, null, null, 'start', 'end', 'center'],
-      mt: ['24px', '40px', '24px', '0', '0', '0'],
-      ml: [null, null, null, null, '16px', '10px'],
+      gridRow: [2, 2, 4, 5, 2, 3],
+      alignSelf: [null, null, 'end', 'start', 'end', 'center'],
+      mt: ['20px', '24px', '24px', '0', '0', '0'],
+      ml: [null, null, null, null, '0', '10px'],
       transform: [
         'translateY(0)',
         'translateY(0)',
+        'translateY(100%)',
         'translateY(0)',
-        'translateY(0)',
-        'translateY(50%)',
+        'translateY(10%)',
         'translateY(0)',
       ],
     }}
@@ -203,8 +199,10 @@ const Info = () => (
         color: 'primary',
       }}
     >
-      Wiket is the first business to business network which lets you connect to
-      mind like people.
+      <span sx={{ fontWeight: '700' }}>
+        Wiket is the first business to business network
+      </span>
+      which lets you connect to mind like people.
     </Paragraph>
   </GridItem>
 );
@@ -212,17 +210,17 @@ const Info = () => (
 const DotArrow = () => (
   <GridItem
     sx={{
-      gridColumn: [4, 5, 4, '13 / 17', '12 / 16', '12 / 16'],
+      gridColumn: [4, 5, 4, '11 / 15', '10 / 16', '12 / 16'],
       gridRow: [5, 6, '3 / span 4', 'span 3 / 6', '3 / span 3', '3 / span 3'],
-      ml: [null, null, null, '-10px', '-20px', '-18px'],
+      ml: [null, null, null, '0', '0', '-18px'],
       alignSelf: [null, null, 'center', 'end', 'start', 'start'],
       position: 'relative',
       transform: [
-        'translateY(0)',
-        'translateY(-5%)',
+        'translateY(2%)',
+        'translateY(-37%)',
         'translateY(59%)',
-        'translateY(14%)',
-        'translateY(-24%)',
+        'translateY(-4%)',
+        'translateY(-27%)',
         'translateY(-6%)',
       ],
     }}
@@ -247,15 +245,15 @@ const FloatingCircle = () => (
         '21 / 23',
         '13 / span 14',
         '11 / 13',
-        '11 / 13',
+        '12 / 13',
       ],
       alignSelf: ['center', 'center', 'center', 'start', 'start', 'start'],
-
+      display: ['block', 'block', 'block', 'none', 'block', 'block'],
       gridRow: [5, 5, 3, 3, 2, 2],
       transform: [
         'translateY(-100%)',
-        'translateY(100%)',
-        'translateY(300%)',
+        'translateY(70%)',
+        'translateY(200%)',
         'translateY(100%)',
         'translateY(40%)',
         'translateY(50%)',
@@ -272,17 +270,17 @@ const FloatingCircle = () => (
 const FloatingMarker = () => (
   <GridItem
     sx={{
-      gridColumn: [4, 4, '7 / span 8', null, '1 / 2', '2 / 3'],
+      gridColumn: [4, 4, '6 / span 7', null, '1 / 2', '2 / 3'],
       gridRow: [5, 5, 3, 3, 1, 1],
-      alignSelf: [null, null, 'center', null, 'center', 'center'],
+      alignSelf: [null, null, 'start', null, 'center', 'center'],
       position: 'relative',
       zIndex: ['-1', '-1', '1', '-1', '1', '1'],
       transform: [
         'translateY(0)',
         'translateY(5%)',
+        'translateY(200%)',
         'translateY(0)',
-        'translateY(0)',
-        'translateY(0)',
+        'translateY(-30%)',
         'translateY(0)',
       ],
     }}
@@ -303,26 +301,26 @@ const FirstCard = ({ children }) => (
     sx={{
       gridColumn: [
         '1 / 7',
-        '2 / 6',
-        '19 / 24',
-        '16 / 21',
+        '2 / 7',
+        '19 / 25',
+        '15 / 21',
         ' 8 /  12',
         '9 /  13',
       ],
       gridRow: [5, 6, 3, 3, 1, 1],
       alignSelf: [null, null, null, 'center', 'center', 'center'],
       height: [null, null, 'auto', '276px', 'auto', 'auto'],
-      width: [null, null, null, null, '88%', '78%'],
-      ml: ['7%', '0', '0', '0', '5%', '0'],
+      width: [null, '90%', '100%', '95%', '100%', '78%'],
+      ml: ['7%', '0', '0', '0', '0', '0'],
       position: 'relative',
       borderRadius: '12px',
       zIndex: '1',
       transform: [
         'translateY(-24%)',
-        'translateY(-25%)',
+        'translateY(-40%)',
         'translateY(17%)',
-        'translateY(20%)',
-        'translateY(0)',
+        'translateY(15%)',
+        'translateY(5%)',
         'translateY(0)',
       ],
     }}
@@ -336,19 +334,20 @@ const FirstCard = ({ children }) => (
 const SecondCard = ({ children }) => (
   <GridItem
     sx={{
-      gridColumn: ['8 / 13', '7 / 11', '5 / 11', '10 / 15', '1 / 5', '2 / 6'],
+      gridColumn: ['7 / 13', '7 / 12', '7 / 13', '8 / 14', '1 / 5', '1 / 5'],
       gridRow: [5, 6, 3, 3, 2, 2],
-      width: [null, null, null, null, null, '90%'],
+      width: ['87%', '87%', '95%', '88%', '95%', '80%'],
       alignSelf: [null, null, 'end', 'end', 'center', 'center'],
+      ml: ['7%', '7%', '0', '0', '0', '14%'],
       position: 'relative',
       zIndex: '1',
       transform: [
-        'translateY(0)',
-        'translateY(-15%)',
-        'translateY(-10%)',
-        'translateY(20%)',
+        'translateY(10%)',
+        'translateY(-28%)',
+        'translateY(-50%)',
+        'translateY(40%)',
         'translateY(-40%)',
-        'translateY(-27%)',
+        'translateY(-50%)',
       ],
     }}
   >
@@ -363,21 +362,20 @@ const ThirdCard = ({ children }) => (
         '1 / 7',
         '3 / 7',
         '18 / 24',
-        '18 / 23',
+        '17 / 24',
+        ' 7 / 12',
         ' 9 / 13',
-        ' 8 / 12',
       ],
       gridRow: [5, 6, 4, 4, 3, 3],
       position: 'relative',
       zIndex: '1',
-      ml: [null, null, null, null, null, '48px'],
-      width: [null, null, null, null, '85%', 'fit-content'],
+      width: [null, '95%', '100%', '93%', '85%', '90%'],
       transform: [
         'translateY(0)',
+        'translateY(-25%)',
+        'translateY(-70%)',
         'translateY(0)',
-        'translateY(-58%)',
-        'translateY(0)',
-        'translateY(-54%)',
+        'translateY(-37%)',
         'translateY(-17%)',
       ],
       alignSelf: ['end', 'center', 'start', 'start', 'center', 'start'],

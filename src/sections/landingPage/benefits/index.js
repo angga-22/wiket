@@ -57,7 +57,7 @@ const Headlines = () => (
     <Heading
       type='h2'
       sx={{
-        color: 'accentSecondary',
+        color: 'primary',
       }}
     >
       Strengthen your market position.
@@ -76,7 +76,7 @@ const Headlines = () => (
 const FirstBenefit = ({ children }) => (
   <GridItem
     sx={{
-      gridColumn: ['1 / 13', '2 / 12', '3 / 12', '1 / 12', '4 / 12', '5 / 11'],
+      gridColumn: ['1 / 13', '2 / 12', '3 / 12', '1 / 12', '4 / 12', '5 / 12'],
       gridRow: [2, 2, 2, 2, 2, 2],
       mb: ['32px', '50px', '62px', '56px', '64px', '90px'],
     }}
@@ -94,7 +94,7 @@ const SecondBenefit = ({ children }) => (
         '14 / 23',
         '13 / 24',
         '14 / 22',
-        ' 14 / 20',
+        ' 14 / 21',
       ],
       gridRow: [3, 3, 2, 2, 2, 2],
       mb: ['32px', '50px', '62px', '56px', '64px', '90px'],
@@ -107,7 +107,7 @@ const SecondBenefit = ({ children }) => (
 const ThirdBenefit = ({ children }) => (
   <GridItem
     sx={{
-      gridColumn: [' 1 / 13', '2 / 12', '3 / 12', '1 / 12', '4 / 12', '5 / 11'],
+      gridColumn: [' 1 / 13', '2 / 12', '3 / 12', '1 / 12', '4 / 12', '5 / 12'],
       gridRow: [4, 4, 3, 3, 3, 3],
       mb: ['32px', '50px', '0', '0', '0', '0'],
     }}
@@ -125,7 +125,7 @@ const FourthBenefit = ({ children }) => (
         '14 / 23',
         '13 / 24',
         '14 / 22',
-        ' 14 / 20',
+        ' 14 / 21',
       ],
       gridRow: [5, 5, 3, 3, 3, 3],
       mb: ['32px', '50px', '0', '0', '0', '0'],
