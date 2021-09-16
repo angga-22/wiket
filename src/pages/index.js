@@ -5,6 +5,7 @@ import { HeaderJeremy } from 'sections/landingPage/header-jeremy/Header';
 import { Values } from 'sections/landingPage/values/Values';
 import { Strengthen } from 'sections/landingPage/strengthen/Strengthen';
 import { Filler } from 'sections/landingPage/filler/Filler';
+import { StartGrowing } from 'sections/landingPage/growing/Growing';
 import potject from 'assets/jpg/header-sub-img-1.jpg';
 import greenThumb from 'assets/jpg/header-sub-img-2.jpg';
 import greenCafe from 'assets/jpg/header-sub-img-3.jpg';
@@ -77,6 +78,7 @@ const IndexPage = ({ data }) => (
     <Values />
     <Filler />
     <FeaturePrice featuresData={data.features.nodes} />
+    <StartGrowing />
     <Footer />
   </div>
 );
