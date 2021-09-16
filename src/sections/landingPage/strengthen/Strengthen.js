@@ -3,12 +3,6 @@
 import { jsx } from 'theme-ui';
 import { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-// import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-
-// import IconCommunication from 'assets/svg/icon-communication.svg';
-// import IconGrowth from 'assets/svg/icon-growth.svg';
-// import IconMarket from 'assets/svg/icon-market.svg';
-// import IconCollaborate from 'assets/svg/icon-collaborate.svg';
 
 // pieces
 import {
@@ -18,25 +12,21 @@ import {
   Heading,
   Paragraph,
   GridItem,
+  Image,
 } from '@thepuzzlers/pieces';
-// import strengthenTexts from '../../../data/strengthen.json';
 
 export const Strengthen = memo(() => {
   const data = useStaticQuery(graphql`
     {
       allStrengthenJson {
-        edges {
-          node {
-            gridColumnStart
-            gridRow
-            id
-            text
-            title
-            # image {
-            #   childImageSharp {
-            #     gatsbyImageData
-            #   }
-            # }
+        nodes {
+          gridColumnStart
+          gridRow
+          id
+          text
+          title
+          image {
+            publicURL
           }
         }
       }
@@ -49,10 +39,10 @@ export const Strengthen = memo(() => {
     >
       <GridWrapper variant='inside.columns'>
         <SectionHeader />
-        {data.allStrengthenJson.map((value) => (
+        {data.allStrengthenJson.nodes.map((value) => (
           <TextBox
             key={value.id}
-            // image={value.image}
+            image={value.image}
             title={value.title}
             text={value.text}
             gridColumnStart={value.gridColumnStart}
@@ -63,13 +53,14 @@ export const Strengthen = memo(() => {
     </Section>
   );
 });
+
 const SectionHeader = () => (
   <GridItem
     sx={{
       gridColumn: [
         '1/span 10',
         '1/span 10',
-        '2/span 15',
+        '2/span 19',
         '1/span 16',
         '3/span 14',
         '5/span 14',
@@ -93,95 +84,7 @@ const SectionHeader = () => (
   </GridItem>
 );
 
-// const ImgCommunication = () => (
-//   <GridItem
-//     sx={{
-//       gridColumn: [
-//         '1/span 3',
-//         '2/span 2',
-//         '2/span 2',
-//         '1/span 3',
-//         '3/span 2',
-//         '5/span 2',
-//       ],
-//       gridRow: '2/3',
-//       alignSelf: 'center',
-//       justifySelf: 'center',
-//     }}
-//   >
-//     <Image src={IconCommunication} />
-//   </GridItem>
-// );
-
-// const ImgConnect = () => (
-//   <GridItem
-//     sx={{
-//       gridColumn: [
-//         '1/span 3',
-//         '2/span 2',
-//         '2/span 2',
-//         '1/span 3',
-//         '3/span 2',
-//         '5/span 2',
-//       ],
-//       gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
-//       alignSelf: 'center',
-//       justifySelf: 'center',
-//     }}
-//   >
-//     <Image src={IconCollaborate} />
-//   </GridItem>
-// );
-
-// const ImgGrowth = () => (
-//   <GridItem
-//     sx={{
-//       gridColumn: [
-//         '1/span 3',
-//         '2/span 2',
-//         '14/span 2',
-//         '14/span 3',
-//         '14/span 2',
-//         '14/span 2',
-//       ],
-//       gridRow: [3 / 4, 3 / 4, 2 / 3, 2 / 3, 2 / 3, 2 / 3],
-//       alignSelf: 'center',
-//       justifySelf: 'center',
-//     }}
-//   >
-//     <Image src={IconGrowth} />
-//   </GridItem>
-// );
-
-// const ImgMarket = () => (
-//   <GridItem
-//     sx={{
-//       gridColumn: [
-//         '1/span 2',
-//         '2/span 2',
-//         '14/span 2',
-//         '14/span 3',
-//         '14/span 2',
-//         '14/span 2',
-//       ],
-//       gridRow: ['5/6', '5/6', '3/4', '3/4', '3/4', '3/4'],
-//       alignSelf: 'center',
-//       justifySelf: 'center',
-//     }}
-//   >
-//     <Image src={IconMarket} />
-//   </GridItem>
-// );
-
-const TextBox = ({
-  id,
-  text,
-  title,
-  gridColumnStart,
-  gridRow,
-  // image
-}) => (
-  //   const sharpImage = getImage(image);
+const TextBox = ({ id, text, title, gridColumnStart, gridRow, image }) => (
   <GridItem
     id={id}
     sx={{
@@ -190,7 +93,7 @@ const TextBox = ({
       gridRow,
       gridColumnEnd: [
         'span 12',
-        'span 10',
+        'span 8',
         'span 9',
         'span 11',
         'span 9',
@@ -198,9 +101,21 @@ const TextBox = ({
       ],
     }}
   >
-    <Box sx={{ display: 'flex', flexDirection: 'row' }}>
-      {/* <GatsbyImage src={sharpImage} /> */}
-      <div>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: ['row', 'row', 'column', 'row', 'row', 'row'],
+      }}
+    >
+      <Image
+        src={image.publicURL}
+        sx={{
+          paddingRight: '1em',
+          alignSelf: 'start',
+          width: ['50%', '50%', '30%', '50%', '50%', '50%'],
+        }}
+      />
+      <div sx={{ paddingTop: '1em' }}>
         <Heading variant='bold' type='titleHeading'>
           {title}
           <span sx={{ color: 'secondary' }}>.</span>
