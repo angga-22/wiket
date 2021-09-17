@@ -114,6 +114,55 @@ export const typographyConfig = {
       fontFamily: 'primary.bold',
     },
   },
+  // Connections
+  profileHeading: {
+    factor: 2.5,
+    fontSizes: [26, 31.9, 42, 34.5, 40.5, 52.5],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+  },
+  profileParagraph: {
+    factor: 2.5,
+    fontSizes: [16.7, 16.8, 18.1, 17.7, 17, 17.7],
+    fontFamily: 'body',
+    lineHeight: 'body.design',
+  },
+  connectionsHeading: {
+    factor: 2.5,
+    fontSizes: [30.88, 32.3, 42.1, 35.7, 40.8, 53.3],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+  },
+  cardsSmallHeading: {
+    factor: 2.5,
+    fontSizes: [15.9, 17, 16.2, 15.9, 15.7, 18.7],
+    fontFamily: 'body',
+    lineHeight: 'heading.safe',
+  },
+  cardBigHeading: {
+    factor: 2.5,
+    fontSizes: [18.7, 19.7, 21, 18.8, 20.4, 21.7],
+    fontFamily: 'body',
+    lineHeight: 'heading.safe',
+  },
+  cardsParagraph: {
+    factor: 2.5,
+    fontSizes: [14.9, 15.2, 16.2, 15, 14.8, 15.8],
+    fontFamily: 'body',
+    lineHeight: 'heading.design',
+  },
+  connectionsSectionHeading: {
+    factor: 2.5,
+    fontSizes: [24.3, 25.1, 30.6, 24.4, 27.8, 35.5],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+  },
+  connectionsNumber: {
+    factor: 2.5,
+    fontSizes: [112.2, 143, 153.1, 150.3, 148.4, 197.7],
+    fontFamily: 'primary',
+    lineHeight: 'heading.safe',
+  },
   // Contact Section
   contactHeading: {
     fontSizes: [29.8, 49.7, 40.1, 35.5, 40.5, 39.5],

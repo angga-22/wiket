@@ -6,6 +6,8 @@ import { Header as HeaderAngga } from 'sections/landingPage/header-angga';
 import { Values } from 'sections/landingPage/values/Values';
 import { Strengthen } from 'sections/landingPage/strengthen/Strengthen';
 import { Filler } from 'sections/landingPage/filler/Filler';
+import { Connections } from 'sections/landingPage/connections/Connections';
+import { Profile } from 'sections/landingPage/profile/Profile';
 import { StartGrowing } from 'sections/landingPage/growing/Growing';
 import potject from 'assets/jpg/header-sub-img-1.jpg';
 import greenThumb from 'assets/jpg/header-sub-img-2.jpg';
@@ -78,6 +80,8 @@ const IndexPage = ({ data }) => (
     <HeaderAngga cardData={headerData} />
     <Benefit benefitData={benefitData} />
     <Strengthen />
+    <Profile />
+    <Connections />
     <Values />
     <Filler />
     <FeaturePrice featuresData={data.features.nodes} />
