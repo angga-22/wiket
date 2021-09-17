@@ -1,7 +1,11 @@
 // external dependencies
 import React, { memo, useState } from 'react';
 
+// gsap
+import { gsap } from 'gsap';
+
 // pieces
+import { NavigationLink } from 'pieces';
 import {
   Box,
   Button,
@@ -10,13 +14,27 @@ import {
   Heading,
   GridItem,
 } from '@thepuzzlers/pieces';
-import { NavigationLink } from 'pieces';
 
 // svgs
 import logo from 'assets/svg/wiket-logo-complete.svg';
 import menuVector from 'assets/svg/menu.svg';
 import closeVector from 'assets/svg/close.svg';
 import logoWhite from 'assets/svg/wiket-logo-light.svg';
+
+const tl = gsap.timeline({
+  ease: 'power2.in',
+  duration: 0.3,
+});
+
+function openNavOverlay() {
+  tl.from('#navigation', { opacity: 0.5, x: '100%' });
+  tl.play();
+}
+
+function closeNavOverlay() {
+  tl.to('#navigation', { opacity: 0, x: '-100%' });
+  tl.play();
+}
 
 export const Navbar = memo(() => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -26,7 +44,11 @@ export const Navbar = memo(() => {
       <GridWrapper
         sx={{
           alignItems: 'center',
+          bg: 'background',
           py: ['20px', '29px', '29px', '20px', '32px', '29px'],
+          position: 'fixed',
+          top: 0,
+          zIndex: 5,
         }}
       >
         <Logo />
@@ -36,24 +58,25 @@ export const Navbar = memo(() => {
       </GridWrapper>
 
       {/* ------------- Navigation Overlay ------------- */}
-      {openMenu && (
-        <GridWrapper
-          sx={{
-            bg: 'greenText',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            height: '100vh',
-            width: '100vw',
-            zIndex: 5,
-          }}
-        >
-          <Close openMenu={openMenu} setOpenMenu={setOpenMenu} />
-          <OverlayNavlinks />
-          <OverlayNavHeading />
-          <LogoLight />
-        </GridWrapper>
-      )}
+      <GridWrapper
+        id='navigation'
+        sx={{
+          bg: 'greenText',
+          display: openMenu ? 'grid' : 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          overflow: 'scroll',
+          height: '100vh',
+          width: '100vw',
+          zIndex: 6,
+        }}
+      >
+        <Close openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <OverlayNavlinks />
+        <OverlayNavHeading />
+        <LogoLight />
+      </GridWrapper>
     </nav>
   );
 });
@@ -92,7 +115,15 @@ const Menu = ({ openMenu, setOpenMenu }) => (
       height: '21px',
       width: '33px',
     }}
-    onClick={() => setOpenMenu(!openMenu)}
+    onClick={() => {
+      if (openMenu) {
+        closeNavOverlay();
+        setOpenMenu(false);
+      } else {
+        setOpenMenu(true);
+        openNavOverlay();
+      }
+    }}
   >
     <Image src={menuVector} alt='Menu icon' />
   </Box>
@@ -103,19 +134,19 @@ const Menu = ({ openMenu, setOpenMenu }) => (
 const LinksData = [
   {
     name: 'Benefits',
-    href: '#benefits',
+    href: '#',
   },
   {
     name: 'Your profile',
-    href: '#profile',
+    href: '#',
   },
   {
     name: 'Connections',
-    href: '#connections',
+    href: '#',
   },
   {
     name: 'Plans & Pricing',
-    href: '#pricing',
+    href: '#',
   },
 ];
 
@@ -139,9 +170,10 @@ const Links = ({ sx }) =>
 const Close = ({ openMenu, setOpenMenu }) => (
   <Box
     sx={{
-      alignSelf: 'center',
+      alignSelf: ['center', 'center', 'end'],
       gridColumn: ['11/13', '12/13', '23/24', '24/25'],
       justifySelf: ['end', 'end', 'baseline', 'end'],
+      my: ['50%', '100%', '100%', '100%'],
       height: ['22.36px', '22.36px', '31.31px', '17.89px'],
       width: ['22.15px', '22.15px', '31.01px', '17.72px'],
     }}
@@ -166,7 +198,7 @@ const OpenNavButton = () => (
 const OverlayNavlinks = () => (
   <GridItem
     sx={{
-      alignSelf: ['baseline', 'center'],
+      alignSelf: ['center', 'center', 'end'],
       alignItems: 'center',
       display: 'flex',
       flexDirection: ['column', 'column', 'column', 'row'],
@@ -187,9 +219,9 @@ const OverlayNavHeading = () => (
       alignSelf: ['end', 'end', 'end', 'center'],
       color: 'textNegative',
       gridColumn: ['1/13', '3/11', '6/20', '15/25'],
-      gridRow: [4, 4, 4, 3],
+      gridRow: [3, 3, 3, 3],
       textAlign: ['center', 'center', 'center', 'right'],
-      pb: ['8%', '10%', '10%', 0],
+      p: ['16% 0 8%', '25% 0 10%', '25% 0 10%', '10% 0 5%'],
     }}
   >
     Where mind-liked businesses <span>connect</span>
@@ -203,6 +235,7 @@ const LogoLight = () => (
       gridColumn: ['4/10', '4/10', '10/16', '1/6'],
       gridRow: [4, 4, 4, 3],
       justifySelf: ['center', 'center', 'center', 'baseline'],
+      mb: ['20%', '20%', '30%', '-5%'],
       height: ['29px', '36.77px', '36.77px', '30.29px'],
       width: ['112px', '142px', '142px', '117px'],
     }}
@@ -214,7 +247,7 @@ const LogoLight = () => (
 /* ------------------- Desktop Navigation ------------------- */
 
 const DesktopNavigation = () => (
-  <Box
+  <GridItem
     sx={{
       display: ['none', 'none', 'none', 'none', 'flex', 'flex'],
       gridColumn: [null, null, null, null, '9/21', '11/21'],
@@ -229,5 +262,5 @@ const DesktopNavigation = () => (
     }}
   >
     <Links sx={{ color: 'greenText' }} />
-  </Box>
+  </GridItem>
 );
