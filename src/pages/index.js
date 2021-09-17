@@ -12,11 +12,6 @@ import { StartGrowing } from 'sections/landingPage/growing/Growing';
 import potject from 'assets/jpg/header-sub-img-1.jpg';
 import greenThumb from 'assets/jpg/header-sub-img-2.jpg';
 import greenCafe from 'assets/jpg/header-sub-img-3.jpg';
-import communicateImg from 'assets/svg/icon-communication.svg';
-import growImg from 'assets/svg/icon-growth.svg';
-import connectImg from 'assets/svg/icon-collaborate.svg';
-import marketImg from 'assets/svg/icon-market.svg';
-import { Benefit } from 'sections/landingPage/benefits';
 import FeaturePrice from 'sections/landingPage/featuresPrice';
 import { Contact } from 'sections/landingPage/contact/Contact';
 import Footer from 'sections/landingPage/footer';
@@ -42,43 +37,11 @@ const headerData = {
   },
 };
 
-const benefitData = {
-  firstBenefit: {
-    id: 1,
-    label: 'Communicate',
-    description:
-      'Build your reputation and relationship to drive innovation and productivity.',
-    img: `${communicateImg}`,
-  },
-  secondBenefit: {
-    id: 2,
-    label: 'Grow',
-    description:
-      'Build your reputation and relationship to drive innovation and productivity.',
-    img: `${growImg}`,
-  },
-  thirdBenefit: {
-    id: 3,
-    label: 'Connect',
-    description:
-      'Build your reputation and relationship to drive innovation and productivity.',
-    img: `${connectImg}`,
-  },
-  fourthBenefit: {
-    id: 4,
-    label: 'market',
-    description:
-      'Build your reputation and relationship to drive innovation and productivity.',
-    img: `${marketImg}`,
-  },
-};
-
 const IndexPage = ({ data }) => (
   <div>
     <Header />
     {/* <HeaderJeremy /> */}
     <HeaderAngga cardData={headerData} />
-    <Benefit benefitData={benefitData} />
     <Strengthen />
     <Profile />
     <Connections />
