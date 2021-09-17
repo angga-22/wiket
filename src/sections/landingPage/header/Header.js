@@ -55,7 +55,7 @@ const Headline = () => (
     <Heading type='body-1000' as='p'>
       Explore new opportunities.
     </Heading>
-    <Heading type='h1' sx={{ mt: '8px' }}>
+    <Heading type='h1' sx={{ mt: ['4px', '4px', '4px', '4px', '12px', '4px'] }}>
       <b>Grow </b>
       your business.
     </Heading>
@@ -119,7 +119,11 @@ const MainImgDescription = () => (
       mt: ['8px', '8px', '8px', 0, '8px', '16px'],
     }}
   >
-    <Heading as='h5' type='h5-500'>
+    <Heading
+      as='h5'
+      type='h5-500'
+      sx={{ mb: ['4px', '4px', '4px', '4px', '4px', '6px'] }}
+    >
       Hanging Garden
     </Heading>
     <Paragraph as='p' type='body-300'>
