@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Header } from 'sections/landingPage/header/Header';
 import { Header as HeaderAngga } from 'sections/landingPage/header-angga';
-// import { HeaderJeremy } from 'sections/landingPage/header-jeremy/Header';
 import { Values } from 'sections/landingPage/values/Values';
 import { Strengthen } from 'sections/landingPage/strengthen/Strengthen';
 import { Filler } from 'sections/landingPage/filler/Filler';
@@ -40,7 +39,6 @@ const headerData = {
 const IndexPage = ({ data }) => (
   <div>
     <Header />
-    {/* <HeaderJeremy /> */}
     <HeaderAngga cardData={headerData} />
     <Strengthen />
     <Profile />
