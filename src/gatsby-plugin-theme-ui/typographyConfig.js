@@ -74,31 +74,44 @@ export const typographyConfig = {
     lineHeight: 1.1,
     letterSpacing: '0.5px',
   },
-  navigationLink: {
-    factor: 2.5,
-    fontSizes: [26.4, 24, 31.2, 31.2, 36],
-    fontFamily: 'primary',
-    lineHeight: 'heading.design',
-  },
+
   hyperLink: {
     factor: 2.5,
     fontSizes: [21.6, 19.2, 24.8, 24.8, 24],
     fontFamily: 'body',
     lineHeight: 'heading.safe',
   },
-  button: {
+  buttonPrimary: {
     factor: 2.5,
-    fontSizes: [18, 16, 22, 22, 18],
-    fontFamily: 'primary',
+    fontSizes: [16.8, 17.9, 19.1, 16.9, 18.5, 19.7],
+    fontFamily: 'bodyBold',
     lineHeight: 'heading.safe',
-    letterSpacing: ['1px'],
+    letterSpacing: 0,
+    color: 'textNegative',
   },
-  buttonLarge: {
+  buttonPrimarySmall: {
     factor: 2.5,
-    fontSizes: [21.6, 19.2, 24.8, 24.8, 24],
-    fontFamily: 'primary',
+    fontSizes: [14.9, 16.1, 17.2, 15, 16.7, 17.8],
+    fontFamily: 'bodyBold',
     lineHeight: 'heading.safe',
-    letterSpacing: '1px',
+    letterSpacing: 0,
+    color: 'textNegative',
+  },
+  navigationLink: {
+    factor: 2.5,
+    fontSizes: [20.5, 21.5, 30.6, 15, 14.8, 15.8],
+    fontFamily: 'bodyBold',
+    lineHeight: 'heading.safe',
+  },
+  openNavHeading: {
+    factor: 2.5,
+    fontSizes: [26.2, 28.7, 36.3, 26.3, 0, 0],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+    '&>span': {
+      color: 'accentPrimary',
+      fontFamily: 'primary.bold',
+    },
   },
   label: {
     factor: 2.5,
@@ -201,142 +214,5 @@ export const lineHeights = {
   body: {
     safe: 1.75,
     design: 1.5,
-  },
-};
-
-export const textDefaultSpans = {
-  p: {
-    primary: [
-      {
-        wide: 'span 12',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 12',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 16',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 16',
-        base: 'span 10',
-        narrow: 'span 12',
-      },
-      {
-        wide: 'span 13',
-        base: 'span 11',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 11',
-        base: 'span 9',
-        narrow: 'span 7',
-      },
-    ],
-    secondary: [
-      {
-        wide: 'span 12',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 12',
-        base: 'span 9',
-        narrow: 'span 7',
-      },
-      {
-        wide: 'span 14',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 15',
-        base: 'span 12',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 12',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 12',
-        base: 'span 7',
-        narrow: 'span 5',
-      },
-    ],
-  },
-  h3: {
-    primary: [
-      {
-        wide: 'span 12',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 12',
-        base: 'span 11',
-        narrow: 'span 6',
-      },
-      {
-        wide: 'span 20',
-        base: 'span 18',
-        narrow: 'span 16',
-      },
-      {
-        wide: 'span 18',
-        base: 'span 12',
-        narrow: 'span 10',
-      },
-      {
-        wide: 'span 16',
-        base: 'span 10',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 14',
-        base: 'span 11',
-        narrow: 'span 10',
-      },
-    ],
-  },
-  h4: {
-    secondary: [
-      {
-        wide: 'span 12',
-        base: 'span 11',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 10',
-        base: 'span 8',
-        narrow: 'span 6',
-      },
-      {
-        wide: 'span 17',
-        base: 'span 11',
-        narrow: 'span 10',
-      },
-      {
-        wide: 'span 18',
-        base: 'span 11',
-        narrow: 'span 8',
-      },
-      {
-        wide: 'span 12',
-        base: 'span 8',
-        narrow: 'span 7',
-      },
-      {
-        wide: 'span 10',
-        base: 'span 8',
-        narrow: 'span 6',
-      },
-    ],
   },
 };
