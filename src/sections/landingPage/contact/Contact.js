@@ -41,7 +41,6 @@ export const Contact = memo(() => {
     <GridWrapper
       sx={{
         gridTemplateRows: [null, null, null, null, 'auto 1fr', 'auto 1fr'],
-        my: ['261px', '381px', '181px', '407px', '395px', '395px'],
       }}
     >
       <Vector />
