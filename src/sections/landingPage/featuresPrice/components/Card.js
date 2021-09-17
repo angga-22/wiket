@@ -66,7 +66,7 @@ const FeatureListing = ({ data }) =>
             {el.isBlossom && el.title !== 'Images' ? (
               <Box
                 sx={{
-                  backgroundColor: '#FDA700',
+                  backgroundColor: 'secondary',
                   width: ['14px', '14px', '14px', '14px', '20px', '20px'],
                   height: ['14px', '14px', '14px', '14px', '20px', '20px'],
                   borderRadius: '50%',
@@ -77,7 +77,7 @@ const FeatureListing = ({ data }) =>
               <Text
                 sx={{
                   fontWeight: 'bold',
-                  color: '#FDA700',
+                  color: 'secondary',
                 }}
               >
                 5
