@@ -7,7 +7,10 @@ export const fontFamilies = {
     normal: 'spoof-light, sans-serif',
     bold: 'spoof-bold, sans-serif',
   },
-  secondary: {
-    normal: 'faible-medium, sans-serif',
+  bodyBold: {
+    normal: 'faible-bold, sans-serif',
+  },
+  primaryBold: {
+    normal: 'spoof-bold, sans-serif',
   },
 };

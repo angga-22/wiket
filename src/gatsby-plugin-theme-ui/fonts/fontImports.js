@@ -6,4 +6,4 @@ import './spoof/normal/css/regular.css';
 import './spoof/normal/css/light.css';
 import './faible/normal/css/regular.css';
 import './faible/normal/css/bold.css';
-import './faible/normal/css/medium.css';
+// import './faible/normal/css/medium.css';

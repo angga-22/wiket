@@ -15,6 +15,7 @@ import connectImg from 'assets/svg/icon-collaborate.svg';
 import marketImg from 'assets/svg/icon-market.svg';
 import { Benefit } from 'sections/landingPage/benefits';
 import FeaturePrice from 'sections/landingPage/featuresPrice';
+import { Contact } from 'sections/landingPage/contact/Contact';
 import Footer from 'sections/landingPage/footer';
 
 const headerData = {
@@ -79,6 +80,7 @@ const IndexPage = ({ data }) => (
     <Filler />
     <FeaturePrice featuresData={data.features.nodes} />
     <StartGrowing />
+    <Contact />
     <Footer />
   </div>
 );

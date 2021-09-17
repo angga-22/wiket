@@ -2,23 +2,17 @@
 import React from 'react';
 import { Global } from '@emotion/react';
 import PropTypes from 'prop-types';
-import 'reset-css';
-// import { gsap } from 'gsap';
+
 // pieces components
 import { PageContextProvider } from 'pieces/utils/context';
 import { Box } from '@thepuzzlers/pieces';
+
 // client imports
-import 'gatsby-plugin-theme-ui/fonts/fontImports';
-import { Nav } from 'components/nav-menu';
+import { Navbar } from 'sections/navbar/Navbar';
 
-// if (typeof window !== `undefined`) {
-// }
-
-// Font Awesome
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { faFacebook,  } from '@fortawesome/free-brands-svg-icons';
-// import { faEnvelope } from '@fortawesome/pro-solid-svg-icons';
-// library.add(faFacebook, faEnvelope);
+// CSS Imports
+import 'reset-css'; // css reset
+import 'gatsby-plugin-theme-ui/fonts/fontImports'; // font families
 
 const Layout = ({ children, pageContext: { locale } }) => (
   <PageContextProvider locale={locale}>
@@ -42,8 +36,6 @@ const Layout = ({ children, pageContext: { locale } }) => (
         },
       }}
     />
-    {/* <Navigation locale={locale} /> */}
-    {/* {GSDevTools.create()} */}
     <Box
       as='main'
       // Padding reflects the height of the NavBar
@@ -51,7 +43,7 @@ const Layout = ({ children, pageContext: { locale } }) => (
         positin: 'relative',
       }}
     >
-      <Nav />
+      <Navbar />
       {children}
     </Box>
     {/* <Footer /> */}

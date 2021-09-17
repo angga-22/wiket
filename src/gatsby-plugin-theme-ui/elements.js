@@ -1,16 +1,21 @@
 const linkDefault = {
   cursor: 'pointer',
 };
+
 const buttonDefault = {
   cursor: 'pointer',
   transition: '0.2s ease-out',
+  bg: 'accentPrimary',
+  borderRadius: 'card',
+  '&:hover': {
+    transform: 'scale(1.1)',
+  },
 };
 
 const links = {
   hyperLink: {
     ...linkDefault,
-    variant: 'typography.hyperLink.normal',
-    textDecoration: 'underline',
+    variant: 'typography.hyperLink.bold',
     ':hover,:focus,active': {
       color: 'medium',
     },
@@ -53,6 +58,16 @@ const buttons = {
       bg: 'medium',
     },
   },
+  tertiary: {
+    ...buttonDefault,
+    variant: 'typography.buttonPrimary.normal',
+    p: '16px 24px',
+  },
+  tertiarySmall: {
+    ...buttonDefault,
+    variant: 'typography.buttonPrimarySmall.normal',
+    p: '12px 16px',
+  },
 };
 
 const cards = {
@@ -60,6 +75,23 @@ const cards = {
     backgroundColor: 'light',
     borderRadius: 'card',
     padding: '20px',
+  },
+  horizontal: {
+    backgroundColor: 'lightBackground',
+    borderRadius: 'cardSecondary',
+    boxShadow: 200,
+    padding: '12px 24px 12px 12px',
+    display: 'flex',
+    position: 'relative',
+    width: '100%',
+    zIndex: 1,
+  },
+  vertical: {
+    backgroundColor: 'lightBackground',
+    borderRadius: 'cardSecondary',
+    padding: '12px 12px 18px',
+    position: 'relative',
+    zIndex: 1,
   },
 };
 
