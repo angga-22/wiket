@@ -97,6 +97,7 @@ export const typographyConfig = {
     letterSpacing: 0,
     color: 'textNegative',
   },
+  // Navigation
   navigationLink: {
     factor: 2.5,
     fontSizes: [20.5, 21.5, 30.6, 15, 14.8, 15.8],
@@ -111,6 +112,40 @@ export const typographyConfig = {
     '&>span': {
       color: 'accentPrimary',
       fontFamily: 'primary.bold',
+    },
+  },
+  // Contact Section
+  contactHeading: {
+    fontSizes: [29.8, 49.7, 40.1, 35.5, 40.5, 39.5],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+  },
+  contactParagraph: {
+    fontSizes: [18.6, 19.5, 23.8, 20.5, 23, 23.7],
+    fontFamily: 'primary',
+    lineHeight: 'heading.design',
+  },
+  inputText: {
+    fontSizes: [14.97, 17.09, 19.14, 15.04, 16.7, 17.8],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
+  inputLabel: {
+    color: 'teal1000',
+    fontFamily: 'bodyBold',
+    lineHeight: 1,
+    fontSizes: [13.1, 14.39, 15.31, 13.16, 14.85, 15.82],
+  },
+  formParagraph: {
+    fontSizes: [12.1, 12.4, 13.3, 12.1, 12.9, 14.8],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+    color: 'teal1000',
+    '&>span': {
+      fontFamily: 'body.bold',
+    },
+    '&>a': {
+      fontFamily: 'body.bold',
     },
   },
   label: {
