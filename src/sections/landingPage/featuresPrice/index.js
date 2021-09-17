@@ -37,20 +37,12 @@ const Headlines = () => (
     <Heading
       type='h2'
       sx={{
-        color: 'primary',
         fontWeight: 'lighter',
         textAlign: ['center', 'center', 'center', 'center', 'left', 'left'],
       }}
     >
       Explore new relationships{' '}
-      <Heading
-        as='span'
-        variant='bold'
-        type='h2'
-        sx={{
-          color: 'primary',
-        }}
-      >
+      <Heading as='span' variant='bold' type='h2'>
         for free.
       </Heading>
     </Heading>
@@ -90,8 +82,8 @@ const BlossomCard = () => (
         '12 / 18',
       ],
       gridRow: [3, 3, 3, 3, 3, 3],
-      borderRadius: ['16px', '16px', '16px', '16px', '16px', '16px'],
-      backgroundColor: '#FDA700',
+      borderRadius: '16px',
+      backgroundColor: 'secondary',
       textAlign: 'center',
       p: [
         '24px 27px',
@@ -108,28 +100,16 @@ const BlossomCard = () => (
       type='cardHeader'
       variant='bold'
       sx={{
-        color: 'primary',
         pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
       }}
     >
       Blossom
-      <Heading
-        type='cardHeaderSmall'
-        sx={{
-          color: 'primary',
-          fontWeight: ['lighter', 'bold', 'bold', 'bold', 'bold', 'bold'],
-        }}
-      >
+      <Heading type='cardHeaderSmall' variant='bold'>
         {' '}
-        / Free
+        Free
       </Heading>
     </Heading>
-    <Paragraph
-      type='cardParagraph'
-      sx={{
-        color: 'primary',
-      }}
-    >
+    <Paragraph type='cardParagraph'>
       Everything you need to get started. Comes with your own profile and access
       to our B2B network.
     </Paragraph>
@@ -142,10 +122,10 @@ const GrowthCard = () => (
       gridColumn: [
         '1 / 13',
         '2 / 12',
-        ' 12/ 24',
+        '12/ 24',
         '12 / 24',
         '18 / 24',
-        ' 18 / 24',
+        '18 / 24',
       ],
       gridRow: [4, 4, 3, 3, 3, 3],
       borderRadius: ['16px', '16px', '16px', '16px', '16px', '16px'],
@@ -168,16 +148,16 @@ const GrowthCard = () => (
       type='cardHeader'
       variant='bold'
       sx={{
-        color: '#fff',
+        color: 'background',
         pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
       }}
     >
       Grow
       <Heading
         type='cardHeaderSmall'
+        variant='bold'
         sx={{
-          color: '#fff',
-          fontWeight: ['lighter', 'bold', 'bold', 'bold', 'bold', 'bold'],
+          color: 'background',
         }}
       >
         {' '}
@@ -187,7 +167,7 @@ const GrowthCard = () => (
     <Paragraph
       type='cardParagraph'
       sx={{
-        color: '#fff',
+        color: 'background',
       }}
     >
       Everything you need to get started. Comes with your own profile and access
@@ -202,10 +182,10 @@ const BatikShape = () => (
       gridColumn: [
         '1 / 12',
         '2 / 11',
-        ' 14/ 24',
+        '14/ 24',
         '14 / 24',
         '19 / 22',
-        ' 21 / 23',
+        '21 / 23',
       ],
       gridRow: [null, null, null, 2, 2, 2],
       zIndex: '-1',
@@ -238,13 +218,12 @@ const FeaturesLabel = () => (
       type='h5'
       variant='bold'
       sx={{
-        color: 'primary',
         mb: ['16px', '16px', '22px', '12px', '24px', '24px'],
       }}
     >
       Features<span sx={{ color: 'secondary' }}>.</span>
     </Heading>
-    <Paragraph type='featureSubline' sx={{ color: 'primary' }}>
+    <Paragraph type='featureSubline'>
       Both of our plans are especially designed for small businesses and come
       with a rich set of features.
     </Paragraph>
