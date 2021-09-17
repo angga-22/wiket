@@ -55,8 +55,8 @@ export const Contact = memo(() => {
           type='submit'
           variant='tertiary'
           sx={{
-            gridColumn: ['1/7', '1/6', '1/7', '2/10', '1/8', '1/8'],
-            gridRow: [5, 5, 4, 3, 4, 3],
+            gridColumn: ['1/7', '1/6', '1/8', '2/10', '1/8', '1/8'],
+            gridRow: [4, 4, 4, 3, 4, 3],
             mr: 'auto',
             mb: 'auto',
             borderRadius: '12px',
@@ -103,7 +103,7 @@ const SubHeadline = () => (
     // variant='lead'
     sx={{
       gridRow: [2],
-      gridColumn: ['2/span 10', '3/span 8', '2/16', '7/19', '1/10', '2/8'],
+      gridColumn: ['2/span 10', '3/span 8', '2/16', '7/18', '1/10', '2/8'],
       textAlign: ['center', 'center', 'left', 'center', 'left', 'left'],
       mb: ['80px'],
     }}
@@ -117,7 +117,7 @@ const Vector = () => (
   <Box
     sx={{
       gridRow: [1, 1, 3, 1, 2, 2],
-      gridColumn: ['11/12', '11/12', '19/21', '21/23', '22/23', '22/23'],
+      gridColumn: ['11/12', '11/12', '22/23', '21/22', '21/23', '22/23'],
       justifySelf: ['baseline', 'baseline', 'end', 'end', 'baseline'],
       transform: [
         'translateY(-60%)',
@@ -144,7 +144,7 @@ const FormWrapper = (props) => (
     variant='fullWidth'
     sx={{
       gridRow: [3, 3, 3, 3, '1 / span 2', '1 / span 2'],
-      gridColumn: ['1/13', '1/13', '5/25', '1/25', '12/25', '12/24'],
+      gridColumn: ['1/13', '1/13', '7/25', '1/25', '12/25', '12/24'],
       width: ['100vw', 'unset', 'unset', 'unset', 'unset', 'unset'],
       ml: [null, 0, 0, 0, 0, 0],
     }}
@@ -169,7 +169,7 @@ const FormWrapper = (props) => (
 const NameInput = ({ value, inputChange }) => (
   <GridItem
     sx={{
-      gridColumn: ['1/13', '1/12', '1/19', '2/12', '1/11', '1/4'],
+      gridColumn: ['1/13', '1/12', '1/16', '2/12', '1/11', '1/4'],
       width: ['100%', '100%', '100%', '100%', '109%', '109%'],
     }}
   >
@@ -188,7 +188,7 @@ const NameInput = ({ value, inputChange }) => (
 const EmailInput = ({ value, inputChange }) => (
   <GridItem
     sx={{
-      gridColumn: ['1/13', '1/12', '1/19', '13/22', '2/12', '6/11'],
+      gridColumn: ['1/13', '1/12', '1/16', '13/22', '2/12', '6/11'],
       justifySelf: 'end',
       width: ['100%', '100%', '100%', '100%', '109%', '109%'],
     }}
@@ -207,7 +207,7 @@ const EmailInput = ({ value, inputChange }) => (
 
 const Textarea = ({ value, inputChange }) => (
   <GridItem
-    sx={{ gridColumn: ['1/13', '1/12', '1/19', '2/16', '1/12', '1/9'] }}
+    sx={{ gridColumn: ['1/13', '1/12', '1/16', '2/16', '1/12', '1/9'] }}
   >
     <Label htmlFor='description' as='label' type='inputLabel'>
       Your Business
@@ -230,7 +230,7 @@ const FormParagraph = () => (
   <Paragraph
     type='formParagraph'
     sx={{
-      gridColumn: ['1/span 11', '1/span 8', '1/12', '9/20', '1/9', '5/12'],
+      gridColumn: ['1/span 11', '1/span 8', '1/13', '9/20', '1/9', '5/12'],
       gridRow: [5, 5, 5, 3, 5, 3],
       mt: ['34px', '35px', '35px', 0, '32px', '0'],
     }}
