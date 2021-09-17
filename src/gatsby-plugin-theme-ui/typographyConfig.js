@@ -1,10 +1,4 @@
 export const typographyConfig = {
-  h1: {
-    factor: 2.5,
-    fontSizes: [50, 65, 84, 51, 72, 94],
-    fontFamily: 'primary',
-    lineHeight: 1,
-  },
   h2: {
     factor: 2.5,
     fontSizes: [27.5, 31, 41, 36, 41, 54],
@@ -116,6 +110,19 @@ export const typographyConfig = {
     },
   },
   // Header
+  h1: {
+    fontSizes: [53.33, 64.75, 88.06, 53.57, 76.1, 96.89],
+    fontFamily: 'primaryBold',
+    lineHeight: 1,
+    '&>b': {
+      color: 'orange500',
+    },
+  },
+  'body-1000': {
+    fontSizes: [22.46, 21.58, 26.8, 18.8, 22.27, 27.68],
+    fontFamily: 'primary',
+    lineHeight: 1,
+  },
   'h5-500': {
     fontSizes: [15.91, 17.09, 16.27, 15.98, 15.78, 18.79],
     fontFamily: 'bodyBold',
@@ -125,6 +132,14 @@ export const typographyConfig = {
     fontSizes: [14.97, 15.29, 16.27, 15.04, 14.85, 15.82],
     fontFamily: 'body',
     lineHeight: 1.25,
+  },
+  lead: {
+    fontSizes: [18.71, 17.09, 19.14, 15.98, 18.56, 19.77],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+    '&>b': {
+      fontFamily: 'body.bold',
+    },
   },
   // Connections
   profileHeading: {
@@ -215,12 +230,7 @@ export const typographyConfig = {
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
-  lead: {
-    factor: 2.5,
-    fontSizes: [19, 16, 20, 15, 17, 20],
-    fontFamily: 'body',
-    lineHeight: 1.5,
-  },
+
   paragraph: {
     factor: 2.5,
     fontSizes: [18.63, 16.87, 16.24, 18.72, 18.45, 19.77],

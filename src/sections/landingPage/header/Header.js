@@ -48,17 +48,15 @@ export const Header = memo(() => (
 const Headline = () => (
   <GridItem
     sx={{
-      gridColumn: ['1/12', '2/12', '2/22', '13/24', '14/25', '14/24'],
+      gridColumn: ['1/13', '2/12', '2/22', '13/24', '14/25', '14/24'],
       gridRow: [1, 1, 1, '1/span 2', 1, 1],
     }}
   >
-    <Heading type='h4' sx={{ color: 'greenText' }}>
+    <Heading type='body-1000' as='p'>
       Explore new opportunities.
     </Heading>
-    <Heading variant='bold' type='h1' sx={{ mt: '8px', color: 'greenText' }}>
-      <Box as='span' sx={{ color: 'accentPrimary' }}>
-        Grow{' '}
-      </Box>
+    <Heading type='h1' sx={{ mt: '8px' }}>
+      <b>Grow </b>
       your business.
     </Heading>
   </GridItem>
@@ -66,9 +64,10 @@ const Headline = () => (
 
 const ParagraphBlock = () => (
   <Paragraph
+    as='h3'
+    type='lead'
     sx={{
       alignSelf: ['end', 'end', 'end', 'center', 'end', 'end'],
-      color: 'greenText',
       gridColumn: ['1/12', '2/9', '2/14', '6/15', '16/22', '16/21'],
       gridRow: [2, 2, 2, 3, 1, 1],
       transform: [
@@ -83,9 +82,7 @@ const ParagraphBlock = () => (
       mb: ['61px', '67px', '61px', 0, 0, 0],
     }}
   >
-    <Box as='span' sx={{ fontFamily: 'faible-bold' }}>
-      Wiket is the first business to business network{' '}
-    </Box>
+    <b>Wiket is the first business to business network </b>
     which lets you connect to mind like people.
   </Paragraph>
 );
@@ -122,10 +119,10 @@ const MainImgDescription = () => (
       mt: ['8px', '8px', '8px', 0, '8px', '16px'],
     }}
   >
-    <Heading type='lead' variant='bold' sx={{ color: 'greenText' }}>
+    <Heading as='h5' type='h5-500'>
       Hanging Garden
     </Heading>
-    <Paragraph type='smallParagraph' sx={{ color: 'greenText' }}>
+    <Paragraph as='p' type='body-300'>
       Florist in Bangkok
     </Paragraph>
   </GridItem>

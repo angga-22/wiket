@@ -17,7 +17,7 @@ const base = {
   // Core
   orange200: '#FFE3AC',
   orange400: '#FFBA33',
-  orange700: '#FDA700',
+  orange500: '#FDA700',
   teal700: '#007C7C',
   teal900: '#00615D',
   teal1000: '#005650',
