@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import {
+  GridWrapper,
   Section,
   GridItem,
   Paragraph,
@@ -14,13 +15,15 @@ import FeatureListing from './components/Card';
 
 const FeaturePrice = ({ featuresData }) => (
   <Section id='feature-price-section' sx={{ mt: '10vw' }}>
-    <Headlines />
-    <SmallHeadlines />
-    <BlossomCard />
-    <GrowthCard />
-    <FeaturesLabel />
-    <BatikShape />
-    <FeatureListing data={featuresData} />
+    <GridWrapper variant='inside.columns'>
+      <Headlines />
+      <SmallHeadlines />
+      <BlossomCard />
+      <GrowthCard />
+      <FeaturesLabel />
+      <BatikShape />
+      <FeatureListing data={featuresData} />
+    </GridWrapper>
   </Section>
 );
 
@@ -31,7 +34,7 @@ const Headlines = () => (
     sx={{
       gridColumn: ['2 / 11', '2 / 12', '8 / 17', '4 / 22', '1 / 8', '2 / 8'],
       gridRow: [1, 1, 1, 1, 1, 1],
-      mb: ['16px'],
+      mb: '1em',
     }}
   >
     <Heading
@@ -54,7 +57,7 @@ const SmallHeadlines = () => (
     sx={{
       gridColumn: ['2 / 12', '3 / 11', '6 / 19', '6 / 20', '1 / 9', '2 /  10'],
       gridRow: [2, 2, 2, 2, 2, 2],
-      mb: ['79px', '117px', '150px', '80px', '177px', '174px'],
+      mb: ['4em', '6em', '4em', '3em', '0', '1em'],
     }}
   >
     <Paragraph
@@ -87,7 +90,7 @@ const BlossomCard = () => (
       textAlign: 'center',
       p: [
         '42px 27px',
-        '42px 44px',
+        '36px 44px',
         '42px 33px',
         '32px 35px',
         '46px 30px',
@@ -103,7 +106,7 @@ const BlossomCard = () => (
         sx={{
           alignSelf: 'end',
           pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
-          px: '.2em',
+          pr: '.3em',
         }}
       >
         Blossom{' '}
@@ -125,6 +128,7 @@ const BlossomCard = () => (
 const GrowthCard = () => (
   <GridItem
     sx={{
+      zIndex: '1',
       gridColumn: [
         '1 / 13',
         '3 / 11',
@@ -136,6 +140,7 @@ const GrowthCard = () => (
       gridRow: [4, 4, 3, 3, 3, 3],
       marginTop: ['-5%', '-5%', '0%', '0%', '0%', '0%'],
       borderRadius: 'priceCard',
+      boxShadow: 'priceCard',
       backgroundColor: 'primary',
       display: 'flex',
       flexDirection: 'column',
@@ -159,7 +164,7 @@ const GrowthCard = () => (
           alignSelf: 'end',
           color: 'background',
           pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
-          px: '.2em',
+          pr: '.3em',
         }}
       >
         Grow
@@ -194,14 +199,23 @@ const BatikShape = () => (
         '1 / 12',
         '2 / 11',
         '14/ 24',
-        '14 / 24',
-        '19 / 22',
-        '21 / 23',
+        '19 / span 6',
+        '19 / span 6',
+        '21 / span 4',
       ],
-      gridRow: [null, null, null, 2, 2, 2],
-      zIndex: '-1',
-      display: ['none', 'none', 'none', 'none', 'block', 'block'],
-      // transform: [null, null, null, null, 'translateY(32%)', 'translateY(46%)'],
+      gridRow: [null, null, null, '3/span 2', '1/span 3', '1/span 3'],
+      zIndex: '0',
+      display: ['none', 'none', 'none', 'block', 'block', 'block'],
+      transform: [
+        null,
+        null,
+        null,
+        'translateY(32%)',
+        'translateY(32%)',
+        'translateY(46%)',
+      ],
+      marginTop: [null, null, null, '10%', '0%', '-15%'],
+      marginBottom: 'auto',
     }}
   >
     <picture>
