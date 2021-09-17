@@ -1,5 +1,5 @@
 // external dependencies
-import React, { memo, useState } from 'react';
+import React, { memo, useState, useEffect, useRef } from 'react';
 
 // gsap
 import { gsap } from 'gsap';
@@ -21,23 +21,61 @@ import menuVector from 'assets/svg/menu.svg';
 import closeVector from 'assets/svg/close.svg';
 import logoWhite from 'assets/svg/wiket-logo-light.svg';
 
-const tl = gsap.timeline({
-  ease: 'power2.in',
-  duration: 0.3,
-});
-
-function openNavOverlay() {
-  tl.from('#navigation', { opacity: 0.5, x: '100%' });
-  tl.play();
-}
-
-function closeNavOverlay() {
-  tl.to('#navigation', { opacity: 0, x: '-100%' });
-  tl.play();
-}
-
 export const Navbar = memo(() => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [closeMenu, setCloseMenu] = useState(true);
+
+  const handleOpenClick = () => {
+    setOpenMenu(!openMenu);
+    setCloseMenu(!closeMenu);
+  };
+
+  const handleCloseClick = () => {
+    setCloseMenu(!closeMenu);
+    setOpenMenu(!openMenu);
+  };
+
+  const navigation = useRef();
+  const tl = useRef();
+  const secondTl = useRef();
+
+  useEffect(() => {
+    tl.current = gsap
+      .timeline({
+        paused: true,
+        defaults: { ease: 'power4.in', duration: 0.5 },
+      })
+      .from(navigation.current, { opacity: 0, x: '100%' });
+
+    return () => tl.current.kill();
+  }, []);
+
+  useEffect(() => {
+    secondTl.current = gsap
+      .timeline({
+        paused: true,
+        defaults: { ease: 'power4.in', duration: 0.5 },
+      })
+      .to(navigation.current, { opacity: 0, x: '-100%' });
+
+    return () => secondTl.current.kill();
+  }, []);
+
+  useEffect(() => {
+    if (openMenu) {
+      tl.current.play();
+    } else {
+      tl.current.reverse();
+    }
+  }, [openMenu, tl]);
+
+  // useEffect(() => {
+  //   if (closeMenu) {
+  //     secondTl.current.play();
+  //   } else {
+  //     secondTl.current.reverse();
+  //   }
+  // }, [closeMenu, secondTl]);
 
   return (
     <nav>
@@ -54,15 +92,15 @@ export const Navbar = memo(() => {
         <Logo />
         <DesktopNavigation />
         <NavButton />
-        <Menu openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <Menu handleClick={handleOpenClick} />
       </GridWrapper>
 
       {/* ------------- Navigation Overlay ------------- */}
       <GridWrapper
-        id='navigation'
+        ref={navigation}
         sx={{
           bg: 'greenText',
-          display: openMenu ? 'grid' : 'none',
+          display: openMenu === true ? 'grid' : 'none',
           position: 'fixed',
           top: 0,
           left: 0,
@@ -72,7 +110,7 @@ export const Navbar = memo(() => {
           zIndex: 6,
         }}
       >
-        <Close openMenu={openMenu} setOpenMenu={setOpenMenu} />
+        <Close handleClick={handleCloseClick} />
         <OverlayNavlinks />
         <OverlayNavHeading />
         <LogoLight />
@@ -106,7 +144,7 @@ const NavButton = () => (
   </Box>
 );
 
-const Menu = ({ openMenu, setOpenMenu }) => (
+const Menu = ({ handleClick }) => (
   <Box
     sx={{
       display: ['block', 'block', 'block', 'block', 'none'],
@@ -115,15 +153,7 @@ const Menu = ({ openMenu, setOpenMenu }) => (
       height: '21px',
       width: '33px',
     }}
-    onClick={() => {
-      if (openMenu) {
-        closeNavOverlay();
-        setOpenMenu(false);
-      } else {
-        setOpenMenu(true);
-        openNavOverlay();
-      }
-    }}
+    onClick={handleClick}
   >
     <Image src={menuVector} alt='Menu icon' />
   </Box>
@@ -167,7 +197,7 @@ const Links = ({ sx }) =>
 
 /* ------------------- Navigation Overlay ------------------- */
 
-const Close = ({ openMenu, setOpenMenu }) => (
+const Close = ({ handleClick }) => (
   <Box
     sx={{
       alignSelf: ['center', 'center', 'end'],
@@ -177,7 +207,7 @@ const Close = ({ openMenu, setOpenMenu }) => (
       height: ['22.36px', '22.36px', '31.31px', '17.89px'],
       width: ['22.15px', '22.15px', '31.01px', '17.72px'],
     }}
-    onClick={() => setOpenMenu(!openMenu)}
+    onClick={handleClick}
   >
     <Image src={closeVector} alt='Close icon' />
   </Box>
