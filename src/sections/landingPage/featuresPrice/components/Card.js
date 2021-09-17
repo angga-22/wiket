@@ -99,22 +99,20 @@ const FeatureListing = ({ data }) =>
                   sx={{
                     fontWeight: 'bold',
                     color: 'secondary',
-                    alignSelf: 'center',
                   }}
                 >
                   5
                 </Text>
               ) : null}
             </div>
-            <div sx={{ display: 'flex' }}>
+            <div>
               {el.isGrowth && el.title !== 'Images' ? (
                 <Box
                   sx={{
-                    backgroundColor: 'accentSecondary',
+                    backgroundColor: 'primary',
                     width: ['14px', '14px', '14px', '14px', '20px', '20px'],
                     height: ['14px', '14px', '14px', '14px', '20px', '20px'],
                     borderRadius: '50%',
-                    display: 'flex',
                   }}
                 />
               ) : null}
@@ -123,8 +121,7 @@ const FeatureListing = ({ data }) =>
                 <Text
                   sx={{
                     fontWeight: 'bold',
-                    color: 'accentSecondary',
-                    alignSelf: 'center',
+                    color: 'primary',
                   }}
                 >
                   10
