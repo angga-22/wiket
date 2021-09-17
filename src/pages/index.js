@@ -31,7 +31,7 @@ const headerData = {
   thirdCard: {
     id: 3,
     label: 'Green Cafe',
-    location: 'Cafe in Bangkok',
+    location: 'Roastery in Bangkok',
     img: `${greenCafe}`,
   },
 };

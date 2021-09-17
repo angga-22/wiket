@@ -131,25 +131,21 @@ const MainImgDescription = () => (
   </GridItem>
 );
 
-const PotjectCard = () => (
+const Card = ({ sx, title, description, image, ...props }) => (
   <Box
     sx={{
       bg: 'background',
       borderRadius: '12px',
       boxShadow: 500,
-      gridColumn: ['1/7', '2/6', '19/25', '16/21', '8/12', '9/11'],
-      gridRow: [5, 5, 3, 2, 1, 1],
       justifySelf: ['end', 'center', 'center', 'center', 'center', 'baseline'],
       padding: '12px 12px 18px 12px',
-      position: 'relative',
-      mt: ['-90px', '-100px', '31px', '130px', '22px', '30px'],
-      mb: 'auto',
-      width: ['145px', '100%', '100%', '100%', '141px', '154px'],
       zIndex: 2,
+      ...sx,
     }}
+    {...props}
   >
     <Image
-      src={headerSubImage1}
+      src={image}
       alt=''
       sx={{
         borderRadius: '8px',
@@ -163,21 +159,35 @@ const PotjectCard = () => (
       variant='bold'
       sx={{ color: 'greenText', mt: 12, mb: 2 }}
     >
-      Potject
+      {title}
     </Heading>
     <Paragraph type='smallParagraph' sx={{ color: 'greenText' }}>
-      Pottery in Bangkok
+      {description}
     </Paragraph>
   </Box>
 );
 
+const PotjectCard = () => (
+  <Card
+    sx={{
+      gridColumn: ['1/7', '2/6', '19/25', '16/21', '8/12', '9/11'],
+      gridRow: [5, 5, 3, 2, 1, 1],
+      justifySelf: ['end', 'center', 'center', 'center', 'center', 'baseline'],
+      position: 'relative',
+      mt: ['-90px', '-100px', '31px', '130px', '22px', '30px'],
+      mb: 'auto',
+      width: ['145px', '100%', '100%', '100%', '141px', '154px'],
+    }}
+    image={headerSubImage1}
+    title='Potject'
+    description='Pottery in Bangkok'
+  />
+);
+
 const GreenCafeCard = () => (
-  <Box
+  <Card
     sx={{
       alignSelf: ['end', 'end', 'end', 'baseline', 'end', 'end'],
-      bg: 'background',
-      borderRadius: '12px',
-      boxShadow: 500,
       gridColumn: ['1/7', '3/7', '18/24', '18/23', '9/12', '9/12'],
       gridRow: [5, 5, 3, 3, 1, 1],
       justifySelf: [
@@ -188,8 +198,6 @@ const GreenCafeCard = () => (
         'baseline',
         'end',
       ],
-      padding: '12px 12px 18px 12px',
-      position: 'relative',
       transform: [
         null,
         'translateY(-23%)',
@@ -199,43 +207,19 @@ const GreenCafeCard = () => (
         'translateY(14%)',
       ],
       width: ['157px', '100%', '100%', '100%', '141px', '154px'],
-      zIndex: 2,
     }}
-  >
-    <Image
-      src={headerSubImage3}
-      alt=''
-      sx={{
-        borderRadius: '8px',
-        objectFit: 'cover',
-        height: ['106px', '121px', '120px', '90px', '90px', '100px'],
-        width: '100%',
-      }}
-    />
-    <Heading
-      type='h6'
-      variant='bold'
-      sx={{ color: 'greenText', mt: 12, mb: 2 }}
-    >
-      Green Cafe
-    </Heading>
-    <Paragraph type='smallParagraph' sx={{ color: 'greenText' }}>
-      Cafe in Bangkok
-    </Paragraph>
-  </Box>
+    image={headerSubImage3}
+    title='Green Cafe'
+    description='Roastery in Bangkok'
+  />
 );
 
 const GreenThumbCard = () => (
-  <Box
+  <Card
     sx={{
-      bg: 'background',
-      borderRadius: '12px',
-      boxShadow: 500,
       gridColumn: ['7/13', '7/11', '5/11', '10/15', '1/4', '2/5'],
       gridRow: [5, 5, 3, 2, 1, 1],
       justifySelf: ['center', null],
-      padding: '12px 12px 18px',
-      position: 'relative',
       transform: [
         'translateY(15%)',
         'translateY(-20%)',
@@ -246,30 +230,11 @@ const GreenThumbCard = () => (
       ],
       mb: 'auto',
       width: ['130px', '100%', '100%', '100%', '160px', '178px'],
-      zIndex: 2,
     }}
-  >
-    <Image
-      src={headerSubImage2}
-      alt=''
-      sx={{
-        borderRadius: '8px',
-        objectFit: 'cover',
-        height: ['85px', '121px', '120px', '90px', '104px', '118px'],
-        width: '100%',
-      }}
-    />
-    <Heading
-      type='h6'
-      variant='bold'
-      sx={{ color: 'greenText', mt: 12, mb: 2 }}
-    >
-      GreenThumb
-    </Heading>
-    <Paragraph type='smallParagraph' sx={{ color: 'greenText' }}>
-      Gardener in CheChe
-    </Paragraph>
-  </Box>
+    image={headerSubImage2}
+    title='GreenThumb'
+    description='Gardener in CheChe'
+  />
 );
 
 const Line = () => (
