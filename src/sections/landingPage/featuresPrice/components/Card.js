@@ -42,7 +42,8 @@ const FeatureListing = ({ data }) =>
                 '2 / 12',
                 '3 / 10',
               ],
-              pb: ['24px', '32px', '32px', '24px', '32px', '32px'],
+              // pb: ['24px', '32px', '32px', '24px', '32px', '32px'],
+              py: '12px',
             }}
           >
             <Paragraph
@@ -55,64 +56,81 @@ const FeatureListing = ({ data }) =>
               {el.title}
             </Paragraph>
           </GridItem>
-          <GridItem
-            sx={{
-              gridColumn: ['11', '11', '21 ', '18', '14 / 16', '14 / 16'],
-              display: 'flex',
-              justifyContent: 'center',
-              transform: 'translateY(10%)',
-            }}
-          >
-            {el.isBlossom && el.title !== 'Images' ? (
-              <Box
-                sx={{
-                  backgroundColor: 'secondary',
-                  width: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                  height: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                  borderRadius: '50%',
-                }}
-              />
-            ) : null}
-            {el.title === 'Images' ? (
-              <Text
-                sx={{
-                  fontWeight: 'bold',
-                  color: 'secondary',
-                }}
-              >
-                5
-              </Text>
-            ) : null}
-          </GridItem>
 
           <GridItem
             sx={{
-              gridColumn: ['12', '12', ' 22', '22', '20 /22', '20 / 22 '],
+              gridColumn: [
+                '10/span 3',
+                '11/span 2',
+                '20/span 3',
+                '20/span 3',
+                '12 / span 12',
+                '12 / span 12',
+              ],
               display: 'flex',
-              justifyContent: 'center',
-              transform: 'translateY(10%)',
+              justifyContent: 'space-around',
+              alignSelf: 'center',
             }}
           >
-            {el.isGrowth && el.title !== 'Images' ? (
-              <Box
-                sx={{
-                  backgroundColor: 'accentSecondary',
-                  width: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                  height: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                  borderRadius: '50%',
-                }}
-              />
-            ) : null}
-            {el.title === 'Images' ? (
-              <Text
-                sx={{
-                  fontWeight: 'bold',
-                  color: 'accentSecondary',
-                }}
-              >
-                10
-              </Text>
-            ) : null}
+            <div>
+              {el.isBlossom && el.title !== 'Images' ? (
+                <Box
+                  sx={{
+                    backgroundColor: 'secondary',
+                    width: ['14px', '14px', '14px', '14px', '20px', '20px'],
+                    height: ['14px', '14px', '14px', '14px', '20px', '20px'],
+                    borderRadius: '50%',
+                  }}
+                />
+              ) : (
+                <Box
+                  sx={{
+                    backgroundColor: 'background',
+                    width: ['14px', '14px', '14px', '14px', '20px', '20px'],
+                    height: ['14px', '14px', '14px', '14px', '20px', '20px'],
+                    borderRadius: '50%',
+                    display: 'flex',
+                  }}
+                />
+              )}
+
+              {el.title === 'Images' ? (
+                <Text
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'secondary',
+                    alignSelf: 'center',
+                  }}
+                >
+                  5
+                </Text>
+              ) : null}
+            </div>
+            <div sx={{ display: 'flex' }}>
+              {el.isGrowth && el.title !== 'Images' ? (
+                <Box
+                  sx={{
+                    backgroundColor: 'accentSecondary',
+                    width: ['14px', '14px', '14px', '14px', '20px', '20px'],
+                    height: ['14px', '14px', '14px', '14px', '20px', '20px'],
+                    borderRadius: '50%',
+                    display: 'flex',
+                  }}
+                />
+              ) : null}
+
+              {el.title === 'Images' ? (
+                <Text
+                  sx={{
+                    fontWeight: 'bold',
+                    color: 'accentSecondary',
+                    alignSelf: 'center',
+                  }}
+                >
+                  10
+                </Text>
+              ) : null}
+            </div>
           </GridItem>
         </>
       ))}
