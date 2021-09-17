@@ -77,7 +77,7 @@ const cards = {
     padding: '20px',
   },
   horizontal: {
-    backgroundColor: 'lightBackground',
+    backgroundColor: 'background',
     borderRadius: 'cardSecondary',
     boxShadow: 200,
     padding: '12px 24px 12px 12px',
@@ -87,7 +87,7 @@ const cards = {
     zIndex: 1,
   },
   vertical: {
-    backgroundColor: 'lightBackground',
+    backgroundColor: 'background',
     borderRadius: 'cardSecondary',
     padding: '12px 12px 18px',
     position: 'relative',
