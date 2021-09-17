@@ -97,6 +97,7 @@ export const typographyConfig = {
     letterSpacing: 0,
     color: 'textNegative',
   },
+
   // Navigation
   navigationLink: {
     factor: 2.5,
@@ -113,6 +114,17 @@ export const typographyConfig = {
       color: 'accentPrimary',
       fontFamily: 'primary.bold',
     },
+  },
+  // Header
+  'h5-500': {
+    fontSizes: [15.91, 17.09, 16.27, 15.98, 15.78, 18.79],
+    fontFamily: 'bodyBold',
+    lineHeight: 1,
+  },
+  'body-300': {
+    fontSizes: [14.97, 15.29, 16.27, 15.04, 14.85, 15.82],
+    fontFamily: 'body',
+    lineHeight: 1.25,
   },
   // Connections
   profileHeading: {

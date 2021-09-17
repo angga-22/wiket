@@ -1,6 +1,7 @@
 export const styles = {
   shadows: {
     priceCard: '0px 18px 24px rgba(0, 0, 0, 0.1)',
+    headerCard: '0px 18px 24px 0px rgba(0, 0, 0, 0.1)',
     1000: '0px 48px 64px rgba(0, 0, 0, 0.2)',
     700: '0px 24px 48px rgba(0, 0, 0, 0.2)',
     500: '0px 18px 24px rgba(0, 0, 0, 0.2)',

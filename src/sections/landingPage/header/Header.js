@@ -136,7 +136,7 @@ const Card = ({ sx, title, description, image, ...props }) => (
     sx={{
       bg: 'background',
       borderRadius: '12px',
-      boxShadow: 500,
+      boxShadow: 'headerCard',
       justifySelf: ['end', 'center', 'center', 'center', 'center', 'baseline'],
       padding: '12px 12px 18px 12px',
       zIndex: 2,
@@ -150,18 +150,20 @@ const Card = ({ sx, title, description, image, ...props }) => (
       sx={{
         borderRadius: '8px',
         objectFit: 'cover',
-        height: ['103px', '121px', '120px', '90px', '90px', '100px'],
         width: '100%',
       }}
     />
     <Heading
-      type='h6'
-      variant='bold'
-      sx={{ color: 'greenText', mt: 12, mb: 2 }}
+      as='h5'
+      type='h5-500'
+      sx={{
+        mt: ['12px', '12px', '12px', '12px', '12px', '18px'],
+        mb: ['4px', '4px', '4px', '4px', '4px', '6px'],
+      }}
     >
       {title}
     </Heading>
-    <Paragraph type='smallParagraph' sx={{ color: 'greenText' }}>
+    <Paragraph as='p' type='body-300'>
       {description}
     </Paragraph>
   </Box>
