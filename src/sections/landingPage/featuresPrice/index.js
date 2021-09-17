@@ -75,43 +75,49 @@ const BlossomCard = () => (
     sx={{
       gridColumn: [
         '2 / 12',
-        '3 / 11',
-        '2 / 13',
-        '2 / 13',
+        '4 / 10',
+        '3 / 13',
+        '3 / 13',
         '12 / 18',
         '12 / 18',
       ],
-      gridRow: [3, 3, 3, 3, 3, 3],
-      borderRadius: '16px',
+      gridRow: 3,
+      borderRadius: 'priceCard',
       backgroundColor: 'secondary',
       textAlign: 'center',
       p: [
-        '24px 27px',
-        '24px 44px',
-        '24px 33px',
+        '42px 27px',
+        '42px 44px',
+        '42px 33px',
         '32px 35px',
-        '24px 30px',
+        '46px 30px',
         '32px 40px',
       ],
       alignSelf: [null, null, 'center', 'center', 'end', 'end'],
     }}
   >
-    <Heading
-      type='cardHeader'
-      variant='bold'
-      sx={{
-        pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
-      }}
-    >
-      Blossom
-      <Heading type='cardHeaderSmall' variant='bold'>
-        {' '}
+    <div sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Heading
+        type='cardHeader'
+        variant='bold'
+        sx={{
+          alignSelf: 'end',
+          pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
+          px: '.2em',
+        }}
+      >
+        Blossom{' '}
+      </Heading>
+      <Heading
+        type='cardHeaderSmall'
+        variant='bold'
+        sx={{ alignSelf: 'start' }}
+      >
         Free
       </Heading>
-    </Heading>
+    </div>
     <Paragraph type='cardParagraph'>
-      Everything you need to get started. Comes with your own profile and access
-      to our B2B network.
+      Set up your own profile, conntect with others and share ideas
     </Paragraph>
   </GridItem>
 );
@@ -121,14 +127,15 @@ const GrowthCard = () => (
     sx={{
       gridColumn: [
         '1 / 13',
-        '2 / 12',
-        '12/ 24',
-        '12 / 24',
+        '3 / 11',
+        '12/ 23',
+        '12 / 23',
         '18 / 24',
         '18 / 24',
       ],
       gridRow: [4, 4, 3, 3, 3, 3],
-      borderRadius: ['16px', '16px', '16px', '16px', '16px', '16px'],
+      marginTop: ['-5%', '-5%', '0%', '0%', '0%', '0%'],
+      borderRadius: 'priceCard',
       backgroundColor: 'primary',
       display: 'flex',
       flexDirection: 'column',
@@ -140,30 +147,34 @@ const GrowthCard = () => (
         '48px 36px',
         '56px 42px',
         '56px 20px',
-        '56px 35px',
+        '56px 10px',
       ],
     }}
   >
-    <Heading
-      type='cardHeader'
-      variant='bold'
-      sx={{
-        color: 'background',
-        pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
-      }}
-    >
-      Grow
+    <div sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Heading
+        type='cardHeader'
+        variant='bold'
+        sx={{
+          alignSelf: 'end',
+          color: 'background',
+          pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
+          px: '.2em',
+        }}
+      >
+        Grow
+      </Heading>
       <Heading
         type='cardHeaderSmall'
         variant='bold'
         sx={{
+          alignSelf: 'start',
           color: 'background',
         }}
       >
-        {' '}
-        / $25 month
+        $25 / month
       </Heading>
-    </Heading>
+    </div>
     <Paragraph
       type='cardParagraph'
       sx={{
@@ -209,8 +220,8 @@ const FeaturesLabel = () => (
     sx={{
       gridColumn: ['1 / 12', '1 / 9', ' 3 / 16', '3 / 16', '2 / 10', '3 / 9'],
       gridRow: [5, 5, 4, 4, 3, 3],
-      borderRadius: ['16px', '16px', '16px', '16px', '16px', '16px'],
-      alignSelf: ['end', 'end', 'end', 'end', 'end', 'end'],
+      borderRadius: '16px',
+      alignSelf: 'end',
       mt: ['77px', '120px', '141px', '120px', '0', '0'],
     }}
   >
