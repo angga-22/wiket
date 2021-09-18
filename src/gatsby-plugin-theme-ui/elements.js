@@ -37,36 +37,17 @@ const links = {
 };
 
 const buttons = {
-  primary: {
-    ...buttonDefault,
-    variant: 'typography.buttonLarge.normal',
-    bg: 'primary',
-    borderRadius: 'button',
-    padding: '10px',
-    '&:hover': {
-      transform: 'scale(1.1)',
-    },
-  },
-  secondary: {
-    ...buttonDefault,
-    width: '300px',
-    variant: 'typography.button.normal',
-    bg: 'light',
-    borderRadius: 'button',
-    padding: '10px',
-    '&:hover': {
-      bg: 'medium',
-    },
-  },
   tertiary: {
     ...buttonDefault,
     variant: 'typography.buttonPrimary.normal',
     p: '16px 24px',
+    borderRadius: 'button',
   },
   tertiarySmall: {
     ...buttonDefault,
     variant: 'typography.buttonPrimarySmall.normal',
     p: '12px 16px',
+    borderRadius: 'button',
   },
 };
 

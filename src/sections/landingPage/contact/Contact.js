@@ -54,16 +54,14 @@ export const Contact = memo(() => {
           type='submit'
           variant='tertiary'
           sx={{
-            gridColumn: ['1/7', '1/6', '1/8', '2/10', '1/8', '1/8'],
+            gridColumn: ['1/7', '2/6', '3/9', '3/9', '2/8', '1/8'],
             gridRow: [4, 4, 4, 3, 4, 3],
-            mr: 'auto',
-            mb: 'auto',
-            borderRadius: '12px',
+            justifySelf: ['auto', 'auto', 'auto', 'auto', 'left', 'left'],
+            alignSelf: 'start',
           }}
         >
           Get started
         </Button>
-        {/* <CheckboxContainer /> */}
         <FormParagraph />
       </FormWrapper>
     </GridWrapper>
@@ -143,7 +141,7 @@ const FormWrapper = (props) => (
     variant='fullWidth'
     sx={{
       gridRow: [3, 3, 3, 3, '1 / span 2', '1 / span 2'],
-      gridColumn: ['1/13', '1/13', '7/25', '1/25', '12/25', '12/24'],
+      gridColumn: ['1/13', '1/13', '6/25', '1/25', '12/25', '11/24'],
       width: ['100vw', 'unset', 'unset', 'unset', 'unset', 'unset'],
       ml: [null, 0, 0, 0, 0, 0],
     }}
@@ -154,7 +152,7 @@ const FormWrapper = (props) => (
       sx={{
         bg: 'formBg',
         borderRadius: 'form',
-        justifyContent: 'center',
+        justifyContent: ['center', 'left', 'left', 'left', 'left', 'left'],
         pt: ['32px', '37px', '37px', '37px', '37px', '37px'],
         pb: ['40px', '48px', '48px', '48px', '48px', '48px'],
       }}
@@ -168,8 +166,7 @@ const FormWrapper = (props) => (
 const NameInput = ({ value, inputChange }) => (
   <GridItem
     sx={{
-      gridColumn: ['1/13', '1/12', '1/16', '2/12', '1/11', '1/4'],
-      width: ['100%', '100%', '100%', '100%', '109%', '109%'],
+      gridColumn: ['1/13', '2/12', '3/18', '3/13', '2/13', '1/7'],
     }}
   >
     <Label htmlFor='name' as='label' type='inputLabel'>
@@ -187,9 +184,7 @@ const NameInput = ({ value, inputChange }) => (
 const EmailInput = ({ value, inputChange }) => (
   <GridItem
     sx={{
-      gridColumn: ['1/13', '1/12', '1/16', '13/22', '2/12', '6/11'],
-      justifySelf: 'end',
-      width: ['100%', '100%', '100%', '100%', '109%', '109%'],
+      gridColumn: ['1/13', '2/12', '3/18', '14/23', '2/13', '7/12'],
     }}
   >
     <Label htmlFor='email' as='label' type='inputLabel'>
@@ -206,7 +201,7 @@ const EmailInput = ({ value, inputChange }) => (
 
 const Textarea = ({ value, inputChange }) => (
   <GridItem
-    sx={{ gridColumn: ['1/13', '1/12', '1/16', '2/16', '1/12', '1/9'] }}
+    sx={{ gridColumn: ['1/13', '2/12', '3/18', '3/17', '2/13', '1/9'] }}
   >
     <Label htmlFor='description' as='label' type='inputLabel'>
       Your Business
@@ -227,9 +222,10 @@ const Textarea = ({ value, inputChange }) => (
 
 const FormParagraph = () => (
   <Paragraph
+    as='p'
     type='formParagraph'
     sx={{
-      gridColumn: ['1/span 11', '1/span 8', '1/13', '9/20', '1/9', '5/12'],
+      gridColumn: ['1/span 11', '2/span 8', '3/15', '10/21', '2/10', '5/12'],
       gridRow: [5, 5, 5, 3, 5, 3],
       mt: ['34px', '35px', '35px', 0, '32px', '0'],
     }}
@@ -237,87 +233,8 @@ const FormParagraph = () => (
     We don’t sell your email and just using it for direct mails to you.{' '}
     <span>No Newsletter involved.</span> For more information refer to our{' '}
     <span>
-      <href>data privacy terms</href>
+      <a href='/privacy-policy'>data privacy terms</a>
     </span>
     .
   </Paragraph>
 );
-
-/* --------------- Checkbox --------------- */
-
-// const CheckboxContainer = () => {
-//   const [isActive, setIsActive] = useState(false);
-
-//   const handleToggle = () => {
-//     setIsActive(!isActive);
-//   };
-
-//   return (
-//     <Box
-//       as='span'
-//       sx={{
-//         bg: 'greenText',
-//         border: 'none',
-//         borderRadius: 'input',
-//         cursor: 'pointer',
-//         display: 'flex',
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//         gridColumn: ['1/3', '1/2', '1/2', '11/12', '1/2', '1/2'],
-//         gridRow: [5, 4, 4, 3, 4, 4],
-//         mt: ['34px', '35px', '35px', 0, '32px', '32px'],
-//         position: 'relative',
-//         height: ['32px', '38px', '32px'],
-//         width: ['32px', '38px', '32px'],
-//       }}
-//     >
-//       <input
-//         type='checkbox'
-//         onClick={handleToggle}
-//         onKeyUp={handleToggle}
-//         style={{
-//           cursor: 'pointer',
-//           opacity: 0,
-//           position: 'absolute',
-//           height: '32px',
-//           width: '32px',
-//         }}
-//       />
-//       <Box
-//         as='span'
-//         className='checkbox-control'
-//         onClick={handleToggle}
-//         onKeyUp={handleToggle}
-//         sx={{
-//           display: 'inline-block',
-//           width: '25px',
-//           height: '25px',
-//         }}
-//       >
-//         <svg
-//           xmlns='http://www.w3.org/2000/svg'
-//           width='25px'
-//           height='25px'
-//           viewBox='0 0 352.62 352.62'
-//           aria-hidden='true'
-//           focusable='false'
-//           style={{
-//             transition: 'transform 0.1s ease-in 25ms',
-//             transform: isActive ? 'scale(1)' : 'scale(0)',
-//             transformOrigin: 'bottom left',
-//           }}
-//         >
-//           <path
-//             fill='#FFA722'
-//             d='M337.222,22.952c-15.912-8.568-33.66,7.956-44.064,17.748c-23.867,23.256-44.063,50.184-66.708,74.664
-//             c-25.092,26.928-48.348,53.856-74.052,80.173c-14.688,14.688-30.6,30.6-40.392,48.96c-22.032-21.421-41.004-44.677-65.484-63.648
-//             c-17.748-13.464-47.124-23.256-46.512,9.18c1.224,42.229,38.556,87.517,66.096,116.28c11.628,12.24,26.928,25.092,44.676,25.704
-//             c21.42,1.224,43.452-24.48,56.304-38.556c22.645-24.48,41.005-52.021,61.812-77.112c26.928-33.048,54.468-65.485,80.784-99.145
-//             C326.206,96.392,378.226,44.983,337.222,22.952z M26.937,187.581c-0.612,0-1.224,0-2.448,0.611
-//             c-2.448-0.611-4.284-1.224-6.732-2.448l0,0C19.593,184.52,22.653,185.132,26.937,187.581z'
-//           />
-//         </svg>
-//       </Box>
-//     </Box>
-//   );
-// };

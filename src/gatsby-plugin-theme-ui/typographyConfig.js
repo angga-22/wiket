@@ -213,15 +213,16 @@ export const typographyConfig = {
     fontSizes: [13.1, 14.39, 15.31, 13.16, 14.85, 15.82],
   },
   formParagraph: {
-    fontSizes: [12.1, 12.4, 13.3, 12.1, 12.9, 14.8],
+    fontSizes: [11.23, 12.59, 13.4, 11.28, 12.99, 14.83],
     fontFamily: 'body',
     lineHeight: 1.5,
     color: 'teal1000',
     '&>span': {
       fontFamily: 'body.bold',
     },
-    '&>a': {
-      fontFamily: 'body.bold',
+    '&>span>a': {
+      color: 'teal1000',
+      textDecoration: 'underline',
     },
   },
   label: {

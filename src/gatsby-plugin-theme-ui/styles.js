@@ -11,7 +11,7 @@ export const styles = {
   },
   radii: {
     card: '10px',
-    button: '5px',
+    button: '12px',
     priceCard: '16px',
     input: '8px',
     form: '24px',
