@@ -1,9 +1,5 @@
 // external dependencies
-import React, { memo, useEffect } from 'react';
-
-// gsap
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import React, { memo } from 'react';
 
 // pieces
 import {
@@ -26,25 +22,30 @@ import imgTwo from 'assets/jpg/connections-card-2.jpg';
 import imgOne from 'assets/jpg/header-sub-img-1.jpg';
 import imgFour from 'assets/jpg/connections-card-4.jpg';
 
-gsap.registerPlugin(ScrollTrigger);
+// animations
+import { motionChangeSections, motionChangeCards } from './animations';
+
+const quantityOfContentWrapper = [0, 1, 2];
 
 export const Connections = memo(() => {
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log('useEffect');
-    // gsap.utils.toArray('.animate-section').forEach((section) => {
-    //   gsap.from(section, {
-    //     autoAlpha: 0.5,
-    //     duration: 1.5,
-    //     scrollTrigger: {
-    //       trigger: section,
-    //       pin: true,
-    //       start: 'top top',
-    //       end: '+=500',
-    //     },
-    //   });
-    // });
-  }, []);
+  const contentWrapper = React.useRef([]);
+  const primaryCards = React.useRef([]);
+
+  // Dynamic refs
+  contentWrapper.current = quantityOfContentWrapper.map(
+    (wrapper, i) => contentWrapper.current[i] ?? React.createRef()
+  );
+  primaryCards.current = quantityOfContentWrapper.map(
+    (wrapper, i) => primaryCards.current[i] ?? React.createRef()
+  );
+
+  console.log(contentWrapper.current);
+  console.log(primaryCards.current);
+
+  React.useEffect(() => {
+    motionChangeSections(contentWrapper);
+    motionChangeCards(primaryCards);
+  });
 
   return (
     <section>
@@ -53,9 +54,18 @@ export const Connections = memo(() => {
       >
         <Headline />
       </GridWrapper>
-      <FirstSection />
-      <SecondSection />
-      <ThirdSection />
+      <FirstSection
+        sectionRef={contentWrapper.current[0]}
+        cardRef={primaryCards.current[0]}
+      />
+      <SecondSection
+        sectionRef={contentWrapper.current[1]}
+        cardRef={primaryCards.current[1]}
+      />
+      <ThirdSection
+        sectionRef={contentWrapper.current[2]}
+        cardRef={primaryCards.current[2]}
+      />
     </section>
   );
 });
@@ -85,8 +95,9 @@ const Headline = () => (
 /* --------------------- Vectors svgs --------------------- */
 /* -------------------------------------------------------- */
 
-const GreenPointerVector = ({ sx }) => (
+const GreenPointerVector = ({ sx, cardRef }) => (
   <Box
+    ref={cardRef}
     sx={{
       position: 'relative',
       height: ['58px', '76px', '54px', '54px', '65px', '123px'],
@@ -131,8 +142,9 @@ const LogoVector = ({ sx }) => (
 /* ------------------- Sections Number ------------------- */
 /* ------------------------------------------------------- */
 
-const Number = ({ number, sx }) => (
+const Number = ({ number, sx, cardRef }) => (
   <Heading
+    ref={cardRef}
     as='h2'
     type='connectionsNumber'
     sx={{
@@ -232,8 +244,9 @@ const CardImgAndTextVertical = ({ image, title, text }) => (
 
 /* ------------------------ Cards ------------------------ */
 
-const HorizontalSmallCard = ({ sx }) => (
+const HorizontalSmallCard = ({ sx, cardRef }) => (
   <Card
+    ref={cardRef}
     sx={{
       variant: 'cards.horizontal',
       ...sx,
@@ -266,8 +279,9 @@ const HorizontalSmallCard = ({ sx }) => (
   </Card>
 );
 
-const HorizontalBigCard = ({ sx }) => (
+const HorizontalBigCard = ({ sx, cardRef }) => (
   <Card
+    ref={cardRef}
     sx={{
       variant: 'cards.horizontal',
       bg: 'formBg',
@@ -341,12 +355,14 @@ const VerticalSmallCard = ({ sx }) => (
 
 /* -------------------- First Section --------------------- */
 
-const FirstSection = () => (
+const FirstSection = ({ sectionRef, cardRef }) => (
   <GridWrapper
+    ref={sectionRef}
     sx={{ justifyContent: 'center', pt: ['62px', '80px', '103px', '44px'] }}
     className='animate-section'
   >
     <GreenPointerVector
+      cardRef={cardRef}
       sx={{
         alignSelf: ['unset', 'baseline', 'baseline', 'end', 'end', 'end'],
         gridColumn: ['9/11', '9/11', '13/15', '15/17', '13/15', '7/10'],
@@ -363,6 +379,7 @@ const FirstSection = () => (
       }}
     />
     <Number
+      cardRef={cardRef}
       number='01.'
       sx={{
         alignSelf: ['end', 'end', 'end', 'end', 'baseline', 'baseline'],
@@ -372,6 +389,7 @@ const FirstSection = () => (
       }}
     />
     <HorizontalSmallCard
+      cardRef={cardRef}
       sx={{
         alignSelf: ['unset', 'unset', 'unset', 'end', 'end'],
         gridColumn: ['3/13', '6/12', '9/18', '5/14', '4/11', '4/9'],
@@ -395,8 +413,9 @@ const FirstSection = () => (
 
 /* ------------------- Second Section -------------------- */
 
-const SecondSection = () => (
+const SecondSection = ({ sectionRef }) => (
   <GridWrapper
+    ref={sectionRef}
     sx={{ pt: ['81px'], display: ['grid', 'none'] }}
     className='animate-section'
   >
@@ -435,13 +454,18 @@ const SecondSection = () => (
 
 /* -------------------- Third Section --------------------- */
 
-const ThirdSection = () => (
+const ThirdSection = ({ sectionRef, cardRef }) => (
   <GridWrapper
+    ref={sectionRef}
     sx={{ pt: ['74px'], display: ['grid', 'none'] }}
     className='animate-section'
   >
-    <HorizontalSmallCard sx={{ gridColumn: ['3/13'], gridRow: [1] }} />
+    <HorizontalSmallCard
+      cardRef={cardRef}
+      sx={{ gridColumn: ['3/13'], gridRow: [1] }}
+    />
     <HorizontalBigCard
+      cardRef={cardRef}
       sx={{ gridColumn: ['1/13'], gridRow: [2], my: ['12px'] }}
     />
     <VerticalBigCard
