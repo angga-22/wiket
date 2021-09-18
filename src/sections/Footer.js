@@ -7,8 +7,7 @@ import {
   Paragraph,
   srcsetValues,
 } from '@thepuzzlers/pieces';
-// import { srcsetValues } from '@thepuzzlers/pieces';
-// import { StaticImage } from 'gatsby-plugin-image';
+
 import batikFooterPhone from 'assets/svg/footer-background-phone.svg';
 import batikFooterPhoneXl from 'assets/svg/footer-background-phoneXl.svg';
 import batikFooterTabletPortrait from 'assets/svg/footer-background-tabletPortrait.svg';
@@ -17,7 +16,7 @@ import batikFooterTabletLandscape from 'assets/svg/footer-background-tabletLands
 import batikFooterDesktop from 'assets/svg/footer-background-desktop.svg';
 import logoWiketWhite from 'assets/svg/logo-wiket-white.svg';
 
-const Footer = () => (
+export const Footer = () => (
   <Section
     id='header-section'
     sx={{
@@ -31,8 +30,6 @@ const Footer = () => (
     <FooterNav />
   </Section>
 );
-
-export default Footer;
 
 const Logo = () => (
   <GridItem
