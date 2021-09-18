@@ -214,7 +214,8 @@ const Textarea = ({ value, inputChange }) => (
       value={value.description}
       onChange={inputChange}
       sx={{
-        height: ['152px', '152px', '152px', '120px', '120px', '120px'],
+        mb: ['32px', '32px', '32px', '40px', '32px', '48px'],
+        height: '144px',
       }}
     />
   </GridItem>

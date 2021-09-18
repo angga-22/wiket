@@ -5,10 +5,16 @@ export const forms = {
     backgroundColor: 'white',
     borderRadius: 'input',
     outline: 'none',
-    mt: '8px',
-    mb: '32px',
-    py: '13px',
-    px: '16px',
+    mt: '8px', // spacing to label
+    mb: ['24px', '32px', '32px', '32px', '32px', '32px'], // spacing between inputs
+    p: [
+      '12px 16px',
+      '12px 16px',
+      '12px 16px',
+      '12px 16px',
+      '10.5px 16px',
+      '10.5px 16px',
+    ],
     '::placeholder': {
       color: 'inputText',
     },
