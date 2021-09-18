@@ -13,7 +13,7 @@ import batikShapeBlind from 'assets/svg/batik-shape-blind.svg';
 import batikShapeOrange from 'assets/svg/batik-shape-orange.svg';
 import FeatureListing from './components/Card';
 
-const FeaturePrice = ({ featuresData }) => (
+export const Pricing = ({ featuresData }) => (
   <Section id='feature-price-section' sx={{ mt: '10vw' }}>
     <GridWrapper variant='inside.columns'>
       <Headlines />
@@ -26,8 +26,6 @@ const FeaturePrice = ({ featuresData }) => (
     </GridWrapper>
   </Section>
 );
-
-export default FeaturePrice;
 
 const Headlines = () => (
   <GridItem

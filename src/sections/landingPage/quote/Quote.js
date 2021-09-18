@@ -11,7 +11,7 @@ import {
 } from '@thepuzzlers/pieces';
 import Tick from '../../../assets/svg/tick.svg';
 
-export const StartGrowing = memo(() => (
+export const Quote = memo(() => (
   <Section
     id='values-section'
     sx={{ minHeight: '50vh', alignItems: 'center', mt: '10vw' }}

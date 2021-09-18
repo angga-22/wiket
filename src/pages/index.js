@@ -1,15 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Header } from 'sections/landingPage/header/Header';
-import { Values } from 'sections/landingPage/values/Values';
-import { Strengthen } from 'sections/landingPage/strengthen/Strengthen';
-import { Filler } from 'sections/landingPage/filler/Filler';
-import { Connections } from 'sections/landingPage/connections/Connections';
-import { Profile } from 'sections/landingPage/profile/Profile';
-import { StartGrowing } from 'sections/landingPage/growing/Growing';
-import FeaturePrice from 'sections/landingPage/featuresPrice';
-import { Contact } from 'sections/landingPage/contact/Contact';
-import Footer from 'sections/landingPage/footer';
+
+import {
+  Header,
+  Strengthen,
+  Profile,
+  Connections,
+  Values,
+  Filler,
+  Pricing,
+  Quote,
+  Contact,
+} from 'sections/landingPage';
+import { Footer } from 'sections/Footer';
 
 const IndexPage = ({ data }) => (
   <div>
@@ -19,8 +22,8 @@ const IndexPage = ({ data }) => (
     <Connections />
     <Values />
     <Filler />
-    <FeaturePrice featuresData={data.features.nodes} />
-    <StartGrowing />
+    <Pricing featuresData={data.features.nodes} />
+    <Quote />
     <Contact />
     <Footer />
   </div>
