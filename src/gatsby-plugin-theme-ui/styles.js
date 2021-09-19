@@ -13,6 +13,8 @@ export const styles = {
     card: '10px',
     button: '12px',
     priceCard: '16px',
+    headerCard: '12px',
+    headerCardImage: '8px',
     input: '8px',
     form: '24px',
     cardSecondary: '12px',
