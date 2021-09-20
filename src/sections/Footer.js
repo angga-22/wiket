@@ -103,14 +103,14 @@ const FooterParagraph = () => (
     <Paragraph
       type='footerParagraph'
       sx={{
-        color: '#fff',
+        color: 'textNegative',
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
         mb: ['45px', '58px', '0', '0', '0'],
         fontWeight: 'lighter',
       }}
     >
       Where mind-liked businesses
-      <span sx={{ color: '#FDA700', fontWeight: 'bold' }}> connect</span>
+      <span sx={{ color: 'secondary', fontWeight: 'bold' }}> connect</span>
     </Paragraph>
   </GridItem>
 );
@@ -142,7 +142,7 @@ const FooterNav = () => (
       type='smallParagraph'
       variant='lighter'
       sx={{
-        color: '#fff',
+        color: 'textNegative',
       }}
     >
       Legal Notes
@@ -151,7 +151,7 @@ const FooterNav = () => (
       type='smallParagraph'
       variant='lighter'
       sx={{
-        color: '#fff',
+        color: 'textNegative',
       }}
     >
       Privacy
