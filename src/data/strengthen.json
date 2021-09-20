@@ -5,7 +5,7 @@
     "text": "Build your reputation and relationships to drive innovation and productivity. ",
     "gridColumnStart": [1, 2, 2, 1, 3, 5],
     "gridRow": ["2 / 3", "2 / 3", "2 / 3", "2 / 3", "2 / 3", "2 / 3"],
-    "image": "../assets/svg/icon-communication.svg"
+    "image": "../assets/svg/iconChat.svg"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "text": "Make referrals of your preferred local partners and start growing together.",
     "gridColumnStart": [1, 2, 14, 14, 14, 14],
     "gridRow": ["3 / 4", "3 / 4", "2 / 3", "2 / 3", "2 / 3", "2 / 3"],
-    "image": "../assets/svg/icon-growth.svg"
+    "image": "../assets/svg/iconPlant.svg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "text": "Become visible, discover new businesses and build strong relationships with others.",
     "gridColumnStart": [1, 2, 2, 1, 3, 5],
     "gridRow": ["4 / 5", "4 / 5", "3 / 4", "3 / 4", "3 / 4", "3 / 4"],
-    "image": "../assets/svg/icon-collaborate.svg"
+    "image": "../assets/svg/iconPuzzle.svg"
   },
   {
     "id": 4,
@@ -29,6 +29,6 @@
     "text": "Start selling your goods to other businesses and buy products from people you can trust.",
     "gridColumnStart": [1, 2, 14, 14, 14, 14],
     "gridRow": ["5 / 6", "5 / 6", "3 / 4", "3 / 4", "3 / 4", "3 / 4"],
-    "image": "../assets/svg/icon-market.svg"
+    "image": "../assets/svg/iconMarket.svg"
   }
 ]
