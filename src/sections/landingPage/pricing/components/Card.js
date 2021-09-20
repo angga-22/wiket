@@ -4,133 +4,122 @@ import { Box, Paragraph, Heading, GridItem } from '@thepuzzlers/pieces';
 import { Text } from 'theme-ui';
 
 const FeatureListing = ({ data }) =>
-  data.map((feature) => (
-    <>
-      <GridItem
+  data.map((feature) => <PricingSection data={feature} />);
+
+const PricingSection = ({ data }) => (
+  <>
+    <GridItem
+      sx={{
+        gridColumn: [
+          '1 / 12',
+          '1 / 12',
+          '3 / 19',
+          '3 / 23',
+          '2 / 24',
+          '3 / 24',
+        ],
+        mt: ['46px', '51px', '40px', '40px', '80px', '80px'],
+      }}
+    >
+      <Heading
+        type='h5'
+        variant='bold'
         sx={{
-          gridColumn: [
-            '1 / 12',
-            '1 / 12',
-            '3 / 19',
-            '3 / 23',
-            '2 / 24',
-            '3 / 24',
-          ],
-          mt: ['46px', '51px', '40px', '40px', '80px', '80px'],
+          color: 'accentSecondary',
+          mb: '20px',
         }}
       >
-        <Heading
-          type='h5'
-          variant='bold'
-          sx={{
-            color: 'accentSecondary',
-            mb: '20px',
-          }}
-        >
-          {feature.title}
-        </Heading>
-      </GridItem>
-      {feature.features.map((el) => (
-        <>
-          <GridItem
-            sx={{
-              gridColumn: [
-                '1 / 10',
-                '1 / 9',
-                '3 / 16',
-                '3 / 12',
-                '2 / 12',
-                '3 / 10',
-              ],
-              // pb: ['24px', '32px', '32px', '24px', '32px', '32px'],
-              py: '12px',
-            }}
-          >
-            <Paragraph
-              type='featureList'
-              variant='bold'
-              sx={{
-                color: 'accentSecondary',
-              }}
-            >
-              {el.title}
-            </Paragraph>
-          </GridItem>
+        {data.title}
+      </Heading>
+    </GridItem>
+    {data.features.map((el) => (
+      <PricingRow data={el} />
+    ))}
+  </>
+);
 
-          <GridItem
-            sx={{
-              gridColumn: [
-                '10/span 3',
-                '11/span 2',
-                '20/span 3',
-                '20/span 3',
-                '12 / span 12',
-                '12 / span 12',
-              ],
-              display: 'flex',
-              justifyContent: 'space-around',
-              alignSelf: 'center',
-            }}
-          >
-            <div>
-              {el.isBlossom && el.title !== 'Images' ? (
-                <Box
-                  sx={{
-                    backgroundColor: 'secondary',
-                    width: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                    height: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                    borderRadius: '50%',
-                  }}
-                />
-              ) : (
-                <Box
-                  sx={{
-                    backgroundColor: 'background',
-                    width: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                    height: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                    borderRadius: '50%',
-                    display: 'flex',
-                  }}
-                />
-              )}
+const PricingRow = ({ data }) => (
+  <>
+    {/* Title */}
+    <GridItem
+      sx={{
+        gridColumn: ['1 / 10', '1 / 9', '3 / 16', '3 / 12', '2 / 12', '3 / 10'],
+        // pb: ['24px', '32px', '32px', '24px', '32px', '32px'],
+        py: '12px',
+      }}
+    >
+      <Paragraph
+        type='featureList'
+        variant='bold'
+        sx={{
+          color: 'accentSecondary',
+        }}
+      >
+        {data.title}
+      </Paragraph>
+    </GridItem>
+    {/* isBlossom */}
+    <GridItem
+      sx={{
+        gridColumn: [
+          '10/span 3',
+          '11/span 2',
+          '20/span 3',
+          '20/span 3',
+          '12 / span 12',
+          '12 / span 12',
+        ],
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignSelf: 'center',
+      }}
+    >
+      {/* isBlossom */}
+      <div>
+        <Indicator
+          color='secondary'
+          value={data.blossomCount ?? data.isBlossom}
+        />
+      </div>
+      {/* isGrowth */}
+      <div>
+        <Indicator color='primary' value={data.growthCount ?? data.isGrowth} />
+      </div>
+    </GridItem>
+  </>
+);
 
-              {el.title === 'Images' ? (
-                <Text
-                  sx={{
-                    fontWeight: 'bold',
-                    color: 'secondary',
-                  }}
-                >
-                  5
-                </Text>
-              ) : null}
-            </div>
-            <div>
-              {el.isGrowth && el.title !== 'Images' ? (
-                <Box
-                  sx={{
-                    backgroundColor: 'primary',
-                    width: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                    height: ['14px', '14px', '14px', '14px', '20px', '20px'],
-                    borderRadius: '50%',
-                  }}
-                />
-              ) : null}
+const Indicator = ({ value, color }) => {
+  if (value === false) {
+    // see-through dot
+    return <Dot color='background' />;
+  }
+  if (value === true) {
+    // colored dot
+    return <Dot color={color} />;
+  }
+  return (
+    // number
+    <Text
+      sx={{
+        fontWeight: 'bold',
+        color,
+      }}
+    >
+      {value}
+    </Text>
+  );
+};
 
-              {el.title === 'Images' ? (
-                <Text
-                  sx={{
-                    fontWeight: 'bold',
-                    color: 'primary',
-                  }}
-                >
-                  10
-                </Text>
-              ) : null}
-            </div>
-          </GridItem>
-        </>
-      ))}
-    </>
-  ));
+const Dot = ({ color }) => (
+  <Box
+    sx={{
+      backgroundColor: color,
+      width: ['14px', '14px', '14px', '14px', '20px', '20px'],
+      height: ['14px', '14px', '14px', '14px', '20px', '20px'],
+      borderRadius: '50%',
+    }}
+  />
+);
+
 export default FeatureListing;
