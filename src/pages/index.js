@@ -35,6 +35,8 @@ export const query = graphql`
           isBlossom
           isGrowth
           title
+          blossomCount
+          growthCount
         }
       }
     }

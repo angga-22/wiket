@@ -19,8 +19,8 @@
       },
       {
         "title": "Images",
-        "isBlossom": true,
-        "isGrowth": true
+        "blossomCount": 5,
+        "growthCount": 10
       }
     ]
   },
@@ -39,8 +39,8 @@
       },
       {
         "title": "Connect with other businesses",
-        "isBlossom": true,
-        "isGrowth": true
+        "blossomCount": 20,
+        "growthCount": 10
       },
       {
         "title": "Conect with end-customers",

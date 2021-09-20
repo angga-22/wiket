@@ -45,7 +45,7 @@ export const PageInternalLink = ({ to, children, sx = {}, variant }) => {
   return (
     <Link
       key={isClient && 'client'}
-      sx={{ ...sx, fontWeight: 'bold' }}
+      sx={{ sx }}
       className={isActive && 'active'}
       variant={variant}
       href={hash}
