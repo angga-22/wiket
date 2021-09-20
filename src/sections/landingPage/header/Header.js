@@ -23,8 +23,8 @@ import linePhoneLandscape from 'assets/svg/line-phone-landscape.svg';
 import lineTabletPortrait from 'assets/svg/line-tablet-portrait.svg';
 import lineTabletLandscape from 'assets/svg/line-tablet-landscape.svg';
 import lineDesktop from 'assets/svg/line-desktop.svg';
-import floatingMarker from 'assets/svg/floating-marker.svg';
-import floatingCircle from 'assets/svg/floating-circle.svg';
+import pinRegular from 'assets/svg/pin-regular.svg';
+import pinWide from 'assets/svg/pin-wide.svg';
 
 // EXPORT
 export const Header = memo(() => (
@@ -50,15 +50,15 @@ export const Header = memo(() => (
     <GreenThumbCard />
     <Line />
     <ParagraphBlock />
-    <FloatingMarker />
-    <FloatingCircle />
+    <PinRegular />
+    <PinWide />
   </Section>
 ));
 
 const Headline = () => (
   <GridItem
     sx={{
-      gridColumn: ['1/13', '1/11', '2/22', '13/24', '14/25', '14/24'],
+      gridColumn: ['1/13', '1/11', '2/22', '13/24', '14/25', '13/24'],
       gridRow: [1, 1, 1, '1/span 2', 1, 1],
       mb: [null, null, '60px'],
     }}
@@ -79,16 +79,9 @@ const ParagraphBlock = () => (
     type='lead'
     sx={{
       alignSelf: ['end', 'end', 'end', 'center', 'end', 'end'],
-      gridColumn: ['1/12', '1/8', '10/20', '6/15', '16/22', '16/21'],
-      gridRow: [2, 2, 5, 3, 1, 1],
-      transform: [
-        null,
-        null,
-        null,
-        null,
-        'translateY(-45%)',
-        'translateY(-15%)',
-      ],
+      gridColumn: ['1/12', '1/8', '10/20', '6/15', '16/22', '16/22'],
+      gridRow: [2, 2, 5, 3, 1, '1/3'],
+      transform: [null, null, null, null, null, 'translateX(6%)'],
       mt: ['20px', '24x', 0, 0, 0, 0],
       mb: ['80px', '60px', 0, 0, 0, 0],
     }}
@@ -175,19 +168,19 @@ const Card = ({ sx, title, description, image, ...props }) => (
 const PotjectCard = () => (
   <Card
     sx={{
-      gridColumn: ['1/7', '2/7', '18/25', '16/21', '8/12', '9/11'],
+      gridColumn: ['1/7', '2/7', '18/25', '16/21', '8/12', '9/13'],
       gridRow: [5, 5, 2, 2, 1, 1],
       justifySelf: ['end', 'start', 'end', 'center', 'center', 'baseline'],
       alignSelf: ['start', 'start', 'start', 'start', 'start', 'start'],
-      width: ['92%', '90%', '88%', 'auto', 'auto', 'auto'],
-      mt: [null, null, null, '130px', '22px', '30px'],
+      width: ['92%', '90%', '88%', 'auto', 'auto', '86%'],
+      mt: [null, null, null, '130px', '22px', 0],
       transform: [
         'translateY(-50%)',
         'translateY(-42%)',
         'translateY(12%)',
         'initial',
         'initial',
-        'initial',
+        'translateY(10%)',
       ],
     }}
     image={headerSubImage1}
@@ -199,9 +192,9 @@ const PotjectCard = () => (
 const GreenCafeCard = () => (
   <Card
     sx={{
-      gridColumn: ['1/7', '3/7', '7/13', '18/23', '9/12', '9/12'],
+      gridColumn: ['1/7', '3/7', '7/13', '18/23', '9/12', '9/13'],
       gridRow: [5, 6, 3, 3, 1, 1],
-      width: ['auto', 'auto', '95%', 'auto', 'auto', 'auto'],
+      width: ['auto', 'auto', '95%', 'auto', 'auto', '90%'],
       alignSelf: ['end', 'end', 'start', 'baseline', 'end', 'end'],
       justifySelf: [
         'baseline',
@@ -209,7 +202,7 @@ const GreenCafeCard = () => (
         'baseline',
         'baseline',
         'baseline',
-        'end',
+        'start',
       ],
       transform: [
         null,
@@ -217,7 +210,7 @@ const GreenCafeCard = () => (
         'initial',
         'translateY(0%)',
         'translateY(14%)',
-        'translateY(14%)',
+        'translateY(32%)',
       ],
     }}
     image={headerSubImage3}
@@ -229,17 +222,18 @@ const GreenCafeCard = () => (
 const GreenThumbCard = () => (
   <Card
     sx={{
-      gridColumn: ['7/13', '7/12', '17/25', '10/15', '1/4', '2/5'],
+      gridColumn: ['7/13', '7/12', '17/25', '10/15', '1/4', '3/7'],
       gridRow: [5, 6, 5, 2, 1, 1],
-      width: ['87%', '83%', '83%', 'auto', 'auto', 'auto'],
-      justifySelf: ['center', 'center', 'center', null, null, null],
+      width: ['87%', '83%', '83%', 'auto', 'auto', '82%'],
+      justifySelf: ['center', 'center', 'center', null, null, 'left'],
+      alignSelf: ['start', null, null, null, null, 'center'],
       transform: [
         'translateY(15%)',
         'translateY(-50%)',
         'translateY(-50%)',
         'translateY(130%)',
         'translateY(70%)',
-        'translateY(90%)',
+        'translateX(-50%)',
       ],
     }}
     image={headerSubImage2}
@@ -253,7 +247,7 @@ const Line = () => (
     as='picture'
     sx={{
       gridColumn: ['3/11', '5/10', '4/span 8', '12/19', '11/15', '11/16'],
-      gridRow: ['5', '5/7', '3/6', 3, 2, 2],
+      gridRow: ['5', '5/7', '3/6', 3, 2, '2/4'],
       width: ['auto', 'auto', '95%', 'auto', 'auto', 'auto'],
       mb: ['-15px', '-43px', 0, 0, 0, 0], // affects the height of the row
       transform: [
@@ -264,7 +258,7 @@ const Line = () => (
         'initial',
         'initial',
         'initial',
-        'initial',
+        'translateY(-28%)',
       ],
       justifySelf: ['auto', 'center', 'left', 'baseline', 'baseline', 'end'],
       alignSelf: [null, 'end', 'end', null, null, null],
@@ -283,40 +277,32 @@ const Line = () => (
   </Box>
 );
 
-const FloatingMarker = () => (
+const PinRegular = () => (
   <GridItem
     sx={{
       display: ['none', 'none', 'block', 'none', 'block', 'block'],
-      gridColumn: [null, null, '6/8', null, '1/3', '2/3'],
+      gridColumn: [null, null, '6/8', null, '1/3', '1/3'],
       gridRow: [null, null, 2, null, 1, 1],
-      mt: [null, null, '42px', null, '75px', '100px'],
-      width: [null, null, 'auto', null, 'auto', 'auto'],
+      justifySelf: [null, null, 'left', null, 'left', 'right'],
+      mt: [null, null, '42px', null, '75px', '130px'],
+      width: [null, null, 'auto', null, 'auto', '42%'],
     }}
   >
-    <Image
-      src={floatingMarker}
-      alt=''
-      sx={{ width: '100%', maxHeight: '100%' }}
-    />
+    <Image src={pinRegular} alt='' sx={{ width: '100%', maxHeight: '100%' }} />
   </GridItem>
 );
 
-const FloatingCircle = () => (
+const PinWide = () => (
   <GridItem
     sx={{
       alignSelf: 'center',
       gridRow: [5, 4, 3, 2, 1, 1],
-      gridColumn: ['3/5', '1/3', '20/23', '12/15', '11/13', '11/12'],
+      gridColumn: ['3/5', '1/3', '20/23', '12/15', '11/13', '12/13'],
       justifySelf: ['center', 'end', 'end', 'end', 'end', 'baseline'],
       mt: ['-80px', '50px', 0, '-20px', '50px', '50px'],
       width: ['auto', 'auto', '82%', 'auto', 'auto', 'auto'],
-      zIndex: 1,
     }}
   >
-    <Image
-      src={floatingCircle}
-      alt=''
-      sx={{ width: '100%', maxHeight: '100%' }}
-    />
+    <Image src={pinWide} alt='' sx={{ width: '100%', maxHeight: '100%' }} />
   </GridItem>
 );
