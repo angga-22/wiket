@@ -1,7 +1,6 @@
 import React from 'react';
 // pieces
 import { Box, Paragraph, Heading, GridItem } from '@thepuzzlers/pieces';
-import { Text } from 'theme-ui';
 
 export const FeatureListing = ({ data }) =>
   data.map((feature) => <FeatureSection data={feature} />);
@@ -100,13 +99,14 @@ const Indicator = ({ value, color }) => {
   }
   return (
     // number
-    <Text
+    <Paragraph
+      variant='bold'
       sx={{
         color,
       }}
     >
       {value}
-    </Text>
+    </Paragraph>
   );
 };
 

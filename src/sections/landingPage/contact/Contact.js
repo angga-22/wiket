@@ -54,7 +54,7 @@ export const Contact = memo(() => {
           type='submit'
           variant='tertiary'
           sx={{
-            gridColumn: ['1/7', '2/6', '3/9', '3/9', '2/8', '1/8'],
+            gridColumn: ['1/7', '2/6', '3/9', '3/9', '2/8', '2/8'],
             gridRow: [4, 4, 4, 3, 4, 3],
             justifySelf: ['auto', 'auto', 'auto', 'auto', 'left', 'left'],
             alignSelf: 'start',
@@ -117,14 +117,14 @@ const Vector = () => (
       gridColumn: ['11/12', '11/12', '22/23', '21/22', '21/23', '22/23'],
       justifySelf: ['baseline', 'baseline', 'end', 'end', 'baseline'],
       transform: [
-        'translateY(-60%)',
-        'translateY(-60%)',
+        'translateY(-100%)',
+        'translateY(-100%)',
         'translateY(-75%)',
         'translateY(-80%)',
         'translateY(-130%)',
-        'translateY(-120%)',
+        'translateY(-70%)',
       ],
-      marginTop: ['-110%', '-110%', '0%', '-10%', '0%', '-200%'],
+      // marginTop: ['-110%', '-110%', '0%', '-10%', '0%', '0%'],
       height: ['80px', '80px', '136.74px', '80px', '136.74px'],
       width: ['22.85px', '22.85px', '39.05px', '22.85px', '39.05px'],
       zIndex: 3,
@@ -141,7 +141,7 @@ const FormWrapper = (props) => (
     variant='fullWidth'
     sx={{
       gridRow: [3, 3, 3, 3, '1 / span 2', '2 / span 1'],
-      gridColumn: ['1/13', '1/13', '6/25', '1/25', '12/25', '11/24'],
+      gridColumn: ['1/13', '1/13', '6/25', '1/25', '12/25', '12/24'],
       width: ['100vw', 'unset', 'unset', 'unset', 'unset', 'unset'],
       ml: [null, 0, 0, 0, 0, 0],
     }}
@@ -155,7 +155,7 @@ const FormWrapper = (props) => (
         justifyContent: ['center', 'left', 'left', 'left', 'left', 'left'],
         pt: ['32px', '37px', '37px', '37px', '37px', '37px'],
         pb: ['40px', '48px', '48px', '48px', '48px', '48px'],
-        marginBottom: ['-15%', '-25%', '-48%', '-28%', '-42%', '-50%'],
+        marginBottom: ['-15%', '-25%', '-48%', '-28%', '-42%', '-40%'],
         zIndex: 2,
       }}
       {...props}
@@ -168,7 +168,7 @@ const FormWrapper = (props) => (
 const NameInput = ({ value, inputChange }) => (
   <GridItem
     sx={{
-      gridColumn: ['1/13', '2/12', '3/18', '3/13', '2/13', '1/7'],
+      gridColumn: ['1/13', '2/12', '3/18', '3/13', '2/13', '2/7'],
     }}
   >
     <Label htmlFor='name' as='label' type='inputLabel'>
@@ -203,7 +203,7 @@ const EmailInput = ({ value, inputChange }) => (
 
 const Textarea = ({ value, inputChange }) => (
   <GridItem
-    sx={{ gridColumn: ['1/13', '2/12', '3/18', '3/17', '2/13', '1/9'] }}
+    sx={{ gridColumn: ['1/13', '2/12', '3/18', '3/17', '2/13', '2/9'] }}
   >
     <Label htmlFor='description' as='label' type='inputLabel'>
       Your Business
@@ -228,7 +228,7 @@ const FormParagraph = () => (
     as='p'
     type='formParagraph'
     sx={{
-      gridColumn: ['1/span 11', '2/span 8', '3/15', '10/21', '2/10', '5/12'],
+      gridColumn: ['1/span 11', '2/span 8', '3/15', '10/21', '2/10', '6/12'],
       gridRow: [5, 5, 5, 3, 5, 3],
       mt: ['34px', '35px', '35px', 0, '32px', '0'],
     }}

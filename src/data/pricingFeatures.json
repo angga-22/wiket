@@ -39,8 +39,8 @@
       },
       {
         "title": "Connect with other businesses",
-        "blossomCount": 20,
-        "growthCount": 10
+        "isBlossom": true,
+        "isGrowth": true
       },
       {
         "title": "Conect with end-customers",
