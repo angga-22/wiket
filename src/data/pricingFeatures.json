@@ -14,7 +14,7 @@
       },
       {
         "title": "Contact details",
-        "isBlossom": false,
+        "isBlossom": true,
         "isGrowth": true
       },
       {
@@ -59,7 +59,7 @@
       },
       {
         "title": "Product listing with images",
-        "isBlossom": true,
+        "isBlossom": false,
         "isGrowth": true
       },
       {

@@ -124,7 +124,6 @@ const Vector = () => (
         'translateY(-130%)',
         'translateY(-70%)',
       ],
-      // marginTop: ['-110%', '-110%', '0%', '-10%', '0%', '0%'],
       height: ['80px', '80px', '136.74px', '80px', '136.74px'],
       width: ['22.85px', '22.85px', '39.05px', '22.85px', '39.05px'],
       zIndex: 3,
