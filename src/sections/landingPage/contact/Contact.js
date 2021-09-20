@@ -127,7 +127,7 @@ const Vector = () => (
       marginTop: ['-110%', '-110%', '0%', '-10%', '0%', '-200%'],
       height: ['80px', '80px', '136.74px', '80px', '136.74px'],
       width: ['22.85px', '22.85px', '39.05px', '22.85px', '39.05px'],
-      zIndex: 2,
+      zIndex: 3,
     }}
   >
     <Image src={contactVector} alt='' sx={{ height: '100%' }} />
@@ -140,7 +140,7 @@ const FormWrapper = (props) => (
   <GridItem
     variant='fullWidth'
     sx={{
-      gridRow: [3, 3, 3, 3, '1 / span 2', '1 / span 2'],
+      gridRow: [3, 3, 3, 3, '1 / span 2', '2 / span 1'],
       gridColumn: ['1/13', '1/13', '6/25', '1/25', '12/25', '11/24'],
       width: ['100vw', 'unset', 'unset', 'unset', 'unset', 'unset'],
       ml: [null, 0, 0, 0, 0, 0],
@@ -155,6 +155,8 @@ const FormWrapper = (props) => (
         justifyContent: ['center', 'left', 'left', 'left', 'left', 'left'],
         pt: ['32px', '37px', '37px', '37px', '37px', '37px'],
         pb: ['40px', '48px', '48px', '48px', '48px', '48px'],
+        marginBottom: ['-15%', '-25%', '-48%', '-28%', '-42%', '-50%'],
+        zIndex: 2,
       }}
       {...props}
     />

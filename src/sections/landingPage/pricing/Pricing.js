@@ -21,6 +21,7 @@ export const Pricing = ({ featuresData }) => (
       <BlossomCard />
       <GrowthCard />
       <FeaturesLabel />
+
       <BatikShape />
       <FeatureListing data={featuresData} />
     </GridWrapper>
