@@ -3,10 +3,10 @@ import React from 'react';
 import { Box, Paragraph, Heading, GridItem } from '@thepuzzlers/pieces';
 import { Text } from 'theme-ui';
 
-const FeatureListing = ({ data }) =>
-  data.map((feature) => <PricingSection data={feature} />);
+export const FeatureListing = ({ data }) =>
+  data.map((feature) => <FeatureSection data={feature} />);
 
-const PricingSection = ({ data }) => (
+const FeatureSection = ({ data }) => (
   <>
     <GridItem
       sx={{
@@ -33,12 +33,12 @@ const PricingSection = ({ data }) => (
       </Heading>
     </GridItem>
     {data.features.map((el) => (
-      <PricingRow data={el} />
+      <FeatureDetailRow data={el} />
     ))}
   </>
 );
 
-const PricingRow = ({ data }) => (
+const FeatureDetailRow = ({ data }) => (
   <>
     {/* Title */}
     <GridItem
@@ -121,5 +121,3 @@ const Dot = ({ color }) => (
     }}
   />
 );
-
-export default FeatureListing;
