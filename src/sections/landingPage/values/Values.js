@@ -122,7 +122,7 @@ const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
         'span 7',
         'span 12',
         'span 8',
-        'span 5',
+        'span 6',
         'span 5',
       ],
     }}
