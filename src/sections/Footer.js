@@ -25,49 +25,15 @@ export const Footer = () => (
     }}
   >
     <BackgroundImage />
-    <FooterParagraph />
     <Logo />
-    <FooterNav />
+    <Link1 />
+    <Link2 />
+    <FooterParagraph />
   </Section>
 );
 
-const Logo = () => (
-  <GridItem
-    sx={{
-      gridColumn: ['5 / 9', '5 / 9', '1 /  6', '1 /  5', '1 /  5', '1 /  4'],
-      transform: [
-        'translateY(0%)',
-        'translateY(0%)',
-        'translateY(-200%)',
-        'translateY(-250%)',
-        'translateY(-210%)',
-        'translateY(-290%)',
-      ],
-    }}
-  >
-    <picture>
-      <source srcSet={logoWiketWhite} />
-      <img
-        src={logoWiketWhite}
-        alt='batik-shape'
-        sx={{
-          width: '100%',
-          mt: [null, null, '0', '0'],
-          mb: ['24px', '24px', '0', '0'],
-        }}
-      />
-    </picture>
-  </GridItem>
-);
-
 const BackgroundImage = () => (
-  <GridItem
-    variant='fullWidth'
-    sx={{
-      maxWidth: '100%',
-      mb: ['72px', '69px', '48px', '25px', '70px', '70px'],
-    }}
-  >
+  <GridItem variant='fullWidth'>
     <picture>
       <source media={srcsetValues[4]} srcSet={batikFooterDesktop} />
       <source media={srcsetValues[3]} srcSet={batikFooterTabletLandscape} />
@@ -76,6 +42,108 @@ const BackgroundImage = () => (
       <source media={srcsetValues[0]} srcSet={batikFooterPhoneXl} />
       <img src={batikFooterPhone} alt='batik-shape' sx={{ width: '100vw' }} />
     </picture>
+  </GridItem>
+);
+
+const Logo = () => (
+  <GridItem
+    sx={{
+      gridColumn: [
+        '5 / span 4',
+        '6 / span 3',
+        '1 / span 5',
+        '1 / span 5',
+        '1 / span 4',
+        '1 / span 3',
+      ],
+      gridRow: ['3/4', '3/4', '2/3', '2/3', '2/3', '2/3'],
+      paddingTop: ['2.5em', '2.5em', '3.5em', '4.5em', '4em', '6em'],
+      paddingBottom: ['1.5em', '1em', '0', '0', '1em', '0'],
+      marginLeft: [0, '-1em', '0', '0', '0', '0'],
+    }}
+  >
+    <picture>
+      <source srcSet={logoWiketWhite} />
+      <img
+        src={logoWiketWhite}
+        alt='batik-shape'
+        sx={{
+          width: ['100%', '80%', '90%', '70%', '90%', '90%'],
+        }}
+      />
+    </picture>
+  </GridItem>
+);
+
+const Link1 = () => (
+  <GridItem
+    sx={{
+      gridColumn: [
+        '3 / span 4',
+        '5 / span 2',
+        '1 / span 4',
+        '1 /  6',
+        '1 /  6',
+        '1 /  5',
+      ],
+      gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
+    }}
+  >
+    <Paragraph
+      type='smallParagraph'
+      variant='lighter'
+      sx={{
+        color: 'textNegative',
+        paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
+        ml: ['1em', '-.5em', 0, 0, 0, 0],
+        transform: [
+          0,
+          0,
+          'translateY(-20%)',
+          'translateY(-20%)',
+          'translateY(-20%)',
+          'translateY(-20%)',
+        ],
+      }}
+    >
+      Legal Notes
+    </Paragraph>
+  </GridItem>
+);
+
+const Link2 = () => (
+  <GridItem
+    sx={{
+      gridColumn: [
+        '8 / span 4',
+        '8 / span 2',
+        '5 / span 4',
+        '5 /  span 3',
+        '4 /  span 2',
+        '3 /  span 2',
+      ],
+      gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
+      paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
+      ml: ['.5em', '-.5em', 0, 0, 0, 0],
+      transform: [
+        0,
+        0,
+        'translateY(-20%)',
+        'translateY(-20%)',
+        'translateY(-20%)',
+        'translateY(-20%)',
+      ],
+    }}
+  >
+    <Paragraph
+      type='smallParagraph'
+      variant='lighter'
+      sx={{
+        color: 'textNegative',
+      }}
+    >
+      Privacy
+    </Paragraph>
   </GridItem>
 );
 
@@ -90,14 +158,8 @@ const FooterParagraph = () => (
         '16 /  25',
         '16 /  25',
       ],
-      transform: [
-        'translateY(0%)',
-        'translateY(0%)',
-        'translateY(0%)',
-        'translateY(0%)',
-        'translateY(0%)',
-        'translateY(0%)',
-      ],
+      gridRow: '2/3',
+      paddingTop: ['3em', '3em', '3em', '2em', '2em', '2em'],
     }}
   >
     <Paragraph
@@ -105,56 +167,19 @@ const FooterParagraph = () => (
       sx={{
         color: 'textNegative',
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
-        mb: ['45px', '58px', '0', '0', '0'],
-        fontWeight: 'lighter',
+        // fontWeight: 'lighter',
       }}
     >
       Where mind-liked businesses
-      <span sx={{ color: 'secondary', fontWeight: 'bold' }}> connect</span>
-    </Paragraph>
-  </GridItem>
-);
-
-const FooterNav = () => (
-  <GridItem
-    sx={{
-      gridColumn: ['3 / 11', '4 / 10', '1 /  7', '1 /  6', '1 /  5', '1 /  5'],
-      mb: ['43px'],
-      display: 'flex',
-      justifyContent: [
-        'space-around',
-        'space-around',
-        'space-between',
-        'space-between',
-        'space-between',
-      ],
-      transform: [
-        'translateY(0%)',
-        'translateY(0%)',
-        'translateY(-350%)',
-        'translateY(-350%)',
-        'translateY(-450%)',
-        'translateY(-500%)',
-      ],
-    }}
-  >
-    <Paragraph
-      type='smallParagraph'
-      variant='lighter'
-      sx={{
-        color: 'textNegative',
-      }}
-    >
-      Legal Notes
-    </Paragraph>
-    <Paragraph
-      type='smallParagraph'
-      variant='lighter'
-      sx={{
-        color: 'textNegative',
-      }}
-    >
-      Privacy
+      <Paragraph
+        type='footerParagraph'
+        as='span'
+        variant='bold'
+        sx={{ color: 'secondary' }}
+      >
+        {' '}
+        connect
+      </Paragraph>
     </Paragraph>
   </GridItem>
 );
