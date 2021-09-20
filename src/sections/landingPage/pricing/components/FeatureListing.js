@@ -102,7 +102,6 @@ const Indicator = ({ value, color }) => {
     // number
     <Text
       sx={{
-        fontWeight: 'bold',
         color,
       }}
     >
