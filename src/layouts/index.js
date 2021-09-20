@@ -4,6 +4,7 @@ import { Global } from '@emotion/react';
 import PropTypes from 'prop-types';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { Footer } from 'sections/Footer';
 
 // pieces components
 import { PageContextProvider } from 'pieces/utils/context';
@@ -52,7 +53,7 @@ const Layout = ({ children, pageContext: { locale } }) => (
       <Navbar />
       {children}
     </Box>
-    {/* <Footer /> */}
+    <Footer />
   </PageContextProvider>
 );
 

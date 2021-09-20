@@ -12,7 +12,6 @@ import {
   Quote,
   Contact,
 } from 'sections/landingPage';
-import { Footer } from 'sections/Footer';
 
 const IndexPage = ({ data }) => (
   <div>
@@ -25,7 +24,6 @@ const IndexPage = ({ data }) => (
     <Pricing featuresData={data.features.nodes} />
     <Quote />
     <Contact />
-    <Footer />
   </div>
 );
 export const query = graphql`
