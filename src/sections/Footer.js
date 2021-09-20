@@ -82,9 +82,9 @@ const Link1 = () => (
         '3 / span 4',
         '5 / span 2',
         '1 / span 4',
-        '1 /  6',
-        '1 /  6',
-        '1 /  5',
+        '1 /  span 5',
+        '1 /  span 5',
+        '1 /  span 4',
       ],
       gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
     }}
@@ -167,7 +167,6 @@ const FooterParagraph = () => (
       sx={{
         color: 'textNegative',
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
-        // fontWeight: 'lighter',
       }}
     >
       Where mind-liked businesses
