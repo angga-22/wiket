@@ -38,7 +38,7 @@
         ],
 
         "marginTop": ["-65%", "-55%", "45%", " -75%", "-50%", "0%"],
-        "marginRight": [0, 0, 0, 0, 0, "15%"],
+        "marginRight": ["0%", "0%", "0%", "0%", "0%", "15%"],
         "marginLeft": [null, null, null, null, null, null],
         "alignSelf": null
       },
@@ -57,7 +57,7 @@
           "10/span 4",
           "9/span 4"
         ],
-        "marginTop": ["10%", "-20%", "-30%", 0, 0, "-15%"],
+        "marginTop": ["10%", "-20%", "-30%", "0%", "0%", "-15%"],
         "marginBottom": "auto",
         "marginRight": ["5%", null, null, null, null, "15%"],
         "marginLeft": [null, null, null, null, null, null],

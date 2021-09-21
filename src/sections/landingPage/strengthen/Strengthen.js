@@ -35,7 +35,10 @@ export const Strengthen = memo(() => {
   return (
     <Section
       id='strengthen-section'
-      sx={{ minHeight: '50vh', alignItems: 'center', mt: '20vh' }}
+      sx={{
+        minHeight: '50vh',
+        alignItems: 'center',
+      }}
     >
       <GridWrapper variant='inside.columns'>
         <SectionHeader />

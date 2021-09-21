@@ -75,7 +75,7 @@ const Headline = () => (
     type='h2'
     // type='contactHeading'
     sx={{
-      gridRow: [1],
+      gridRow: [1, 1, 1, 1],
       gridColumn: ['2/12', '4/span 6', '2/22', '6/20', '1/11', '2/7'],
       textAlign: ['center', 'center', 'left', 'center', 'left', 'left'],
       mb: 16,

@@ -11,7 +11,10 @@ import Key from '../../../assets/svg/key.svg';
 export const Filler = memo(() => (
   <Section
     id='values-section'
-    sx={{ minHeight: '10vh', alignItems: 'center', mt: '10vw' }}
+    sx={{
+      // minHeight: '10vh',
+      alignItems: 'center',
+    }}
   >
     <GridWrapper
       variant='inside.columns'
