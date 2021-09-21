@@ -84,7 +84,7 @@ export const Navbar = memo(() => {
         }}
       >
         <Close handleClick={handleClick} />
-        <OverlayNavlinks />
+        <OverlayNavlinks handleClick={handleClick} />
         <OverlayNavHeading />
         <LogoLight />
       </GridWrapper>
@@ -150,7 +150,7 @@ const LinksData = [
   },
 ];
 
-const Links = ({ sx }) =>
+const Links = ({ sx, handleClick }) =>
   LinksData.map((link) => (
     <NavigationLink
       to={link.href}
@@ -160,6 +160,7 @@ const Links = ({ sx }) =>
         ...sx,
       }}
       key={link.name}
+      onClick={handleClick}
     >
       {link.name}
     </NavigationLink>
@@ -194,7 +195,7 @@ const OpenNavButton = () => (
   </Button>
 );
 
-const OverlayNavlinks = () => (
+const OverlayNavlinks = ({ handleClick }) => (
   <GridItem
     sx={{
       alignSelf: ['center', 'center', 'end'],
@@ -205,7 +206,7 @@ const OverlayNavlinks = () => (
       justifyContent: ['unset', 'unset', 'unset', 'space-between'],
     }}
   >
-    <Links sx={{ color: 'textNegative' }} />
+    <Links sx={{ color: 'textNegative' }} handleClick={handleClick} />
     <OpenNavButton />
   </GridItem>
 );
