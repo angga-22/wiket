@@ -124,6 +124,299 @@ const Headline = () => (
 );
 
 /* -------------------------------------------------------- */
+/* ------------------ Section Container ------------------- */
+/* -------------------------------------------------------- */
+
+const Section = ({ sectionRef, position, number }) => (
+  <GridWrapper
+    ref={sectionRef}
+    sx={{
+      justifyContent: 'center',
+      pt: ['62px', '80px', '103px', '44px', '92px', '77px'],
+    }}
+  >
+    <Number number={number} position={position} />
+
+    <HorizontalSmallCard position={position} />
+    <HorizontalBigCard position={position} />
+    <VerticalBigCard position={position} />
+    <VerticalSmallCard position={position} />
+
+    <GreenPointerVector position={position} />
+    <FloatingCircleVector position={position} />
+    <LogoVector position={position} />
+    <FloatingLeaf position={position} />
+    <Line position={position} />
+    <Curl position={position} />
+
+    <SectionHeading position={position} />
+  </GridWrapper>
+);
+
+/* ------------------------------------------------------ */
+/* ------------------- Section Number ------------------- */
+/* ------------------------------------------------------ */
+
+const Number = ({ number, position }) => {
+  const styles = [
+    {
+      alignSelf: ['end', 'end', 'end', 'end', 'start', 'start'],
+      gridColumn: ['1/8', '1/7', '1/10', '1/10', '2/8', '16/23'],
+      gridRow: [2, 1, 1, 1, 1, 1],
+      mb: [0, 0, 0, '32px', '59px', '-20px'],
+    },
+    {
+      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
+      gridColumn: ['4/13', '4/13', '14/24', '14/25', '16/24', '3/11'],
+      gridRow: [3, 3, 1, 1, 1, 1],
+      justifySelf: ['end', 'end', 'start', 'end', 'start', 'start'],
+      mt: ['10px', '12px', 0, 0, 0, 0],
+    },
+    {
+      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
+      gridColumn: ['1/10', '1/10', '1/10', '1/10', '2/8', '16/23'],
+      gridRow: [3, 3, 1, 1, 1, 1],
+      justifySelf: 'start',
+      transform: [
+        'translateY(-16%)',
+        'translateY(-16%)',
+        'unset',
+        'unset',
+        'unset',
+        'translateY(10%)',
+      ],
+    },
+  ];
+
+  return (
+    <Heading
+      as='h2'
+      type='connectionsNumber'
+      sx={{
+        color: 'secondary',
+        ...styles[position],
+      }}
+    >
+      {number}
+    </Heading>
+  );
+};
+
+/* ------------------------------------------------------- */
+/* ------------------------ Cards ------------------------ */
+/* ------------------------------------------------------- */
+
+const HorizontalSmallCard = ({ position }) => {
+  const styles = [
+    {
+      alignSelf: ['unset', 'unset', 'unset', 'end', 'end'],
+      gridColumn: ['3/13', '6/13', '9/18', '5/14', '4/11', '4/9'],
+      gridRow: [3, 1, 1, 1, 1, 2],
+      mb: ['12px', '80px', '80px', 0, 0, 0],
+      mt: [0, 0, 0, 0, 0, '54px'],
+    },
+    {
+      alignSelf: [null, null, 'start', 'start', 'start', 'start'],
+      gridColumn: ['1/11', '1/8', '3/12', '2/11', '5/12', '15/20'],
+      gridRow: 2,
+      mt: [0, 0, 0, 0, 0, '48px'],
+    },
+    {
+      alignSelf: [null, null, null, 'start', 'start', 'start'],
+      gridColumn: ['3/13', '6/13', '5/14', '12/21', '10/17', '3/8'],
+      gridRow: [1, 1, 2, 1, 1, 2],
+      mt: [0, 0, '24px', 0, 0, '54px'],
+      mb: [0, 0, 0, 0, '24px', 0],
+    },
+  ];
+
+  return (
+    <Card
+      sx={{
+        variant: 'cards.horizontal',
+        ...styles[position],
+      }}
+    >
+      <Box
+        sx={{
+          mr: '16px',
+          width: ['38%', '38%', '45%', '45%', '42%', '45%'],
+        }}
+      >
+        <Image
+          src={imgThree}
+          sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
+        />
+      </Box>
+      <Box sx={{ alignSelf: 'center', width: ['45%'] }}>
+        <Heading as='h5' type='cardsSmallHeading' sx={{ mb: '4px' }}>
+          Green Cafe
+        </Heading>
+        <Paragraph type='cardsParagraph'>Gardener in Chiang Mai</Paragraph>
+      </Box>
+    </Card>
+  );
+};
+
+const HorizontalBigCard = ({ position }) => {
+  const styles = [
+    {
+      alignSelf: ['unset', 'unset', 'unset', 'unset', 'unset', 'end'],
+      gridColumn: ['1/13', '1/9', '1/11', '1/12', '12/21', '6/13'],
+      gridRow: [4, 2, 2, 2, 1, 1],
+      mt: [0, '12px', '12px', '24px', '23px', 0],
+      mb: ['auto', 'auto', 'auto', 'auto', 'auto', 'unset'],
+    },
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: [null, null, 'start', 'start', 'start', 'end'],
+      gridColumn: ['1/13', '1/9', '9/19', '1/12', '2/11', '8/15'],
+      gridRow: [2, 2, 3, 3, 3, 1],
+      my: ['12px', '12px', '24px', 0, '24px', 0],
+      mb: ['12px', '12px', 'auto', 'auto', 'auto', 0],
+    },
+  ];
+
+  return (
+    <Card
+      sx={{
+        variant: 'cards.horizontal',
+        bg: 'blue100',
+        ...styles[position],
+      }}
+    >
+      <Box
+        sx={{
+          mr: '16px',
+          width: ['32%', '33%', '45%', '32%', '38%', '39%'],
+        }}
+      >
+        <Image
+          src={imgTwo}
+          sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
+        />
+      </Box>
+      <Box sx={{ alignSelf: 'center' }}>
+        <Heading as='h5' type='cardBigHeading' sx={{ mb: '4px' }}>
+          Hanging Garden
+        </Heading>
+        <Paragraph type='cardsParagraph'>Florist in Bangkok</Paragraph>
+      </Box>
+    </Card>
+  );
+};
+
+const VerticalBigCard = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      justifySelf: 'end',
+      gridColumn: ['1/7', '2/7', '1/7', '1/7', '4/9', '14/18'],
+      gridRow: 1,
+      mb: ['62px', '90px', '50px', '44px', '70px', '24px'],
+    },
+    {
+      alignSelf: [null, null, null, 'start', 'start', 'start'],
+      justifySelf: 'start',
+      gridColumn: ['1/7', '1/6', '2/8', '6/12', '5/10', '4/8'],
+      gridRow: [3, 3, 3, 2, 2, 1],
+      mt: ['37px', '50px', '24px', '-34px', '-40px', 0],
+    },
+  ];
+
+  return (
+    <PrimaryCard
+      image={imgFour}
+      title='Green Thumb'
+      text='Gardener in Chiang Mai'
+      sx={{
+        boxShadow: 100,
+        variant: 'cards.vertical',
+        width: ['94%'],
+        ...styles[position],
+      }}
+    />
+  );
+};
+
+const VerticalSmallCard = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      gridColumn: ['8/13', '8/12', '8/13', '8/13', '10/14', '19/22'],
+      gridRow: 1,
+      mb: ['29px', '40px', '30px', '24px', '50px', '0'],
+      mt: 'auto',
+    },
+    {
+      gridColumn: ['7/12', '7/11', '12/17', '13/18', '11/15', '9/12'],
+      gridRow: [3, 3, 1, 2, 2, 2],
+      mb: 'auto',
+      ml: ['5%', '5%', 0, 0, 0, 0],
+      mt: [0, 0, 0, 0, 0, '54px'],
+    },
+  ];
+
+  return (
+    <PrimaryCard
+      image={imgOne}
+      title='Potject'
+      text='Pottery in Bangkok'
+      sx={{
+        boxShadow: 200,
+        variant: 'cards.vertical',
+        width: ['100%'],
+        ...styles[position],
+      }}
+    />
+  );
+};
+
+/* ------------------------------------------------------- */
+/* ------------------- Section Heading ------------------- */
+/* ------------------------------------------------------- */
+
+const SectionHeading = ({ position }) => {
+  const styles = [
+    {
+      gridColumn: ['1/10', '3/9', '13/24', '15/24', '16/24', '16/24'],
+      gridRow: [5, 3, 3, 2, 2, 2],
+      mt: ['43px', '64px', '43px', '81px', '40px', '52px'],
+    },
+    {
+      alignSelf: [null, null, 'end', 'start'],
+      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '3/10'],
+      gridRow: [4, 4, 3, 3, 2, 2],
+      mt: ['14px', '14px', 0, 0, '40px', '52px'],
+    },
+    {
+      alignSelf: [null, null, null, null, 'end', 'start'],
+      gridColumn: ['1/10', '3/9', '13/23', '15/24', '16/24', '16/24'],
+      gridRow: [4, 4, 4, 4, 3, 2],
+      mt: ['38px', '38px', 0, 0, 0, '52px'],
+    },
+  ];
+
+  return (
+    <Heading
+      as='h2'
+      type='connectionsSectionHeading'
+      sx={{
+        ...styles[position],
+      }}
+    >
+      {data[position].text}
+    </Heading>
+  );
+};
+
+/* -------------------------------------------------------- */
 /* --------------------- Vectors svgs --------------------- */
 /* -------------------------------------------------------- */
 
@@ -325,299 +618,6 @@ const Curl = ({ position }) => {
     </Box>
   );
 };
-
-/* ------------------------------------------------------- */
-/* ------------------- Sections Number ------------------- */
-/* ------------------------------------------------------- */
-
-const Number = ({ number, position }) => {
-  const styles = [
-    {
-      alignSelf: ['end', 'end', 'end', 'end', 'start', 'start'],
-      gridColumn: ['1/8', '1/7', '1/10', '1/10', '2/8', '16/23'],
-      gridRow: [2, 1, 1, 1, 1, 1],
-      mb: [0, 0, 0, '32px', '59px', '-20px'],
-    },
-    {
-      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
-      gridColumn: ['4/13', '4/13', '14/24', '14/25', '16/24', '3/11'],
-      gridRow: [3, 3, 1, 1, 1, 1],
-      justifySelf: ['end', 'end', 'start', 'end', 'start', 'start'],
-      mt: ['10px', '12px', 0, 0, 0, 0],
-    },
-    {
-      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
-      gridColumn: ['1/10', '1/10', '1/10', '1/10', '2/8', '16/23'],
-      gridRow: [3, 3, 1, 1, 1, 1],
-      justifySelf: 'start',
-      transform: [
-        'translateY(-16%)',
-        'translateY(-16%)',
-        'unset',
-        'unset',
-        'unset',
-        'translateY(10%)',
-      ],
-    },
-  ];
-
-  return (
-    <Heading
-      as='h2'
-      type='connectionsNumber'
-      sx={{
-        color: 'secondary',
-        ...styles[position],
-      }}
-    >
-      {number}
-    </Heading>
-  );
-};
-
-/* ------------------------------------------------------- */
-/* ------------------ Sections Headings ------------------ */
-/* ------------------------------------------------------- */
-
-const SectionHeading = ({ position }) => {
-  const styles = [
-    {
-      gridColumn: ['1/10', '3/9', '13/24', '15/24', '16/24', '16/24'],
-      gridRow: [5, 3, 3, 2, 2, 2],
-      mt: ['43px', '64px', '43px', '81px', '40px', '52px'],
-    },
-    {
-      alignSelf: [null, null, 'end', 'start'],
-      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '3/10'],
-      gridRow: [4, 4, 3, 3, 2, 2],
-      mt: ['14px', '14px', 0, 0, '40px', '52px'],
-    },
-    {
-      alignSelf: [null, null, null, null, 'end', 'start'],
-      gridColumn: ['1/10', '3/9', '13/23', '15/24', '16/24', '16/24'],
-      gridRow: [4, 4, 4, 4, 3, 2],
-      mt: ['38px', '38px', 0, 0, 0, '52px'],
-    },
-  ];
-
-  return (
-    <Heading
-      as='h2'
-      type='connectionsSectionHeading'
-      sx={{
-        ...styles[position],
-      }}
-    >
-      {data[position].text}
-    </Heading>
-  );
-};
-
-/* ------------------------------------------------------- */
-/* ------------------------ Cards ------------------------ */
-/* ------------------------------------------------------- */
-
-const HorizontalSmallCard = ({ position }) => {
-  const styles = [
-    {
-      alignSelf: ['unset', 'unset', 'unset', 'end', 'end'],
-      gridColumn: ['3/13', '6/13', '9/18', '5/14', '4/11', '4/9'],
-      gridRow: [3, 1, 1, 1, 1, 2],
-      mb: ['12px', '80px', '80px', 0, 0, 0],
-      mt: [0, 0, 0, 0, 0, '54px'],
-    },
-    {
-      alignSelf: [null, null, 'start', 'start', 'start', 'start'],
-      gridColumn: ['1/11', '1/8', '3/12', '2/11', '5/12', '15/20'],
-      gridRow: 2,
-      mt: [0, 0, 0, 0, 0, '48px'],
-    },
-    {
-      alignSelf: [null, null, null, 'start', 'start', 'start'],
-      gridColumn: ['3/13', '6/13', '5/14', '12/21', '10/17', '3/8'],
-      gridRow: [1, 1, 2, 1, 1, 2],
-      mt: [0, 0, '24px', 0, 0, '54px'],
-      mb: [0, 0, 0, 0, '24px', 0],
-    },
-  ];
-
-  return (
-    <Card
-      sx={{
-        variant: 'cards.horizontal',
-        ...styles[position],
-      }}
-    >
-      <Box
-        sx={{
-          mr: '16px',
-          width: ['38%', '38%', '45%', '45%', '42%', '45%'],
-        }}
-      >
-        <Image
-          src={imgThree}
-          sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
-        />
-      </Box>
-      <Box sx={{ alignSelf: 'center', width: ['45%'] }}>
-        <Heading as='h5' type='cardsSmallHeading' sx={{ mb: '4px' }}>
-          Green Cafe
-        </Heading>
-        <Paragraph type='cardsParagraph'>Gardener in Chiang Mai</Paragraph>
-      </Box>
-    </Card>
-  );
-};
-
-const HorizontalBigCard = ({ position }) => {
-  const styles = [
-    {
-      alignSelf: ['unset', 'unset', 'unset', 'unset', 'unset', 'end'],
-      gridColumn: ['1/13', '1/9', '1/11', '1/12', '12/21', '6/13'],
-      gridRow: [4, 2, 2, 2, 1, 1],
-      mt: [0, '12px', '12px', '24px', '23px', 0],
-      mb: ['auto', 'auto', 'auto', 'auto', 'auto', 'unset'],
-    },
-    {
-      display: 'none',
-    },
-    {
-      alignSelf: [null, null, 'start', 'start', 'start', 'end'],
-      gridColumn: ['1/13', '1/9', '9/19', '1/12', '2/11', '8/15'],
-      gridRow: [2, 2, 3, 3, 3, 1],
-      my: ['12px', '12px', '24px', 0, '24px', 0],
-      mb: ['12px', '12px', 'auto', 'auto', 'auto', 0],
-    },
-  ];
-
-  return (
-    <Card
-      sx={{
-        variant: 'cards.horizontal',
-        bg: 'blue100',
-        ...styles[position],
-      }}
-    >
-      <Box
-        sx={{
-          mr: '16px',
-          width: ['32%', '33%', '45%', '32%', '38%', '39%'],
-        }}
-      >
-        <Image
-          src={imgTwo}
-          sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
-        />
-      </Box>
-      <Box sx={{ alignSelf: 'center' }}>
-        <Heading as='h5' type='cardBigHeading' sx={{ mb: '4px' }}>
-          Hanging Garden
-        </Heading>
-        <Paragraph type='cardsParagraph'>Florist in Bangkok</Paragraph>
-      </Box>
-    </Card>
-  );
-};
-
-const VerticalBigCard = ({ position }) => {
-  const styles = [
-    {
-      display: 'none',
-    },
-    {
-      justifySelf: 'end',
-      gridColumn: ['1/7', '2/7', '1/7', '1/7', '4/9', '14/18'],
-      gridRow: 1,
-      mb: ['62px', '90px', '50px', '44px', '70px', '24px'],
-    },
-    {
-      alignSelf: [null, null, null, 'start', 'start', 'start'],
-      justifySelf: 'start',
-      gridColumn: ['1/7', '1/6', '2/8', '6/12', '5/10', '4/8'],
-      gridRow: [3, 3, 3, 2, 2, 1],
-      mt: ['37px', '50px', '24px', '-34px', '-40px', 0],
-    },
-  ];
-
-  return (
-    <PrimaryCard
-      image={imgFour}
-      title='Green Thumb'
-      text='Gardener in Chiang Mai'
-      sx={{
-        boxShadow: 100,
-        variant: 'cards.vertical',
-        width: ['94%'],
-        ...styles[position],
-      }}
-    />
-  );
-};
-
-const VerticalSmallCard = ({ position }) => {
-  const styles = [
-    {
-      display: 'none',
-    },
-    {
-      gridColumn: ['8/13', '8/12', '8/13', '8/13', '10/14', '19/22'],
-      gridRow: 1,
-      mb: ['29px', '40px', '30px', '24px', '50px', '0'],
-      mt: 'auto',
-    },
-    {
-      gridColumn: ['7/12', '7/11', '12/17', '13/18', '11/15', '9/12'],
-      gridRow: [3, 3, 1, 2, 2, 2],
-      mb: 'auto',
-      ml: ['5%', '5%', 0, 0, 0, 0],
-      mt: [0, 0, 0, 0, 0, '54px'],
-    },
-  ];
-
-  return (
-    <PrimaryCard
-      image={imgOne}
-      title='Potject'
-      text='Pottery in Bangkok'
-      sx={{
-        boxShadow: 200,
-        variant: 'cards.vertical',
-        width: ['100%'],
-        ...styles[position],
-      }}
-    />
-  );
-};
-
-/* -------------------------------------------------------- */
-/* ----------------------- Sections ----------------------- */
-/* -------------------------------------------------------- */
-
-const Section = ({ sectionRef, position, number }) => (
-  <GridWrapper
-    ref={sectionRef}
-    sx={{
-      justifyContent: 'center',
-      pt: ['62px', '80px', '103px', '44px', '92px', '77px'],
-    }}
-  >
-    <Number number={number} position={position} />
-
-    <HorizontalSmallCard position={position} />
-    <HorizontalBigCard position={position} />
-    <VerticalBigCard position={position} />
-    <VerticalSmallCard position={position} />
-
-    <GreenPointerVector position={position} />
-    <FloatingCircleVector position={position} />
-    <LogoVector position={position} />
-    <FloatingLeaf position={position} />
-    <Line position={position} />
-    <Curl position={position} />
-
-    <SectionHeading position={position} />
-  </GridWrapper>
-);
 
 /* -------------------------------------------------------- */
 /* ------------------------ Spacer ------------------------ */
