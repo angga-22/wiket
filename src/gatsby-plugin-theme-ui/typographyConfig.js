@@ -150,7 +150,9 @@ export const typographyConfig = {
   },
   profileParagraph: {
     factor: 2.5,
-    fontSizes: [16.7, 16.8, 18.1, 17.7, 17, 17.7],
+    // fontSizes: [16.7, 16.8, 18.1, 17.7, 17, 17.7],
+    // updated
+    fontSizes: [16.84, 17.09, 18.19, 15.04, 17.63, 17.8],
     fontFamily: 'body',
     lineHeight: 'body.design',
   },
