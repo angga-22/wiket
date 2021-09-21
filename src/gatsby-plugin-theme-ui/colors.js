@@ -42,7 +42,7 @@ const textColors = {
   text: '#005650',
   brightText: '#FFFFFF',
   lightText: '#FFFCF9',
-  heading: '#005650',
+  heading: '#005650', // teal1000
   greenText: '#004E4C',
   inputText: '#C0C2C9',
 };

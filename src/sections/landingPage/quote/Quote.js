@@ -14,7 +14,10 @@ import Tick from '../../../assets/svg/tick.svg';
 export const Quote = memo(() => (
   <Section
     id='values-section'
-    sx={{ minHeight: '50vh', alignItems: 'center', my: '10vh' }}
+    sx={{
+      //  minHeight: '50vh',
+      alignItems: 'center',
+    }}
   >
     <GridWrapper variant='inside.columns'>
       <GridItem

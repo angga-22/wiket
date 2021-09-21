@@ -32,7 +32,7 @@ export const Profile = memo(() => {
   return (
     <GridWrapper
       as='section'
-      sx={{ mt: ['332px', '202px', '218px', '219px', '184px', '272px'] }}
+      // sx={{ mt: ['332px', '202px', '218px', '219px', '184px', '272px'] }}
     >
       <Headline />
       <Line />

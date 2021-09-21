@@ -14,7 +14,7 @@ import batikShapeOrange from 'assets/svg/batik-shape-orange.svg';
 import { FeatureListing } from './components/FeatureListing';
 
 export const Pricing = ({ featuresData }) => (
-  <Section id='feature-price-section' sx={{ mt: '10vw' }}>
+  <Section id='feature-price-section'>
     <GridWrapper variant='inside.columns'>
       <Headlines />
       <SmallHeadlines />

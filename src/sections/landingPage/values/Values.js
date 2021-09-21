@@ -18,7 +18,10 @@ import valuesTexts from '../../../data/values.json';
 export const Values = memo(() => (
   <Section
     id='values-section'
-    sx={{ minHeight: '100vh', alignItems: 'center', mt: '10vw' }}
+    sx={{
+      minHeight: '100vh',
+      alignItems: 'center',
+    }}
   >
     <GridWrapper
       variant='inside.columns'

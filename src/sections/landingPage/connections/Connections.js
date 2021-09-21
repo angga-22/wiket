@@ -50,7 +50,7 @@ export const Connections = memo(() => {
   return (
     <section>
       <GridWrapper
-        sx={{ mt: ['360px', '584px', '390px', '237px', '262px', '178px'] }}
+      // sx={{ mt: ['360px', '584px', '390px', '237px', '262px', '178px'] }}
       >
         <Headline />
       </GridWrapper>

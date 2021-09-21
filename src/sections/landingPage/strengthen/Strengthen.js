@@ -38,7 +38,6 @@ export const Strengthen = memo(() => {
       sx={{
         minHeight: '50vh',
         alignItems: 'center',
-        mt: ['214px', '122px', '149px', '114px', '136px', '140px'],
       }}
     >
       <GridWrapper variant='inside.columns'>
