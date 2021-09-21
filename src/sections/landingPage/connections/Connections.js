@@ -258,7 +258,6 @@ const Number = ({ number, position }) => {
     <Heading
       as='h2'
       type='connectionsNumber'
-      variant='bold'
       sx={{
         color: 'secondary',
         ...styles[position],
