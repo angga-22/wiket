@@ -11,6 +11,7 @@ import {
   srcsetValues,
   Image,
 } from '@thepuzzlers/pieces';
+import { PrimaryCard } from 'components';
 
 // images
 // import { StaticImage } from 'gatsby-plugin-image';
@@ -128,7 +129,10 @@ const MainImgDescription = () => (
 );
 
 const Card = ({ sx, title, description, image, ...props }) => (
-  <Box
+  <PrimaryCard
+    image={image}
+    title={title}
+    text={description}
     sx={{
       bg: 'background',
       borderRadius: 'headerCard',
@@ -139,30 +143,7 @@ const Card = ({ sx, title, description, image, ...props }) => (
       ...sx,
     }}
     {...props}
-  >
-    <Image
-      src={image}
-      alt=''
-      sx={{
-        borderRadius: 'headerCardImage',
-        objectFit: 'cover',
-        width: '100%',
-      }}
-    />
-    <Heading
-      as='h5'
-      type='h5-500'
-      sx={{
-        mt: ['12px', '12px', '12px', '12px', '12px', '18px'],
-        mb: ['4px', '4px', '4px', '4px', '4px', '6px'],
-      }}
-    >
-      {title}
-    </Heading>
-    <Paragraph as='p' type='body-300'>
-      {description}
-    </Paragraph>
-  </Box>
+  />
 );
 
 const PotjectCard = () => (

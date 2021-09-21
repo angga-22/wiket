@@ -159,6 +159,10 @@ export const typographyConfig = {
     fontSizes: [30.88, 32.3, 42.1, 35.7, 40.8, 53.3],
     fontFamily: 'primary',
     lineHeight: 'heading.design',
+    color: 'greenText',
+    '&>span': {
+      fontFamily: 'primary.bold',
+    },
   },
   cardsSmallHeading: {
     factor: 2.5,
@@ -191,8 +195,9 @@ export const typographyConfig = {
   connectionsNumber: {
     factor: 2.5,
     fontSizes: [112.2, 143, 153.1, 150.3, 148.4, 197.7],
-    fontFamily: 'primary',
+    fontFamily: 'primaryBold',
     lineHeight: 'heading.safe',
+    color: 'accentPrimary',
   },
   // Contact Section
   contactHeading: {

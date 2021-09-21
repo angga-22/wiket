@@ -23,21 +23,13 @@ import logoWhite from 'assets/svg/wiket-logo-light.svg';
 
 export const Navbar = memo(() => {
   const [openMenu, setOpenMenu] = useState(false);
-  const [closeMenu, setCloseMenu] = useState(true);
 
-  const handleOpenClick = () => {
-    setOpenMenu(!openMenu);
-    setCloseMenu(!closeMenu);
-  };
-
-  const handleCloseClick = () => {
-    setCloseMenu(!closeMenu);
+  const handleClick = () => {
     setOpenMenu(!openMenu);
   };
 
   const navigation = useRef();
   const tl = useRef();
-  const secondTl = useRef();
 
   useEffect(() => {
     tl.current = gsap
@@ -45,20 +37,9 @@ export const Navbar = memo(() => {
         paused: true,
         defaults: { ease: 'power4.in', duration: 0.5 },
       })
-      .from(navigation.current, { opacity: 0, x: '100%' });
+      .from(navigation.current, { opacity: 0, x: '100%', y: '-100%' });
 
     return () => tl.current.kill();
-  }, []);
-
-  useEffect(() => {
-    secondTl.current = gsap
-      .timeline({
-        paused: true,
-        defaults: { ease: 'power4.in', duration: 0.5 },
-      })
-      .to(navigation.current, { opacity: 0, x: '-100%' });
-
-    return () => secondTl.current.kill();
   }, []);
 
   useEffect(() => {
@@ -68,14 +49,6 @@ export const Navbar = memo(() => {
       tl.current.reverse();
     }
   }, [openMenu, tl]);
-
-  // useEffect(() => {
-  //   if (closeMenu) {
-  //     secondTl.current.play();
-  //   } else {
-  //     secondTl.current.reverse();
-  //   }
-  // }, [closeMenu, secondTl]);
 
   return (
     <nav>
@@ -92,7 +65,7 @@ export const Navbar = memo(() => {
         <Logo />
         <DesktopNavigation />
         <NavButton />
-        <Menu handleClick={handleOpenClick} />
+        <Menu handleClick={handleClick} />
       </GridWrapper>
 
       {/* ------------- Navigation Overlay ------------- */}
@@ -110,7 +83,7 @@ export const Navbar = memo(() => {
           zIndex: 6,
         }}
       >
-        <Close handleClick={handleCloseClick} />
+        <Close handleClick={handleClick} />
         <OverlayNavlinks />
         <OverlayNavHeading />
         <LogoLight />
@@ -124,9 +97,8 @@ export const Navbar = memo(() => {
 const Logo = () => (
   <Box
     sx={{
-      gridColumn: ['1/5', '1/4', '1/6', '1/5', '1/5', '1/5'],
-      height: ['31.61px', '35.03px', '41.7px', '29px', '35.9px', '46px'],
-      width: ['103px', '122px', '139.89px', '101px', '123.9px', '124px'],
+      gridColumn: ['1/5', '1/4', '1/6', '1/5', '1/4', '1/4'],
+      width: '100%',
     }}
   >
     <Image src={logo} alt='Wiket logo' />
@@ -150,8 +122,6 @@ const Menu = ({ handleClick }) => (
       display: ['block', 'block', 'block', 'block', 'none'],
       gridColumn: ['11/13', '12/13', '23/25', '23/25'],
       justifySelf: ['end'],
-      height: '21px',
-      width: '33px',
     }}
     onClick={handleClick}
   >
@@ -201,11 +171,10 @@ const Close = ({ handleClick }) => (
   <Box
     sx={{
       alignSelf: ['center', 'center', 'end'],
-      gridColumn: ['11/13', '12/13', '23/24', '24/25'],
+      gridColumn: ['12/13', '12/13', '22/24', '24/25'],
       justifySelf: ['end', 'end', 'baseline', 'end'],
       my: ['50%', '100%', '100%', '100%'],
-      height: ['22.36px', '22.36px', '31.31px', '17.89px'],
-      width: ['22.15px', '22.15px', '31.01px', '17.72px'],
+      width: ['100%', '100%', '70%', '100%'],
     }}
     onClick={handleClick}
   >
@@ -262,12 +231,11 @@ const LogoLight = () => (
   <Box
     sx={{
       alignSelf: ['baseline', 'baseline', 'baseline', 'center'],
-      gridColumn: ['4/10', '4/10', '10/16', '1/6'],
+      gridColumn: ['5/9', '5/9', '10/16', '1/5'],
       gridRow: [4, 4, 4, 3],
       justifySelf: ['center', 'center', 'center', 'baseline'],
-      mb: ['20%', '20%', '30%', '-5%'],
-      height: ['29px', '36.77px', '36.77px', '30.29px'],
-      width: ['112px', '142px', '142px', '117px'],
+      mb: ['20%', '20%', '30%', '-20%'],
+      width: ['100%', '70%', '80%', '90%'],
     }}
   >
     <Image src={logoWhite} alt='Wiket logo' />
