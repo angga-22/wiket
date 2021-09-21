@@ -76,7 +76,7 @@ export const Connections = memo(() => {
   // });
 
   return (
-    <section>
+    <section id='connections-section'>
       <GridWrapper>
         <Headline />
       </GridWrapper>

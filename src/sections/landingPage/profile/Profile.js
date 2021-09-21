@@ -33,7 +33,7 @@ export const Profile = memo(() => {
   };
 
   return (
-    <GridWrapper as='section'>
+    <GridWrapper as='section' id='profile-section'>
       <Headline />
       <Line />
       <Animation options={defaultOptions} />

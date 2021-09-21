@@ -134,19 +134,19 @@ const Menu = ({ handleClick }) => (
 const LinksData = [
   {
     name: 'Benefits',
-    href: '#',
+    href: '#strengthen-section',
   },
   {
     name: 'Your profile',
-    href: '#',
+    href: '#profile-section',
   },
   {
     name: 'Connections',
-    href: '#',
+    href: '#connections-section',
   },
   {
     name: 'Plans & Pricing',
-    href: '#',
+    href: '#feature-price-section',
   },
 ];
 
