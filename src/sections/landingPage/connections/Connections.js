@@ -74,9 +74,7 @@ export const Connections = memo(() => {
 
   return (
     <section>
-      <GridWrapper
-      // sx={{ mt: ['360px', '584px', '390px', '237px', '262px', '178px'] }}
-      >
+      <GridWrapper>
         <Headline />
       </GridWrapper>
 
@@ -127,9 +125,9 @@ const Headline = () => (
 const GreenPointerVector = ({ position }) => {
   const styles = [
     {
-      alignSelf: ['unset', 'baseline', 'baseline', 'end', 'end', 'end'],
+      alignSelf: ['unset', 'start', 'start', 'end', 'end', 'start'],
       gridColumn: ['9/11', '9/11', '13/15', '15/17', '13/15', '7/10'],
-      gridRow: [1, 2, 2, 1, 2, '1 / span 2'],
+      gridRow: [1, 2, 2, 1, 2, 2],
       justifySelf: ['unset', 'unset', 'unset', 'unset', 'end', 'end'],
       transform: [
         'translateY(40%)',
@@ -137,7 +135,7 @@ const GreenPointerVector = ({ position }) => {
         'none',
         'translateY(-50%)',
         'translateY(-30%)',
-        'translateY(-71%)',
+        'translateY(-20%)',
       ],
     },
     {
@@ -152,6 +150,7 @@ const GreenPointerVector = ({ position }) => {
     <Box
       sx={{
         position: 'relative',
+        width: ['100%', '80%', '100%', '90%', '75%', '75%'],
         zIndex: 0,
         ...styles[position],
       }}
@@ -167,10 +166,10 @@ const FloatingCircleVector = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: ['end', 'end', 'end', 'end'],
-      gridRow: [1, 1, 1, 1],
-      gridColumn: ['6/9', '6/9', '6/9', '6/9'],
-      mb: ['19px', '19px', '19px', '10px'],
+      alignSelf: 'end',
+      gridRow: 1,
+      gridColumn: ['6/9', '6/9', '6/9', '6/9', '8/11', '17/20'],
+      mb: ['19px', '19px', '19px', '10px', '20px', '-24px'],
     },
     {
       display: 'none',
@@ -199,15 +198,17 @@ const LogoVector = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: ['end', 'end', 'start', 'start'],
-      gridColumn: ['10/13', '9/12', '14/18', '19/23'],
-      gridRow: [3, 3, 2, 2],
-      justifySelf: ['end', 'end', 'end', 'end'],
+      alignSelf: ['end', 'end', 'start', 'start', 'start', 'start'],
+      gridColumn: ['10/13', '9/12', '14/18', '19/23', '15/18', '7/10'],
+      gridRow: [3, 3, 2, 2, 2, 2],
+      justifySelf: 'end',
       transform: [
         'translateY(10%)',
         'translateY(10%)',
         'translateY(-30%)',
         'translateY(-50%)',
+        'translateY(-40%)',
+        'translateY(-10%)',
       ],
     },
   ];
@@ -239,18 +240,25 @@ const Number = ({ number, position }) => {
       mb: [0, 0, 0, '32px', '59px', '-20px'],
     },
     {
-      alignSelf: [null, null, 'end', 'end'],
-      gridColumn: ['4/13', '4/13', '14/24', '14/25'],
-      gridRow: [3, 3, 1, 1],
-      justifySelf: ['end', 'end', 'start', 'end'],
-      mt: ['10px', '12px', 0, 0],
+      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
+      gridColumn: ['4/13', '4/13', '14/24', '14/25', '16/24', '3/11'],
+      gridRow: [3, 3, 1, 1, 1, 1],
+      justifySelf: ['end', 'end', 'start', 'end', 'start', 'start'],
+      mt: ['10px', '12px', 0, 0, 0, 0],
     },
     {
-      alignSelf: [null, null, 'end', 'end'],
-      gridColumn: ['1/10', '1/10', '1/10', '1/10'],
-      gridRow: [3, 3, 1, 1],
-      justifySelf: ['start', 'start', 'start', 'start'],
-      transform: ['translateY(-16%)', 'translateY(-16%)', 'unset', 'unset'],
+      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
+      gridColumn: ['1/10', '1/10', '1/10', '1/10', '2/8', '16/23'],
+      gridRow: [3, 3, 1, 1, 1, 1],
+      justifySelf: 'start',
+      transform: [
+        'translateY(-16%)',
+        'translateY(-16%)',
+        'unset',
+        'unset',
+        'unset',
+        'translateY(10%)',
+      ],
     },
   ];
 
@@ -275,20 +283,21 @@ const Number = ({ number, position }) => {
 const SectionHeading = ({ position }) => {
   const styles = [
     {
-      gridColumn: ['1/11', '3/10', '13/25', '15/25', '16/24', '16/24'],
+      gridColumn: ['1/10', '3/9', '13/24', '15/24', '16/24', '16/24'],
       gridRow: [5, 3, 3, 2, 2, 2],
       mt: ['43px', '64px', '43px', '81px', '40px', '52px'],
     },
     {
-      alignSelf: [null, null, 'end'],
-      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '16/24'],
-      gridRow: [4, 4, 3],
-      mt: ['14px', '14px', 0, 0],
+      alignSelf: [null, null, 'end', 'start'],
+      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '3/10'],
+      gridRow: [4, 4, 3, 3, 2, 2],
+      mt: ['14px', '14px', 0, 0, '40px', '52px'],
     },
     {
-      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '16/24'],
-      gridRow: [4],
-      mt: ['38px', '38px', 0, 0],
+      alignSelf: [null, null, null, null, 'end', 'start'],
+      gridColumn: ['1/10', '3/9', '13/23', '15/24', '16/24', '16/24'],
+      gridRow: [4, 4, 4, 4, 3, 2],
+      mt: ['38px', '38px', 0, 0, 0, '52px'],
     },
   ];
 
@@ -319,15 +328,17 @@ const HorizontalSmallCard = ({ position }) => {
       mt: [0, 0, 0, 0, 0, '54px'],
     },
     {
-      alignSelf: [null, null, 'start', 'start'],
-      gridColumn: ['1/11', '1/8', '3/12', '2/11'],
-      gridRow: [2, 2, 2, 2],
+      alignSelf: [null, null, 'start', 'start', 'start', 'start'],
+      gridColumn: ['1/11', '1/8', '3/12', '2/11', '5/12', '15/20'],
+      gridRow: 2,
+      mt: [0, 0, 0, 0, 0, '48px'],
     },
     {
-      alignSelf: [null, null, null, 'start'],
-      gridColumn: ['3/13', '6/13', '5/14', '12/21'],
-      gridRow: [1, 1, 2, 1],
-      mt: [0, 0, '24px', 0],
+      alignSelf: [null, null, null, 'start', 'start', 'start'],
+      gridColumn: ['3/13', '6/13', '5/14', '12/21', '10/17', '3/8'],
+      gridRow: [1, 1, 2, 1, 1, 2],
+      mt: [0, 0, '24px', 0, 0, '54px'],
+      mb: [0, 0, 0, 0, '24px', 0],
     },
   ];
 
@@ -341,7 +352,7 @@ const HorizontalSmallCard = ({ position }) => {
       <Box
         sx={{
           mr: '16px',
-          width: ['38%', '38%', '45%', '45%', '45%', '45%'],
+          width: ['38%', '38%', '45%', '45%', '42%', '45%'],
         }}
       >
         <Image
@@ -372,11 +383,11 @@ const HorizontalBigCard = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: [null, null, 'start', 'start'],
-      gridColumn: ['1/13', '1/9', '9/19', '1/12'],
-      gridRow: [2, 2, 3, 3],
-      my: ['12px', '12px', '24px', 0],
-      mb: ['12px', '12px', 'auto', 'auto'],
+      alignSelf: [null, null, 'start', 'start', 'start', 'end'],
+      gridColumn: ['1/13', '1/9', '9/19', '1/12', '2/11', '8/15'],
+      gridRow: [2, 2, 3, 3, 3, 1],
+      my: ['12px', '12px', '24px', 0, '24px', 0],
+      mb: ['12px', '12px', 'auto', 'auto', 'auto', 0],
     },
   ];
 
@@ -391,7 +402,7 @@ const HorizontalBigCard = ({ position }) => {
       <Box
         sx={{
           mr: '16px',
-          width: ['32%', '33%%', '45%', '32%', '39%', '39%'],
+          width: ['32%', '33%', '45%', '32%', '38%', '39%'],
         }}
       >
         <Image
@@ -416,16 +427,16 @@ const VerticalBigCard = ({ position }) => {
     },
     {
       justifySelf: 'end',
-      gridColumn: ['1/7', '2/7', '1/7', '1/7'],
-      gridRow: [1, 1, 1, 1],
-      mb: ['62px', '90px', '50px', '44px'],
+      gridColumn: ['1/7', '2/7', '1/7', '1/7', '4/9', '14/18'],
+      gridRow: 1,
+      mb: ['62px', '90px', '50px', '44px', '70px', '24px'],
     },
     {
-      alignSelf: [null, null, null, 'start'],
-      justifySelf: 'baseline',
-      gridColumn: ['1/7', '1/6', '2/8', '6/12'],
-      gridRow: [3, 3, 3, 2],
-      mt: ['37px', '50px', '24px', '-34px'],
+      alignSelf: [null, null, null, 'start', 'start', 'start'],
+      justifySelf: 'start',
+      gridColumn: ['1/7', '1/6', '2/8', '6/12', '5/10', '4/8'],
+      gridRow: [3, 3, 3, 2, 2, 1],
+      mt: ['37px', '50px', '24px', '-34px', '-40px', 0],
     },
   ];
 
@@ -450,16 +461,17 @@ const VerticalSmallCard = ({ position }) => {
       display: 'none',
     },
     {
-      gridColumn: ['8/13', '8/12', '8/13', '8/13'],
-      gridRow: [1, 1, 1, 1],
-      mb: ['29px', '40px', '30px', '24px'],
+      gridColumn: ['8/13', '8/12', '8/13', '8/13', '10/14', '19/22'],
+      gridRow: 1,
+      mb: ['29px', '40px', '30px', '24px', '50px', '0'],
       mt: 'auto',
     },
     {
-      gridColumn: ['7/12', '7/11', '12/17', '13/18'],
-      gridRow: [3, 3, 1, 2],
-      mb: ['auto'],
-      ml: ['5%', '5%', 0, 0],
+      gridColumn: ['7/12', '7/11', '12/17', '13/18', '11/15', '9/12'],
+      gridRow: [3, 3, 1, 2, 2, 2],
+      mb: 'auto',
+      ml: ['5%', '5%', 0, 0, 0, 0],
+      mt: [0, 0, 0, 0, 0, '54px'],
     },
   ];
 
@@ -487,7 +499,10 @@ const VerticalSmallCard = ({ position }) => {
 const Section = ({ sectionRef, position, number }) => (
   <GridWrapper
     ref={sectionRef}
-    sx={{ justifyContent: 'center', pt: ['62px', '80px', '103px', '44px'] }}
+    sx={{
+      justifyContent: 'center',
+      pt: ['62px', '80px', '103px', '44px', '92px', '77px'],
+    }}
   >
     <Number number={number} position={position} />
 
