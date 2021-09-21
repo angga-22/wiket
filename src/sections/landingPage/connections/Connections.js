@@ -10,6 +10,7 @@ import {
   Image,
   Card,
 } from '@thepuzzlers/pieces';
+import { PrimaryCard } from 'components';
 
 // svgs
 import greenPointer from 'assets/svg/pin.svg';
@@ -17,8 +18,8 @@ import logo from 'assets/svg/wiket-logo.svg';
 import floatingCircle from 'assets/svg/floating-circle-green.svg';
 
 // card images
-import imgThree from 'assets/jpg/header-sub-img-3.jpg';
-import imgTwo from 'assets/jpg/connections-card-2.jpg';
+import imgThree from 'assets/jpg/image-roastery.jpg';
+import imgTwo from 'assets/jpg/image-florist.jpg';
 import imgOne from 'assets/jpg/header-sub-img-1.jpg';
 import imgFour from 'assets/jpg/connections-card-4.jpg';
 
@@ -26,6 +27,33 @@ import imgFour from 'assets/jpg/connections-card-4.jpg';
 // import { motionChangeSections, motionChangeCards } from './animations';
 
 const quantityOfContentWrapper = [0, 1, 2];
+
+const data = [
+  {
+    text: (
+      <>
+        Start by <span>connecting</span> with your current business partners.
+      </>
+    ),
+    number: '01.',
+  },
+  {
+    text: (
+      <>
+        See interesting connection your <span>partners already have.</span>
+      </>
+    ),
+    number: '02.',
+  },
+  {
+    text: (
+      <>
+        Connect with <span>new businesses </span> through your partners.
+      </>
+    ),
+    number: '03.',
+  },
+];
 
 export const Connections = memo(() => {
   const contentWrapper = React.useRef([]);
@@ -38,9 +66,6 @@ export const Connections = memo(() => {
   primaryCards.current = quantityOfContentWrapper.map(
     (wrapper, i) => primaryCards.current[i] ?? React.createRef()
   );
-
-  // console.log(contentWrapper.current);
-  // console.log(primaryCards.current);
 
   // React.useEffect(() => {
   //   motionChangeSections(contentWrapper);
@@ -59,19 +84,19 @@ export const Connections = memo(() => {
         position={0}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
-        number='01.'
+        number={data[0].number}
       />
       <Section
         position={1}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
-        number='02.'
+        number={data[1].number}
       />
       <Section
         position={2}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
-        number='03.'
+        number={data[2].number}
       />
     </section>
   );
@@ -86,13 +111,10 @@ const Headline = () => (
     as='h2'
     type='connectionsHeading'
     sx={{
-      color: 'greenText',
       gridColumn: ['1/13', '1/10', '1/16', '1/19', '1/16', '2/13'],
     }}
   >
-    <Box as='span' sx={{ fontFamily: 'spoof-bold' }}>
-      Build strong connections.{' '}
-    </Box>
+    <span>Build strong connections. </span>
     <br />
     Right from the App.
   </Heading>
@@ -130,8 +152,6 @@ const GreenPointerVector = ({ position }) => {
     <Box
       sx={{
         position: 'relative',
-        // height: ['58px', '76px', '54px', '54px', '65px', '123px'],
-        // width: ['49px', '64px', '46px', '46px', '55px', '105px'],
         zIndex: 0,
         ...styles[position],
       }}
@@ -149,7 +169,7 @@ const FloatingCircleVector = ({ position }) => {
     {
       alignSelf: ['end', 'end', 'end', 'end'],
       gridRow: [1, 1, 1, 1],
-      gridColumn: ['6/8', '6/9', '6/9', '6/9'],
+      gridColumn: ['6/9', '6/9', '6/9', '6/9'],
       mb: ['19px', '19px', '19px', '10px'],
     },
     {
@@ -161,8 +181,6 @@ const FloatingCircleVector = ({ position }) => {
     <Box
       sx={{
         position: 'relative',
-        // height: ['65px'],
-        // width: ['76px'],
         zIndex: 0,
         ...styles[position],
       }}
@@ -185,7 +203,12 @@ const LogoVector = ({ position }) => {
       gridColumn: ['10/13', '9/12', '14/18', '19/23'],
       gridRow: [3, 3, 2, 2],
       justifySelf: ['end', 'end', 'end', 'end'],
-      transform: ['unset', 'unset', 'translateY(-30%)', 'translateY(-50%)'],
+      transform: [
+        'translateY(10%)',
+        'translateY(10%)',
+        'translateY(-30%)',
+        'translateY(-50%)',
+      ],
     },
   ];
 
@@ -236,8 +259,6 @@ const Number = ({ number, position }) => {
       as='h2'
       type='connectionsNumber'
       sx={{
-        fontFamily: 'spoof-bold',
-        color: 'accentPrimary',
         ...styles[position],
       }}
     >
@@ -250,7 +271,7 @@ const Number = ({ number, position }) => {
 /* ------------------ Sections Headings ------------------ */
 /* ------------------------------------------------------- */
 
-const FirstSectionHeading = ({ position }) => {
+const SectionHeading = ({ position }) => {
   const styles = [
     {
       gridColumn: ['1/11', '3/10', '13/25', '15/25', '16/24', '16/24'],
@@ -278,80 +299,32 @@ const FirstSectionHeading = ({ position }) => {
         ...styles[position],
       }}
     >
-      Start by <span>connecting </span> with your current business partners.
+      {data[position].text}
     </Heading>
   );
 };
 
-// const SecondSectionHeading = () => (
-//   <Heading
-//     as='h2'
-//     type='connectionsSectionHeading'
-//     sx={{
-//       gridColumn: ['1/10'],
-//       gridRow: [4],
-//       mt: ['14px'],
-//     }}
-//   >
-//     See interesting connection your <span>partners already have.</span>
-//   </Heading>
-// );
-
-// const ThirdSectionHeading = () => (
-//   <Heading
-//     as='h2'
-//     type='connectionsSectionHeading'
-//     sx={{
-//       gridColumn: ['1/10'],
-//       gridRow: [4],
-//       mt: ['38px'],
-//     }}
-//   >
-//     Connect with <span>new businesses </span>
-//     through your partners.
-//   </Heading>
-// );
-
 /* ------------------------------------------------------- */
 /* ------------------------ Cards ------------------------ */
 /* ------------------------------------------------------- */
-
-const CardImgAndTextVertical = ({ image, title, text }) => (
-  <>
-    <Image src={image} sx={{ borderRadius: 'input' }} />
-    <Heading
-      as='h5'
-      type='cardsSmallHeading'
-      sx={{
-        mt: '12px',
-        mb: '4px',
-      }}
-    >
-      {title}
-    </Heading>
-    <Paragraph type='cardsParagraph'>{text}</Paragraph>
-  </>
-);
-
-/* ------------------------ Cards ------------------------ */
 
 const HorizontalSmallCard = ({ position }) => {
   const styles = [
     {
       alignSelf: ['unset', 'unset', 'unset', 'end', 'end'],
-      gridColumn: ['3/13', '6/12', '9/18', '5/14', '4/11', '4/9'],
+      gridColumn: ['3/13', '6/13', '9/18', '5/14', '4/11', '4/9'],
       gridRow: [3, 1, 1, 1, 1, 2],
       mb: ['12px', '80px', '80px', 0, 0, 0],
       mt: [0, 0, 0, 0, 0, '54px'],
     },
     {
       alignSelf: [null, null, 'start', 'start'],
-      gridColumn: ['1/11', '2/8', '3/12', '2/11'],
+      gridColumn: ['1/11', '1/8', '3/12', '2/11'],
       gridRow: [2, 2, 2, 2],
     },
     {
       alignSelf: [null, null, null, 'start'],
-      gridColumn: ['3/13', '6/12', '5/14', '12/21'],
+      gridColumn: ['3/13', '6/13', '5/14', '12/21'],
       gridRow: [1, 1, 2, 1],
       mt: [0, 0, '24px', 0],
     },
@@ -367,8 +340,7 @@ const HorizontalSmallCard = ({ position }) => {
       <Box
         sx={{
           mr: '16px',
-          height: ['90px', '90px', '90px', '90px', '100px', '100px'],
-          width: ['38%', '50%', '45%', '45%', '45%', '45%'],
+          width: ['38%', '38%', '45%', '45%', '45%', '45%'],
         }}
       >
         <Image
@@ -403,7 +375,7 @@ const HorizontalBigCard = ({ position }) => {
       gridColumn: ['1/13', '1/9', '9/19', '1/12'],
       gridRow: [2, 2, 3, 3],
       my: ['12px', '12px', '24px', 0],
-      mb: 'auto',
+      mb: ['12px', '12px', 'auto', 'auto'],
     },
   ];
 
@@ -411,14 +383,14 @@ const HorizontalBigCard = ({ position }) => {
     <Card
       sx={{
         variant: 'cards.horizontal',
-        bg: 'formBg',
+        bg: 'blue100',
         ...styles[position],
       }}
     >
       <Box
         sx={{
           mr: '16px',
-          width: ['32%', '32%', '45%', '32%', '39%', '39%'],
+          width: ['32%', '33%%', '45%', '32%', '39%', '39%'],
         }}
       >
         <Image
@@ -452,25 +424,22 @@ const VerticalBigCard = ({ position }) => {
       justifySelf: 'baseline',
       gridColumn: ['1/7', '1/6', '2/8', '6/12'],
       gridRow: [3, 3, 3, 2],
-      mt: ['37px', '45px', '24px', '-34px'],
+      mt: ['37px', '50px', '24px', '-34px'],
     },
   ];
 
   return (
-    <Card
+    <PrimaryCard
+      image={imgFour}
+      title='Green Thumb'
+      text='Gardener in Chiang Mai'
       sx={{
         boxShadow: 100,
         variant: 'cards.vertical',
         width: ['94%'],
         ...styles[position],
       }}
-    >
-      <CardImgAndTextVertical
-        image={imgFour}
-        title='Green Thumb'
-        text='Gardener in Chiang Mai'
-      />
-    </Card>
+    />
   );
 };
 
@@ -494,20 +463,17 @@ const VerticalSmallCard = ({ position }) => {
   ];
 
   return (
-    <Card
+    <PrimaryCard
+      image={imgOne}
+      title='Potject'
+      text='Pottery in Bangkok'
       sx={{
         boxShadow: 200,
         variant: 'cards.vertical',
         width: ['100%'],
         ...styles[position],
       }}
-    >
-      <CardImgAndTextVertical
-        image={imgOne}
-        title='Potject'
-        text='Pottery in Bangkok'
-      />
-    </Card>
+    />
   );
 };
 
@@ -533,6 +499,6 @@ const Section = ({ sectionRef, position, number }) => (
     <FloatingCircleVector position={position} />
     <LogoVector position={position} />
 
-    <FirstSectionHeading position={position} />
+    <SectionHeading position={position} />
   </GridWrapper>
 );
