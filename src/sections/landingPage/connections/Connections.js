@@ -16,6 +16,9 @@ import { PrimaryCard } from 'components';
 import greenPointer from 'assets/svg/pin.svg';
 import logo from 'assets/svg/wiket-logo.svg';
 import floatingCircle from 'assets/svg/floating-circle-green.svg';
+import floatingLeaf from 'assets/svg/floating-leaf.svg';
+import line from 'assets/svg/shape03.svg';
+import curl from 'assets/svg/shape04.svg';
 
 // card images
 import imgThree from 'assets/jpg/image-roastery.jpg';
@@ -84,12 +87,14 @@ export const Connections = memo(() => {
         cardRef={primaryCards.current[0]}
         number={data[0].number}
       />
+      <Spacer />
       <Section
         position={1}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={data[1].number}
       />
+      <Spacer />
       <Section
         position={2}
         sectionRef={contentWrapper.current[0]}
@@ -223,6 +228,100 @@ const LogoVector = ({ position }) => {
       }}
     >
       <Image src={logo} alt='' />
+    </Box>
+  );
+};
+
+const FloatingLeaf = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      display: ['none', 'block', 'block', 'block', 'block', 'block'],
+      gridRow: [1, 1, 3, 2, 2, 1],
+      gridColumn: ['unset', '5/7', '8/10', '11/14', '10/12', '3/5'],
+      justifySelf: ['unset', 'unset', 'unset', 'end', 'start', 'start'],
+      mt: [0, 0, '14px', 0, 0, 0],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: ['100%', '100%', '100%', '80%', '80%', '80%'],
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={floatingLeaf} alt='' />
+    </Box>
+  );
+};
+
+const Line = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: 'end',
+      display: ['none', 'none', 'block', 'none', 'block', 'none'],
+      gridRow: [1, 1, 2, 2, 3, 2],
+      gridColumn: ['unset', 'unset', '3/5', 'unset', 'unset'],
+      justifySelf: ['end', 'end', 'end', 'end', 'center', 'unset'],
+      mb: [0, 0, '14px', 0, 0, 0],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: '60%',
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={line} alt='' />
+    </Box>
+  );
+};
+
+const Curl = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: 'center',
+      display: ['none', 'none', 'block', 'block', 'block', 'block'],
+      gridRow: [1, 1, 3, 2, 2, 2],
+      gridColumn: ['unset', 'unset', '1/3', '5/7', '4/6', '2/4'],
+      justifySelf: ['start', 'start', 'start', 'start', 'start', 'center'],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: ['80%', '80%', '80%', '80%', '70%', '60%'],
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={curl} alt='' />
     </Box>
   );
 };
@@ -494,8 +593,6 @@ const VerticalSmallCard = ({ position }) => {
 /* ----------------------- Sections ----------------------- */
 /* -------------------------------------------------------- */
 
-/* -------------------- First Section --------------------- */
-
 const Section = ({ sectionRef, position, number }) => (
   <GridWrapper
     ref={sectionRef}
@@ -514,7 +611,16 @@ const Section = ({ sectionRef, position, number }) => (
     <GreenPointerVector position={position} />
     <FloatingCircleVector position={position} />
     <LogoVector position={position} />
+    <FloatingLeaf position={position} />
+    <Line position={position} />
+    <Curl position={position} />
 
     <SectionHeading position={position} />
   </GridWrapper>
 );
+
+/* -------------------------------------------------------- */
+/* ------------------------ Spacer ------------------------ */
+/* -------------------------------------------------------- */
+
+const Spacer = () => <Box sx={{ height: ['100px'] }} />;
