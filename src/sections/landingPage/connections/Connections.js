@@ -147,10 +147,10 @@ const FloatingCircleVector = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: ['end', 'end', 'end'],
-      gridRow: [1, 1, 1],
-      gridColumn: ['6/8', '6/9', '6/9'],
-      mb: ['19px'],
+      alignSelf: ['end', 'end', 'end', 'end'],
+      gridRow: [1, 1, 1, 1],
+      gridColumn: ['6/8', '6/9', '6/9', '6/9'],
+      mb: ['19px', '19px', '19px', '10px'],
     },
     {
       display: 'none',
@@ -181,11 +181,11 @@ const LogoVector = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: ['end', 'end', 'start'],
-      gridColumn: ['10/13', '9/12', '14/18'],
-      gridRow: [3, 3, 2],
-      justifySelf: ['end', 'end', 'end'],
-      transform: ['unset', 'unset', 'translateY(-30%)'],
+      alignSelf: ['end', 'end', 'start', 'start'],
+      gridColumn: ['10/13', '9/12', '14/18', '19/23'],
+      gridRow: [3, 3, 2, 2],
+      justifySelf: ['end', 'end', 'end', 'end'],
+      transform: ['unset', 'unset', 'translateY(-30%)', 'translateY(-50%)'],
     },
   ];
 
@@ -216,18 +216,18 @@ const Number = ({ number, position }) => {
       mb: [0, 0, 0, '32px', '59px', '-20px'],
     },
     {
-      alignSelf: [null, null, 'end'],
-      gridColumn: ['4/13', '4/13', '14/24'],
-      gridRow: [3, 3, 1],
-      justifySelf: ['end', 'end', 'start'],
-      mt: ['10px', '12px', 0],
+      alignSelf: [null, null, 'end', 'end'],
+      gridColumn: ['4/13', '4/13', '14/24', '14/25'],
+      gridRow: [3, 3, 1, 1],
+      justifySelf: ['end', 'end', 'start', 'end'],
+      mt: ['10px', '12px', 0, 0],
     },
     {
-      alignSelf: [null, null, 'end'],
-      gridColumn: ['1/10', '1/10', '1/10'],
-      gridRow: [3, 3, 1],
-      justifySelf: ['start', 'start', 'start'],
-      transform: ['translateY(-16%)', 'translateY(-16%)', 'unset'],
+      alignSelf: [null, null, 'end', 'end'],
+      gridColumn: ['1/10', '1/10', '1/10', '1/10'],
+      gridRow: [3, 3, 1, 1],
+      justifySelf: ['start', 'start', 'start', 'start'],
+      transform: ['translateY(-16%)', 'translateY(-16%)', 'unset', 'unset'],
     },
   ];
 
@@ -261,12 +261,12 @@ const FirstSectionHeading = ({ position }) => {
       alignSelf: [null, null, 'end'],
       gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '16/24'],
       gridRow: [4, 4, 3],
-      mt: ['14px', '14px', 0],
+      mt: ['14px', '14px', 0, 0],
     },
     {
       gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '16/24'],
       gridRow: [4],
-      mt: ['38px', '38px', 0],
+      mt: ['38px', '38px', 0, 0],
     },
   ];
 
@@ -345,14 +345,15 @@ const HorizontalSmallCard = ({ position }) => {
       mt: [0, 0, 0, 0, 0, '54px'],
     },
     {
-      alignSelf: [null, null, 'start'],
-      gridColumn: ['1/11', '2/8', '3/12'],
-      gridRow: [2, 2, 2],
+      alignSelf: [null, null, 'start', 'start'],
+      gridColumn: ['1/11', '2/8', '3/12', '2/11'],
+      gridRow: [2, 2, 2, 2],
     },
     {
-      gridColumn: ['3/13', '6/12', '5/14'],
-      gridRow: [1, 1, 2],
-      mt: [0, 0, '24px'],
+      alignSelf: [null, null, null, 'start'],
+      gridColumn: ['3/13', '6/12', '5/14', '12/21'],
+      gridRow: [1, 1, 2, 1],
+      mt: [0, 0, '24px', 0],
     },
   ];
 
@@ -367,7 +368,7 @@ const HorizontalSmallCard = ({ position }) => {
         sx={{
           mr: '16px',
           height: ['90px', '90px', '90px', '90px', '100px', '100px'],
-          width: ['38%', '50%', '38%', '38%', '45%', '45%'],
+          width: ['38%', '50%', '45%', '45%', '45%', '45%'],
         }}
       >
         <Image
@@ -398,10 +399,11 @@ const HorizontalBigCard = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: [null, null, 'start'],
-      gridColumn: ['1/13', '1/9', '9/19'],
-      gridRow: [2, 2, 3],
-      my: ['12px', '12px', '24px'],
+      alignSelf: [null, null, 'start', 'start'],
+      gridColumn: ['1/13', '1/9', '9/19', '1/12'],
+      gridRow: [2, 2, 3, 3],
+      my: ['12px', '12px', '24px', 0],
+      mb: 'auto',
     },
   ];
 
@@ -441,15 +443,16 @@ const VerticalBigCard = ({ position }) => {
     },
     {
       justifySelf: 'end',
-      gridColumn: ['1/7', '2/7', '1/7'],
-      gridRow: [1, 1, 1],
-      mb: ['62px', '90px', '50px'],
+      gridColumn: ['1/7', '2/7', '1/7', '1/7'],
+      gridRow: [1, 1, 1, 1],
+      mb: ['62px', '90px', '50px', '44px'],
     },
     {
+      alignSelf: [null, null, null, 'start'],
       justifySelf: 'baseline',
-      gridColumn: ['1/7', '1/6', '2/8'],
-      gridRow: [3, 3, 3],
-      mt: ['37px', '45px', '24px'],
+      gridColumn: ['1/7', '1/6', '2/8', '6/12'],
+      gridRow: [3, 3, 3, 2],
+      mt: ['37px', '45px', '24px', '-34px'],
     },
   ];
 
@@ -477,16 +480,16 @@ const VerticalSmallCard = ({ position }) => {
       display: 'none',
     },
     {
-      gridColumn: ['8/13', '8/12', '8/13'],
-      gridRow: [1, 1, 1],
-      mb: ['29px', '40px', '30px'],
+      gridColumn: ['8/13', '8/12', '8/13', '8/13'],
+      gridRow: [1, 1, 1, 1],
+      mb: ['29px', '40px', '30px', '24px'],
       mt: 'auto',
     },
     {
-      gridColumn: ['7/12', '7/11', '12/17'],
-      gridRow: [3, 3, 1],
+      gridColumn: ['7/12', '7/11', '12/17', '13/18'],
+      gridRow: [3, 3, 1, 2],
       mb: ['auto'],
-      ml: ['5%', '5%', 0],
+      ml: ['5%', '5%', 0, 0],
     },
   ];
 
