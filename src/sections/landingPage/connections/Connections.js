@@ -86,13 +86,12 @@ const Headline = () => (
     as='h2'
     type='connectionsHeading'
     sx={{
-      color: 'greenText',
       gridColumn: ['1/13', '1/10', '1/16', '1/19', '1/16', '2/13'],
     }}
   >
-    <Box as='span' sx={{ fontFamily: 'spoof-bold' }}>
+    <Heading as='span' type='h2' variant='bold'>
       Build strong connections.{' '}
-    </Box>
+    </Heading>
     <br />
     Right from the App.
   </Heading>
@@ -235,9 +234,9 @@ const Number = ({ number, position }) => {
     <Heading
       as='h2'
       type='connectionsNumber'
+      variant='bold'
       sx={{
-        fontFamily: 'spoof-bold',
-        color: 'accentPrimary',
+        color: 'secondary',
         ...styles[position],
       }}
     >

@@ -47,13 +47,7 @@ const FeatureDetailRow = ({ data }) => (
         py: '12px',
       }}
     >
-      <Paragraph
-        type='featureList'
-        variant='bold'
-        sx={{
-          color: 'accentSecondary',
-        }}
-      >
+      <Paragraph type='featureList' variant='bold'>
         {data.title}
       </Paragraph>
     </GridItem>

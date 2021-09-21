@@ -5,7 +5,7 @@ const linkDefault = {
 const buttonDefault = {
   cursor: 'pointer',
   transition: '0.2s ease-out',
-  bg: 'accentPrimary',
+  bg: 'secondary',
   borderRadius: 'card',
   '&:hover': {
     transform: 'scale(1.1)',

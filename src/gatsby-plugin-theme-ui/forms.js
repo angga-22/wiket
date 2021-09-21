@@ -1,8 +1,8 @@
 export const forms = {
   input: {
     variant: 'typography.inputText.normal',
-    color: 'inputText',
-    backgroundColor: 'white',
+    color: 'blue300',
+    backgroundColor: 'blue50',
     borderRadius: 'input',
     outline: 'none',
     mt: '8px', // spacing to label
@@ -16,11 +16,10 @@ export const forms = {
       '10.5px 16px',
     ],
     '::placeholder': {
-      color: 'inputText',
+      color: 'blue300',
     },
   },
   label: {
-    color: 'greenText',
     fontFamily: 'faible-bold',
     mb: '100px',
   },

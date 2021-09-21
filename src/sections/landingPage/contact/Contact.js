@@ -82,12 +82,7 @@ const Headline = () => (
     }}
   >
     Keep in{' '}
-    <Heading
-      as='span'
-      type='h2'
-      variant='bold'
-      // sx={{ fontFamily: 'spoof-bold' }}
-    >
+    <Heading as='span' type='h2' variant='bold'>
       touch.
     </Heading>
   </Heading>

@@ -4,7 +4,6 @@ import Lottie from 'react-lottie';
 
 // pieces
 import {
-  Box,
   Heading,
   Paragraph,
   GridItem,
@@ -30,10 +29,7 @@ export const Profile = memo(() => {
   };
 
   return (
-    <GridWrapper
-      as='section'
-      // sx={{ mt: ['332px', '202px', '218px', '219px', '184px', '272px'] }}
-    >
+    <GridWrapper as='section'>
       <Headline />
       <Line />
       <Animation options={defaultOptions} />
@@ -48,16 +44,15 @@ export const Headline = () => (
     as='h2'
     type='profileHeading'
     sx={{
-      color: 'greenText',
       gridColumn: ['1/12', '1/12', '2/21', '1/14', '2/14', '2/14'],
       gridRow: [1, 1, 1, 2, 2, 2],
       pb: ['73px', '41px', '63px', '24px', '24px', 0],
       pt: [0, 0, 0, '54px', '65px', 0],
     }}
   >
-    <Box as='span' sx={{ color: 'accentPrimary', fontFamily: 'spoof-bold' }}>
+    <Heading as='span' type='h2' variant='bold' sx={{ color: 'secondary' }}>
       Focused on small businesses.{' '}
-    </Box>
+    </Heading>
     Your profile lets everyone know, what you bring to the table.
   </Heading>
 );
@@ -138,7 +133,6 @@ export const Body = () => (
     type='profileParagraph'
     sx={{
       alignSelf: ['start', 'end', 'start', 'start', 'start', 'end'],
-      color: 'greenText',
       gridColumn: ['1/10', '1/6', '2/11', '1/10', '2/8', '11/16'],
       gridRow: [4, 3, 3, 3, 3, 3],
       pt: ['25px', 0, 0, 0, 0, '25px'],

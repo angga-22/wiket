@@ -105,7 +105,7 @@ export const typographyConfig = {
     fontFamily: 'primary',
     lineHeight: 'heading.design',
     '&>span': {
-      color: 'accentPrimary',
+      color: 'secondary',
       fontFamily: 'primary.bold',
     },
   },
@@ -165,31 +165,27 @@ export const typographyConfig = {
     fontSizes: [15.9, 17, 16.2, 15.9, 15.7, 18.7],
     fontFamily: 'bodyBold',
     lineHeight: 'heading.safe',
-    color: 'greenText',
   },
   cardBigHeading: {
     factor: 2.5,
     fontSizes: [18.7, 19.7, 21, 18.8, 20.4, 21.7],
     fontFamily: 'bodyBold',
     lineHeight: 'heading.safe',
-    color: 'greenText',
   },
   cardsParagraph: {
     factor: 2.5,
     fontSizes: [14.9, 15.2, 16.2, 15, 14.8, 15.8],
     fontFamily: 'body',
     lineHeight: 'heading.design',
-    color: 'greenText',
   },
   connectionsSectionHeading: {
     factor: 2.5,
     fontSizes: [24.3, 25.1, 30.6, 24.4, 27.8, 35.5],
     fontFamily: 'primary',
     lineHeight: 'heading.design',
-    color: 'greenText',
     '&>span': {
       fontFamily: 'primary.bold',
-      color: 'accentPrimary',
+      color: 'secondary',
     },
   },
   connectionsNumber: {

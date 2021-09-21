@@ -99,7 +99,7 @@ export const Navbar = memo(() => {
       <GridWrapper
         ref={navigation}
         sx={{
-          bg: 'greenText',
+          bg: 'primary',
           display: openMenu === true ? 'grid' : 'none',
           position: 'fixed',
           top: 0,
@@ -291,6 +291,6 @@ const DesktopNavigation = () => (
       ],
     }}
   >
-    <Links sx={{ color: 'greenText' }} />
+    <Links sx={{ color: 'primary' }} />
   </GridItem>
 );

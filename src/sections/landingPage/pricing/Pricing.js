@@ -62,7 +62,6 @@ const SmallHeadlines = () => (
     <Paragraph
       type='paragraph'
       sx={{
-        color: 'accentSecondary',
         textAlign: ['center', 'center', 'center', 'center', 'left', 'left'],
       }}
     >

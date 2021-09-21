@@ -12,14 +12,10 @@ export const Filler = memo(() => (
   <Section
     id='values-section'
     sx={{
-      // minHeight: '10vh',
       alignItems: 'center',
     }}
   >
-    <GridWrapper
-      variant='inside.columns'
-      //   sx={{ gridTemplateRow: ['minContent', 200, 'minContent'] }}
-    >
+    <GridWrapper variant='inside.columns'>
       <GridItem
         sx={{
           gridColumn: [

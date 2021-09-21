@@ -15,7 +15,6 @@ export const Quote = memo(() => (
   <Section
     id='values-section'
     sx={{
-      //  minHeight: '50vh',
       alignItems: 'center',
     }}
   >
