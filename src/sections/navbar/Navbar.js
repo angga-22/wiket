@@ -13,7 +13,7 @@ import {
   Heading,
   GridItem,
 } from '@thepuzzlers/pieces';
-import { Link } from 'theme-ui';
+// import { Link } from 'theme-ui';
 
 // svgs
 import logo from 'assets/svg/wiket-logo-complete.svg';
@@ -27,25 +27,35 @@ export const Navbar = memo(() => {
     gsap.timeline({ defaults: { ease: 'Power1.easeOut' } }).reverse()
   );
   const navigation = useRef();
+  const navLinksRefs = useRef([]);
+  navLinksRefs.current = [];
+  const overlayHeading = useRef();
+  const logoLight = useRef();
 
   const handleClick = () => {
     setOpenMenu(!openMenu);
   };
 
+  const addToRefs = (el) => {
+    if (el && !navLinksRefs.current.includes(el)) {
+      navLinksRefs.current.push(el);
+    }
+  };
+
   useEffect(() => {
-    gsap.set('.navigation-link', { x: '-100%', opacity: 0 });
+    gsap.set(navLinksRefs.current, { x: '-100%', opacity: 0 });
 
     tl.current
       .from(navigation.current, { opacity: 0, x: '100%' })
-      .to('.navigation-link', {
+      .to(navLinksRefs.current, {
         duration: 0.3,
         x: '0',
         ease: 'Power1.easeOut',
         stagger: 0.2,
         opacity: 1,
       })
-      .from('.overlay-heading', { y: '100%', opacity: 0 })
-      .from('.logo-light', { y: '100%', opacity: 0 });
+      .from(overlayHeading.current, { y: '100%', opacity: 0 })
+      .from(logoLight.current, { y: '100%', opacity: 0 });
   }, []);
 
   useEffect(() => {
@@ -86,9 +96,9 @@ export const Navbar = memo(() => {
         }}
       >
         <Close handleClick={handleClick} />
-        <OverlayNavlinks handleClick={handleClick} />
-        <OverlayNavHeading />
-        <LogoLight />
+        <OverlayNavlinks handleClick={handleClick} designatedRef={addToRefs} />
+        <OverlayNavHeading designatedRef={overlayHeading} />
+        <LogoLight designatedRef={logoLight} />
       </GridWrapper>
     </nav>
   );
@@ -155,13 +165,14 @@ const useLinks = () => {
   return links;
 };
 
-const Links = ({ handleClick }) => {
+const Links = ({ handleClick, designatedRef }) => {
   const links = useLinks();
 
   return links.nav.map((link) => (
     <Box
       key={link.title}
       className='navigation-link'
+      ref={designatedRef}
       sx={{
         color: 'textNegative',
         textAlign: 'center',
@@ -208,21 +219,21 @@ const Close = ({ handleClick }) => (
   </Box>
 );
 
-const OpenNavButton = ({ handleClick }) => (
-  <Link
-    href='#contact-section'
+const OpenNavButton = ({ handleClick, designatedRef }) => (
+  <NavigationLink
+    to='#contact-section'
     sx={{
       m: ['0 auto', '0 auto', '0 auto', '0 0 auto 0'],
       variant: 'buttons.tertiary',
     }}
     onClick={handleClick}
-    className='navigation-link'
+    ref={designatedRef}
   >
     Get started
-  </Link>
+  </NavigationLink>
 );
 
-const OverlayNavlinks = ({ handleClick }) => (
+const OverlayNavlinks = ({ handleClick, designatedRef }) => (
   <GridItem
     sx={{
       alignSelf: ['center', 'center', 'end'],
@@ -233,12 +244,12 @@ const OverlayNavlinks = ({ handleClick }) => (
       justifyContent: ['unset', 'unset', 'unset', 'space-between'],
     }}
   >
-    <Links handleClick={handleClick} />
-    <OpenNavButton handleClick={handleClick} />
+    <Links handleClick={handleClick} designatedRef={designatedRef} />
+    <OpenNavButton handleClick={handleClick} designatedRef={designatedRef} />
   </GridItem>
 );
 
-const OverlayNavHeading = () => (
+const OverlayNavHeading = ({ designatedRef }) => (
   <Heading
     as='h2'
     type='openNavHeading'
@@ -250,13 +261,13 @@ const OverlayNavHeading = () => (
       textAlign: ['center', 'center', 'center', 'right'],
       p: ['16% 0 8%', '25% 0 10%', '25% 0 10%', '10% 0 5%'],
     }}
-    className='overlay-heading'
+    ref={designatedRef}
   >
     Where mind-liked businesses <span>connect</span>
   </Heading>
 );
 
-const LogoLight = () => (
+const LogoLight = ({ designatedRef }) => (
   <Box
     sx={{
       alignSelf: ['baseline', 'baseline', 'baseline', 'center'],
@@ -266,7 +277,7 @@ const LogoLight = () => (
       mb: ['20%', '20%', '30%', '-20%'],
       width: ['100%', '70%', '80%', '90%'],
     }}
-    className='logo-light'
+    ref={designatedRef}
   >
     <Image src={logoWhite} alt='Wiket logo' />
   </Box>
