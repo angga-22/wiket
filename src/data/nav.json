@@ -3,7 +3,7 @@
     "nav": [
       {
         "title": "Benefits",
-        "to": "/#benefit-section"
+        "to": "/#benefits"
       },
       {
         "title": "Your Profile",
@@ -15,7 +15,7 @@
       },
       {
         "title": "Plans & Pricing",
-        "to": "/#feature-price-section"
+        "to": "/#feature-price"
       }
     ],
     "footer": {

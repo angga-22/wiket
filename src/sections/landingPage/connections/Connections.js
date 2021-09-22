@@ -1,4 +1,7 @@
 // external dependencies
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import React, { memo } from 'react';
 
 // pieces
@@ -76,7 +79,7 @@ export const Connections = memo(() => {
   // });
 
   return (
-    <section id='connections-section'>
+    <section id='connections' sx={{ paddingTop: '120px' }}>
       <GridWrapper>
         <Headline />
       </GridWrapper>

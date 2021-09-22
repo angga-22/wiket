@@ -6,40 +6,26 @@ import { memo } from 'react';
 import ThumbsUpImg from 'assets/svg/Group 67.svg';
 
 // pieces
-import {
-  Section,
-  GridWrapper,
-  Heading,
-  Paragraph,
-  GridItem,
-} from '@thepuzzlers/pieces';
+import { Section, Heading, Paragraph, GridItem } from '@thepuzzlers/pieces';
 import valuesTexts from '../../../data/values.json';
 
 export const Values = memo(() => (
   <Section
     id='values-section'
-    sx={{
-      minHeight: '100vh',
-      alignItems: 'center',
-    }}
+    sx={{ '.valuesTextBlock:last-of-type': { paddingBottom: '7em' } }}
   >
-    <GridWrapper
-      variant='inside.columns'
-      sx={{ '.valuesTextBlock:last-of-type': { paddingBottom: '7em' } }}
-    >
-      <Background />
-      <SectionHeader />
-      <SectionHeaderImg />
-      {valuesTexts.map((value) => (
-        <TextBlock
-          key={value.id}
-          title={value.title}
-          text={value.text}
-          gridColumnStart={value.gridColumnStart}
-          gridRow={value.gridRow}
-        />
-      ))}
-    </GridWrapper>
+    <Background />
+    <SectionHeader />
+    <SectionHeaderImg />
+    {valuesTexts.map((value) => (
+      <TextBlock
+        key={value.id}
+        title={value.title}
+        text={value.text}
+        gridColumnStart={value.gridColumnStart}
+        gridRow={value.gridRow}
+      />
+    ))}
   </Section>
 ));
 

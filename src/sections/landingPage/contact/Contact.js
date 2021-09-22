@@ -18,6 +18,7 @@ import { Form } from './Form';
 
 export const Contact = memo(() => (
   <GridWrapper
+    id='contact-section'
     sx={{
       gridTemplateRows: [null, null, null, null, 'auto 1fr', 'auto 1fr'],
     }}

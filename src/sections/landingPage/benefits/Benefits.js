@@ -8,17 +8,16 @@ import { graphql, useStaticQuery } from 'gatsby';
 import {
   Box,
   Section,
-  GridWrapper,
   Heading,
   Paragraph,
   GridItem,
   Image,
 } from '@thepuzzlers/pieces';
 
-export const Strengthen = memo(() => {
+export const Benefits = memo(() => {
   const data = useStaticQuery(graphql`
     {
-      allStrengthenJson {
+      allBenefitsJson {
         nodes {
           gridColumnStart
           gridRow
@@ -34,25 +33,23 @@ export const Strengthen = memo(() => {
   `);
   return (
     <Section
-      id='strengthen-section'
+      id='benefits'
       sx={{
-        minHeight: '50vh',
+        paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'],
         alignItems: 'center',
       }}
     >
-      <GridWrapper variant='inside.columns'>
-        <SectionHeader />
-        {data.allStrengthenJson.nodes.map((value) => (
-          <TextBox
-            key={value.id}
-            image={value.image}
-            title={value.title}
-            text={value.text}
-            gridColumnStart={value.gridColumnStart}
-            gridRow={value.gridRow}
-          />
-        ))}
-      </GridWrapper>
+      <SectionHeader />
+      {data.allBenefitsJson.nodes.map((value) => (
+        <TextBox
+          key={value.id}
+          image={value.image}
+          title={value.title}
+          text={value.text}
+          gridColumnStart={value.gridColumnStart}
+          gridRow={value.gridRow}
+        />
+      ))}
     </Section>
   );
 });
