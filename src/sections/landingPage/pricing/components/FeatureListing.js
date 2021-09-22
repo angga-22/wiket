@@ -94,7 +94,7 @@ const Indicator = ({ value, color }) => {
   return (
     // number
     <Paragraph
-      variant='bold'
+      type='pricingSectionNumber'
       sx={{
         color,
       }}
