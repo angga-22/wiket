@@ -19,18 +19,14 @@ import floatingLeaf from 'assets/svg/floating-leaf.svg';
 import line from 'assets/svg/shape03.svg';
 import curl from 'assets/svg/shape04.svg';
 
-// card images
-import greenCafeImage from 'assets/jpg/connections-image-roastery.jpg';
-import hangingGardensImage from 'assets/jpg/connections-image-florist.jpg';
-import potjectImage from 'assets/jpg/image-pottery.jpg';
-import greenThumbImage from 'assets/jpg/image-gardener.jpg';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // animations
 // import { motionChangeSections, motionChangeCards } from './animations';
 
 const quantityOfContentWrapper = [0, 1, 2];
 
-const data = [
+const sectionsData = [
   {
     text: (
       <>
@@ -57,7 +53,7 @@ const data = [
   },
 ];
 
-export const Connections = memo(() => {
+export const Connections = memo(({ imagesData }) => {
   const contentWrapper = React.useRef([]);
   const primaryCards = React.useRef([]);
 
@@ -68,6 +64,9 @@ export const Connections = memo(() => {
   primaryCards.current = quantityOfContentWrapper.map(
     (wrapper, i) => primaryCards.current[i] ?? React.createRef()
   );
+
+  // eslint-disable-next-line no-console
+  console.log('imagesData', imagesData);
 
   // React.useEffect(() => {
   //   motionChangeSections(contentWrapper);
@@ -84,21 +83,24 @@ export const Connections = memo(() => {
         position={0}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
-        number={data[0].number}
+        number={sectionsData[0].number}
+        imagesData={imagesData}
       />
       <Spacer />
       <Section
         position={1}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
-        number={data[1].number}
+        number={sectionsData[1].number}
+        imagesData={imagesData}
       />
       <Spacer />
       <Section
         position={2}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
-        number={data[2].number}
+        number={sectionsData[2].number}
+        imagesData={imagesData}
       />
     </section>
   );
@@ -126,7 +128,7 @@ const Headline = () => (
 /* ------------------ Section Container ------------------- */
 /* -------------------------------------------------------- */
 
-const Section = ({ sectionRef, position, number }) => (
+const Section = ({ sectionRef, position, number, imagesData }) => (
   <GridWrapper
     ref={sectionRef}
     sx={{
@@ -138,8 +140,8 @@ const Section = ({ sectionRef, position, number }) => (
 
     <GreenCafeCard position={position} />
     <HangingGardensCard position={position} />
-    <GreenThumbCard position={position} />
-    <PotjectCard position={position} />
+    <GreenThumbCard position={position} image={imagesData.greenThumbImag} />
+    <PotjectCard position={position} image={imagesData.potjectImage} />
 
     <GreenPointerVector position={position} />
     <FloatingCircleVector position={position} />
@@ -237,8 +239,9 @@ const GreenCafeCard = ({ position }) => {
           width: ['38%', '38%', '45%', '45%', '42%', '45%'],
         }}
       >
-        <Image
-          src={greenCafeImage}
+        <StaticImage
+          src='../../../assets/jpg/connections-image-roastery.jpg'
+          alt='Image roastery'
           sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
         />
       </Box>
@@ -284,8 +287,9 @@ const HangingGardensCard = ({ position }) => {
           width: ['32%', '33%', '45%', '32%', '38%', '39%'],
         }}
       >
-        <Image
-          src={hangingGardensImage}
+        <StaticImage
+          src='../../../assets/jpg/connections-image-florist.jpg'
+          alt='Image of a florist'
           sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
         />
       </Box>
@@ -296,7 +300,7 @@ const HangingGardensCard = ({ position }) => {
   );
 };
 
-const GreenThumbCard = ({ position }) => {
+const GreenThumbCard = ({ position, image }) => {
   const styles = [
     {
       display: 'none',
@@ -318,7 +322,7 @@ const GreenThumbCard = ({ position }) => {
 
   return (
     <PrimaryCard
-      image={greenThumbImage}
+      image={image}
       title='Green Thumb'
       text='Gardener in Chiang Mai'
       sx={{
@@ -330,7 +334,7 @@ const GreenThumbCard = ({ position }) => {
   );
 };
 
-const PotjectCard = ({ position }) => {
+const PotjectCard = ({ position, image }) => {
   const styles = [
     {
       display: 'none',
@@ -352,7 +356,7 @@ const PotjectCard = ({ position }) => {
 
   return (
     <PrimaryCard
-      image={potjectImage}
+      image={image}
       title='Potject'
       text='Pottery in Bangkok'
       sx={{
@@ -397,7 +401,7 @@ const SectionHeading = ({ position }) => {
         ...styles[position],
       }}
     >
-      {data[position].text}
+      {sectionsData[position].text}
     </Heading>
   );
 };
