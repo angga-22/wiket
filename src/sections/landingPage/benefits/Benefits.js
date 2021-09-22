@@ -14,10 +14,10 @@ import {
   Image,
 } from '@thepuzzlers/pieces';
 
-export const Strengthen = memo(() => {
+export const Benefits = memo(() => {
   const data = useStaticQuery(graphql`
     {
-      allStrengthenJson {
+      allBenefitsJson {
         nodes {
           gridColumnStart
           gridRow
@@ -40,7 +40,7 @@ export const Strengthen = memo(() => {
       }}
     >
       <SectionHeader />
-      {data.allStrengthenJson.nodes.map((value) => (
+      {data.allBenefitsJson.nodes.map((value) => (
         <TextBox
           key={value.id}
           image={value.image}

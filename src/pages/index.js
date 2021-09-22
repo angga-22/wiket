@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import {
   Header,
-  Strengthen,
+  Benefits,
   Profile,
   Connections,
   Values,
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => (
   <div>
     <Header />
     <Box sx={{ height: ['94px', '2px', '29px', '0px', '16px', '20px'] }} />
-    <Strengthen />
+    <Benefits />
     <Box sx={{ height: ['212px', '82px', '98px', '99px', '64px', '152px'] }} />
     <Profile />
     <Box sx={{ height: ['0px', '0px', '17px', '0px', '0px', '0px'] }} />

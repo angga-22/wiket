@@ -2,7 +2,7 @@ export * from './header/Header';
 export * from './values/Values';
 export * from './profile/Profile';
 export * from './connections/Connections';
-export * from './strengthen/Strengthen';
+export * from './benefits/Benefits';
 export * from './pricing/Pricing';
 export * from './filler/Filler';
 export * from './quote/Quote';
