@@ -17,7 +17,7 @@ import { Box } from '@thepuzzlers/pieces';
 
 const IndexPage = ({ data }) => (
   <div>
-    <Header />
+    <Header imagesData={data.images.nodes[0]} />
     <Box sx={{ height: ['94px', '2px', '29px', '0px', '16px', '20px'] }} />
     <Benefits />
     <Box sx={{ height: ['212px', '82px', '98px', '99px', '64px', '152px'] }} />

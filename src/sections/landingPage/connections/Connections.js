@@ -3,7 +3,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { memo } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 
 // pieces
@@ -53,7 +52,7 @@ const sectionsData = [
   },
 ];
 
-export const Connections = memo(() => {
+export const Connections = memo(({ imagesData }) => {
   const contentWrapper = React.useRef([]);
   const primaryCards = React.useRef([]);
 
@@ -70,34 +69,6 @@ export const Connections = memo(() => {
   //   motionChangeCards(primaryCards);
   // });
 
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      allImagesJson {
-        images: nodes {
-          greenCafeImage {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-          greenThumbImage {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-          potjectImage {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  const images = data.allImagesJson.images[0];
-  // eslint-disable-next-line no-console
-  console.log(images);
-
   return (
     <section id='connections' sx={{ paddingTop: '120px' }}>
       <GridWrapper>
@@ -109,7 +80,7 @@ export const Connections = memo(() => {
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={sectionsData[0].number}
-        imagesData={images}
+        imagesData={imagesData}
       />
       <Spacer />
       <Section
@@ -117,7 +88,7 @@ export const Connections = memo(() => {
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={sectionsData[1].number}
-        imagesData={images}
+        imagesData={imagesData}
       />
       <Spacer />
       <Section
@@ -125,7 +96,7 @@ export const Connections = memo(() => {
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={sectionsData[2].number}
-        imagesData={images}
+        imagesData={imagesData}
       />
     </section>
   );

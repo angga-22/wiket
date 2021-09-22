@@ -1,5 +1,10 @@
 // external dependencies
-import React, { memo } from 'react';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+
+// external dependencies
+import { memo } from 'react';
 
 // pieces
 import {
@@ -11,17 +16,13 @@ import {
   srcsetValues,
   Image,
 } from '@thepuzzlers/pieces';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // Local components
 import { PrimaryCard } from 'components';
 import { CardTextBlock } from 'components/blocks/CardTextBlock';
 
 // images
-// import { StaticImage } from 'gatsby-plugin-image';
-import headerMainImage from 'assets/jpg/header-main-img.jpg';
-import potjectImage from 'assets/jpg/image-pottery.jpg';
-import greenThumbImage from 'assets/jpg/image-gardener.jpg';
-import greenCafeImage from 'assets/jpg/image-roastery.jpg';
 import linePhonePortrait from 'assets/svg/line-phone-portrait.svg';
 import linePhoneLandscape from 'assets/svg/line-phone-landscape.svg';
 import lineTabletPortrait from 'assets/svg/line-tablet-portrait.svg';
@@ -31,7 +32,7 @@ import pinRegular from 'assets/svg/pin-regular.svg';
 import pinWide from 'assets/svg/pin-wide.svg';
 
 // EXPORT
-export const Header = memo(() => (
+export const Header = memo(({ imagesData }) => (
   <Section
     id='header-section'
     sx={{
@@ -49,9 +50,9 @@ export const Header = memo(() => (
     <Headline />
     <MainImgContainer />
     <MainImgDescription />
-    <PotjectCard />
-    <GreenCafeCard />
-    <GreenThumbCard />
+    <PotjectCard image={imagesData.potjectImage} />
+    <GreenCafeCard image={imagesData.greenCafeImage} />
+    <GreenThumbCard image={imagesData.greenThumbImage} />
     <Line />
     <ParagraphBlock />
     <PinRegular />
@@ -96,17 +97,22 @@ const ParagraphBlock = () => (
 );
 
 const MainImgContainer = () => (
-  <Image
-    src={headerMainImage}
-    alt=''
+  <Box
     sx={{
       gridColumn: ['1/13', '4/12', '9/22', '2/11', '2/10', '3/11'],
       gridRow: [4, '4/6', '2/5', 2, '1/4', 1],
-      borderRadius: ['24px', '24px', '24px', '24px', '19.7px', '24px'],
-      objectFit: 'contain',
       width: '100%',
     }}
-  />
+  >
+    <StaticImage
+      src='../../../assets/jpg/header-main-img.jpg'
+      alt=''
+      sx={{
+        borderRadius: ['24px', '24px', '24px', '24px', '19.7px', '24px'],
+        objectFit: 'contain',
+      }}
+    />
+  </Box>
 );
 
 const MainImgDescription = () => (
@@ -137,7 +143,7 @@ const Card = ({ sx, title, description, image, ...props }) => (
   />
 );
 
-const PotjectCard = () => (
+const PotjectCard = ({ image }) => (
   <Card
     sx={{
       gridColumn: ['1/7', '2/7', '18/25', '15/21', '8/12', '9/13'],
@@ -155,13 +161,13 @@ const PotjectCard = () => (
         'translateY(10%)',
       ],
     }}
-    image={potjectImage}
+    image={image}
     title='Potject'
     description='Pottery in Bangkok'
   />
 );
 
-const GreenCafeCard = () => (
+const GreenCafeCard = ({ image }) => (
   <Card
     sx={{
       gridColumn: ['1/7', '3/7', '7/13', '8/14', '7/12', '9/13'],
@@ -185,13 +191,13 @@ const GreenCafeCard = () => (
         'translateY(32%)',
       ],
     }}
-    image={greenCafeImage}
+    image={image}
     title='Green Cafe'
     description='Roastery in Bangkok'
   />
 );
 
-const GreenThumbCard = () => (
+const GreenThumbCard = ({ image }) => (
   <Card
     sx={{
       gridColumn: ['7/13', '7/12', '17/25', '17/24', '1/5', '3/7'],
@@ -208,7 +214,7 @@ const GreenThumbCard = () => (
         'translateX(-50%)',
       ],
     }}
-    image={greenThumbImage}
+    image={image}
     title='GreenThumb'
     description='Gardener in Ratchaburi'
   />
