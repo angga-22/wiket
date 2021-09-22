@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => (
     <Box sx={{ height: ['212px', '82px', '98px', '99px', '64px', '152px'] }} />
     <Profile />
     <Box sx={{ height: ['0px', '0px', '17px', '0px', '0px', '0px'] }} />
-    <Connections />
+    <Connections imagesData={data.images.nodes[0]} />
     <Box
       sx={{ height: ['280px', '244px', '511px', '187px', '352px', '216px'] }}
     />
@@ -53,6 +53,25 @@ export const query = graphql`
           title
           blossomCount
           growthCount
+        }
+      }
+    }
+    images: allImagesJson {
+      nodes {
+        greenCafeImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        greenThumbImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        potjectImage {
+          childImageSharp {
+            gatsbyImageData
+          }
         }
       }
     }
