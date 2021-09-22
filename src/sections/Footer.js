@@ -91,7 +91,6 @@ const Link1 = () => (
   >
     <Paragraph
       type='smallParagraph'
-      variant='lighter'
       sx={{
         color: 'textNegative',
         paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
@@ -137,7 +136,6 @@ const Link2 = () => (
   >
     <Paragraph
       type='smallParagraph'
-      variant='lighter'
       sx={{
         color: 'textNegative',
       }}
