@@ -5,15 +5,11 @@ import { jsx } from 'theme-ui';
 import React, { memo } from 'react';
 
 // pieces
-import {
-  Box,
-  Heading,
-  Paragraph,
-  GridWrapper,
-  Image,
-  Card,
-} from '@thepuzzlers/pieces';
+import { Box, Heading, GridWrapper, Image, Card } from '@thepuzzlers/pieces';
+
+// local components
 import { PrimaryCard } from 'components';
+import { CardTextBlock } from 'components/blocks/CardTextBlock';
 
 // svgs
 import greenPointer from 'assets/svg/pin.svg';
@@ -24,10 +20,10 @@ import line from 'assets/svg/shape03.svg';
 import curl from 'assets/svg/shape04.svg';
 
 // card images
-import imgThree from 'assets/jpg/image-roastery.jpg';
-import imgTwo from 'assets/jpg/image-florist.jpg';
-import imgOne from 'assets/jpg/header-sub-img-1.jpg';
-import imgFour from 'assets/jpg/connections-card-4.jpg';
+import greenCafeImage from 'assets/jpg/connections-image-roastery.jpg';
+import hangingGardensImage from 'assets/jpg/connections-image-florist.jpg';
+import potjectImage from 'assets/jpg/image-pottery.jpg';
+import greenThumbImage from 'assets/jpg/image-gardener.jpg';
 
 // animations
 // import { motionChangeSections, motionChangeCards } from './animations';
@@ -140,10 +136,10 @@ const Section = ({ sectionRef, position, number }) => (
   >
     <Number number={number} position={position} />
 
-    <HorizontalSmallCard position={position} />
-    <HorizontalBigCard position={position} />
-    <VerticalBigCard position={position} />
-    <VerticalSmallCard position={position} />
+    <GreenCafeCard position={position} />
+    <HangingGardensCard position={position} />
+    <GreenThumbCard position={position} />
+    <PotjectCard position={position} />
 
     <GreenPointerVector position={position} />
     <FloatingCircleVector position={position} />
@@ -209,7 +205,7 @@ const Number = ({ number, position }) => {
 /* ------------------------ Cards ------------------------ */
 /* ------------------------------------------------------- */
 
-const HorizontalSmallCard = ({ position }) => {
+const GreenCafeCard = ({ position }) => {
   const styles = [
     {
       alignSelf: ['unset', 'unset', 'unset', 'end', 'end'],
@@ -234,12 +230,7 @@ const HorizontalSmallCard = ({ position }) => {
   ];
 
   return (
-    <Card
-      sx={{
-        variant: 'cards.horizontal',
-        ...styles[position],
-      }}
-    >
+    <Card variant='horizontal' sx={styles[position]}>
       <Box
         sx={{
           mr: '16px',
@@ -247,21 +238,18 @@ const HorizontalSmallCard = ({ position }) => {
         }}
       >
         <Image
-          src={imgThree}
+          src={greenCafeImage}
           sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
         />
       </Box>
       <Box sx={{ alignSelf: 'center', width: ['45%'] }}>
-        <Heading as='h5' type='cardsSmallHeading' sx={{ mb: '4px' }}>
-          Green Cafe
-        </Heading>
-        <Paragraph type='cardsParagraph'>Gardener in Chiang Mai</Paragraph>
+        <CardTextBlock title='Green Cafe' text='Gardener in Chiang Mai' />
       </Box>
     </Card>
   );
 };
 
-const HorizontalBigCard = ({ position }) => {
+const HangingGardensCard = ({ position }) => {
   const styles = [
     {
       alignSelf: ['unset', 'unset', 'unset', 'unset', 'unset', 'end'],
@@ -284,8 +272,8 @@ const HorizontalBigCard = ({ position }) => {
 
   return (
     <Card
+      variant='horizontal'
       sx={{
-        variant: 'cards.horizontal',
         bg: 'blue100',
         ...styles[position],
       }}
@@ -297,21 +285,18 @@ const HorizontalBigCard = ({ position }) => {
         }}
       >
         <Image
-          src={imgTwo}
+          src={hangingGardensImage}
           sx={{ borderRadius: 'input', objectFit: 'cover', height: '100%' }}
         />
       </Box>
       <Box sx={{ alignSelf: 'center' }}>
-        <Heading as='h5' type='cardBigHeading' sx={{ mb: '4px' }}>
-          Hanging Garden
-        </Heading>
-        <Paragraph type='cardsParagraph'>Florist in Bangkok</Paragraph>
+        <CardTextBlock large title='Hanging Garden' text='Florist in Bangkok' />
       </Box>
     </Card>
   );
 };
 
-const VerticalBigCard = ({ position }) => {
+const GreenThumbCard = ({ position }) => {
   const styles = [
     {
       display: 'none',
@@ -333,12 +318,11 @@ const VerticalBigCard = ({ position }) => {
 
   return (
     <PrimaryCard
-      image={imgFour}
+      image={greenThumbImage}
       title='Green Thumb'
       text='Gardener in Chiang Mai'
       sx={{
         boxShadow: 100,
-        variant: 'cards.vertical',
         width: ['94%'],
         ...styles[position],
       }}
@@ -346,7 +330,7 @@ const VerticalBigCard = ({ position }) => {
   );
 };
 
-const VerticalSmallCard = ({ position }) => {
+const PotjectCard = ({ position }) => {
   const styles = [
     {
       display: 'none',
@@ -368,12 +352,11 @@ const VerticalSmallCard = ({ position }) => {
 
   return (
     <PrimaryCard
-      image={imgOne}
+      image={potjectImage}
       title='Potject'
       text='Pottery in Bangkok'
       sx={{
         boxShadow: 200,
-        variant: 'cards.vertical',
         width: ['100%'],
         ...styles[position],
       }}

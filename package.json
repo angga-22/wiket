@@ -8,7 +8,7 @@
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@gatsbyjs/reach-router": "^1.3.6",
-    "@thepuzzlers/pieces": "0.0.20",
+    "@thepuzzlers/pieces": "0.0.21",
     "babel-preset-gatsby": "^1.12.0",
     "eslint-plugin-jest": "^24.4.0",
     "framer-motion": "^4.1.3",

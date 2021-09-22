@@ -1,1 +1,1 @@
-export * from './cards/cards';
+export * from './cards/PrimaryCard';

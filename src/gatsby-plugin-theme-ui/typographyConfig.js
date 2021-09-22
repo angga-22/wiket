@@ -109,7 +109,7 @@ export const typographyConfig = {
       fontFamily: 'primary.bold',
     },
   },
-  // Header
+  // Figma Text Styles
   h1: {
     fontSizes: [53.33, 64.75, 88.06, 53.57, 76.1, 96.89],
     fontFamily: 'primaryBold',
@@ -125,6 +125,11 @@ export const typographyConfig = {
   },
   'h5-500': {
     fontSizes: [15.91, 17.09, 16.27, 15.98, 15.78, 18.79],
+    fontFamily: 'bodyBold',
+    lineHeight: 1,
+  },
+  'h5-700': {
+    fontSizes: [18.71, 19.78, 21.06, 18.8, 20.42, 21.75],
     fontFamily: 'bodyBold',
     lineHeight: 1,
   },
@@ -166,24 +171,6 @@ export const typographyConfig = {
       fontFamily: 'primary.bold',
     },
   },
-  cardsSmallHeading: {
-    factor: 2.5,
-    fontSizes: [15.9, 17, 16.2, 15.9, 15.7, 18.7],
-    fontFamily: 'bodyBold',
-    lineHeight: 'heading.safe',
-  },
-  cardBigHeading: {
-    factor: 2.5,
-    fontSizes: [18.7, 19.7, 21, 18.8, 20.4, 21.7],
-    fontFamily: 'bodyBold',
-    lineHeight: 'heading.safe',
-  },
-  cardsParagraph: {
-    factor: 2.5,
-    fontSizes: [14.9, 15.2, 16.2, 15, 14.8, 15.8],
-    fontFamily: 'body',
-    lineHeight: 'heading.design',
-  },
   connectionsSectionHeading: {
     factor: 2.5,
     fontSizes: [24.3, 25.1, 30.6, 24.4, 27.8, 35.5],
@@ -204,6 +191,7 @@ export const typographyConfig = {
   // Contact Section
   contactHeading: {
     fontSizes: [29.8, 49.7, 40.1, 35.5, 40.5, 39.5],
+
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
