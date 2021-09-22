@@ -5,14 +5,10 @@ import { memo } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
 // pieces
-import {
-  Box,
-  Section,
-  Heading,
-  Paragraph,
-  GridItem,
-  Image,
-} from '@thepuzzlers/pieces';
+import { Box, Section, Heading, GridItem, Image } from '@thepuzzlers/pieces';
+
+// Local components
+import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
 
 export const Benefits = memo(() => {
   const data = useStaticQuery(graphql`
@@ -68,17 +64,8 @@ const SectionHeader = () => (
       gridRow: '1/span 1',
     }}
   >
-    <Heading type='sectionHeading' sx={{ paddingBottom: '1.5em' }}>
-      Strengthen your market position.{' '}
-      <Heading
-        as='span'
-        type='sectionHeading'
-        variant='bold'
-        sx={{ color: 'secondary' }}
-      >
-        {' '}
-        Together.
-      </Heading>
+    <Heading as='h2' type='h2-500'>
+      Strengthen your market position. <span>Together.</span>
     </Heading>
   </GridItem>
 );
@@ -114,15 +101,7 @@ const TextBox = ({ id, text, title, gridColumnStart, gridRow, image }) => (
           width: ['50%', '50%', '30%', '50%', '50%', '50%'],
         }}
       />
-      <div sx={{ paddingTop: '1em' }}>
-        <Heading variant='bold' type='titleHeading'>
-          {title}
-          <span sx={{ color: 'secondary' }}>.</span>
-        </Heading>
-        <Paragraph type='textParagraph' marginTop='.5em'>
-          {text}
-        </Paragraph>
-      </div>
+      <PrimaryTextBlock sx={{ paddingTop: '1em' }} title={title} text={text} />
     </Box>
   </GridItem>
 );
