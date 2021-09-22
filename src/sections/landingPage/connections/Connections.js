@@ -3,6 +3,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { memo } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 
 // pieces
 import { Box, Heading, GridWrapper, Image, Card } from '@thepuzzlers/pieces';
@@ -18,8 +20,6 @@ import floatingCircle from 'assets/svg/floating-circle-green.svg';
 import floatingLeaf from 'assets/svg/floating-leaf.svg';
 import line from 'assets/svg/shape03.svg';
 import curl from 'assets/svg/shape04.svg';
-
-import { StaticImage } from 'gatsby-plugin-image';
 
 // animations
 // import { motionChangeSections, motionChangeCards } from './animations';
@@ -53,7 +53,7 @@ const sectionsData = [
   },
 ];
 
-export const Connections = memo(({ imagesData }) => {
+export const Connections = memo(() => {
   const contentWrapper = React.useRef([]);
   const primaryCards = React.useRef([]);
 
@@ -65,13 +65,38 @@ export const Connections = memo(({ imagesData }) => {
     (wrapper, i) => primaryCards.current[i] ?? React.createRef()
   );
 
-  // eslint-disable-next-line no-console
-  console.log('imagesData', imagesData);
-
   // React.useEffect(() => {
   //   motionChangeSections(contentWrapper);
   //   motionChangeCards(primaryCards);
   // });
+
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      allImagesJson {
+        images: nodes {
+          greenCafeImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          greenThumbImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          potjectImage {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const images = data.allImagesJson.images[0];
+  // eslint-disable-next-line no-console
+  console.log(images);
 
   return (
     <section id='connections' sx={{ paddingTop: '120px' }}>
@@ -84,7 +109,7 @@ export const Connections = memo(({ imagesData }) => {
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={sectionsData[0].number}
-        imagesData={imagesData}
+        imagesData={images}
       />
       <Spacer />
       <Section
@@ -92,7 +117,7 @@ export const Connections = memo(({ imagesData }) => {
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={sectionsData[1].number}
-        imagesData={imagesData}
+        imagesData={images}
       />
       <Spacer />
       <Section
@@ -100,7 +125,7 @@ export const Connections = memo(({ imagesData }) => {
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={sectionsData[2].number}
-        imagesData={imagesData}
+        imagesData={images}
       />
     </section>
   );
@@ -140,7 +165,7 @@ const Section = ({ sectionRef, position, number, imagesData }) => (
 
     <GreenCafeCard position={position} />
     <HangingGardensCard position={position} />
-    <GreenThumbCard position={position} image={imagesData.greenThumbImag} />
+    <GreenThumbCard position={position} image={imagesData.greenThumbImage} />
     <PotjectCard position={position} image={imagesData.potjectImage} />
 
     <GreenPointerVector position={position} />
