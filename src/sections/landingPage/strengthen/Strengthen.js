@@ -8,7 +8,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import {
   Box,
   Section,
-  GridWrapper,
   Heading,
   Paragraph,
   GridItem,
@@ -33,29 +32,25 @@ export const Strengthen = memo(() => {
     }
   `);
   return (
-    <section
-      id='strengthen-section'
+    <Section
+      id='benefits'
       sx={{
-        paddingTop: '120px',
+        paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'],
         alignItems: 'center',
       }}
     >
-      <Section>
-        <GridWrapper variant='inside.columns'>
-          <SectionHeader />
-          {data.allStrengthenJson.nodes.map((value) => (
-            <TextBox
-              key={value.id}
-              image={value.image}
-              title={value.title}
-              text={value.text}
-              gridColumnStart={value.gridColumnStart}
-              gridRow={value.gridRow}
-            />
-          ))}
-        </GridWrapper>
-      </Section>
-    </section>
+      <SectionHeader />
+      {data.allStrengthenJson.nodes.map((value) => (
+        <TextBox
+          key={value.id}
+          image={value.image}
+          title={value.title}
+          text={value.text}
+          gridColumnStart={value.gridColumnStart}
+          gridRow={value.gridRow}
+        />
+      ))}
+    </Section>
   );
 });
 

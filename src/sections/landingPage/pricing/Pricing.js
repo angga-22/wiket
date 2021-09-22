@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import {
-  GridWrapper,
   Section,
   GridItem,
   Paragraph,
@@ -14,20 +13,18 @@ import batikShapeOrange from 'assets/svg/batik-shape-orange.svg';
 import { FeatureListing } from './components/FeatureListing';
 
 export const Pricing = ({ featuresData }) => (
-  <section id='feature-price-section' sx={{ paddingTop: '120px' }}>
-    <Section>
-      <GridWrapper variant='inside.columns'>
-        <Headlines />
-        <SmallHeadlines />
-        <BlossomCard />
-        <GrowthCard />
-        <FeaturesLabel />
-
-        <BatikShape />
-        <FeatureListing data={featuresData} />
-      </GridWrapper>
-    </Section>
-  </section>
+  <Section
+    id='feature-price'
+    sx={{ paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'] }}
+  >
+    <Headlines />
+    <SmallHeadlines />
+    <BlossomCard />
+    <GrowthCard />
+    <FeaturesLabel />
+    <BatikShape />
+    <FeatureListing data={featuresData} />
+  </Section>
 );
 
 const Headlines = () => (

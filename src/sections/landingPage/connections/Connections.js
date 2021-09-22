@@ -79,7 +79,7 @@ export const Connections = memo(() => {
   // });
 
   return (
-    <section id='connections-section' sx={{ paddingTop: '120px' }}>
+    <section id='connections' sx={{ paddingTop: '120px' }}>
       <GridWrapper>
         <Headline />
       </GridWrapper>

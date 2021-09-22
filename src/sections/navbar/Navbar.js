@@ -1,6 +1,6 @@
 // external dependencies
 import React, { memo, useState, useEffect, useRef } from 'react';
-
+import { graphql, useStaticQuery } from 'gatsby';
 // gsap
 import { gsap } from 'gsap';
 
@@ -131,40 +131,36 @@ const Menu = ({ handleClick }) => (
 
 /* ---------------- Links Data and Component ---------------- */
 
-const LinksData = [
-  {
-    name: 'Benefits',
-    href: '#strengthen-section',
-  },
-  {
-    name: 'Your profile',
-    href: '#profile-section',
-  },
-  {
-    name: 'Connections',
-    href: '#connections-section',
-  },
-  {
-    name: 'Plans & Pricing',
-    href: '#feature-price-section',
-  },
-];
+const Links = ({ sx, handleClick }) => {
+  const data = useStaticQuery(graphql`
+    {
+      allNavJson {
+        nodes {
+          nav {
+            title
+            to
+          }
+        }
+      }
+    }
+  `);
+  const links = data.allNavJson.nodes[0];
 
-const Links = ({ sx, handleClick }) =>
-  LinksData.map((link) => (
+  return links.nav.map((link) => (
     <NavigationLink
-      to={link.href}
+      to={link.to}
       sx={{
         textAlign: 'center',
         mb: ['16%', '10%', '9%', 0, 0],
         ...sx,
       }}
-      key={link.name}
+      key={link.title}
       onClick={handleClick}
     >
-      {link.name}
+      {link.title}
     </NavigationLink>
   ));
+};
 
 /* ------------------- Navigation Overlay ------------------- */
 

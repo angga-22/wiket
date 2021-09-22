@@ -36,7 +36,7 @@ export const Profile = memo(() => {
   };
 
   return (
-    <section id='profile-section' sx={{ paddingTop: '120px' }}>
+    <section id='profile' sx={{ paddingTop: '120px' }}>
       <GridWrapper>
         <Headline />
         <Line />
