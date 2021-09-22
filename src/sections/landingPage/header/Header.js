@@ -80,8 +80,8 @@ const ParagraphBlock = () => (
     type='lead'
     sx={{
       alignSelf: ['end', 'end', 'end', 'end', 'end', 'end'],
-      gridColumn: ['1/12', '1/8', '10/20', '4/14', '16/22', '16/22'],
-      gridRow: [2, 2, 5, 3, 1, '1/3'],
+      gridColumn: ['1/12', '1/8', '10/20', '4/14', '15/23', '16/22'],
+      gridRow: [2, 2, 5, 3, '4', '1/3'],
       transform: [null, null, null, null, null, 'translateX(6%)'],
       mt: ['20px', '24x', 0, 0, 0, 0],
       mb: ['80px', '60px', 0, 0, 0, 0],
@@ -97,8 +97,8 @@ const MainImgContainer = () => (
     src={headerMainImage}
     alt=''
     sx={{
-      gridColumn: ['1/13', '4/12', '9/22', '2/11', '2/11', '3/11'],
-      gridRow: [4, '4/6', '2/5', 2, 1, 1],
+      gridColumn: ['1/13', '4/12', '9/22', '2/11', '2/10', '3/11'],
+      gridRow: [4, '4/6', '2/5', 2, '1/4', 1],
       borderRadius: ['24px', '24px', '24px', '24px', '19.7px', '24px'],
       objectFit: 'contain',
       width: '100%',
@@ -110,8 +110,8 @@ const MainImgDescription = () => (
   <GridItem
     sx={{
       gridColumn: ['1/8', '4/8', '9/16', '2/11', '2/6', '3/7'],
-      gridRow: [3, 3, 5, 1, 2, 2],
-      mt: ['8px', '8px', '8px', 0, '8px', '16px'],
+      gridRow: [3, 3, 5, 1, 4, 2],
+      mt: ['8px', '8px', '8px', 0, '22px', '16px'],
       mb: ['12px', '12px', 0, '12px', 0, 0],
     }}
   >
@@ -173,9 +173,9 @@ const PotjectCard = () => (
 const GreenCafeCard = () => (
   <Card
     sx={{
-      gridColumn: ['1/7', '3/7', '7/13', '8/14', '9/12', '9/13'],
-      gridRow: [5, 6, 3, 3, 1, 1],
-      width: ['auto', 'auto', '95%', '89%', 'auto', '90%'],
+      gridColumn: ['1/7', '3/7', '7/13', '8/14', '7/12', '9/13'],
+      gridRow: [5, 6, 3, 3, '3/5', 1],
+      width: ['auto', 'auto', '95%', '89%', '85%', '90%'],
       alignSelf: ['end', 'end', 'start', 'baseline', 'end', 'end'],
       justifySelf: [
         'baseline',
@@ -190,7 +190,7 @@ const GreenCafeCard = () => (
         null,
         'initial',
         'translateY(-50%)',
-        'translateY(14%)',
+        'translateY(5%)',
         'translateY(32%)',
       ],
     }}
@@ -203,9 +203,9 @@ const GreenCafeCard = () => (
 const GreenThumbCard = () => (
   <Card
     sx={{
-      gridColumn: ['7/13', '7/12', '17/25', '17/24', '1/4', '3/7'],
-      gridRow: [5, 6, 5, 3, 1, 1],
-      width: ['87%', '83%', '83%', '92%', 'auto', '82%'],
+      gridColumn: ['7/13', '7/12', '17/25', '17/24', '1/5', '3/7'],
+      gridRow: [5, 6, 5, 3, '1/3', 1],
+      width: ['87%', '83%', '83%', '92%', '94%', '82%'],
       justifySelf: ['center', 'center', 'center', 'left', null, 'left'],
       alignSelf: ['start', null, null, null, null, 'center'],
       transform: [
@@ -227,9 +227,9 @@ const Line = () => (
   <Box
     as='picture'
     sx={{
-      gridColumn: ['3/11', '5/10', '4/span 8', '11/19', '11/15', '11/16'],
-      gridRow: ['5', '5/7', '3/6', '2/5', 2, '2/4'],
-      width: ['auto', 'auto', '95%', 'auto', 'auto', 'auto'],
+      gridColumn: ['3/11', '5/10', '4/span 8', '11/19', '10/15', '11/16'],
+      gridRow: ['5', '5/7', '3/6', '2/5', '2/5', '2/4'],
+      width: ['auto', 'auto', '95%', 'auto', '88%', 'auto'],
       mb: ['-15px', '-43px', 0, 0, 0, 0], // affects the height of the row
       transform: [
         // leaves height of row unaltered
@@ -237,10 +237,10 @@ const Line = () => (
         'initial',
         'initial',
         'translateY(12%)',
-        'initial',
+        'translateY(20%)',
         'translateY(-28%)',
       ],
-      justifySelf: ['auto', 'center', 'left', 'baseline', 'baseline', 'end'],
+      justifySelf: ['auto', 'center', 'left', 'left', 'baseline', 'end'],
       alignSelf: [null, 'end', 'end', null, null, null],
     }}
   >
@@ -261,7 +261,7 @@ const PinRegular = () => (
   <GridItem
     sx={{
       display: ['none', 'none', 'block', 'none', 'block', 'block'],
-      gridColumn: [null, null, '6/8', null, '1/3', '1/3'],
+      gridColumn: [null, null, '6/8', null, '1', '1/3'],
       gridRow: [null, null, 2, null, 1, 1],
       justifySelf: [null, null, 'left', null, 'left', 'right'],
       mt: [null, null, '42px', null, '75px', '130px'],
