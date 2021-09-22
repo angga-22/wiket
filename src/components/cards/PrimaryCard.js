@@ -1,12 +1,13 @@
 import React from 'react';
-import { Card, Image } from '@thepuzzlers/pieces';
+import { Card } from '@thepuzzlers/pieces';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import { CardTextBlock } from '../blocks/CardTextBlock';
 
 export const PrimaryCard = ({ image, title, text, sx, ...props }) => (
   <Card variant='vertical' sx={sx} {...props}>
-    <Image
-      src={image}
+    <GatsbyImage
+      src={getImage(image)}
       alt=''
       sx={{
         borderRadius: 'headerCardImage',
