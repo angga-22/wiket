@@ -33,27 +33,29 @@ export const Strengthen = memo(() => {
     }
   `);
   return (
-    <Section
+    <section
       id='strengthen-section'
       sx={{
-        minHeight: '50vh',
+        paddingTop: '120px',
         alignItems: 'center',
       }}
     >
-      <GridWrapper variant='inside.columns'>
-        <SectionHeader />
-        {data.allStrengthenJson.nodes.map((value) => (
-          <TextBox
-            key={value.id}
-            image={value.image}
-            title={value.title}
-            text={value.text}
-            gridColumnStart={value.gridColumnStart}
-            gridRow={value.gridRow}
-          />
-        ))}
-      </GridWrapper>
-    </Section>
+      <Section>
+        <GridWrapper variant='inside.columns'>
+          <SectionHeader />
+          {data.allStrengthenJson.nodes.map((value) => (
+            <TextBox
+              key={value.id}
+              image={value.image}
+              title={value.title}
+              text={value.text}
+              gridColumnStart={value.gridColumnStart}
+              gridRow={value.gridRow}
+            />
+          ))}
+        </GridWrapper>
+      </Section>
+    </section>
   );
 });
 

@@ -1,5 +1,8 @@
 // external dependencies
-import React, { memo } from 'react';
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+import { memo } from 'react';
 import Lottie from 'react-lottie';
 
 // pieces
@@ -33,17 +36,19 @@ export const Profile = memo(() => {
   };
 
   return (
-    <GridWrapper as='section' id='profile-section'>
-      <Headline />
-      <Line />
-      <Animation options={defaultOptions} />
-      <ChatBubble />
-      <Body />
-      <Pin />
-      <Tshape />
-      <Outline />
-      <Arrow />
-    </GridWrapper>
+    <section id='profile-section' sx={{ paddingTop: '120px' }}>
+      <GridWrapper>
+        <Headline />
+        <Line />
+        <Animation options={defaultOptions} />
+        <ChatBubble />
+        <Body />
+        <Pin />
+        <Tshape />
+        <Outline />
+        <Arrow />
+      </GridWrapper>
+    </section>
   );
 });
 

@@ -19,7 +19,6 @@ export const Values = memo(() => (
   <Section
     id='values-section'
     sx={{
-      minHeight: '100vh',
       alignItems: 'center',
     }}
   >
