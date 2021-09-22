@@ -199,7 +199,7 @@ export const typographyConfig = {
     fontSizes: [112.2, 143, 153.1, 150.3, 148.4, 197.7],
     fontFamily: 'primaryBold',
     lineHeight: 'heading.safe',
-    color: 'accentPrimary',
+    color: 'secondary',
   },
   // Contact Section
   contactHeading: {
@@ -315,6 +315,13 @@ export const typographyConfig = {
     fontSizes: [14.9, 15.1, 16.24, 14.98, 14.76, 17.79],
     fontFamily: 'body',
     lineHeight: 1.5,
+  },
+  pricingSectionNumber: {
+    factor: 2.5,
+    fontSizes: [18.71, 17.99, 19.14, 18.8, 18.56, 19.77],
+    fontFamily: 'primaryBold',
+    lineHeight: 'heading.safe',
+    color: 'secondary',
   },
   footerParagraph: {
     factor: 2.5,
