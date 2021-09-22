@@ -18,21 +18,77 @@ import batikFooterTabletLandscape from 'assets/svg/footer-background-tabletLands
 import batikFooterDesktop from 'assets/svg/footer-background-desktop.svg';
 import logoWiketWhite from 'assets/svg/logo-wiket-white.svg';
 
-export const Footer = () => (
-  <Section
-    id='header-section'
-    sx={{
-      mt: '10vw',
-      backgroundColor: 'primary',
-    }}
-  >
-    <BackgroundImage />
-    <Logo />
-    <Link1 />
-    <Link2 />
-    <FooterParagraph />
-  </Section>
-);
+const useFooterLinks = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allNavJson {
+        nodes {
+          footer {
+            dataPolicy {
+              title
+              to
+            }
+            legal {
+              title
+              to
+            }
+          }
+        }
+      }
+    }
+  `);
+  const links = data.allNavJson.nodes[0];
+  return links;
+};
+
+export const Footer = () => {
+  const links = useFooterLinks();
+
+  return (
+    <Section
+      id='header-section'
+      sx={{
+        mt: '10vw',
+        backgroundColor: 'primary',
+      }}
+    >
+      <BackgroundImage />
+      <Logo />
+      <FooterLink
+        sx={{
+          gridColumn: [
+            '3 / span 4',
+            '5 / span 2',
+            '1 / span 4',
+            '1 /  span 5',
+            '1 /  span 5',
+            '1 /  span 4',
+          ],
+          // ml: ['1em', '-.5em', 0, 0, 0, 0],
+        }}
+        to={links.footer.dataPolicy.to}
+        title={links.footer.dataPolicy.title}
+      />
+
+      <FooterLink
+        sx={{
+          gridColumn: [
+            '8 / span 4',
+            '8 / span 2',
+            '5 / span 4',
+            '5 /  span 3',
+            '4 /  span 2',
+            '3 /  span 2',
+          ],
+          // ml: ['.5em', '-.5em', 0, 0, 0, 0],
+        }}
+        to={links.footer.legal.to}
+        title={links.footer.legal.title}
+      />
+      <FooterParagraph />
+    </Section>
+  );
+};
 
 const BackgroundImage = () => (
   <GridItem variant='fullWidth'>
@@ -77,118 +133,36 @@ const Logo = () => (
   </GridItem>
 );
 
-const useFooterLinks = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allNavJson {
-        nodes {
-          footer {
-            dataPolicy {
-              title
-              to
-            }
-            legal {
-              title
-              to
-            }
-          }
-        }
-      }
-    }
-  `);
-  const links = data.allNavJson.nodes[0];
-  return links;
-};
-
-const Link1 = () => {
-  const links = useFooterLinks();
-
-  return (
-    <GridItem
-      sx={{
-        gridColumn: [
-          '3 / span 4',
-          '5 / span 2',
-          '1 / span 4',
-          '1 /  span 5',
-          '1 /  span 5',
-          '1 /  span 4',
-        ],
-        gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
-      }}
-    >
-      <NavigationLink
-        as={Paragraph}
-        to={links.footer.dataPolicy.to}
-        key={links.footer.dataPolicy.title}
+const FooterLink = ({ gridColumn, to, title, ml }) => (
+  <GridItem
+    sx={{
+      gridColumn,
+      gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
+      paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
+      ml,
+      transform: [
+        0,
+        0,
+        'translateY(-20%)',
+        'translateY(-20%)',
+        'translateY(-20%)',
+        'translateY(-20%)',
+      ],
+      color: 'textNegative',
+    }}
+  >
+    <NavigationLink to={to}>
+      <Paragraph
+        type='smallParagraph'
+        sx={{
+          color: 'textNegative',
+        }}
       >
-        <Paragraph
-          type='smallParagraph'
-          sx={{
-            color: 'textNegative',
-            paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
-            ml: ['1em', '-.5em', 0, 0, 0, 0],
-            transform: [
-              0,
-              0,
-              'translateY(-20%)',
-              'translateY(-20%)',
-              'translateY(-20%)',
-              'translateY(-20%)',
-            ],
-          }}
-        >
-          {links.footer.dataPolicy.title}
-        </Paragraph>
-      </NavigationLink>
-    </GridItem>
-  );
-};
-
-const Link2 = () => {
-  const links = useFooterLinks();
-
-  return (
-    <GridItem
-      sx={{
-        gridColumn: [
-          '8 / span 4',
-          '8 / span 2',
-          '5 / span 4',
-          '5 /  span 3',
-          '4 /  span 2',
-          '3 /  span 2',
-        ],
-        gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
-        paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
-        ml: ['.5em', '-.5em', 0, 0, 0, 0],
-        transform: [
-          0,
-          0,
-          'translateY(-20%)',
-          'translateY(-20%)',
-          'translateY(-20%)',
-          'translateY(-20%)',
-        ],
-      }}
-    >
-      <NavigationLink
-        a={console.log(links)}
-        to={links.footer.legal.to}
-        key={links.footer.legal.title}
-      >
-        <Paragraph
-          type='smallParagraph'
-          sx={{
-            color: 'textNegative',
-          }}
-        >
-          {links.footer.legal.title}
-        </Paragraph>
-      </NavigationLink>
-    </GridItem>
-  );
-};
+        {title}
+      </Paragraph>
+    </NavigationLink>
+  </GridItem>
+);
 
 const FooterParagraph = () => (
   <GridItem
