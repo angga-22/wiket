@@ -10,7 +10,14 @@ import { Link } from '@thepuzzlers/pieces';
 // Expects the user to already be on the correct page.
 // Expects an id selector as the "to"-prop
 // Valid "to"-props: "#footer" or "/about/#us"
-export const PageInternalLink = ({ to, children, sx = {}, variant }) => {
+export const PageInternalLink = ({
+  to,
+  children,
+  sx = {},
+  variant,
+  onClick: customOnClick = () => {},
+  ...props
+}) => {
   const { pathname: currentPathname, hash: currentHash } = useLocation();
   const [isClient, setClient] = useState(false);
   const hash = to.slice(to.indexOf('#'));
@@ -49,7 +56,11 @@ export const PageInternalLink = ({ to, children, sx = {}, variant }) => {
       className={isActive && 'active'}
       variant={variant}
       href={hash}
-      onClick={(e) => scrollToHash(e)}
+      {...props}
+      onClick={(e) => {
+        scrollToHash(e);
+        customOnClick(); // e.g. used to close the nav overlay
+      }}
     >
       {children}
     </Link>
