@@ -19,16 +19,14 @@
       }
     ],
     "footer": {
-      "links": [
-        {
-          "title": "Privacy Policy",
-          "to": "/privacy-policy"
-        },
-        {
-          "title": "Legal",
-          "to": "/legal"
-        }
-      ]
+      "dataPolicy": {
+        "title": "Privacy Policy",
+        "to": "/privacy-policy"
+      },
+      "legal": {
+        "title": "Legal",
+        "to": "/legal"
+      }
     }
   }
 ]
