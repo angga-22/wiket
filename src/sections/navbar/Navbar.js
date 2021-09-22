@@ -13,7 +13,6 @@ import {
   Heading,
   GridItem,
 } from '@thepuzzlers/pieces';
-// import { Link } from 'theme-ui';
 
 // svgs
 import logo from 'assets/svg/wiket-logo-complete.svg';
@@ -27,8 +26,8 @@ export const Navbar = memo(() => {
     gsap.timeline({ defaults: { ease: 'Power1.easeOut' } }).reverse()
   );
   const navigation = useRef();
-  const navLinksRefs = useRef([]);
-  navLinksRefs.current = [];
+  const navLinks = useRef([]);
+  navLinks.current = [];
   const overlayHeading = useRef();
   const logoLight = useRef();
 
@@ -37,17 +36,17 @@ export const Navbar = memo(() => {
   };
 
   const addToRefs = (el) => {
-    if (el && !navLinksRefs.current.includes(el)) {
-      navLinksRefs.current.push(el);
+    if (el && !navLinks.current.includes(el)) {
+      navLinks.current.push(el);
     }
   };
 
   useEffect(() => {
-    gsap.set(navLinksRefs.current, { x: '-100%', opacity: 0 });
+    gsap.set(navLinks.current, { x: '-100%', opacity: 0 });
 
     tl.current
       .from(navigation.current, { opacity: 0, x: '100%' })
-      .to(navLinksRefs.current, {
+      .to(navLinks.current, {
         duration: 0.3,
         x: '0',
         ease: 'Power1.easeOut',
@@ -220,17 +219,21 @@ const Close = ({ handleClick }) => (
 );
 
 const OpenNavButton = ({ handleClick, designatedRef }) => (
-  <NavigationLink
-    to='#contact-section'
+  <Box
     sx={{
       m: ['0 auto', '0 auto', '0 auto', '0 0 auto 0'],
       variant: 'buttons.tertiary',
     }}
-    onClick={handleClick}
     ref={designatedRef}
   >
-    Get started
-  </NavigationLink>
+    <NavigationLink
+      to='#contact-section'
+      onClick={handleClick}
+      ref={designatedRef}
+    >
+      Get started
+    </NavigationLink>
+  </Box>
 );
 
 const OverlayNavlinks = ({ handleClick, designatedRef }) => (
