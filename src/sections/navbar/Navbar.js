@@ -138,22 +138,27 @@ const Menu = ({ handleClick }) => (
 );
 
 /* ---------------- Links Data and Components ---------------- */
-const data = useStaticQuery(graphql`
-  {
-    allNavJson {
-      nodes {
-        nav {
-          title
-          to
+const useLinks = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allNavJson {
+        nodes {
+          nav {
+            title
+            to
+          }
         }
       }
     }
-  }
-`);
-const links = data.allNavJson.nodes[0];
+  `);
+  const links = data.allNavJson.nodes[0];
+  return links;
+};
 
-const Links = ({ handleClick }) =>
-  links.nav.map((link) => (
+const Links = ({ handleClick }) => {
+  const links = useLinks();
+
+  return links.nav.map((link) => (
     <NavigationLink
       to={link.to}
       sx={{
@@ -165,12 +170,15 @@ const Links = ({ handleClick }) =>
       onClick={handleClick}
       className='navigation-link'
     >
-      {link.name}
+      {link.title}
     </NavigationLink>
   ));
+};
 
-const DesktopLinks = () =>
-  links.nav.map((link) => (
+const DesktopLinks = () => {
+  const links = useLinks();
+
+  return links.nav.map((link) => (
     <NavigationLink
       to={link.to}
       sx={{
@@ -182,7 +190,7 @@ const DesktopLinks = () =>
       {link.title}
     </NavigationLink>
   ));
-
+};
 /* ------------------- Navigation Overlay ------------------- */
 
 const Close = ({ handleClick }) => (
