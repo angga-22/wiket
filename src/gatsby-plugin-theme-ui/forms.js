@@ -1,7 +1,7 @@
 export const forms = {
   input: {
     variant: 'typography.inputText.normal',
-    color: 'blue300',
+    color: 'teal1000',
     backgroundColor: 'blue50',
     borderRadius: 'input',
     outline: 'none',
