@@ -42,6 +42,7 @@ export const Contact = memo(() => {
       sx={{
         gridTemplateRows: [null, null, null, null, 'auto 1fr', 'auto 1fr'],
       }}
+      id='contact-section'
     >
       <Vector />
       <Headline />
