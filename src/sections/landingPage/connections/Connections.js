@@ -16,6 +16,9 @@ import { PrimaryCard } from 'components';
 import greenPointer from 'assets/svg/pin.svg';
 import logo from 'assets/svg/wiket-logo.svg';
 import floatingCircle from 'assets/svg/floating-circle-green.svg';
+import floatingLeaf from 'assets/svg/floating-leaf.svg';
+import line from 'assets/svg/shape03.svg';
+import curl from 'assets/svg/shape04.svg';
 
 // card images
 import imgThree from 'assets/jpg/image-roastery.jpg';
@@ -73,10 +76,8 @@ export const Connections = memo(() => {
   // });
 
   return (
-    <section>
-      <GridWrapper
-      // sx={{ mt: ['360px', '584px', '390px', '237px', '262px', '178px'] }}
-      >
+    <section id='connections-section'>
+      <GridWrapper>
         <Headline />
       </GridWrapper>
 
@@ -86,12 +87,14 @@ export const Connections = memo(() => {
         cardRef={primaryCards.current[0]}
         number={data[0].number}
       />
+      <Spacer />
       <Section
         position={1}
         sectionRef={contentWrapper.current[0]}
         cardRef={primaryCards.current[0]}
         number={data[1].number}
       />
+      <Spacer />
       <Section
         position={2}
         sectionRef={contentWrapper.current[0]}
@@ -121,114 +124,38 @@ const Headline = () => (
 );
 
 /* -------------------------------------------------------- */
-/* --------------------- Vectors svgs --------------------- */
+/* ------------------ Section Container ------------------- */
 /* -------------------------------------------------------- */
 
-const GreenPointerVector = ({ position }) => {
-  const styles = [
-    {
-      alignSelf: ['unset', 'baseline', 'baseline', 'end', 'end', 'end'],
-      gridColumn: ['9/11', '9/11', '13/15', '15/17', '13/15', '7/10'],
-      gridRow: [1, 2, 2, 1, 2, '1 / span 2'],
-      justifySelf: ['unset', 'unset', 'unset', 'unset', 'end', 'end'],
-      transform: [
-        'translateY(40%)',
-        'none',
-        'none',
-        'translateY(-50%)',
-        'translateY(-30%)',
-        'translateY(-71%)',
-      ],
-    },
-    {
-      display: 'none',
-    },
-    {
-      display: 'none',
-    },
-  ];
+const Section = ({ sectionRef, position, number }) => (
+  <GridWrapper
+    ref={sectionRef}
+    sx={{
+      justifyContent: 'center',
+      pt: ['62px', '80px', '103px', '44px', '92px', '77px'],
+    }}
+  >
+    <Number number={number} position={position} />
 
-  return (
-    <Box
-      sx={{
-        position: 'relative',
-        zIndex: 0,
-        ...styles[position],
-      }}
-    >
-      <Image src={greenPointer} alt='' />
-    </Box>
-  );
-};
+    <HorizontalSmallCard position={position} />
+    <HorizontalBigCard position={position} />
+    <VerticalBigCard position={position} />
+    <VerticalSmallCard position={position} />
 
-const FloatingCircleVector = ({ position }) => {
-  const styles = [
-    {
-      display: 'none',
-    },
-    {
-      alignSelf: ['end', 'end', 'end', 'end'],
-      gridRow: [1, 1, 1, 1],
-      gridColumn: ['6/9', '6/9', '6/9', '6/9'],
-      mb: ['19px', '19px', '19px', '10px'],
-    },
-    {
-      display: 'none',
-    },
-  ];
+    <GreenPointerVector position={position} />
+    <FloatingCircleVector position={position} />
+    <LogoVector position={position} />
+    <FloatingLeaf position={position} />
+    <Line position={position} />
+    <Curl position={position} />
 
-  return (
-    <Box
-      sx={{
-        position: 'relative',
-        zIndex: 0,
-        ...styles[position],
-      }}
-    >
-      <Image src={floatingCircle} alt='' />
-    </Box>
-  );
-};
+    <SectionHeading position={position} />
+  </GridWrapper>
+);
 
-const LogoVector = ({ position }) => {
-  const styles = [
-    {
-      display: 'none',
-    },
-    {
-      display: 'none',
-    },
-    {
-      alignSelf: ['end', 'end', 'start', 'start'],
-      gridColumn: ['10/13', '9/12', '14/18', '19/23'],
-      gridRow: [3, 3, 2, 2],
-      justifySelf: ['end', 'end', 'end', 'end'],
-      transform: [
-        'translateY(10%)',
-        'translateY(10%)',
-        'translateY(-30%)',
-        'translateY(-50%)',
-      ],
-    },
-  ];
-
-  return (
-    <Box
-      sx={{
-        position: 'relative',
-        width: [null, '80%'],
-        zIndex: 0,
-        ...styles[position],
-      }}
-    >
-      <Image src={logo} alt='' />
-    </Box>
-  );
-};
-
-/* ------------------------------------------------------- */
-/* ------------------- Sections Number ------------------- */
-/* ------------------------------------------------------- */
+/* ------------------------------------------------------ */
+/* ------------------- Section Number ------------------- */
+/* ------------------------------------------------------ */
 
 const Number = ({ number, position }) => {
   const styles = [
@@ -239,18 +166,25 @@ const Number = ({ number, position }) => {
       mb: [0, 0, 0, '32px', '59px', '-20px'],
     },
     {
-      alignSelf: [null, null, 'end', 'end'],
-      gridColumn: ['4/13', '4/13', '14/24', '14/25'],
-      gridRow: [3, 3, 1, 1],
-      justifySelf: ['end', 'end', 'start', 'end'],
-      mt: ['10px', '12px', 0, 0],
+      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
+      gridColumn: ['4/13', '4/13', '14/24', '14/25', '16/24', '3/11'],
+      gridRow: [3, 3, 1, 1, 1, 1],
+      justifySelf: ['end', 'end', 'start', 'end', 'start', 'start'],
+      mt: ['10px', '12px', 0, 0, 0, 0],
     },
     {
-      alignSelf: [null, null, 'end', 'end'],
-      gridColumn: ['1/10', '1/10', '1/10', '1/10'],
-      gridRow: [3, 3, 1, 1],
-      justifySelf: ['start', 'start', 'start', 'start'],
-      transform: ['translateY(-16%)', 'translateY(-16%)', 'unset', 'unset'],
+      alignSelf: [null, null, 'end', 'end', 'end', 'end'],
+      gridColumn: ['1/10', '1/10', '1/10', '1/10', '2/8', '16/23'],
+      gridRow: [3, 3, 1, 1, 1, 1],
+      justifySelf: 'start',
+      transform: [
+        'translateY(-16%)',
+        'translateY(-16%)',
+        'unset',
+        'unset',
+        'unset',
+        'translateY(10%)',
+      ],
     },
   ];
 
@@ -258,50 +192,12 @@ const Number = ({ number, position }) => {
     <Heading
       as='h2'
       type='connectionsNumber'
-      variant='bold'
       sx={{
         color: 'secondary',
         ...styles[position],
       }}
     >
       {number}
-    </Heading>
-  );
-};
-
-/* ------------------------------------------------------- */
-/* ------------------ Sections Headings ------------------ */
-/* ------------------------------------------------------- */
-
-const SectionHeading = ({ position }) => {
-  const styles = [
-    {
-      gridColumn: ['1/11', '3/10', '13/25', '15/25', '16/24', '16/24'],
-      gridRow: [5, 3, 3, 2, 2, 2],
-      mt: ['43px', '64px', '43px', '81px', '40px', '52px'],
-    },
-    {
-      alignSelf: [null, null, 'end'],
-      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '16/24'],
-      gridRow: [4, 4, 3],
-      mt: ['14px', '14px', 0, 0],
-    },
-    {
-      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '16/24'],
-      gridRow: [4],
-      mt: ['38px', '38px', 0, 0],
-    },
-  ];
-
-  return (
-    <Heading
-      as='h2'
-      type='connectionsSectionHeading'
-      sx={{
-        ...styles[position],
-      }}
-    >
-      {data[position].text}
     </Heading>
   );
 };
@@ -320,15 +216,17 @@ const HorizontalSmallCard = ({ position }) => {
       mt: [0, 0, 0, 0, 0, '54px'],
     },
     {
-      alignSelf: [null, null, 'start', 'start'],
-      gridColumn: ['1/11', '1/8', '3/12', '2/11'],
-      gridRow: [2, 2, 2, 2],
+      alignSelf: [null, null, 'start', 'start', 'start', 'start'],
+      gridColumn: ['1/11', '1/8', '3/12', '2/11', '5/12', '15/20'],
+      gridRow: 2,
+      mt: [0, 0, 0, 0, 0, '48px'],
     },
     {
-      alignSelf: [null, null, null, 'start'],
-      gridColumn: ['3/13', '6/13', '5/14', '12/21'],
-      gridRow: [1, 1, 2, 1],
-      mt: [0, 0, '24px', 0],
+      alignSelf: [null, null, null, 'start', 'start', 'start'],
+      gridColumn: ['3/13', '6/13', '5/14', '12/21', '10/17', '3/8'],
+      gridRow: [1, 1, 2, 1, 1, 2],
+      mt: [0, 0, '24px', 0, 0, '54px'],
+      mb: [0, 0, 0, 0, '24px', 0],
     },
   ];
 
@@ -342,7 +240,7 @@ const HorizontalSmallCard = ({ position }) => {
       <Box
         sx={{
           mr: '16px',
-          width: ['38%', '38%', '45%', '45%', '45%', '45%'],
+          width: ['38%', '38%', '45%', '45%', '42%', '45%'],
         }}
       >
         <Image
@@ -373,11 +271,11 @@ const HorizontalBigCard = ({ position }) => {
       display: 'none',
     },
     {
-      alignSelf: [null, null, 'start', 'start'],
-      gridColumn: ['1/13', '1/9', '9/19', '1/12'],
-      gridRow: [2, 2, 3, 3],
-      my: ['12px', '12px', '24px', 0],
-      mb: ['12px', '12px', 'auto', 'auto'],
+      alignSelf: [null, null, 'start', 'start', 'start', 'end'],
+      gridColumn: ['1/13', '1/9', '9/19', '1/12', '2/11', '8/15'],
+      gridRow: [2, 2, 3, 3, 3, 1],
+      my: ['12px', '12px', '24px', 0, '24px', 0],
+      mb: ['12px', '12px', 'auto', 'auto', 'auto', 0],
     },
   ];
 
@@ -392,7 +290,7 @@ const HorizontalBigCard = ({ position }) => {
       <Box
         sx={{
           mr: '16px',
-          width: ['32%', '33%%', '45%', '32%', '39%', '39%'],
+          width: ['32%', '33%', '45%', '32%', '38%', '39%'],
         }}
       >
         <Image
@@ -417,16 +315,16 @@ const VerticalBigCard = ({ position }) => {
     },
     {
       justifySelf: 'end',
-      gridColumn: ['1/7', '2/7', '1/7', '1/7'],
-      gridRow: [1, 1, 1, 1],
-      mb: ['62px', '90px', '50px', '44px'],
+      gridColumn: ['1/7', '2/7', '1/7', '1/7', '4/9', '14/18'],
+      gridRow: 1,
+      mb: ['62px', '90px', '50px', '44px', '70px', '24px'],
     },
     {
-      alignSelf: [null, null, null, 'start'],
-      justifySelf: 'baseline',
-      gridColumn: ['1/7', '1/6', '2/8', '6/12'],
-      gridRow: [3, 3, 3, 2],
-      mt: ['37px', '50px', '24px', '-34px'],
+      alignSelf: [null, null, null, 'start', 'start', 'start'],
+      justifySelf: 'start',
+      gridColumn: ['1/7', '1/6', '2/8', '6/12', '5/10', '4/8'],
+      gridRow: [3, 3, 3, 2, 2, 1],
+      mt: ['37px', '50px', '24px', '-34px', '-40px', 0],
     },
   ];
 
@@ -451,16 +349,17 @@ const VerticalSmallCard = ({ position }) => {
       display: 'none',
     },
     {
-      gridColumn: ['8/13', '8/12', '8/13', '8/13'],
-      gridRow: [1, 1, 1, 1],
-      mb: ['29px', '40px', '30px', '24px'],
+      gridColumn: ['8/13', '8/12', '8/13', '8/13', '10/14', '19/22'],
+      gridRow: 1,
+      mb: ['29px', '40px', '30px', '24px', '50px', '0'],
       mt: 'auto',
     },
     {
-      gridColumn: ['7/12', '7/11', '12/17', '13/18'],
-      gridRow: [3, 3, 1, 2],
-      mb: ['auto'],
-      ml: ['5%', '5%', 0, 0],
+      gridColumn: ['7/12', '7/11', '12/17', '13/18', '11/15', '9/12'],
+      gridRow: [3, 3, 1, 2, 2, 2],
+      mb: 'auto',
+      ml: ['5%', '5%', 0, 0, 0, 0],
+      mt: [0, 0, 0, 0, 0, '54px'],
     },
   ];
 
@@ -479,28 +378,249 @@ const VerticalSmallCard = ({ position }) => {
   );
 };
 
+/* ------------------------------------------------------- */
+/* ------------------- Section Heading ------------------- */
+/* ------------------------------------------------------- */
+
+const SectionHeading = ({ position }) => {
+  const styles = [
+    {
+      gridColumn: ['1/10', '3/9', '13/24', '15/24', '16/24', '16/24'],
+      gridRow: [5, 3, 3, 2, 2, 2],
+      mt: ['43px', '64px', '43px', '81px', '40px', '52px'],
+    },
+    {
+      alignSelf: [null, null, 'end', 'start'],
+      gridColumn: ['1/10', '3/10', '13/25', '15/25', '16/24', '3/10'],
+      gridRow: [4, 4, 3, 3, 2, 2],
+      mt: ['14px', '14px', 0, 0, '40px', '52px'],
+    },
+    {
+      alignSelf: [null, null, null, null, 'end', 'start'],
+      gridColumn: ['1/10', '3/9', '13/23', '15/24', '16/24', '16/24'],
+      gridRow: [4, 4, 4, 4, 3, 2],
+      mt: ['38px', '38px', 0, 0, 0, '52px'],
+    },
+  ];
+
+  return (
+    <Heading
+      as='h2'
+      type='connectionsSectionHeading'
+      sx={{
+        ...styles[position],
+      }}
+    >
+      {data[position].text}
+    </Heading>
+  );
+};
+
 /* -------------------------------------------------------- */
-/* ----------------------- Sections ----------------------- */
+/* --------------------- Vectors svgs --------------------- */
 /* -------------------------------------------------------- */
 
-/* -------------------- First Section --------------------- */
+const GreenPointerVector = ({ position }) => {
+  const styles = [
+    {
+      alignSelf: ['unset', 'start', 'start', 'end', 'end', 'start'],
+      gridColumn: ['9/11', '9/11', '13/15', '15/17', '13/15', '7/10'],
+      gridRow: [1, 2, 2, 1, 2, 2],
+      justifySelf: ['unset', 'unset', 'unset', 'unset', 'end', 'end'],
+      transform: [
+        'translateY(40%)',
+        'none',
+        'none',
+        'translateY(-50%)',
+        'translateY(-30%)',
+        'translateY(-20%)',
+      ],
+    },
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+  ];
 
-const Section = ({ sectionRef, position, number }) => (
-  <GridWrapper
-    ref={sectionRef}
-    sx={{ justifyContent: 'center', pt: ['62px', '80px', '103px', '44px'] }}
-  >
-    <Number number={number} position={position} />
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: ['100%', '80%', '100%', '90%', '75%', '75%'],
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={greenPointer} alt='' />
+    </Box>
+  );
+};
 
-    <HorizontalSmallCard position={position} />
-    <HorizontalBigCard position={position} />
-    <VerticalBigCard position={position} />
-    <VerticalSmallCard position={position} />
+const FloatingCircleVector = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: 'end',
+      gridRow: 1,
+      gridColumn: ['6/9', '6/9', '6/9', '6/9', '8/11', '17/20'],
+      mb: ['19px', '19px', '19px', '10px', '20px', '-24px'],
+    },
+    {
+      display: 'none',
+    },
+  ];
 
-    <GreenPointerVector position={position} />
-    <FloatingCircleVector position={position} />
-    <LogoVector position={position} />
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={floatingCircle} alt='' />
+    </Box>
+  );
+};
 
-    <SectionHeading position={position} />
-  </GridWrapper>
-);
+const LogoVector = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: ['end', 'end', 'start', 'start', 'start', 'start'],
+      gridColumn: ['10/13', '9/12', '14/18', '19/23', '15/18', '7/10'],
+      gridRow: [3, 3, 2, 2, 2, 2],
+      justifySelf: 'end',
+      transform: [
+        'translateY(10%)',
+        'translateY(10%)',
+        'translateY(-30%)',
+        'translateY(-50%)',
+        'translateY(-40%)',
+        'translateY(-10%)',
+      ],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: [null, '80%'],
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={logo} alt='' />
+    </Box>
+  );
+};
+
+const FloatingLeaf = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      display: ['none', 'block', 'block', 'block', 'block', 'block'],
+      gridRow: [1, 1, 3, 2, 2, 1],
+      gridColumn: ['unset', '5/7', '8/10', '11/14', '10/12', '3/5'],
+      justifySelf: ['unset', 'unset', 'unset', 'end', 'start', 'start'],
+      mt: [0, 0, '14px', 0, 0, 0],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: ['100%', '100%', '100%', '80%', '80%', '80%'],
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={floatingLeaf} alt='' />
+    </Box>
+  );
+};
+
+const Line = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: 'end',
+      display: ['none', 'none', 'block', 'none', 'block', 'none'],
+      gridRow: [1, 1, 2, 2, 3, 2],
+      gridColumn: ['unset', 'unset', '3/5', 'unset', 'unset'],
+      justifySelf: ['end', 'end', 'end', 'end', 'center', 'unset'],
+      mb: [0, 0, '14px', 0, 0, 0],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: '60%',
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={line} alt='' />
+    </Box>
+  );
+};
+
+const Curl = ({ position }) => {
+  const styles = [
+    {
+      display: 'none',
+    },
+    {
+      display: 'none',
+    },
+    {
+      alignSelf: 'center',
+      display: ['none', 'none', 'block', 'block', 'block', 'block'],
+      gridRow: [1, 1, 3, 2, 2, 2],
+      gridColumn: ['unset', 'unset', '1/3', '5/7', '4/6', '2/4'],
+      justifySelf: ['start', 'start', 'start', 'start', 'start', 'center'],
+    },
+  ];
+
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        width: ['80%', '80%', '80%', '80%', '70%', '60%'],
+        zIndex: 0,
+        ...styles[position],
+      }}
+    >
+      <Image src={curl} alt='' />
+    </Box>
+  );
+};
+
+/* -------------------------------------------------------- */
+/* ------------------------ Spacer ------------------------ */
+/* -------------------------------------------------------- */
+
+const Spacer = () => <Box sx={{ height: ['100px'] }} />;

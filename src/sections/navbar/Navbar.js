@@ -84,7 +84,7 @@ export const Navbar = memo(() => {
         }}
       >
         <Close handleClick={handleClick} />
-        <OverlayNavlinks />
+        <OverlayNavlinks handleClick={handleClick} />
         <OverlayNavHeading />
         <LogoLight />
       </GridWrapper>
@@ -134,23 +134,23 @@ const Menu = ({ handleClick }) => (
 const LinksData = [
   {
     name: 'Benefits',
-    href: '#',
+    href: '#strengthen-section',
   },
   {
     name: 'Your profile',
-    href: '#',
+    href: '#profile-section',
   },
   {
     name: 'Connections',
-    href: '#',
+    href: '#connections-section',
   },
   {
     name: 'Plans & Pricing',
-    href: '#',
+    href: '#feature-price-section',
   },
 ];
 
-const Links = ({ sx }) =>
+const Links = ({ sx, handleClick }) =>
   LinksData.map((link) => (
     <NavigationLink
       to={link.href}
@@ -160,6 +160,7 @@ const Links = ({ sx }) =>
         ...sx,
       }}
       key={link.name}
+      onClick={handleClick}
     >
       {link.name}
     </NavigationLink>
@@ -194,7 +195,7 @@ const OpenNavButton = () => (
   </Button>
 );
 
-const OverlayNavlinks = () => (
+const OverlayNavlinks = ({ handleClick }) => (
   <GridItem
     sx={{
       alignSelf: ['center', 'center', 'end'],
@@ -205,7 +206,7 @@ const OverlayNavlinks = () => (
       justifyContent: ['unset', 'unset', 'unset', 'space-between'],
     }}
   >
-    <Links sx={{ color: 'textNegative' }} />
+    <Links sx={{ color: 'textNegative' }} handleClick={handleClick} />
     <OpenNavButton />
   </GridItem>
 );

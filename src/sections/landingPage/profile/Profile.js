@@ -14,6 +14,10 @@ import {
 // vectors
 import line from 'assets/svg/shape01.svg';
 import chatBubble from 'assets/svg/wiket-logogram.svg';
+import pin from 'assets/svg/pin.svg';
+import arrow from 'assets/svg/arrow.svg';
+import tShape from 'assets/svg/tShape.svg';
+import outline from 'assets/svg/outline.svg';
 
 // lottie
 import animationData from '../../../lotties/ui_wiket.json';
@@ -29,12 +33,16 @@ export const Profile = memo(() => {
   };
 
   return (
-    <GridWrapper as='section'>
+    <GridWrapper as='section' id='profile-section'>
       <Headline />
       <Line />
       <Animation options={defaultOptions} />
       <ChatBubble />
       <Body />
+      <Pin />
+      <Tshape />
+      <Outline />
+      <Arrow />
     </GridWrapper>
   );
 });
@@ -44,10 +52,10 @@ export const Headline = () => (
     as='h2'
     type='profileHeading'
     sx={{
-      gridColumn: ['1/12', '1/12', '2/21', '1/14', '2/14', '2/14'],
+      gridColumn: ['1/12', '1/12', '2/21', '1/14', '3/14', '3/14'],
       gridRow: [1, 1, 1, 2, 2, 2],
       pb: ['73px', '41px', '63px', '24px', '24px', 0],
-      pt: [0, 0, 0, '54px', '65px', 0],
+      pt: [0, 0, 0, 0, 0, 0],
     }}
   >
     <Heading as='span' type='h2' variant='bold' sx={{ color: 'secondary' }}>
@@ -60,10 +68,22 @@ export const Headline = () => (
 export const Animation = ({ options }) => (
   <GridItem
     sx={{
-      gridRow: [3, 3, 3, '2 / span 3', '2 / span 3', '2 / span 2'],
-      gridColumn: ['3/13', '6/13', '15/24', '17/25', '16/22', '17/23'],
-      justifySelf: 'end',
-      position: 'relative',
+      gridRow: [
+        '3/ span 1',
+        '3/ span 1',
+        '3/ span 1',
+        '2 / span 3',
+        '2 / span 3',
+        '2 / span 2',
+      ],
+      gridColumn: [
+        '3/span 10',
+        '7/span 6',
+        '15/span 9',
+        '17/span 8',
+        '17/span 6',
+        '17/span 6',
+      ],
       height: [
         '530px',
         '533.32px',
@@ -72,11 +92,10 @@ export const Animation = ({ options }) => (
         '512.11px',
         '619.78px',
       ],
-      width: ['263.31px', '263.31px', '253px', '223.84px', '252.84px', '306px'],
       zIndex: 1,
     }}
   >
-    <Lottie options={options} height='100%' width='100%' />
+    <Lottie options={options} height='100%' />
   </GridItem>
 );
 
@@ -85,18 +104,22 @@ export const Line = () => (
     sx={{
       justifySelf: [
         'baseline',
-        'end',
+        'start',
+        'baseline',
+        'baseline',
         'baseline',
         'end',
-        'baseline',
-        'baseline',
       ],
-      gridColumn: ['1/3', '5/7', '14/15', '15/17', '14/16', '16/17'],
+      gridColumn: [
+        '1/span 2',
+        '6/span 2',
+        '14/span 2',
+        '16/span 2',
+        '16/span 1',
+        '16/span 1',
+      ],
       gridRow: [2, 2, 2, 1, 1, 1],
       transform: 'rotate(90deg)',
-      mb: [0, 0, 0, '-10px', 0, 0],
-      height: ['49.13px', '45.11px', '38px', '35.58px', '45.11px', '45.11px'],
-      width: ['48.58px', '46.91px', '39.52px', '37px', '46.91px', '46.91px'],
     }}
   >
     <Image src={line} alt='' />
@@ -106,21 +129,32 @@ export const Line = () => (
 export const ChatBubble = () => (
   <GridItem
     sx={{
-      alignSelf: [
-        'center',
-        'baseline',
-        'baseline',
-        'center',
-        'baseline',
-        'baseline',
+      alignSelf: ['center', 'end', 'center', 'end', 'end', 'end'],
+      gridRow: [
+        '3/span 1',
+        '3/span 1',
+        '3/span 1',
+        '2/span 1',
+        '2/span 1',
+        '2/span 1',
       ],
-      gridRow: [3, 3, 3, '2 / span 3', '2 / span 3', '2 / span 3'],
-      gridColumn: ['1/3', '5/9', '13/17', '15/19', '14/18', '15/18'],
-      justifySelf: ['baseline', 'baseline', 'end', 'end', 'center', 'end'],
-      position: 'relative',
-      mt: [0, '139px', '139px', 0, '178px', '208px'],
-      height: ['111px', '186px', '186px', '146px', '186px', '186px'],
-      width: ['76px', '128px', '128px', '100px', '128px', '128px'],
+      gridColumn: [
+        '1/span 4',
+        '5/span 4',
+        '13/span 5',
+        '15/span 4',
+        '15/span 4',
+        '15/span 3',
+      ],
+      width: ['75%', '75%', '90%', '90%', '80%', '85%'],
+      transform: [
+        '0%',
+        'translateY(35%)',
+        'translateY(-10%)',
+        'translateY(20%)',
+        'translateY(20%)',
+        ['translateY(-20%)', 'translateX(15%)'],
+      ],
       zIndex: 0,
     }}
   >
@@ -132,13 +166,92 @@ export const Body = () => (
   <Paragraph
     type='profileParagraph'
     sx={{
-      alignSelf: ['start', 'end', 'start', 'start', 'start', 'end'],
-      gridColumn: ['1/10', '1/6', '2/11', '1/10', '2/8', '11/16'],
+      alignSelf: ['start', 'center', 'end', 'end', 'start', 'start'],
+      gridColumn: [
+        '1/span 11',
+        '1/span 5',
+        '2/span 9',
+        '6/span 9',
+        '8/span 6',
+        '10/span 5',
+      ],
       gridRow: [4, 3, 3, 3, 3, 3],
-      pt: ['25px', 0, 0, 0, 0, '25px'],
+      pt: ['25px', 0, 0, '5em', '3em', '25px'],
+      pb: [0, 0, '2em', 0, 0, 0],
     }}
   >
-    Unless other social networks, wiket is created for businesses and the people
+    Unless other social networks, wiket is crafted for businesses and the people
     behind them.
   </Paragraph>
+);
+
+export const Arrow = () => (
+  <GridItem
+    sx={{
+      gridRow: ['6/span 1', '5/span 1'],
+      gridColumn: [
+        '4/span 3',
+        '4/span 2',
+        '6/span 3',
+        '7/span 3',
+        '9/span 2',
+        '10/span 2',
+      ],
+      paddingTop: ['2em', '12em', '1.5em', '1.5em', '1.5em', '1.5em'],
+    }}
+  >
+    <Image src={arrow} alt='' />
+  </GridItem>
+);
+
+export const Outline = () => (
+  <GridItem
+    sx={{
+      gridRow: [
+        '5/span 1',
+        '4/span 1',
+        '4/span 1',
+        '4/span 1',
+        '4/span 1',
+        '3/span 1',
+      ],
+      gridColumn: [
+        '8/span 2',
+        '7/span 2',
+        '10/span 2',
+        '11/span 2',
+        '12/span 1',
+        '13/span 1',
+      ],
+      paddingTop: ['5em', '9em', '8em', '3.5em', '3.5em', '10em'],
+    }}
+  >
+    <Image src={outline} alt='' />
+  </GridItem>
+);
+
+export const Pin = () => (
+  <GridItem
+    sx={{
+      display: ['none', 'none', 'none', 'none', 'none', 'block'],
+      gridRow: [3],
+      gridColumn: [null, null, null, null, null, '7/ span 1'],
+    }}
+  >
+    <Image src={pin} alt='' />
+  </GridItem>
+);
+
+export const Tshape = () => (
+  <GridItem
+    sx={{
+      display: ['none', 'none', 'block', 'none', 'none', 'none'],
+      gridRow: [3],
+      gridColumn: [null, null, '5/span 3', null, null, null],
+      paddingTop: '4em',
+      width: '85%',
+    }}
+  >
+    <Image src={tShape} alt='' />
+  </GridItem>
 );

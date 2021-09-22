@@ -26,9 +26,7 @@ const IndexPage = ({ data }) => (
       sx={{ height: ['332px', '202px', '218px', '219px', '184px', '272px'] }}
     />
     <Profile />
-    <Box
-      sx={{ height: ['360px', '584px', '390px', '237px', '262px', '178px'] }}
-    />
+    <Box sx={{ height: ['103px', '121px', '137px', '61px', '90px', '44px'] }} />
     <Connections />
     <Box
       sx={{ height: ['280px', '244px', '511px', '187px', '352px', '216px'] }}
