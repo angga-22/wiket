@@ -8,12 +8,12 @@ import { gsap } from 'gsap';
 import { NavigationLink } from 'pieces';
 import {
   Box,
-  Button,
   GridWrapper,
   Image,
   Heading,
   GridItem,
 } from '@thepuzzlers/pieces';
+import { Link } from 'theme-ui';
 
 // svgs
 import logo from 'assets/svg/wiket-logo-complete.svg';
@@ -23,32 +23,34 @@ import logoWhite from 'assets/svg/wiket-logo-light.svg';
 
 export const Navbar = memo(() => {
   const [openMenu, setOpenMenu] = useState(false);
+  const tl = useRef(
+    gsap.timeline({ defaults: { ease: 'Power1.easeOut' } }).reverse()
+  );
+  const navigation = useRef();
 
   const handleClick = () => {
     setOpenMenu(!openMenu);
   };
 
-  const navigation = useRef();
-  const tl = useRef();
-
   useEffect(() => {
-    tl.current = gsap
-      .timeline({
-        paused: true,
-        defaults: { ease: 'power4.in', duration: 0.5 },
-      })
-      .from(navigation.current, { opacity: 0, x: '100%', y: '-100%' });
+    gsap.set('.navigation-link', { x: '-100%', opacity: 0 });
 
-    return () => tl.current.kill();
+    tl.current
+      .from(navigation.current, { opacity: 0, x: '100%' })
+      .to('.navigation-link', {
+        duration: 0.3,
+        x: '0',
+        ease: 'Power1.easeOut',
+        stagger: 0.2,
+        opacity: 1,
+      })
+      .from('.overlay-heading', { y: '100%', opacity: 0 })
+      .from('.logo-light', { y: '100%', opacity: 0 });
   }, []);
 
   useEffect(() => {
-    if (openMenu) {
-      tl.current.play();
-    } else {
-      tl.current.reverse();
-    }
-  }, [openMenu, tl]);
+    tl.current.reversed(!openMenu);
+  }, [openMenu]);
 
   return (
     <nav>
@@ -95,14 +97,15 @@ export const Navbar = memo(() => {
 /* -------------------- Mobile Navigation -------------------- */
 
 const Logo = () => (
-  <Box
+  <NavigationLink
+    to='#header-section'
     sx={{
       gridColumn: ['1/5', '1/4', '1/6', '1/5', '1/4', '1/4'],
       width: '100%',
     }}
   >
     <Image src={logo} alt='Wiket logo' />
-  </Box>
+  </NavigationLink>
 );
 
 const NavButton = () => (
@@ -112,7 +115,12 @@ const NavButton = () => (
       justifySelf: ['end', 'baseline', 'baseline', 'baseline', 'end', 'end'],
     }}
   >
-    <Button variant='tertiarySmall'>Get started</Button>
+    <NavigationLink
+      to='#contact-section'
+      sx={{ variant: 'buttons.tertiarySmall' }}
+    >
+      Get started
+    </NavigationLink>
   </Box>
 );
 
@@ -129,38 +137,51 @@ const Menu = ({ handleClick }) => (
   </Box>
 );
 
-/* ---------------- Links Data and Component ---------------- */
-
-const Links = ({ sx, handleClick }) => {
-  const data = useStaticQuery(graphql`
-    {
-      allNavJson {
-        nodes {
-          nav {
-            title
-            to
-          }
+/* ---------------- Links Data and Components ---------------- */
+const data = useStaticQuery(graphql`
+  {
+    allNavJson {
+      nodes {
+        nav {
+          title
+          to
         }
       }
     }
-  `);
-  const links = data.allNavJson.nodes[0];
+  }
+`);
+const links = data.allNavJson.nodes[0];
 
-  return links.nav.map((link) => (
+const Links = ({ handleClick }) =>
+  links.nav.map((link) => (
     <NavigationLink
       to={link.to}
       sx={{
+        color: 'textNegative',
         textAlign: 'center',
         mb: ['16%', '10%', '9%', 0, 0],
-        ...sx,
       }}
       key={link.title}
       onClick={handleClick}
+      className='navigation-link'
+    >
+      {link.name}
+    </NavigationLink>
+  ));
+
+const DesktopLinks = () =>
+  links.nav.map((link) => (
+    <NavigationLink
+      to={link.to}
+      sx={{
+        color: 'primary',
+        textAlign: 'center',
+      }}
+      key={link.title}
     >
       {link.title}
     </NavigationLink>
   ));
-};
 
 /* ------------------- Navigation Overlay ------------------- */
 
@@ -179,16 +200,18 @@ const Close = ({ handleClick }) => (
   </Box>
 );
 
-const OpenNavButton = () => (
-  <Button
-    type='submit'
-    variant='tertiary'
+const OpenNavButton = ({ handleClick }) => (
+  <Link
+    href='#contact-section'
     sx={{
       m: ['0 auto', '0 auto', '0 auto', '0 0 auto 0'],
+      variant: 'buttons.tertiary',
     }}
+    onClick={handleClick}
+    className='navigation-link'
   >
     Get started
-  </Button>
+  </Link>
 );
 
 const OverlayNavlinks = ({ handleClick }) => (
@@ -202,8 +225,8 @@ const OverlayNavlinks = ({ handleClick }) => (
       justifyContent: ['unset', 'unset', 'unset', 'space-between'],
     }}
   >
-    <Links sx={{ color: 'textNegative' }} handleClick={handleClick} />
-    <OpenNavButton />
+    <Links handleClick={handleClick} />
+    <OpenNavButton handleClick={handleClick} />
   </GridItem>
 );
 
@@ -219,6 +242,7 @@ const OverlayNavHeading = () => (
       textAlign: ['center', 'center', 'center', 'right'],
       p: ['16% 0 8%', '25% 0 10%', '25% 0 10%', '10% 0 5%'],
     }}
+    className='overlay-heading'
   >
     Where mind-liked businesses <span>connect</span>
   </Heading>
@@ -234,6 +258,7 @@ const LogoLight = () => (
       mb: ['20%', '20%', '30%', '-20%'],
       width: ['100%', '70%', '80%', '90%'],
     }}
+    className='logo-light'
   >
     <Image src={logoWhite} alt='Wiket logo' />
   </Box>
@@ -256,6 +281,6 @@ const DesktopNavigation = () => (
       ],
     }}
   >
-    <Links sx={{ color: 'primary' }} />
+    <DesktopLinks />
   </GridItem>
 );
