@@ -167,7 +167,7 @@ const FormMessage = ({ msg, setFormState }) => (
       textAlign: 'center',
     }}
   >
-    <Heading type='h2' as='h5' variant='bold'>
+    <Heading type='h2-500' as='h5' variant='bold'>
       {msg.headline}
     </Heading>
     <Paragraph type='lead' as='p' sx={{ pt: '20px' }}>

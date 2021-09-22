@@ -34,19 +34,19 @@ export const Contact = memo(() => (
 
 const Headline = () => (
   <Heading
-    type='h2'
-    // type='contactHeading'
+    as='h2'
+    type='h2-500'
     sx={{
       gridRow: [1, 1, 1, 1],
       gridColumn: ['2/12', '4/span 6', '2/22', '6/20', '1/11', '2/7'],
       textAlign: ['center', 'center', 'left', 'center', 'left', 'left'],
       mb: 16,
+      '&>span': {
+        color: 'teal1000',
+      },
     }}
   >
-    Keep in{' '}
-    <Heading as='span' type='h2' variant='bold'>
-      touch.
-    </Heading>
+    Keep in <span>touch.</span>
   </Heading>
 );
 

@@ -53,7 +53,7 @@ export const Quote = memo(() => (
       >
         <Heading
           as='h2'
-          type='sectionHeading'
+          type='h2-500'
           sx={{ paddingY: '.5em', textAlign: 'center' }}
         >
           Start growing your business when you’re ready.

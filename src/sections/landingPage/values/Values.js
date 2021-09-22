@@ -3,10 +3,14 @@
 import { jsx, Image } from 'theme-ui';
 import { memo } from 'react';
 
-import ThumbsUpImg from 'assets/svg/Group 67.svg';
-
 // pieces
-import { Section, Heading, Paragraph, GridItem } from '@thepuzzlers/pieces';
+import { Section, Heading, GridItem } from '@thepuzzlers/pieces';
+
+// Local components
+import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
+
+// Data
+import ThumbsUpImg from 'assets/svg/Group 67.svg';
 import valuesTexts from '../../../data/values.json';
 
 export const Values = memo(() => (
@@ -57,22 +61,17 @@ const SectionHeader = () => (
   >
     <Heading
       as='h2'
-      type='sectionHeadingValues'
+      type='h2-500'
       sx={{
+        color: 'textNegative',
+        '&>span': {
+          color: 'textNegative',
+        },
         textAlign: ['center', 'left', 'left', 'left', 'left', 'left'],
       }}
     >
       The place for <br />
-      <Heading
-        as='span'
-        type='sectionHeadingValues'
-        sx={{
-          textAlign: ['center', 'left', 'left', 'left', 'left', 'left'],
-        }}
-        variant='bold'
-      >
-        like-minded people
-      </Heading>
+      <span>like-minded people</span>
       <span sx={{ color: 'secondary' }}>.</span>
     </Heading>
   </GridItem>
@@ -99,9 +98,12 @@ const SectionHeaderImg = () => (
 );
 
 const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
-  <GridItem
+  <PrimaryTextBlock
+    light
     className='valuesTextBlock'
     id={id}
+    title={title}
+    text={text}
     sx={{
       marginTop: '3em',
       gridColumnStart,
@@ -115,13 +117,5 @@ const TextBlock = ({ id, text, title, gridColumnStart, gridRow }) => (
         'span 5',
       ],
     }}
-  >
-    <Heading variant='bold' type='titleHeadingValues'>
-      {title}
-      <span sx={{ color: 'secondary' }}>.</span>
-    </Heading>
-    <Paragraph type='textParagraphValues' marginTop='.5em'>
-      {text}
-    </Paragraph>
-  </GridItem>
+  />
 );

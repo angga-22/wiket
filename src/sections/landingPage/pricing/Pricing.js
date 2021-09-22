@@ -10,6 +10,7 @@ import {
 } from '@thepuzzlers/pieces';
 import batikShapeBlind from 'assets/svg/batik-shape-blind.svg';
 import batikShapeOrange from 'assets/svg/batik-shape-orange.svg';
+import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
 import { FeatureListing } from './components/FeatureListing';
 
 export const Pricing = ({ featuresData }) => (
@@ -36,16 +37,16 @@ const Headlines = () => (
     }}
   >
     <Heading
-      type='h2'
+      as='h2'
+      type='h2-500'
       sx={{
-        fontWeight: 'lighter',
         textAlign: ['center', 'center', 'center', 'center', 'left', 'left'],
+        '&>span': {
+          color: 'teal1000',
+        },
       }}
     >
-      Explore new relationships{' '}
-      <Heading as='span' variant='bold' type='h2'>
-        for free.
-      </Heading>
+      Explore new relationships <span>for free.</span>
     </Heading>
   </GridItem>
 );
@@ -59,7 +60,7 @@ const SmallHeadlines = () => (
     }}
   >
     <Paragraph
-      type='paragraph'
+      type='body-700'
       sx={{
         textAlign: ['center', 'center', 'center', 'center', 'left', 'left'],
       }}
@@ -116,7 +117,7 @@ const BlossomCard = () => (
         Free
       </Heading>
     </div>
-    <Paragraph type='cardParagraph'>
+    <Paragraph type='body-300' sx={{ lineHeight: 1.5 }}>
       Set up your own profile, conntect with others and share ideas
     </Paragraph>
   </GridItem>
@@ -177,12 +178,7 @@ const GrowthCard = () => (
         $25 / month
       </Heading>
     </div>
-    <Paragraph
-      type='cardParagraph'
-      sx={{
-        color: 'background',
-      }}
-    >
+    <Paragraph type='body-300' sx={{ lineHeight: 1.5, color: 'biege100' }}>
       Everything you need to get started. Comes with your own profile and access
       to our B2B network.
     </Paragraph>
@@ -236,18 +232,10 @@ const FeaturesLabel = () => (
       mt: ['77px', '120px', '141px', '120px', '0', '0'],
     }}
   >
-    <Heading
-      type='h5'
-      variant='bold'
-      sx={{
-        mb: ['16px', '16px', '22px', '12px', '24px', '24px'],
-      }}
-    >
-      Features<span sx={{ color: 'secondary' }}>.</span>
-    </Heading>
-    <Paragraph type='featureSubline'>
-      Both of our plans are especially designed for small businesses and come
-      with a rich set of features.
-    </Paragraph>
+    <PrimaryTextBlock
+      title='Features'
+      text='Both of our plans are especially designed for small businesses and come
+      with a rich set of features.'
+    />
   </GridItem>
 );

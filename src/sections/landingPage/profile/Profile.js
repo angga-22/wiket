@@ -55,17 +55,15 @@ export const Profile = memo(() => {
 export const Headline = () => (
   <Heading
     as='h2'
-    type='profileHeading'
+    type='h2-500'
     sx={{
-      gridColumn: ['1/12', '1/12', '2/21', '1/14', '3/14', '3/14'],
+      gridColumn: ['1/12', '1/12', '2/21', '1/14', '2/13', '3/14'],
       gridRow: [1, 1, 1, 2, 2, 2],
       pb: ['73px', '41px', '63px', '24px', '24px', 0],
       pt: [0, 0, 0, 0, 0, 0],
     }}
   >
-    <Heading as='span' type='h2' variant='bold' sx={{ color: 'secondary' }}>
-      Focused on small businesses.{' '}
-    </Heading>
+    <span>Focused on small businesses. </span>
     Your profile lets everyone know, what you bring to the table.
   </Heading>
 );
@@ -169,7 +167,8 @@ export const ChatBubble = () => (
 
 export const Body = () => (
   <Paragraph
-    type='profileParagraph'
+    as='p'
+    type='body-500'
     sx={{
       alignSelf: ['start', 'center', 'end', 'end', 'start', 'start'],
       gridColumn: [
@@ -177,7 +176,7 @@ export const Body = () => (
         '1/span 5',
         '2/span 9',
         '6/span 9',
-        '8/span 6',
+        '8/span 7',
         '10/span 5',
       ],
       gridRow: [4, 3, 3, 3, 3, 3],
@@ -185,7 +184,7 @@ export const Body = () => (
       pb: [0, 0, '2em', 0, 0, 0],
     }}
   >
-    Unless other social networks, wiket is crafted for businesses and the people
+    Unless other social networks, wiket is created for businesses and the people
     behind them.
   </Paragraph>
 );

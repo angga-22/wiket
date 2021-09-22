@@ -62,7 +62,7 @@ export const Header = memo(() => (
 const Headline = () => (
   <GridItem
     sx={{
-      gridColumn: ['1/12', '1/11', '2/22', '13/25', '14/25', '13/24'],
+      gridColumn: ['1/13', '1/11', '2/22', '13/25', '14/25', '13/24'],
       gridRow: [1, 1, 1, '1/span 2', 1, 1],
       mb: [null, null, '60px'],
     }}
@@ -118,7 +118,7 @@ const MainImgDescription = () => (
       mb: ['12px', '12px', 0, '12px', 0, 0],
     }}
   >
-    <CardTextBlock title='Hanging Garden' text='FLorist in Bangkok' />
+    <CardTextBlock title='Hanging Garden' text='Florist in Bangkok' />
   </GridItem>
 );
 
