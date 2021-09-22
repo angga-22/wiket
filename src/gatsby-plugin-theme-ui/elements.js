@@ -52,14 +52,9 @@ const buttons = {
 };
 
 const cards = {
-  primary: {
-    backgroundColor: 'light',
-    borderRadius: 'card',
-    padding: '20px',
-  },
   horizontal: {
     backgroundColor: 'background',
-    borderRadius: 'cardSecondary',
+    borderRadius: 'card',
     boxShadow: 200,
     padding: '12px 24px 12px 12px',
     display: 'flex',
@@ -69,8 +64,8 @@ const cards = {
   },
   vertical: {
     backgroundColor: 'background',
-    borderRadius: 'cardSecondary',
-    padding: '12px 12px 18px',
+    borderRadius: 'card',
+    padding: '12px 12px 18px 12px',
     position: 'relative',
     zIndex: 1,
   },

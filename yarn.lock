@@ -2285,10 +2285,10 @@
     "@theme-ui/css" "0.11.2"
     "@theme-ui/mdx" "0.11.2"
 
-"@thepuzzlers/pieces@0.0.20":
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/@thepuzzlers/pieces/-/pieces-0.0.20.tgz#05d551ddc2c6bdd547c8f5ade5dc1dbd3631aae0"
-  integrity sha512-k88OsWLtgwH8xL2VCG63kTGju/9/chHDgz+WTBpdtbwTO3fIGcxeqpwQZf3j9ank7kAti4gI+ePtUiPFFn5zQA==
+"@thepuzzlers/pieces@0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@thepuzzlers/pieces/-/pieces-0.0.21.tgz#29459ac7df79eb1026d44d63d040bbce8f49567a"
+  integrity sha512-CGvCwCxzGqWXOiGGKEDTahQORjX4BNpP+gIRuI6NvWvZc3pxgkq64zqg9G2U/L3CPFgZ3CXDHoPkui0+gckZnA==
   dependencies:
     framer-motion "^4.1.5"
     prop-types "^15.7.2"

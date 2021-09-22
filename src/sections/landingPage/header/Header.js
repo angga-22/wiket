@@ -11,14 +11,17 @@ import {
   srcsetValues,
   Image,
 } from '@thepuzzlers/pieces';
+
+// Local components
 import { PrimaryCard } from 'components';
+import { CardTextBlock } from 'components/blocks/CardTextBlock';
 
 // images
 // import { StaticImage } from 'gatsby-plugin-image';
 import headerMainImage from 'assets/jpg/header-main-img.jpg';
-import headerSubImage1 from 'assets/jpg/header-sub-img-1.jpg';
-import headerSubImage2 from 'assets/jpg/header-sub-img-2.jpg';
-import headerSubImage3 from 'assets/jpg/header-sub-img-3.jpg';
+import potjectImage from 'assets/jpg/image-pottery.jpg';
+import greenThumbImage from 'assets/jpg/image-gardener.jpg';
+import greenCafeImage from 'assets/jpg/image-roastery.jpg';
 import linePhonePortrait from 'assets/svg/line-phone-portrait.svg';
 import linePhoneLandscape from 'assets/svg/line-phone-landscape.svg';
 import lineTabletPortrait from 'assets/svg/line-tablet-portrait.svg';
@@ -115,16 +118,7 @@ const MainImgDescription = () => (
       mb: ['12px', '12px', 0, '12px', 0, 0],
     }}
   >
-    <Heading
-      as='h5'
-      type='h5-500'
-      sx={{ mb: ['4px', '4px', '4px', '4px', '4px', '6px'] }}
-    >
-      Hanging Garden
-    </Heading>
-    <Paragraph as='p' type='body-300'>
-      Florist in Bangkok
-    </Paragraph>
+    <CardTextBlock title='Hanging Garden' text='FLorist in Bangkok' />
   </GridItem>
 );
 
@@ -134,10 +128,7 @@ const Card = ({ sx, title, description, image, ...props }) => (
     title={title}
     text={description}
     sx={{
-      bg: 'background',
-      borderRadius: 'headerCard',
       boxShadow: 'headerCard',
-      padding: '12px 12px 18px 12px',
       alignSelf: 'start', // makes sure card is only as high as its content
       zIndex: 2,
       ...sx,
@@ -164,7 +155,7 @@ const PotjectCard = () => (
         'translateY(10%)',
       ],
     }}
-    image={headerSubImage1}
+    image={potjectImage}
     title='Potject'
     description='Pottery in Bangkok'
   />
@@ -194,7 +185,7 @@ const GreenCafeCard = () => (
         'translateY(32%)',
       ],
     }}
-    image={headerSubImage3}
+    image={greenCafeImage}
     title='Green Cafe'
     description='Roastery in Bangkok'
   />
@@ -217,7 +208,7 @@ const GreenThumbCard = () => (
         'translateX(-50%)',
       ],
     }}
-    image={headerSubImage2}
+    image={greenThumbImage}
     title='GreenThumb'
     description='Gardener in Ratchaburi'
   />

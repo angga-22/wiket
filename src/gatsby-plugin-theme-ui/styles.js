@@ -10,13 +10,11 @@ export const styles = {
     100: '0px 8px 16px rgba(65, 65, 65, 0.05)',
   },
   radii: {
-    card: '10px',
     button: '12px',
     priceCard: '16px',
-    headerCard: '12px',
+    card: '12px',
     headerCardImage: '8px',
     input: '8px',
     form: '24px',
-    cardSecondary: '12px',
   },
 };
