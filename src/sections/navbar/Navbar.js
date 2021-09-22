@@ -159,19 +159,19 @@ const Links = ({ handleClick }) => {
   const links = useLinks();
 
   return links.nav.map((link) => (
-    <NavigationLink
-      to={link.to}
+    <Box
+      key={link.title}
+      className='navigation-link'
       sx={{
         color: 'textNegative',
         textAlign: 'center',
         mb: ['16%', '10%', '9%', 0, 0],
       }}
-      key={link.title}
-      onClick={handleClick}
-      className='navigation-link'
     >
-      {link.title}
-    </NavigationLink>
+      <NavigationLink to={link.to} onClick={handleClick}>
+        {link.title}
+      </NavigationLink>
+    </Box>
   ));
 };
 
