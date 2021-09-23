@@ -206,11 +206,12 @@ const DesktopLinks = () => {
 const Close = ({ handleClick }) => (
   <Box
     sx={{
-      alignSelf: ['center', 'center', 'end'],
-      gridColumn: ['12/13', '12/13', '22/24', '24/25'],
-      justifySelf: ['end', 'end', 'baseline', 'end'],
-      my: ['50%', '100%', '100%', '100%'],
-      width: ['100%', '100%', '70%', '100%'],
+      alignSelf: 'start',
+      gridColumn: ['12/13', '12/13', '23/25', '23/25'],
+      justifySelf: 'end',
+      mt: ['29px', '38px', '40px', '29px'],
+      mb: ['50%', '100%', '100%', '100%'],
+      width: ['100%', '80%', '70%', '50%'],
     }}
     onClick={handleClick}
   >
