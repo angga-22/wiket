@@ -42,19 +42,19 @@ export const Navbar = memo(() => {
   };
 
   useEffect(() => {
-    gsap.set(navLinks.current, { x: '-100%', opacity: 0 });
+    gsap.set(navLinks.current, { x: '-80%', opacity: 0 });
 
     tl.current
       .from(navigation.current, { opacity: 0, x: '100%' })
       .to(navLinks.current, {
-        duration: 0.3,
+        duration: 0.2,
         x: '0',
         ease: 'Power1.easeOut',
         stagger: 0.2,
         opacity: 1,
       })
-      .from(overlayHeading.current, { y: '100%', opacity: 0 })
-      .from(logoLight.current, { y: '100%', opacity: 0 });
+      .from(overlayHeading.current, { y: '80%', opacity: 0 })
+      .from(logoLight.current, { y: '80%', opacity: 0 });
   }, []);
 
   useEffect(() => {
