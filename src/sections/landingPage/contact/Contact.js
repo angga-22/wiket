@@ -14,6 +14,7 @@ export const Contact = memo(() => (
   <Section
     id='contact-section'
     sx={{
+      paddingTop: ['160px', '270px', '140px', '160px', '180px', '210px'],
       gridTemplateRows: [null, null, null, null, 'auto 1fr', 'auto 1fr'],
     }}
   >

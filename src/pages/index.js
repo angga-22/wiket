@@ -36,9 +36,7 @@ const IndexPage = ({ data }) => (
       sx={{ height: ['200px', '352px', '349px', '105px', '440px', '425px'] }}
     />
     <Quote />
-    <Box
-      sx={{ height: ['290px', '290px', '369px', '167px', '269px', '250px'] }}
-    />
+    <Box sx={{ height: ['130px', '20px', '229px', '7px', '89px', '40px'] }} />
     <Contact />
   </div>
 );

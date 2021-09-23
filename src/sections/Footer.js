@@ -85,14 +85,14 @@ export const Footer = () => {
 };
 
 const BackgroundImage = () => (
-  <GridItem variant='fullWidth'>
+  <GridItem>
     <picture>
       <source media={srcsetValues[4]} srcSet={batikFooterDesktop} />
       <source media={srcsetValues[3]} srcSet={batikFooterTabletLandscape} />
       <source media={srcsetValues[2]} srcSet={batikFooterPhoneLandscape} />
       <source media={srcsetValues[1]} srcSet={batikFooterTabletPortrait} />
       <source media={srcsetValues[0]} srcSet={batikFooterPhoneXl} />
-      <img src={batikFooterPhone} alt='batik-shape' sx={{ width: '100vw' }} />
+      <img src={batikFooterPhone} alt='batik-shape' sx={{ width: '100%' }} />
     </picture>
   </GridItem>
 );
