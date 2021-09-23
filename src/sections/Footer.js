@@ -55,35 +55,30 @@ export const Footer = () => {
       <BackgroundImage />
       <Logo />
       <FooterLink
-        sx={{
-          gridColumn: [
-            '3 / span 4',
-            '5 / span 2',
-            '1 / span 4',
-            '1 /  span 5',
-            '1 /  span 5',
-            '1 /  span 4',
-          ],
-          // ml: ['1em', '-.5em', 0, 0, 0, 0],
-        }}
-        to={links.footer.dataPolicy.to}
-        title={links.footer.dataPolicy.title}
-      />
-
-      <FooterLink
-        sx={{
-          gridColumn: [
-            '8 / span 4',
-            '8 / span 2',
-            '5 / span 4',
-            '5 /  span 3',
-            '4 /  span 2',
-            '3 /  span 2',
-          ],
-          // ml: ['.5em', '-.5em', 0, 0, 0, 0],
-        }}
         to={links.footer.legal.to}
         title={links.footer.legal.title}
+        gridColumn={[
+          '3 / span 4',
+          '5 / span 2',
+          '1 / span 4',
+          '1 /  span 5',
+          '1 /  span 5',
+          '1 /  span 4',
+        ]}
+        ml={['1em', '-.5em', 0, 0, 0, 0]}
+      />
+      <FooterLink
+        to={links.footer.dataPolicy.to}
+        title={links.footer.dataPolicy.title}
+        gridColumn={[
+          '8 / span 4',
+          '8 / span 2',
+          '5 / span 4',
+          '5 /  span 3',
+          '4 /  span 2',
+          '3 /  span 2',
+        ]}
+        ml={['.5em', '-.5em', '-.5em', '-1.5em', 0, 0]}
       />
       <FooterParagraph />
     </Section>
@@ -136,10 +131,10 @@ const Logo = () => (
 const FooterLink = ({ gridColumn, to, title, ml }) => (
   <GridItem
     sx={{
+      ml,
       gridColumn,
       gridRow: ['4/5', '4/5', '3/4', '3/4', '3/4', '3/4'],
       paddingBottom: ['3em', '3em', '3em', '2em', '4em', '4em'],
-      ml,
       transform: [
         0,
         0,
@@ -152,14 +147,7 @@ const FooterLink = ({ gridColumn, to, title, ml }) => (
     }}
   >
     <NavigationLink to={to}>
-      <Paragraph
-        type='smallParagraph'
-        sx={{
-          color: 'textNegative',
-        }}
-      >
-        {title}
-      </Paragraph>
+      <Paragraph type='footerLink'>{title}</Paragraph>
     </NavigationLink>
   </GridItem>
 );

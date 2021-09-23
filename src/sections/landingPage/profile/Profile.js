@@ -10,7 +10,7 @@ import {
   Heading,
   Paragraph,
   GridItem,
-  GridWrapper,
+  Section,
   Image,
 } from '@thepuzzlers/pieces';
 
@@ -36,19 +36,22 @@ export const Profile = memo(() => {
   };
 
   return (
-    <section id='profile' sx={{ paddingTop: '120px' }}>
-      <GridWrapper>
-        <Headline />
-        <Line />
-        <Animation options={defaultOptions} />
-        <ChatBubble />
-        <Body />
-        <Pin />
-        <Tshape />
-        <Outline />
-        <Arrow />
-      </GridWrapper>
-    </section>
+    <Section
+      id='profile'
+      sx={{
+        paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'],
+      }}
+    >
+      <Headline />
+      <Line />
+      <Animation options={defaultOptions} />
+      <ChatBubble />
+      <Body />
+      <Pin />
+      <Tshape />
+      <Outline />
+      <Arrow />
+    </Section>
   );
 });
 

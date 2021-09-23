@@ -2,13 +2,7 @@
 import React, { memo } from 'react';
 
 // pieces
-import {
-  Box,
-  Heading,
-  Image,
-  Paragraph,
-  GridWrapper,
-} from '@thepuzzlers/pieces';
+import { Box, Heading, Image, Paragraph, Section } from '@thepuzzlers/pieces';
 
 // images
 import contactVector from 'assets/svg/contact-vector.svg';
@@ -17,7 +11,7 @@ import contactVector from 'assets/svg/contact-vector.svg';
 import { Form } from './Form';
 
 export const Contact = memo(() => (
-  <GridWrapper
+  <Section
     id='contact-section'
     sx={{
       gridTemplateRows: [null, null, null, null, 'auto 1fr', 'auto 1fr'],
@@ -27,7 +21,7 @@ export const Contact = memo(() => (
     <Headline />
     <SubHeadline />
     <Form />
-  </GridWrapper>
+  </Section>
 ));
 
 /* ------------------ Text Section ------------------ */
