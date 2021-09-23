@@ -131,10 +131,10 @@ const ParagraphBlock = ({ paragraphBlockRef }) => (
     as='h3'
     type='lead'
     sx={{
-      alignSelf: ['end', 'end', 'end', 'end', 'end', 'end'],
+      alignSelf: ['end', 'end', 'end', 'end', 'center', 'end'],
       gridColumn: ['1/12', '1/8', '10/20', '4/14', '15/23', '16/22'],
-      gridRow: [2, 2, 5, 3, '4', '1/3'],
-      transform: [null, null, null, null, null, 'translateX(6%)'],
+      gridRow: [2, 2, 5, 3, 3, '1/3'],
+      transform: [null, null, null, null, 'translateY(-15%)', 'translateX(6%)'],
       mt: ['20px', '24x', 0, 0, 0, 0],
       mb: ['80px', '60px', 0, 0, 0, 0],
     }}
@@ -169,9 +169,10 @@ const MainImgDescription = ({ designatedRef }) => (
   <GridItem
     sx={{
       gridColumn: ['1/8', '4/8', '9/16', '2/11', '2/6', '3/7'],
-      gridRow: [3, 3, 5, 1, 4, 2],
-      mt: ['8px', '8px', '8px', 0, '22px', '16px'],
-      mb: ['12px', '12px', 0, '12px', 0, 0],
+      gridRow: [3, 3, 5, 1, 3, 2],
+      mt: ['8px', '8px', '8px', 0, '50px', '16px'],
+      mb: ['12px', '12px', 0, '12px', '-30px', 0],
+      alignSelf: [null, null, null, null, 'end', null],
     }}
     ref={designatedRef}
   >
@@ -224,7 +225,7 @@ const GreenCafeCard = ({ image, designatedRef }) => (
   <Card
     sx={{
       gridColumn: ['1/7', '3/7', '7/13', '8/14', '7/12', '9/13'],
-      gridRow: [5, 6, 3, 3, '3/5', 1],
+      gridRow: [5, 6, 3, 3, 3, 1],
       width: ['auto', 'auto', '95%', '89%', '85%', '90%'],
       alignSelf: ['end', 'end', 'start', 'baseline', 'end', 'end'],
       justifySelf: [
@@ -240,7 +241,7 @@ const GreenCafeCard = ({ image, designatedRef }) => (
         null,
         'initial',
         'translateY(-50%)',
-        'translateY(5%)',
+        'translateY(25%)',
         'translateY(32%)',
       ],
     }}
@@ -289,10 +290,10 @@ const Line = ({ designatedRef }) => (
         'initial',
         'initial',
         'translateY(12%)',
-        'translateY(20%)',
+        'translateY(8%)',
         'translateY(-28%)',
       ],
-      justifySelf: ['auto', 'center', 'left', 'left', 'baseline', 'end'],
+      justifySelf: ['auto', 'center', 'left', 'left', 'left', 'end'],
       alignSelf: [null, 'end', 'end', null, null, null],
     }}
     ref={designatedRef}
@@ -331,10 +332,11 @@ const PinWide = ({ designatedRef }) => (
     sx={{
       alignSelf: 'center',
       gridRow: [5, 4, 3, 2, 1, 1],
-      gridColumn: ['3/5', '1/3', '20/23', '9/13', '11/13', '12/13'],
-      justifySelf: ['center', 'end', 'end', 'center', 'end', 'baseline'],
-      mt: ['-80px', '50px', 0, '-20px', '50px', '50px'],
-      width: ['auto', 'auto', '82%', '50%', 'auto', 'auto'],
+      gridColumn: ['3/5', '1/3', '20/23', '9/13', '10/13', '12/13'],
+      justifySelf: ['center', 'end', 'end', 'center', 'center', 'baseline'],
+      mt: ['-80px', '50px', 0, '-20px', '240px', '50px'],
+      width: ['auto', 'auto', '82%', '50%', '30%', 'auto'],
+      transform: [null, null, null, null, 'translateX(-30%)', null],
     }}
     ref={designatedRef}
   >
