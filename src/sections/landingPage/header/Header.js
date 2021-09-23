@@ -133,8 +133,8 @@ const ParagraphBlock = ({ paragraphBlockRef }) => (
     sx={{
       alignSelf: ['end', 'end', 'end', 'end', 'center', 'end'],
       gridColumn: ['1/12', '1/8', '10/20', '4/14', '15/23', '16/22'],
-      gridRow: [2, 2, 5, 3, 3, '1/3'],
-      transform: [null, null, null, null, 'translateY(-15%)', 'translateX(6%)'],
+      gridRow: [2, 2, 5, 3, 3, 1],
+      transform: [null, null, null, null, 'translateY(-15%)', null],
       mt: ['20px', '24x', 0, 0, 0, 0],
       mb: ['80px', '60px', 0, 0, 0, 0],
     }}
@@ -170,9 +170,9 @@ const MainImgDescription = ({ designatedRef }) => (
     sx={{
       gridColumn: ['1/8', '4/8', '9/16', '2/11', '2/6', '3/7'],
       gridRow: [3, 3, 5, 1, 3, 2],
-      mt: ['8px', '8px', '8px', 0, '50px', '16px'],
+      mt: ['8px', '8px', '8px', 0, '50px', 0],
       mb: ['12px', '12px', 0, '12px', '-30px', 0],
-      alignSelf: [null, null, null, null, 'end', null],
+      alignSelf: [null, null, null, null, 'end', 'center'],
     }}
     ref={designatedRef}
   >
@@ -291,9 +291,9 @@ const Line = ({ designatedRef }) => (
         'initial',
         'translateY(12%)',
         'translateY(8%)',
-        'translateY(-28%)',
+        'translateY(-45%)',
       ],
-      justifySelf: ['auto', 'center', 'left', 'left', 'left', 'end'],
+      justifySelf: ['auto', 'center', 'left', 'left', 'left', 'left'],
       alignSelf: [null, 'end', 'end', null, null, null],
     }}
     ref={designatedRef}
@@ -332,10 +332,10 @@ const PinWide = ({ designatedRef }) => (
     sx={{
       alignSelf: 'center',
       gridRow: [5, 4, 3, 2, 1, 1],
-      gridColumn: ['3/5', '1/3', '20/23', '9/13', '10/13', '12/13'],
+      gridColumn: ['3/5', '1/3', '20/23', '9/13', '10/13', '12/14'],
       justifySelf: ['center', 'end', 'end', 'center', 'center', 'baseline'],
       mt: ['-80px', '50px', 0, '-20px', '240px', '50px'],
-      width: ['auto', 'auto', '82%', '50%', '30%', 'auto'],
+      width: ['auto', 'auto', '82%', '50%', '30%', '60%'],
       transform: [null, null, null, null, 'translateX(-30%)', null],
     }}
     ref={designatedRef}
