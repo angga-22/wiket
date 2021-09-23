@@ -412,7 +412,14 @@ const PotjectCard = ({ position, image, potjectRef }) => {
 const SectionHeading = ({ position }) => {
   const styles = [
     {
-      gridColumn: ['1/10', '3/9', '13/24', '15/24', '16/24', '16/24'],
+      gridColumn: [
+        '1/span 10',
+        '3/span 7',
+        '13/span 12',
+        '15/span 12',
+        '16/span 8',
+        '16/span 8',
+      ],
       gridRow: [5, 3, 3, 2, 2, 2],
       mt: ['43px', '64px', '43px', '81px', '40px', '52px'],
     },
