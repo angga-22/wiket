@@ -125,12 +125,17 @@ const BlossomCard = () => (
         sx={{
           alignSelf: 'end',
           pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
-          pr: '.3em',
+          pr: ['.3em', '1.2em', '.3em', '.3em', '.3em', '.3em'],
         }}
       >
         Blossom{' '}
       </Heading>
-      <Heading type='cardHeaderSmall' sx={{ alignSelf: 'start' }}>
+      <Heading
+        type='cardHeaderSmall'
+        sx={{
+          alignSelf: 'start',
+        }}
+      >
         Free
       </Heading>
     </div>
