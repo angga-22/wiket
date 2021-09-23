@@ -187,8 +187,11 @@ export const Body = () => (
       pb: [0, 0, '2em', 0, 0, 0],
     }}
   >
-    Unlike other social networks, wiket is created for businesses and the people
-    behind them.
+    Unlike other social networks, wiket is{' '}
+    <Paragraph as='span' variant='bold'>
+      crafted for small businesses
+    </Paragraph>{' '}
+    and the people behind them.
   </Paragraph>
 );
 
