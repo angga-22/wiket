@@ -168,11 +168,6 @@ export const typographyConfig = {
       textDecoration: 'underline',
     },
   },
-  smallParagraph: {
-    fontSizes: [15, 12, 14, 11.5, 11.5, 13],
-    fontFamily: 'body',
-    lineHeight: 1.5,
-  },
   featureList: {
     fontSizes: [16, 16, 16, 16, 19.6, 20],
     fontFamily: 'body',
