@@ -73,7 +73,8 @@ export const Header = memo(({ imagesData }) => {
     <Section
       id='header-section'
       sx={{
-        mt: ['160px', '175px', '168px', '110px', '135px', '148px'],
+        pt: ['160px', '175px', '168px', '110px', '135px', '148px'],
+
         gridTemplateRows: [
           'auto',
           'auto auto auto auto 81px',
