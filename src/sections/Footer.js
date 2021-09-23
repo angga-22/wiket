@@ -174,7 +174,7 @@ const FooterParagraph = () => (
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
       }}
     >
-      Where mind-liked businesses
+      Where like-minded businesses
       <Paragraph
         type='footerParagraph'
         as='span'

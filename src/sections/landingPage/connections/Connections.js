@@ -37,7 +37,7 @@ const sectionsData = [
   {
     text: (
       <>
-        See interesting connection your <span>partners already have.</span>
+        See interesting connections your <span>partners already have.</span>
       </>
     ),
     number: '02.',

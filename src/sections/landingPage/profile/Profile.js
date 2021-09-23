@@ -187,7 +187,7 @@ export const Body = () => (
       pb: [0, 0, '2em', 0, 0, 0],
     }}
   >
-    Unless other social networks, wiket is created for businesses and the people
+    Unlike other social networks, wiket is created for businesses and the people
     behind them.
   </Paragraph>
 );

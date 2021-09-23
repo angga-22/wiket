@@ -140,7 +140,7 @@ const BlossomCard = () => (
       </Heading>
     </div>
     <Paragraph type='body-300' sx={{ lineHeight: 1.5 }}>
-      Set up your own profile, conntect with others and share ideas
+      Set up your own profile, connect with others and share ideas
     </Paragraph>
   </GridItem>
 );

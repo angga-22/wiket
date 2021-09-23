@@ -141,7 +141,7 @@ const ParagraphBlock = ({ paragraphBlockRef }) => (
     ref={paragraphBlockRef}
   >
     <b>Wiket is the first business to business network </b>
-    which lets you connect to mind like people.
+    which lets you connect to like-minded people.
   </Paragraph>
 );
 
