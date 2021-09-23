@@ -4,7 +4,7 @@
 import { jsx } from 'theme-ui';
 
 // external dependencies
-import { memo } from 'react';
+import React, { memo, useRef } from 'react';
 
 // pieces
 import {
@@ -32,41 +32,89 @@ import pinRegular from 'assets/svg/pin-regular.svg';
 import pinWide from 'assets/svg/pin-wide.svg';
 
 // EXPORT
-export const Header = memo(({ imagesData }) => (
-  <Section
-    id='header-section'
-    sx={{
-      mt: ['160px', '175px', '168px', '110px', '135px', '148px'],
-      gridTemplateRows: [
-        'auto',
-        'auto auto auto auto 81px',
-        'auto',
-        'auto',
-        'auto',
-        'auto',
-      ],
-    }}
-  >
-    <Headline />
-    <MainImgContainer />
-    <MainImgDescription />
-    <PotjectCard image={imagesData.potjectImage} />
-    <GreenCafeCard image={imagesData.greenCafeImage} />
-    <GreenThumbCard image={imagesData.greenThumbImage} />
-    <Line />
-    <ParagraphBlock />
-    <PinRegular />
-    <PinWide />
-  </Section>
-));
+export const Header = memo(({ imagesData }) => {
+  const headlineRef = useRef();
+  const paragraphBlockRef = useRef();
+  // Array with MainImgContainer and MainImgDescription components
+  const mainImgAndDescRef = useRef([]);
+  // Array with PotjectCard, GreenCafeCard, GreenThumbCard components
+  const cardsRef = useRef([]);
+  // Array with Line, PinRegular, PinWide components
+  const vectorsRef = useRef([]);
 
-const Headline = () => (
+  React.useEffect(() => {
+    /* eslint-disable no-console */
+    // Destructuring of elements in arrays
+    const [mainImage, imageDescription] = mainImgAndDescRef.current;
+    const [potjectCard, greenCafeCard, greenThumbCard] = cardsRef.current;
+    const [line, pinR, pinW] = vectorsRef.current;
+
+    console.log('img and desc', mainImage, imageDescription);
+    console.log('cards', potjectCard, greenCafeCard, greenThumbCard);
+    console.log('vectors', line, pinR, pinW);
+  }, []);
+
+  // Curried function to push elements to array
+  const pushToRefsArray = (array) => (el) => array.push(el);
+
+  // Push main image and description to array
+  mainImgAndDescRef.current = [];
+  const pushToMainImgAndDesc = pushToRefsArray(mainImgAndDescRef.current);
+
+  // Push cards to array
+  cardsRef.current = [];
+  const pushToCards = pushToRefsArray(cardsRef.current);
+
+  // Push vectors to array
+  vectorsRef.current = [];
+  const pushToVectors = pushToRefsArray(vectorsRef.current);
+
+  return (
+    <Section
+      id='header-section'
+      sx={{
+        mt: ['160px', '175px', '168px', '110px', '135px', '148px'],
+        gridTemplateRows: [
+          'auto',
+          'auto auto auto auto 81px',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+        ],
+      }}
+    >
+      <Headline headlineRef={headlineRef} />
+      <MainImgContainer designatedRef={pushToMainImgAndDesc} />
+      <MainImgDescription designatedRef={pushToMainImgAndDesc} />
+      <PotjectCard
+        image={imagesData.potjectImage}
+        designatedRef={pushToCards}
+      />
+      <GreenCafeCard
+        image={imagesData.greenCafeImage}
+        designatedRef={pushToCards}
+      />
+      <GreenThumbCard
+        image={imagesData.greenThumbImage}
+        designatedRef={pushToCards}
+      />
+      <Line designatedRef={pushToVectors} />
+      <ParagraphBlock paragraphBlockRef={paragraphBlockRef} />
+      <PinRegular designatedRef={pushToVectors} />
+      <PinWide designatedRef={pushToVectors} />
+    </Section>
+  );
+});
+
+const Headline = ({ headlineRef }) => (
   <GridItem
     sx={{
       gridColumn: ['1/13', '1/11', '2/22', '13/25', '14/25', '13/24'],
       gridRow: [1, 1, 1, '1/span 2', 1, 1],
       mb: [null, null, '60px'],
     }}
+    ref={headlineRef}
   >
     <Heading type='body-1000' as='p'>
       Explore new opportunities.
@@ -78,7 +126,7 @@ const Headline = () => (
   </GridItem>
 );
 
-const ParagraphBlock = () => (
+const ParagraphBlock = ({ paragraphBlockRef }) => (
   <Paragraph
     as='h3'
     type='lead'
@@ -90,19 +138,21 @@ const ParagraphBlock = () => (
       mt: ['20px', '24x', 0, 0, 0, 0],
       mb: ['80px', '60px', 0, 0, 0, 0],
     }}
+    ref={paragraphBlockRef}
   >
     <b>Wiket is the first business to business network </b>
     which lets you connect to mind like people.
   </Paragraph>
 );
 
-const MainImgContainer = () => (
+const MainImgContainer = ({ designatedRef }) => (
   <Box
     sx={{
       gridColumn: ['1/13', '4/12', '9/22', '2/11', '2/10', '3/11'],
       gridRow: [4, '4/6', '2/5', 2, '1/4', 1],
       width: '100%',
     }}
+    ref={designatedRef}
   >
     <StaticImage
       src='../../../assets/jpg/header-main-img.jpg'
@@ -115,7 +165,7 @@ const MainImgContainer = () => (
   </Box>
 );
 
-const MainImgDescription = () => (
+const MainImgDescription = ({ designatedRef }) => (
   <GridItem
     sx={{
       gridColumn: ['1/8', '4/8', '9/16', '2/11', '2/6', '3/7'],
@@ -123,12 +173,13 @@ const MainImgDescription = () => (
       mt: ['8px', '8px', '8px', 0, '22px', '16px'],
       mb: ['12px', '12px', 0, '12px', 0, 0],
     }}
+    ref={designatedRef}
   >
     <CardTextBlock title='Hanging Garden' text='Florist in Bangkok' />
   </GridItem>
 );
 
-const Card = ({ sx, title, description, image, ...props }) => (
+const Card = ({ sx, title, description, image, designatedRef, ...props }) => (
   <PrimaryCard
     image={image}
     title={title}
@@ -139,11 +190,12 @@ const Card = ({ sx, title, description, image, ...props }) => (
       zIndex: 2,
       ...sx,
     }}
+    cardRef={designatedRef}
     {...props}
   />
 );
 
-const PotjectCard = ({ image }) => (
+const PotjectCard = ({ image, designatedRef }) => (
   <Card
     sx={{
       gridColumn: ['1/7', '2/7', '18/25', '15/21', '8/12', '9/13'],
@@ -164,10 +216,11 @@ const PotjectCard = ({ image }) => (
     image={image}
     title='Potject'
     description='Pottery in Bangkok'
+    designatedRef={designatedRef}
   />
 );
 
-const GreenCafeCard = ({ image }) => (
+const GreenCafeCard = ({ image, designatedRef }) => (
   <Card
     sx={{
       gridColumn: ['1/7', '3/7', '7/13', '8/14', '7/12', '9/13'],
@@ -194,10 +247,11 @@ const GreenCafeCard = ({ image }) => (
     image={image}
     title='Green Cafe'
     description='Roastery in Bangkok'
+    designatedRef={designatedRef}
   />
 );
 
-const GreenThumbCard = ({ image }) => (
+const GreenThumbCard = ({ image, designatedRef }) => (
   <Card
     sx={{
       gridColumn: ['7/13', '7/12', '17/25', '17/24', '1/5', '3/7'],
@@ -217,10 +271,11 @@ const GreenThumbCard = ({ image }) => (
     image={image}
     title='GreenThumb'
     description='Gardener in Ratchaburi'
+    designatedRef={designatedRef}
   />
 );
 
-const Line = () => (
+const Line = ({ designatedRef }) => (
   <Box
     as='picture'
     sx={{
@@ -240,6 +295,7 @@ const Line = () => (
       justifySelf: ['auto', 'center', 'left', 'left', 'baseline', 'end'],
       alignSelf: [null, 'end', 'end', null, null, null],
     }}
+    ref={designatedRef}
   >
     <source media={srcsetValues[4]} srcSet={lineDesktop} />
     <source media={srcsetValues[3]} srcSet={lineTabletLandscape} />
@@ -254,7 +310,7 @@ const Line = () => (
   </Box>
 );
 
-const PinRegular = () => (
+const PinRegular = ({ designatedRef }) => (
   <GridItem
     sx={{
       display: ['none', 'none', 'block', 'none', 'block', 'block'],
@@ -264,12 +320,13 @@ const PinRegular = () => (
       mt: [null, null, '42px', null, '75px', '130px'],
       width: [null, null, 'auto', null, 'auto', '42%'],
     }}
+    ref={designatedRef}
   >
     <Image src={pinRegular} alt='' sx={{ width: '100%', maxHeight: '100%' }} />
   </GridItem>
 );
 
-const PinWide = () => (
+const PinWide = ({ designatedRef }) => (
   <GridItem
     sx={{
       alignSelf: 'center',
@@ -279,6 +336,7 @@ const PinWide = () => (
       mt: ['-80px', '50px', 0, '-20px', '50px', '50px'],
       width: ['auto', 'auto', '82%', '50%', 'auto', 'auto'],
     }}
+    ref={designatedRef}
   >
     <Image src={pinWide} alt='' sx={{ width: '100%', maxHeight: '100%' }} />
   </GridItem>
