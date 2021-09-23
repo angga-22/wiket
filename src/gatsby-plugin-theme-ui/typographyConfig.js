@@ -16,6 +16,11 @@ export const typographyConfig = {
     fontFamily: 'primary',
     lineHeight: 'heading.design',
   },
+  paragraph: {
+    fontSizes: [16.84, 17.09, 18.19, 15.04, 17.63, 17.8],
+    fontFamily: 'body',
+    lineHeight: 1.5,
+  },
   hyperLink: {
     fontSizes: [21.6, 19.2, 24.8, 24.8, 24],
     fontFamily: 'body',
