@@ -62,7 +62,7 @@ const SubHeadline = () => (
 const Vector = () => (
   <Box
     sx={{
-      gridRow: [1, 1, 3, 1, 2, 2],
+      gridRow: [1, 1, 3, 1, 2, 1],
       gridColumn: ['11/12', '11/12', '22/23', '21/22', '21/23', '22/23'],
       justifySelf: ['baseline', 'baseline', 'end', 'end', 'baseline'],
       transform: [
