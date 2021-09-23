@@ -123,7 +123,7 @@ const FormWrapper = (props) => (
   <GridItem
     variant='fullWidth'
     sx={{
-      gridRow: [3, 3, 3, 3, '1 / span 2', '2 / span 1'],
+      gridRow: [3, 3, 3, 3, '1 / span 2', '1 / span 2'],
       gridColumn: ['1/13', '1/13', '6/25', '1/25', '12/25', '12/24'],
       width: ['100vw', 'unset', 'unset', 'unset', 'unset', 'unset'],
       ml: [null, 0, 0, 0, 0, 0],
@@ -141,7 +141,7 @@ const FormWrapper = (props) => (
         justifyContent: ['center', 'left', 'left', 'left', 'left', 'left'],
         pt: ['32px', '37px', '37px', '37px', '37px', '37px'],
         pb: ['40px', '48px', '48px', '48px', '48px', '48px'],
-        marginBottom: ['-15%', '-25%', '-48%', '-28%', '-42%', '-40%'],
+        marginBottom: ['-15%', '-25%', '-48%', '-28%', '-42%', '-18%'],
         zIndex: 2,
       }}
       {...props}

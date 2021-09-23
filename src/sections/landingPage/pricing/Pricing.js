@@ -122,7 +122,6 @@ const BlossomCard = () => (
     <div sx={{ display: 'flex', justifyContent: 'center' }}>
       <Heading
         type='cardHeader'
-        variant='bold'
         sx={{
           alignSelf: 'end',
           pb: ['8px', '8px', '14px', '8px', '8px', '8px'],
@@ -131,11 +130,7 @@ const BlossomCard = () => (
       >
         Blossom{' '}
       </Heading>
-      <Heading
-        type='cardHeaderSmall'
-        variant='bold'
-        sx={{ alignSelf: 'start' }}
-      >
+      <Heading type='cardHeaderSmall' sx={{ alignSelf: 'start' }}>
         Free
       </Heading>
     </div>
@@ -179,7 +174,6 @@ const GrowthCard = () => (
     <div sx={{ display: 'flex', justifyContent: 'center' }}>
       <Heading
         type='cardHeader'
-        variant='bold'
         sx={{
           alignSelf: 'end',
           color: 'background',
@@ -191,7 +185,6 @@ const GrowthCard = () => (
       </Heading>
       <Heading
         type='cardHeaderSmall'
-        variant='bold'
         sx={{
           alignSelf: 'start',
           color: 'background',

@@ -32,7 +32,6 @@ export const Benefits = memo(() => {
       id='benefits'
       sx={{
         paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'],
-        alignItems: 'center',
       }}
     >
       <SectionHeader />

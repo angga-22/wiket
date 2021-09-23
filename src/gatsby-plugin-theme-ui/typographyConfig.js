@@ -175,12 +175,12 @@ export const typographyConfig = {
   },
   cardHeader: {
     fontSizes: [25, 28, 28, 24, 30, 22],
-    fontFamily: 'primary',
+    fontFamily: 'primaryBold',
     lineHeight: 1.5,
   },
   cardHeaderSmall: {
     fontSizes: [16, 17, 17, 16, 16, 16],
-    fontFamily: 'body',
+    fontFamily: 'bodyBold',
     lineHeight: 1.5,
   },
   pricingSectionNumber: {
@@ -193,6 +193,7 @@ export const typographyConfig = {
     fontSizes: [26.08, 24.86, 26.75, 26.21, 31.36, 43.5],
     fontFamily: 'primary',
     lineHeight: 1.5,
+    color: 'textNegative',
   },
 };
 

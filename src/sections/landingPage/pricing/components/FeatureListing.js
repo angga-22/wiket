@@ -24,11 +24,10 @@ const FeatureSection = ({ data }) => (
         type='h5'
         variant='bold'
         sx={{
-          color: 'accentSecondary',
           mb: '20px',
         }}
       >
-        {data.title}
+        {data.title}monkey
       </Heading>
     </GridItem>
     {data.features.map((el) => (
@@ -43,7 +42,6 @@ const FeatureDetailRow = ({ data }) => (
     <GridItem
       sx={{
         gridColumn: ['1 / 10', '1 / 9', '3 / 16', '3 / 12', '2 / 12', '3 / 10'],
-        // pb: ['24px', '32px', '32px', '24px', '32px', '32px'],
         py: '12px',
       }}
     >

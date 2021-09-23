@@ -48,7 +48,6 @@ export const Footer = () => {
     <Section
       id='header-section'
       sx={{
-        mt: '10vw',
         backgroundColor: 'primary',
       }}
     >
@@ -170,7 +169,6 @@ const FooterParagraph = () => (
     <Paragraph
       type='footerParagraph'
       sx={{
-        color: 'textNegative',
         textAlign: ['center', 'center', 'right', 'right', 'right', 'right'],
       }}
     >

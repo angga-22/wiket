@@ -31,7 +31,7 @@ const Headline = () => (
     as='h2'
     type='h2-500'
     sx={{
-      gridRow: [1, 1, 1, 1],
+      gridRow: 1,
       gridColumn: ['2/12', '4/span 6', '2/22', '6/20', '1/11', '2/7'],
       textAlign: ['center', 'center', 'left', 'center', 'left', 'left'],
       mb: 16,
@@ -46,14 +46,12 @@ const Headline = () => (
 
 const SubHeadline = () => (
   <Paragraph
-    // as='h5'
     type='lead'
-    // variant='lead'
     sx={{
       gridRow: [2],
       gridColumn: ['2/span 10', '3/span 8', '2/16', '7/18', '1/10', '2/8'],
       textAlign: ['center', 'center', 'left', 'center', 'left', 'left'],
-      mb: ['80px'],
+      mb: '80px',
     }}
   >
     Join our waiting list now and get informed once we open up our network
