@@ -53,21 +53,28 @@ const sectionsData = [
 ];
 
 export const Connections = memo(({ imagesData }) => {
-  const contentWrapper = React.useRef([]);
-  const primaryCards = React.useRef([]);
+  const greenCafeRef = React.useRef([]);
+  const hangingGardensRef = React.useRef([]);
+  const greenThumbRef = React.useRef([]);
+  const potjectRef = React.useRef([]);
+  const numberRef = React.useRef([]);
 
   // Dynamic refs
-  contentWrapper.current = quantityOfContentWrapper.map(
-    (wrapper, i) => contentWrapper.current[i] ?? React.createRef()
+  greenCafeRef.current = quantityOfContentWrapper.map(
+    (wrapper, i) => greenCafeRef.current[i] ?? React.createRef()
   );
-  primaryCards.current = quantityOfContentWrapper.map(
-    (wrapper, i) => primaryCards.current[i] ?? React.createRef()
+  hangingGardensRef.current = quantityOfContentWrapper.map(
+    (wrapper, i) => hangingGardensRef.current[i] ?? React.createRef()
   );
-
-  // React.useEffect(() => {
-  //   motionChangeSections(contentWrapper);
-  //   motionChangeCards(primaryCards);
-  // });
+  greenThumbRef.current = quantityOfContentWrapper.map(
+    (wrapper, i) => greenThumbRef.current[i] ?? React.createRef()
+  );
+  potjectRef.current = quantityOfContentWrapper.map(
+    (wrapper, i) => potjectRef.current[i] ?? React.createRef()
+  );
+  numberRef.current = quantityOfContentWrapper.map(
+    (wrapper, i) => numberRef.current[i] ?? React.createRef()
+  );
 
   return (
     <section id='connections' sx={{ paddingTop: '120px' }}>
@@ -77,24 +84,33 @@ export const Connections = memo(({ imagesData }) => {
 
       <Section
         position={0}
-        sectionRef={contentWrapper.current[0]}
-        cardRef={primaryCards.current[0]}
+        greenCafeRef={greenCafeRef.current[0]}
+        hangingGardensRef={hangingGardensRef.current[0]}
+        greenThumbRef={greenThumbRef.current[0]}
+        potjectRef={potjectRef.current[0]}
+        numberRef={numberRef.current[0]}
         number={sectionsData[0].number}
         imagesData={imagesData}
       />
       <Spacer />
       <Section
         position={1}
-        sectionRef={contentWrapper.current[0]}
-        cardRef={primaryCards.current[0]}
+        greenCafeRef={greenCafeRef.current[1]}
+        hangingGardensRef={hangingGardensRef.current[1]}
+        greenThumbRef={greenThumbRef.current[1]}
+        potjectRef={potjectRef.current[1]}
+        numberRef={numberRef.current[1]}
         number={sectionsData[1].number}
         imagesData={imagesData}
       />
       <Spacer />
       <Section
         position={2}
-        sectionRef={contentWrapper.current[0]}
-        cardRef={primaryCards.current[0]}
+        greenCafeRef={greenCafeRef.current[2]}
+        hangingGardensRef={hangingGardensRef.current[2]}
+        greenThumbRef={greenThumbRef.current[2]}
+        potjectRef={potjectRef.current[2]}
+        numberRef={numberRef.current[2]}
         number={sectionsData[2].number}
         imagesData={imagesData}
       />
@@ -124,7 +140,17 @@ const Headline = () => (
 /* ------------------ Section Container ------------------- */
 /* -------------------------------------------------------- */
 
-const Section = ({ sectionRef, position, number, imagesData }) => (
+const Section = ({
+  sectionRef,
+  position,
+  number,
+  imagesData,
+  greenCafeRef,
+  hangingGardensRef,
+  greenThumbRef,
+  potjectRef,
+  numberRef,
+}) => (
   <GridWrapper
     ref={sectionRef}
     sx={{
@@ -132,12 +158,23 @@ const Section = ({ sectionRef, position, number, imagesData }) => (
       pt: ['62px', '80px', '103px', '44px', '92px', '77px'],
     }}
   >
-    <Number number={number} position={position} />
+    <Number number={number} position={position} numberRef={numberRef} />
 
-    <GreenCafeCard position={position} />
-    <HangingGardensCard position={position} />
-    <GreenThumbCard position={position} image={imagesData.greenThumbImage} />
-    <PotjectCard position={position} image={imagesData.potjectImage} />
+    <GreenCafeCard position={position} greenCafeRef={greenCafeRef} />
+    <HangingGardensCard
+      position={position}
+      hangingGardensRef={hangingGardensRef}
+    />
+    <GreenThumbCard
+      position={position}
+      image={imagesData.greenThumbImage}
+      greenThumbRef={greenThumbRef}
+    />
+    <PotjectCard
+      position={position}
+      image={imagesData.potjectImage}
+      potjectRef={potjectRef}
+    />
 
     <GreenPointerVector position={position} />
     <FloatingCircleVector position={position} />
@@ -154,7 +191,7 @@ const Section = ({ sectionRef, position, number, imagesData }) => (
 /* ------------------- Section Number ------------------- */
 /* ------------------------------------------------------ */
 
-const Number = ({ number, position }) => {
+const Number = ({ number, position, numberRef }) => {
   const styles = [
     {
       alignSelf: ['end', 'end', 'end', 'end', 'start', 'start'],
@@ -193,6 +230,7 @@ const Number = ({ number, position }) => {
         color: 'secondary',
         ...styles[position],
       }}
+      ref={numberRef}
     >
       {number}
     </Heading>
@@ -203,7 +241,7 @@ const Number = ({ number, position }) => {
 /* ------------------------ Cards ------------------------ */
 /* ------------------------------------------------------- */
 
-const GreenCafeCard = ({ position }) => {
+const GreenCafeCard = ({ position, greenCafeRef }) => {
   const styles = [
     {
       alignSelf: ['unset', 'unset', 'unset', 'end', 'end'],
@@ -228,7 +266,7 @@ const GreenCafeCard = ({ position }) => {
   ];
 
   return (
-    <Card variant='horizontal' sx={styles[position]}>
+    <Card variant='horizontal' sx={styles[position]} ref={greenCafeRef}>
       <Box
         sx={{
           mr: '16px',
@@ -248,7 +286,7 @@ const GreenCafeCard = ({ position }) => {
   );
 };
 
-const HangingGardensCard = ({ position }) => {
+const HangingGardensCard = ({ position, hangingGardensRef }) => {
   const styles = [
     {
       alignSelf: ['unset', 'unset', 'unset', 'unset', 'unset', 'end'],
@@ -276,6 +314,7 @@ const HangingGardensCard = ({ position }) => {
         bg: 'blue100',
         ...styles[position],
       }}
+      ref={hangingGardensRef}
     >
       <Box
         sx={{
@@ -296,7 +335,7 @@ const HangingGardensCard = ({ position }) => {
   );
 };
 
-const GreenThumbCard = ({ position, image }) => {
+const GreenThumbCard = ({ position, image, greenThumbRef }) => {
   const styles = [
     {
       display: 'none',
@@ -326,11 +365,12 @@ const GreenThumbCard = ({ position, image }) => {
         width: ['94%'],
         ...styles[position],
       }}
+      cardRef={greenThumbRef}
     />
   );
 };
 
-const PotjectCard = ({ position, image }) => {
+const PotjectCard = ({ position, image, potjectRef }) => {
   const styles = [
     {
       display: 'none',
@@ -360,6 +400,7 @@ const PotjectCard = ({ position, image }) => {
         width: ['100%'],
         ...styles[position],
       }}
+      cardRef={potjectRef}
     />
   );
 };

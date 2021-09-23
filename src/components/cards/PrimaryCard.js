@@ -8,8 +8,8 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import { CardTextBlock } from '../blocks/CardTextBlock';
 
-export const PrimaryCard = ({ image, title, text, sx, ...props }) => (
-  <Card variant='vertical' sx={sx} {...props}>
+export const PrimaryCard = ({ image, title, text, sx, cardRef, ...props }) => (
+  <Card variant='vertical' sx={sx} {...props} ref={cardRef}>
     <GatsbyImage
       image={getImage(image)}
       alt=''
