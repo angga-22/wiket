@@ -1,6 +1,7 @@
 // pieces
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
+import { graphql, useStaticQuery } from 'gatsby';
 import {
   Section,
   GridItem,
@@ -13,21 +14,42 @@ import batikShapeOrange from 'assets/svg/batik-shape-orange.svg';
 import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
 import { FeatureListing } from './components/FeatureListing';
 
-export const Pricing = ({ featuresData }) => (
-  <Section
-    id='feature-price'
-    sx={{ paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'] }}
-  >
-    <Headlines />
-    <SmallHeadlines />
-    <BlossomCard />
-    <GrowthCard />
-    <FeaturesLabel />
-    <BatikShape />
-    <FeatureListing data={featuresData} />
-  </Section>
-);
+export const Pricing = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allPricingFeaturesJson {
+        nodes {
+          title
+          features {
+            isBlossom
+            isGrowth
+            title
+            blossomCount
+            growthCount
+          }
+        }
+      }
+    }
+  `);
 
+  const features = data.allPricingFeaturesJson.nodes;
+  return (
+    <Section
+      id='feature-price'
+      sx={{
+        paddingTop: ['120px', '120px', '120px', '120px', '120px', '120px'],
+      }}
+    >
+      <Headlines />
+      <SmallHeadlines />
+      <BlossomCard />
+      <GrowthCard />
+      <FeaturesLabel />
+      <BatikShape />
+      <FeatureListing data={features} />
+    </Section>
+  );
+};
 const Headlines = () => (
   <GridItem
     sx={{

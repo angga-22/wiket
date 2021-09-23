@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => (
     <Box sx={{ height: ['64px', '80px', '147px', '44px', '88px', '140px'] }} />
     <Filler />
     <Box sx={{ height: ['0px', '0px', '0px', '0px', '0px', '64px'] }} />
-    <Pricing featuresData={data.features.nodes} />
+    <Pricing />
     <Box
       sx={{ height: ['200px', '352px', '349px', '105px', '440px', '425px'] }}
     />
@@ -43,19 +43,7 @@ const IndexPage = ({ data }) => (
   </div>
 );
 export const query = graphql`
-  query getFeaturesPricingData {
-    features: allPricingFeaturesJson {
-      nodes {
-        title
-        features {
-          isBlossom
-          isGrowth
-          title
-          blossomCount
-          growthCount
-        }
-      }
-    }
+  query getImagesData {
     images: allImagesJson {
       nodes {
         greenCafeImage {
