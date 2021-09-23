@@ -27,7 +27,7 @@ const FeatureSection = ({ data }) => (
           mb: '20px',
         }}
       >
-        {data.title}monkey
+        {data.title}
       </Heading>
     </GridItem>
     {data.features.map((el) => (

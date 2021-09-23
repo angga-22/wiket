@@ -9,7 +9,6 @@ import {
   Heading,
   srcsetValues,
 } from '@thepuzzlers/pieces';
-import batikShapeBlind from 'assets/svg/batik-shape-blind.svg';
 import batikShapeOrange from 'assets/svg/batik-shape-orange.svg';
 import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
 import { FeatureListing } from './components/FeatureListing';
@@ -232,7 +231,7 @@ const BatikShape = () => (
     }}
   >
     <picture>
-      <source media={srcsetValues[4]} srcSet={batikShapeBlind} />
+      <source media={srcsetValues[4]} srcSet={batikShapeOrange} />
       <source media={srcsetValues[3]} srcSet={batikShapeOrange} />
       <source media={srcsetValues[2]} srcSet={batikShapeOrange} />
       <source media={srcsetValues[1]} srcSet={batikShapeOrange} />
