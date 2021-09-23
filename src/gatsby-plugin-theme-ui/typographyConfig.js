@@ -51,6 +51,12 @@ export const typographyConfig = {
       fontFamily: 'primary.bold',
     },
   },
+  footerLink: {
+    fontSizes: [14.97, 14.39, 15.31, 15.04, 14.85, 15.82],
+    fontFamily: 'body',
+    lineHeight: 1,
+    color: 'textNegative',
+  },
   // Figma Text Styles
   h1: {
     fontSizes: [53.33, 64.75, 88.06, 53.57, 76.1, 96.89],

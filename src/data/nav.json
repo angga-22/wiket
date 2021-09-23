@@ -20,11 +20,11 @@
     ],
     "footer": {
       "dataPolicy": {
-        "title": "Privacy Policy",
+        "title": "Privacy",
         "to": "/privacy-policy"
       },
       "legal": {
-        "title": "Legal",
+        "title": "Legal notes",
         "to": "/legal"
       }
     }
