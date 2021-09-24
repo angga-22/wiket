@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Image } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { memo } from 'react';
+import Lottie from 'react-lottie';
 
 // pieces
 import { Section, Heading, GridItem } from '@thepuzzlers/pieces';
@@ -10,28 +11,42 @@ import { Section, Heading, GridItem } from '@thepuzzlers/pieces';
 import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
 
 // Data
-import ThumbsUpImg from 'assets/svg/Group 67.svg';
+// import ThumbsUpImg from 'assets/svg/Group 67.svg';
 import valuesTexts from '../../../data/values.json';
 
-export const Values = memo(() => (
-  <Section
-    id='values-section'
-    sx={{ '.valuesTextBlock:last-of-type': { paddingBottom: '7em' } }}
-  >
-    <Background />
-    <SectionHeader />
-    <SectionHeaderImg />
-    {valuesTexts.map((value) => (
-      <TextBlock
-        key={value.id}
-        title={value.title}
-        text={value.text}
-        gridColumnStart={value.gridColumnStart}
-        gridRow={value.gridRow}
-      />
-    ))}
-  </Section>
-));
+// lottie
+import animationData from '../../../lotties/wiket-thumbs-up.json';
+
+export const Values = memo(() => {
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  return (
+    <Section
+      id='values-section'
+      sx={{ '.valuesTextBlock:last-of-type': { paddingBottom: '7em' } }}
+    >
+      <Background />
+      <SectionHeader />
+      <SectionHeaderImg options={defaultOptions} />
+      {valuesTexts.map((value) => (
+        <TextBlock
+          key={value.id}
+          title={value.title}
+          text={value.text}
+          gridColumnStart={value.gridColumnStart}
+          gridRow={value.gridRow}
+        />
+      ))}
+    </Section>
+  );
+});
 
 const Background = () => (
   <GridItem
@@ -77,7 +92,7 @@ const SectionHeader = () => (
   </GridItem>
 );
 
-const SectionHeaderImg = () => (
+const SectionHeaderImg = ({ options }) => (
   <GridItem
     sx={{
       paddingTop: ['4em', '7em', '9em', '2em', '6em', '6em'],
@@ -93,7 +108,7 @@ const SectionHeaderImg = () => (
       alignSelf: ['start', 'end', 'end', 'start', 'end', 'end'],
     }}
   >
-    <Image src={ThumbsUpImg} />
+    <Lottie options={options} height='100%' />
   </GridItem>
 );
 
