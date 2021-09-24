@@ -11,7 +11,6 @@ import { Section, Heading, GridItem } from '@thepuzzlers/pieces';
 import { PrimaryTextBlock } from 'components/blocks/PrimaryTextBlock';
 
 // Data
-// import ThumbsUpImg from 'assets/svg/Group 67.svg';
 import valuesTexts from '../../../data/values.json';
 
 // lottie
@@ -19,7 +18,7 @@ import animationData from '../../../lotties/wiket-thumbs-up.json';
 
 export const Values = memo(() => {
   const defaultOptions = {
-    loop: false,
+    loop: true,
     autoplay: true,
     animationData,
     rendererSettings: {
@@ -101,9 +100,8 @@ const SectionHeaderImg = ({ options }) => (
     sx={{
       alignSelf: ['start', 'end', 'end', 'start', 'end', 'end'],
       gridColumn: ['1/13', '6/13', '12/24', '12/25', '15/24', '15/24'],
-      gridRow: ['2 / 3', '1 / 1', '1 / 1', '3 / 4', '1 / 1', '1 / 1'],
-      paddingTop: [0, '4em', '5em', 0, 0, 0],
-      mt: [0, 0, 0, '-2em', 0, '-2em'],
+      gridRow: ['2 / 3', '1', '1', '3 / 4', '1', '1'],
+      mt: [0, '4em', '5em', '-2em', 0, '-2em'],
       mb: ['-4em', '-6em', '-5em', '-1em', '-7em', '-10em'],
       width: ['100%', '95%', '100%', '92%', '100%', '97%'],
     }}
