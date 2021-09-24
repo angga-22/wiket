@@ -30,7 +30,11 @@ export const Values = memo(() => {
   return (
     <Section
       id='values-section'
-      sx={{ '.valuesTextBlock:last-of-type': { paddingBottom: '7em' } }}
+      sx={{
+        '.valuesTextBlock:last-of-type': {
+          paddingBottom: ['7em', '8em', '7em', '5em', '6em', '7em'],
+        },
+      }}
     >
       <Background />
       <SectionHeader />
@@ -95,17 +99,13 @@ const SectionHeader = () => (
 const SectionHeaderImg = ({ options }) => (
   <GridItem
     sx={{
-      paddingTop: ['4em', '7em', '9em', '2em', '6em', '6em'],
-      gridColumn: [
-        '1/span 11',
-        '7/span 5',
-        '12/span 11',
-        '13/span 10',
-        '16/span 8',
-        '16/span 7',
-      ],
-      gridRow: ['2 / 3', '1 / 1', '1 / 1', '3 / 4', '1 / 1', '1 / 1'],
       alignSelf: ['start', 'end', 'end', 'start', 'end', 'end'],
+      gridColumn: ['1/13', '6/13', '12/24', '12/25', '15/24', '15/24'],
+      gridRow: ['2 / 3', '1 / 1', '1 / 1', '3 / 4', '1 / 1', '1 / 1'],
+      paddingTop: [0, '4em', '5em', 0, 0, 0],
+      mt: [0, 0, 0, '-2em', 0, '-2em'],
+      mb: ['-4em', '-6em', '-5em', '-1em', '-7em', '-10em'],
+      width: ['100%', '95%', '100%', '92%', '100%', '97%'],
     }}
   >
     <Lottie options={options} height='100%' />
