@@ -23,7 +23,7 @@ import tShape from 'assets/svg/tShape.svg';
 import outline from 'assets/svg/outline.svg';
 
 // lottie
-import animationData from '../../../lotties/ui_wiket.json';
+import animationData from '../../../lotties/wiket-walkthrough-app.json';
 
 export const Profile = memo(() => {
   const defaultOptions = {
