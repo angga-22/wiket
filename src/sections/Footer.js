@@ -51,7 +51,9 @@ export const Footer = () => {
         backgroundColor: 'primary',
       }}
     >
-      <BackgroundImage />
+      <GridItem variant='fullWidth'>
+        <BackgroundImage />
+      </GridItem>
       <Logo />
       <FooterLink
         to={links.footer.legal.to}
