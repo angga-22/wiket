@@ -31,8 +31,15 @@ import lineDesktop from 'assets/svg/line-desktop.svg';
 import pinRegular from 'assets/svg/pin-regular.svg';
 import pinWide from 'assets/svg/pin-wide.svg';
 
+import {
+  mobileAnimationTextAndImg,
+  mobileCardsAnimation,
+  headerDesktopAnimation,
+} from './animations';
+
 // EXPORT
 export const Header = memo(({ imagesData }) => {
+  const headerRef = useRef();
   const headlineRef = useRef();
   const paragraphBlockRef = useRef();
   // Array with MainImgContainer and MainImgDescription components
@@ -43,15 +50,28 @@ export const Header = memo(({ imagesData }) => {
   const vectorsRef = useRef([]);
 
   React.useEffect(() => {
-    /* eslint-disable no-console */
     // Destructuring of elements in arrays
-    const [mainImage, imageDescription] = mainImgAndDescRef.current;
-    const [potjectCard, greenCafeCard, greenThumbCard] = cardsRef.current;
-    const [line, pinR, pinW] = vectorsRef.current;
+    // const [mainImage, imageDescription] = mainImgAndDescRef.current;
+    // const [potjectCard, greenCafeCard, greenThumbCard] = cardsRef.current;
+    // const [line, pinR, pinW] = vectorsRef.current;
 
-    console.log('img and desc', mainImage, imageDescription);
-    console.log('cards', potjectCard, greenCafeCard, greenThumbCard);
-    console.log('vectors', line, pinR, pinW);
+    if (window.innerWidth < 750) {
+      mobileAnimationTextAndImg(
+        headlineRef,
+        paragraphBlockRef,
+        mainImgAndDescRef,
+        headerRef
+      );
+      mobileCardsAnimation(cardsRef);
+    } else {
+      headerDesktopAnimation(
+        mainImgAndDescRef,
+        cardsRef,
+        headlineRef,
+        paragraphBlockRef,
+        vectorsRef
+      );
+    }
   }, []);
 
   // Curried function to push elements to array
@@ -72,9 +92,9 @@ export const Header = memo(({ imagesData }) => {
   return (
     <Section
       id='header-section'
+      ref={headerRef}
       sx={{
         pt: ['160px', '175px', '168px', '110px', '135px', '148px'],
-
         gridTemplateRows: [
           'auto',
           'auto auto auto auto 81px',
